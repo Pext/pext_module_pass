@@ -60,7 +60,7 @@ class Module(ModuleBase):
         return ["init", "insert", "edit", "generate", "rm", "mv", "cp"]
 
     def getCommands(self):
-        commandsText = []
+        commandList = []
 
         # We will crash here if pass is not installed.
         # TODO: Find a nice way to notify the user they need to install pass
@@ -72,9 +72,9 @@ class Module(ModuleBase):
                 command = strippedLine[5:]
                 for supportedCommand in self.getSupportedCommands():
                     if command.startswith(supportedCommand):
-                        commandsText.append(command)
+                        commandList.append([supportedCommand, command])
 
-        return commandsText
+        return commandList
 
     def getEntries(self):
         passDir = self.getDataLocation()
