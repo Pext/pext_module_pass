@@ -63,8 +63,6 @@ class Module(ModuleBase):
         return ["init", "insert", "edit", "generate", "rm", "mv", "cp"]
 
     def getCommands(self):
-        commandList = []
-
         # We will crash here if pass is not installed.
         # TODO: Find a nice way to notify the user they need to install pass
         commandText = check_output([self.binary, "--help"])
@@ -86,7 +84,6 @@ class Module(ModuleBase):
                 if name[-4:] == ".gpg":
                     unsortedPasswords.append(os.path.join(root, name))
 
-        entries = []
         for password in sorted(unsortedPasswords, key=lambda name: os.path.getatime(os.path.join(root, name)), reverse=True):
             entry = password[len(passDir):-4]
             self.q.put([Action.addEntry, [entry, entry]])
