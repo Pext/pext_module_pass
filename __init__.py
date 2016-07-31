@@ -28,12 +28,15 @@ import pyinotify
 
 
 class Module(ModuleBase):
-    def __init__(self, binary, q):
+    def init(self, binary, q):
         self.binary = "pass" if (binary is None) else binary
 
         self.q = q
 
         self.ANSIEscapeRegex = re.compile('(\x9B|\x1B\[)[0-?]*[ -\/]*[@-~]')
+
+        self.getCommands()
+        self.getEntries()
 
         self.initInotify(q)
 
@@ -72,9 +75,7 @@ class Module(ModuleBase):
                 command = strippedLine[5:]
                 for supportedCommand in self.getSupportedCommands():
                     if command.startswith(supportedCommand):
-                        commandList.append([supportedCommand, command])
-
-        return commandList
+                        self.q.put([Action.addCommand, [supportedCommand, command]])
 
     def getEntries(self):
         passDir = self.getDataLocation()
@@ -88,9 +89,7 @@ class Module(ModuleBase):
         entries = []
         for password in sorted(unsortedPasswords, key=lambda name: os.path.getatime(os.path.join(root, name)), reverse=True):
             entry = password[len(passDir):-4]
-            entries.append([entry, entry])
-
-        return entries
+            self.q.put([Action.addEntry, [entry, entry]])
 
     def getAllEntryFields(self, entryName):
         entries = []
