@@ -8,5 +8,9 @@ front-end to the command-line password manager
 
     sudo apt-get install python3 python3-pexpect python3-pyinotify pass
 
+## Fedora
+
+    sudo dnf install python3 python3-pexpect python3-inotify pass
+
 # License
 GPLv3+.
