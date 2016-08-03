@@ -113,23 +113,28 @@ class Module(ModuleBase):
             return self.runCommand(["insert", "-fm", command[1]], printOnSuccess=True, prefillInput=prefillData.rstrip())
 
         sanitizedCommandList = [quote(commandPart) for commandPart in command]
+        command = " ".join(sanitizedCommandList)
 
-        proc = pexpect.spawn('/bin/sh', ['-c', self.binary + " " + " ".join(sanitizedCommandList) + (" 2>/dev/null" if hideErrors else "")])
-        return self.processProcOutput(proc, printOnSuccess, hideErrors, prefillInput)
+        proc = pexpect.spawn('/bin/sh', ['-c', self.binary + " " + command + (" 2>/dev/null" if hideErrors else "")])
+        return self.processProcOutput(proc, command, printOnSuccess, hideErrors, prefillInput)
 
-    def processProcOutput(self, proc, printOnSuccess=False, hideErrors=False, prefillInput=''):
+    def processProcOutput(self, proc, command, printOnSuccess=False, hideErrors=False, prefillInput=''):
         result = proc.expect_exact([pexpect.EOF, pexpect.TIMEOUT, "[Y/n]", "[y/N]", "Enter password ", "Retype password ", " and press Ctrl+D when finished:"], timeout=3)
         if result == 0:
             exitCode = proc.sendline("echo $?")
-        elif result == 1 and proc.before:
-            self.q.put([Action.addError, "Timeout error while running '{}'. This specific way of calling the command is most likely not supported yet by Pext.".format(" ".join(command))])
-            self.q.put([Action.addError, "Command output: {}".format(self.ANSIEscapeRegex.sub('', proc.before.decode("utf-8")))])
+        elif result == 1:
+            self.q.put([Action.addError, "Timeout error while running '{}'".format(command)])
+            if proc.before:
+                self.q.put([Action.addError, "Command output: {}".format(self.ANSIEscapeRegex.sub('', proc.before.decode("utf-8")))])
+
+            return None
         elif result == 2 or result == 3:
             proc.setecho(False)
             question = proc.before.decode("utf-8")
 
             if (result == 2):
                 self.proc = {'proc': proc,
+                             'command': command,
                              'type': Action.askQuestionDefaultYes,
                              'printOnSuccess': printOnSuccess,
                              'hideErrors': hideErrors,
@@ -137,26 +142,29 @@ class Module(ModuleBase):
                 self.q.put([Action.askQuestionDefaultYes, question])
             else:
                 self.proc = {'proc': proc,
+                             'command': command,
                              'type': Action.askQuestionDefaultNo,
                              'printOnSuccess': printOnSuccess,
                              'hideErrors': hideErrors,
                              'prefillInput': prefillInput}
                 self.q.put([Action.askQuestionDefaultNo, question])
 
-            return
+            return None
         elif result == 4 or result == 5:
             printOnSuccess = False
             proc.setecho(False)
             self.proc = {'proc': proc,
+                         'command': command,
                          'type': Action.askInputPassword,
                          'printOnSuccess': printOnSuccess,
                          'hideErrors': hideErrors,
                          'prefillInput': prefillInput}
             self.q.put([Action.askInputPassword, proc.after.decode("utf-8")])
 
-            return
+            return None
         elif result == 6:
             self.proc = {'proc': proc,
+                         'command': command,
                          'type': Action.askInputMultiLine,
                          'printOnSuccess': printOnSuccess,
                          'hideErrors': hideErrors,
@@ -165,7 +173,7 @@ class Module(ModuleBase):
 
             proc.setecho(False)
 
-            return
+            return None
 
         proc.close()
         exitCode = proc.exitstatus
@@ -180,7 +188,7 @@ class Module(ModuleBase):
 
             return message
         else:
-            self.q.put([Action.addError, message if message else "Error code {} running '{}'. More info may be logged to the console".format(str(exitCode), " ".join(command))])
+            self.q.put([Action.addError, message if message else "Error code {} running '{}'. More info may be logged to the console".format(str(exitCode), command)])
 
             return None
 
@@ -210,7 +218,7 @@ class Module(ModuleBase):
             self.proc['proc'].sendcontrol("d")
             self.proc['proc'].setecho(True)
 
-        self.processProcOutput(self.proc['proc'], printOnSuccess=self.proc['printOnSuccess'], hideErrors=self.proc['hideErrors'], prefillInput=self.proc['prefillInput'])
+        self.processProcOutput(self.proc['proc'], self.proc['command'], printOnSuccess=self.proc['printOnSuccess'], hideErrors=self.proc['hideErrors'], prefillInput=self.proc['prefillInput'])
 
 class EventHandler(pyinotify.ProcessEvent):
     def __init__(self, q, store):
