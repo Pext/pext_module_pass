@@ -108,8 +108,13 @@ class Module(ModuleBase):
         # If we edit a password, make sure to get the original input first so we can show the user
         if command[0] == "edit" and len(command) == 2:
             prefillData = self.runCommand(["show", command[1]], hideErrors=True)
+
+            if self.proc['result'] == pexpect.TIMEOUT:
+                return None
+
             if prefillData is None:
                 prefillData = ''
+
             return self.runCommand(["insert", "-fm", command[1]], printOnSuccess=True, prefillInput=prefillData.rstrip())
 
         sanitizedCommandList = [quote(commandPart) for commandPart in command]
@@ -119,10 +124,13 @@ class Module(ModuleBase):
         return self.processProcOutput(proc, command, printOnSuccess, hideErrors, prefillInput)
 
     def processProcOutput(self, proc, command, printOnSuccess=False, hideErrors=False, prefillInput=''):
-        result = proc.expect_exact([pexpect.EOF, pexpect.TIMEOUT, "[Y/n]", "[y/N]", "Enter password ", "Retype password ", " and press Ctrl+D when finished:"], timeout=3)
+        possibleResults = [pexpect.EOF, pexpect.TIMEOUT, "[Y/n]", "[y/N]", "Enter password ", "Retype password ", " and press Ctrl+D when finished:"]
+        result = proc.expect_exact(possibleResults, timeout=3)
         if result == 0:
+            self.proc = {'result': possibleResults[result]}
             exitCode = proc.sendline("echo $?")
         elif result == 1:
+            self.proc = {'result': possibleResults[result]}
             self.q.put([Action.addError, "Timeout error while running '{}'".format(command)])
             if proc.before:
                 self.q.put([Action.addError, "Command output: {}".format(self.ANSIEscapeRegex.sub('', proc.before.decode("utf-8")))])
@@ -138,7 +146,8 @@ class Module(ModuleBase):
                              'type': Action.askQuestionDefaultYes,
                              'printOnSuccess': printOnSuccess,
                              'hideErrors': hideErrors,
-                             'prefillInput': prefillInput}
+                             'prefillInput': prefillInput,
+                             'result': possibleResults[result]}
                 self.q.put([Action.askQuestionDefaultYes, question])
             else:
                 self.proc = {'proc': proc,
@@ -146,7 +155,8 @@ class Module(ModuleBase):
                              'type': Action.askQuestionDefaultNo,
                              'printOnSuccess': printOnSuccess,
                              'hideErrors': hideErrors,
-                             'prefillInput': prefillInput}
+                             'prefillInput': prefillInput,
+                             'result': possibleResults[result]}
                 self.q.put([Action.askQuestionDefaultNo, question])
 
             return None
@@ -158,7 +168,8 @@ class Module(ModuleBase):
                          'type': Action.askInputPassword,
                          'printOnSuccess': printOnSuccess,
                          'hideErrors': hideErrors,
-                         'prefillInput': prefillInput}
+                         'prefillInput': prefillInput,
+                         'result': possibleResults[result]}
             self.q.put([Action.askInputPassword, proc.after.decode("utf-8")])
 
             return None
@@ -168,7 +179,8 @@ class Module(ModuleBase):
                          'type': Action.askInputMultiLine,
                          'printOnSuccess': printOnSuccess,
                          'hideErrors': hideErrors,
-                         'prefillInput': prefillInput}
+                         'prefillInput': prefillInput,
+                         'result': possibleResults[result]}
             self.q.put([Action.askInputMultiLine, proc.before.decode("utf-8").lstrip(), prefillInput])
 
             proc.setecho(False)
