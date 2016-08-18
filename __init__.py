@@ -34,6 +34,7 @@ class Module(ModuleBase):
         self.q = q
 
         self.ANSIEscapeRegex = re.compile('(\x9B|\x1B\[)[0-?]*[ -\/]*[@-~]')
+        self.passwordEntries = {}
 
         self.getCommands()
         self.getEntries()
@@ -60,7 +61,7 @@ class Module(ModuleBase):
         call([self.binary] + command)
 
     def getSupportedCommands(self):
-        return ["init", "insert", "edit", "generate", "rm", "mv", "cp"]
+        return ["show", "init", "insert", "edit", "generate", "rm", "mv", "cp"]
 
     def getCommands(self):
         # We will crash here if pass is not installed.
@@ -73,7 +74,7 @@ class Module(ModuleBase):
                 command = strippedLine[5:]
                 for supportedCommand in self.getSupportedCommands():
                     if command.startswith(supportedCommand):
-                        self.q.put([Action.addCommand, [supportedCommand, command]])
+                        self.q.put([Action.addCommand, command])
 
     def getEntries(self):
         passDir = self.getDataLocation()
@@ -86,25 +87,59 @@ class Module(ModuleBase):
 
         for password in sorted(unsortedPasswords, key=lambda name: os.path.getatime(os.path.join(root, name)), reverse=True):
             entry = password[len(passDir):-4]
-            self.q.put([Action.addEntry, [entry, entry]])
+            self.q.put([Action.addEntry, entry])
 
-    def getAllEntryFields(self, entryName):
-        entries = []
-        for entry in self.runCommand(["show", entryName], hideErrors=True).rstrip().splitlines():
-            if len(entries) == 0:
-                entries.append([entry, "********"])
+    def selectionMade(self, selection):
+        if len(selection) == 0:
+            # We're at the main menu
+            self.passwordEntries = {}
+            self.q.put([Action.replaceEntryList, []])
+            self.getCommands()
+            self.getEntries()
+
+            return
+        elif len(selection) == 2:
+            # We're selecting a password
+            if selection[1] == "********":
+                self.q.put([Action.copyToClipboard, self.passwordEntries["********"]])
             else:
                 # Get the final part to prepare for copying. For example, if
                 # the entry is named URL: https://example.org/", only copy
                 # "https://example.org/" to the clipboard
-                copyStringParts = entry.split(": ", 1)
+                copyStringParts = self.passwordEntries[selection[1]].split(": ", 1)
 
                 copyString = copyStringParts[1] if len(copyStringParts) > 1 else copyStringParts[0]
-                entries.append([copyString, entry])
+                self.q.put([Action.copyToClipboard, copyString])
 
-        return entries
+            self.passwordEntries = {}
+            self.q.put([Action.close])
+            self.q.put([Action.replaceEntryList, []])
+            self.getCommands()
+            self.getEntries()
+
+            return
+
+        results = self.runCommand(["show", selection[0]], hideErrors=True)
+        if results is None:
+            self.q.put([Action.setSelection, []])
+            return
+
+        self.q.put([Action.replaceEntryList, []])
+        self.q.put([Action.replaceCommandList, []])
+
+        for line in results.rstrip().splitlines():
+            if len(self.passwordEntries) == 0:
+                self.passwordEntries["********"] = line
+                self.q.put([Action.addEntry, "********"])
+            else:
+                self.passwordEntries[line] = line
+                self.q.put([Action.addEntry, line])
 
     def runCommand(self, command, printOnSuccess=False, hideErrors=False, prefillInput=''):
+        # Ensure this is a valid command
+        if command[0] not in self.getSupportedCommands():
+            return None
+
         # If we edit a password, make sure to get the original input first so we can show the user
         if command[0] == "edit" and len(command) == 2:
             prefillData = self.runCommand(["show", command[1]], hideErrors=True)
@@ -238,20 +273,20 @@ class EventHandler(pyinotify.ProcessEvent):
         self.store = store
 
     def process_IN_CREATE(self, event):
-        if event.dir:
+        if event.dir or len(self.store.passwordEntries) == 0:
             return
 
         entryName = event.pathname[len(self.store.getDataLocation()):-4]
 
-        self.q.put([Action.prependEntry, [entryName, entryName]])
+        self.q.put([Action.prependEntry, entryName])
 
     def process_IN_DELETE(self, event):
-        if event.dir:
+        if event.dir or len(self.store.passwordEntries) == 0:
             return
 
         entryName = event.pathname[len(self.store.getDataLocation()):-4]
 
-        self.q.put([Action.removeEntry, [entryName, entryName]])
+        self.q.put([Action.removeEntry, entryName])
 
     def process_IN_MOVED_FROM(self, event):
         self.process_IN_DELETE(event)
@@ -260,10 +295,10 @@ class EventHandler(pyinotify.ProcessEvent):
         self.process_IN_CREATE(event)
 
     def process_IN_OPEN(self, event):
-        if event.dir:
+        if event.dir or len(self.store.passwordEntries) == 0:
             return
 
         entryName = event.pathname[len(self.store.getDataLocation()):-4]
 
-        self.q.put([Action.prependEntry, [entryName, entryName]])
-        self.q.put([Action.removeEntry, [entryName, entryName]])
+        self.q.put([Action.prependEntry, entryName])
+        self.q.put([Action.removeEntry, entryName])
