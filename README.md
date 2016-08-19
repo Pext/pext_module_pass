@@ -4,7 +4,7 @@ front-end to the command-line password manager
 [pass](https://www.passwordstore.org/).
 
 # Supported flags
-- binary: Use a custom binary (defaults: "pass")
+- binary: Use a custom binary (default: "pass")
 
 # Dependencies
 ## Debian
