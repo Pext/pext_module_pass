@@ -3,6 +3,9 @@ This module allows [Pext](https://github.com/Pext/Pext) to be used as a
 front-end to the command-line password manager
 [pass](https://www.passwordstore.org/).
 
+# Supported flags
+- binary: Use a custom binary (defaults: "pass")
+
 # Dependencies
 ## Debian
 
