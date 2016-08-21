@@ -273,7 +273,7 @@ class EventHandler(pyinotify.ProcessEvent):
         self.store = store
 
     def process_IN_CREATE(self, event):
-        if event.dir or len(self.store.passwordEntries) == 0:
+        if event.dir or len(self.store.passwordEntries) > 0:
             return
 
         entryName = event.pathname[len(self.store.getDataLocation()):-4]
@@ -281,7 +281,7 @@ class EventHandler(pyinotify.ProcessEvent):
         self.q.put([Action.prependEntry, entryName])
 
     def process_IN_DELETE(self, event):
-        if event.dir or len(self.store.passwordEntries) == 0:
+        if event.dir or len(self.store.passwordEntries) > 0:
             return
 
         entryName = event.pathname[len(self.store.getDataLocation()):-4]
@@ -295,7 +295,7 @@ class EventHandler(pyinotify.ProcessEvent):
         self.process_IN_CREATE(event)
 
     def process_IN_OPEN(self, event):
-        if event.dir or len(self.store.passwordEntries) == 0:
+        if event.dir or len(self.store.passwordEntries) > 0:
             return
 
         entryName = event.pathname[len(self.store.getDataLocation()):-4]
