@@ -16,7 +16,7 @@
 import re
 import os
 from os.path import expanduser
-from subprocess import call, check_output
+from subprocess import check_output
 from shlex import quote
 
 import pexpect
@@ -36,34 +36,28 @@ class Module(ModuleBase):
         self.ANSIEscapeRegex = re.compile('(\x9B|\x1B\[)[0-?]*[ -\/]*[@-~]')
         self.passwordEntries = {}
 
-        self.getCommands()
-        self.getEntries()
+        self._getCommands()
+        self._getEntries()
 
-        self.initInotify(q)
+        self._initInotify(q)
 
-    def initInotify(self, q):
+    def _initInotify(self, q):
         # Initialize the EventHandler and make it watch the password store
         eventHandler = EventHandler(q, self)
         watchManager = pyinotify.WatchManager()
         self.notifier = pyinotify.ThreadedNotifier(watchManager, eventHandler)
         watchedEvents = pyinotify.IN_CREATE | pyinotify.IN_DELETE | pyinotify.IN_MOVED_FROM | pyinotify.IN_MOVED_TO | pyinotify.IN_OPEN
-        watchManager.add_watch(self.getDataLocation(), watchedEvents, rec=True, auto_add=True)
+        watchManager.add_watch(self._getDataLocation(), watchedEvents, rec=True, auto_add=True)
         self.notifier.daemon = True
         self.notifier.start()
 
-    def stop(self):
-        self.notifier.stop()
-
-    def getDataLocation(self):
+    def _getDataLocation(self):
         return expanduser("~") + "/.password-store/"
 
-    def call(self, command):
-        call([self.binary] + command)
-
-    def getSupportedCommands(self):
+    def _getSupportedCommands(self):
         return ["show", "init", "insert", "edit", "generate", "rm", "mv", "cp"]
 
-    def getCommands(self):
+    def _getCommands(self):
         # We will crash here if pass is not installed.
         # TODO: Find a nice way to notify the user they need to install pass
         commandText = check_output([self.binary, "--help"])
@@ -72,12 +66,12 @@ class Module(ModuleBase):
             strippedLine = line.lstrip().decode("utf-8")
             if strippedLine[:4] == "pass":
                 command = strippedLine[5:]
-                for supportedCommand in self.getSupportedCommands():
+                for supportedCommand in self._getSupportedCommands():
                     if command.startswith(supportedCommand):
                         self.q.put([Action.addCommand, command])
 
-    def getEntries(self):
-        passDir = self.getDataLocation()
+    def _getEntries(self):
+        passDir = self._getDataLocation()
 
         unsortedPasswords = []
         for root, dirs, files in os.walk(passDir):
@@ -89,13 +83,16 @@ class Module(ModuleBase):
             entry = password[len(passDir):-4]
             self.q.put([Action.addEntry, entry])
 
+    def stop(self):
+        self.notifier.stop()
+
     def selectionMade(self, selection):
         if len(selection) == 0:
             # We're at the main menu
             self.passwordEntries = {}
             self.q.put([Action.replaceEntryList, []])
-            self.getCommands()
-            self.getEntries()
+            self._getCommands()
+            self._getEntries()
 
             return
         elif len(selection) == 2:
@@ -114,8 +111,8 @@ class Module(ModuleBase):
             self.passwordEntries = {}
             self.q.put([Action.close])
             self.q.put([Action.replaceEntryList, []])
-            self.getCommands()
-            self.getEntries()
+            self._getCommands()
+            self._getEntries()
 
             return
 
@@ -137,7 +134,7 @@ class Module(ModuleBase):
 
     def runCommand(self, command, printOnSuccess=False, hideErrors=False, prefillInput=''):
         # Ensure this is a valid command
-        if command[0] not in self.getSupportedCommands():
+        if command[0] not in self._getSupportedCommands():
             return None
 
         # If we edit a password, make sure to get the original input first so we can show the user
@@ -156,9 +153,9 @@ class Module(ModuleBase):
         command = " ".join(sanitizedCommandList)
 
         proc = pexpect.spawn('/bin/sh', ['-c', self.binary + " " + command + (" 2>/dev/null" if hideErrors else "")])
-        return self.processProcOutput(proc, command, printOnSuccess, hideErrors, prefillInput)
+        return self._processProcOutput(proc, command, printOnSuccess, hideErrors, prefillInput)
 
-    def processProcOutput(self, proc, command, printOnSuccess=False, hideErrors=False, prefillInput=''):
+    def _processProcOutput(self, proc, command, printOnSuccess=False, hideErrors=False, prefillInput=''):
         possibleResults = [pexpect.EOF, pexpect.TIMEOUT, "[Y/n]", "[y/N]", "Enter password ", "Retype password ", " and press Ctrl+D when finished:"]
         result = proc.expect_exact(possibleResults, timeout=3)
         if result == 0:
@@ -265,7 +262,7 @@ class Module(ModuleBase):
             self.proc['proc'].sendcontrol("d")
             self.proc['proc'].setecho(True)
 
-        self.processProcOutput(self.proc['proc'], self.proc['command'], printOnSuccess=self.proc['printOnSuccess'], hideErrors=self.proc['hideErrors'], prefillInput=self.proc['prefillInput'])
+        self._processProcOutput(self.proc['proc'], self.proc['command'], printOnSuccess=self.proc['printOnSuccess'], hideErrors=self.proc['hideErrors'], prefillInput=self.proc['prefillInput'])
 
 class EventHandler(pyinotify.ProcessEvent):
     def __init__(self, q, store):
@@ -276,7 +273,7 @@ class EventHandler(pyinotify.ProcessEvent):
         if event.dir or len(self.store.passwordEntries) > 0:
             return
 
-        entryName = event.pathname[len(self.store.getDataLocation()):-4]
+        entryName = event.pathname[len(self.store._getDataLocation()):-4]
 
         self.q.put([Action.prependEntry, entryName])
 
@@ -284,7 +281,7 @@ class EventHandler(pyinotify.ProcessEvent):
         if event.dir or len(self.store.passwordEntries) > 0:
             return
 
-        entryName = event.pathname[len(self.store.getDataLocation()):-4]
+        entryName = event.pathname[len(self.store._getDataLocation()):-4]
 
         self.q.put([Action.removeEntry, entryName])
 
@@ -298,7 +295,7 @@ class EventHandler(pyinotify.ProcessEvent):
         if event.dir or len(self.store.passwordEntries) > 0:
             return
 
-        entryName = event.pathname[len(self.store.getDataLocation()):-4]
+        entryName = event.pathname[len(self.store._getDataLocation()):-4]
 
         self.q.put([Action.prependEntry, entryName])
         self.q.put([Action.removeEntry, entryName])
