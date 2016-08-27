@@ -83,63 +83,14 @@ class Module(ModuleBase):
             entry = password[len(passDir):-4]
             self.q.put([Action.addEntry, entry])
 
-    def stop(self):
-        self.notifier.stop()
-
-    def selectionMade(self, selection):
-        if len(selection) == 0:
-            # We're at the main menu
-            self.passwordEntries = {}
-            self.q.put([Action.replaceEntryList, []])
-            self._getCommands()
-            self._getEntries()
-
-            return
-        elif len(selection) == 2:
-            # We're selecting a password
-            if selection[1] == "********":
-                self.q.put([Action.copyToClipboard, self.passwordEntries["********"]])
-            else:
-                # Get the final part to prepare for copying. For example, if
-                # the entry is named URL: https://example.org/", only copy
-                # "https://example.org/" to the clipboard
-                copyStringParts = self.passwordEntries[selection[1]].split(": ", 1)
-
-                copyString = copyStringParts[1] if len(copyStringParts) > 1 else copyStringParts[0]
-                self.q.put([Action.copyToClipboard, copyString])
-
-            self.passwordEntries = {}
-            self.q.put([Action.close])
-            self.q.put([Action.replaceEntryList, []])
-            self._getCommands()
-            self._getEntries()
-
-            return
-
-        results = self.runCommand(["show", selection[0]], hideErrors=True)
-        if results is None:
-            self.q.put([Action.setSelection, []])
-            return
-
-        self.q.put([Action.replaceEntryList, []])
-        self.q.put([Action.replaceCommandList, []])
-
-        for line in results.rstrip().splitlines():
-            if len(self.passwordEntries) == 0:
-                self.passwordEntries["********"] = line
-                self.q.put([Action.addEntry, "********"])
-            else:
-                self.passwordEntries[line] = line
-                self.q.put([Action.addEntry, line])
-
-    def runCommand(self, command, printOnSuccess=False, hideErrors=False, prefillInput=''):
+    def _runCommand(self, command, printOnSuccess=False, hideErrors=False, prefillInput=''):
         # Ensure this is a valid command
         if command[0] not in self._getSupportedCommands():
             return None
 
         # If we edit a password, make sure to get the original input first so we can show the user
         if command[0] == "edit" and len(command) == 2:
-            prefillData = self.runCommand(["show", command[1]], hideErrors=True)
+            prefillData = self._runCommand(["show", command[1]], hideErrors=True)
 
             if self.proc['result'] == pexpect.TIMEOUT:
                 return None
@@ -147,7 +98,7 @@ class Module(ModuleBase):
             if prefillData is None:
                 prefillData = ''
 
-            return self.runCommand(["insert", "-fm", command[1]], printOnSuccess=True, prefillInput=prefillData.rstrip())
+            return self._runCommand(["insert", "-fm", command[1]], printOnSuccess=True, prefillInput=prefillData.rstrip())
 
         sanitizedCommandList = [quote(commandPart) for commandPart in command]
         command = " ".join(sanitizedCommandList)
@@ -263,6 +214,58 @@ class Module(ModuleBase):
             self.proc['proc'].setecho(True)
 
         self._processProcOutput(self.proc['proc'], self.proc['command'], printOnSuccess=self.proc['printOnSuccess'], hideErrors=self.proc['hideErrors'], prefillInput=self.proc['prefillInput'])
+
+
+    def stop(self):
+        self.notifier.stop()
+
+    def selectionMade(self, selection):
+        if len(selection) == 0:
+            # We're at the main menu
+            self.passwordEntries = {}
+            self.q.put([Action.replaceCommandList, []])
+            self.q.put([Action.replaceEntryList, []])
+            self._getCommands()
+            self._getEntries()
+        elif len(selection) == 1:
+            if selection[0]["type"] == "command":
+                parts = selection[0]["value"].split(" ")
+                self._runCommand(parts)
+                self.q.put([Action.setSelection, []])
+            elif selection[0]["type"] == "entry":
+                results = self._runCommand(["show", selection[0]["value"]], hideErrors=True)
+                if results is None:
+                    self.q.put([Action.setSelection, []])
+                    return
+
+                self.q.put([Action.replaceEntryList, []])
+                self.q.put([Action.replaceCommandList, []])
+
+                for line in results.rstrip().splitlines():
+                    if len(self.passwordEntries) == 0:
+                        self.passwordEntries["********"] = line
+                        self.q.put([Action.addEntry, "********"])
+                    else:
+                        self.passwordEntries[line] = line
+                        self.q.put([Action.addEntry, line])
+            else:
+                self.q.put([Action.criticalError, "Unexpected selectionMade value: {}".format(selection)])
+        elif len(selection) == 2:
+            # We're selecting a password
+            if selection[1]["value"] == "********":
+                self.q.put([Action.copyToClipboard, self.passwordEntries["********"]])
+            else:
+                # Get the final part to prepare for copying. For example, if
+                # the entry is named URL: https://example.org/", only copy
+                # "https://example.org/" to the clipboard
+                copyStringParts = self.passwordEntries[selection[1]["value"]].split(": ", 1)
+
+                copyString = copyStringParts[1] if len(copyStringParts) > 1 else copyStringParts[0]
+                self.q.put([Action.copyToClipboard, copyString])
+
+            self.q.put([Action.close])
+        else:
+            self.q.put([Action.criticalError, "Unexpected selectionMade value: {}".format(selection)])
 
 class EventHandler(pyinotify.ProcessEvent):
     def __init__(self, q, store):
