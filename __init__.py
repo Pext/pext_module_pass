@@ -223,6 +223,7 @@ class Module(ModuleBase):
         if len(selection) == 0:
             # We're at the main menu
             self.passwordEntries = {}
+            self.q.put([Action.setHeader])
             self.q.put([Action.replaceCommandList, []])
             self.q.put([Action.replaceEntryList, []])
             self._getCommands()
@@ -238,6 +239,7 @@ class Module(ModuleBase):
                     self.q.put([Action.setSelection, []])
                     return
 
+                self.q.put([Action.setHeader, selection[0]["value"]])
                 self.q.put([Action.replaceEntryList, []])
                 self.q.put([Action.replaceCommandList, []])
 
