@@ -36,28 +36,28 @@ class Module(ModuleBase):
         self.ANSIEscapeRegex = re.compile('(\x9B|\x1B\[)[0-?]*[ -\/]*[@-~]')
         self.passwordEntries = {}
 
-        self._getCommands()
-        self._getEntries()
+        self._get_commands()
+        self._get_entries()
 
-        self._initInotify(q)
+        self._init_inotify(q)
 
-    def _initInotify(self, q):
+    def _init_inotify(self, q):
         # Initialize the EventHandler and make it watch the password store
         eventHandler = EventHandler(q, self)
         watchManager = pyinotify.WatchManager()
         self.notifier = pyinotify.ThreadedNotifier(watchManager, eventHandler)
         watchedEvents = pyinotify.IN_CREATE | pyinotify.IN_DELETE | pyinotify.IN_MOVED_FROM | pyinotify.IN_MOVED_TO | pyinotify.IN_OPEN
-        watchManager.add_watch(self._getDataLocation(), watchedEvents, rec=True, auto_add=True)
+        watchManager.add_watch(self._get_data_location(), watchedEvents, rec=True, auto_add=True)
         self.notifier.daemon = True
         self.notifier.start()
 
-    def _getDataLocation(self):
+    def _get_data_location(self):
         return expanduser("~") + "/.password-store/"
 
-    def _getSupportedCommands(self):
+    def _get_supported_commands(self):
         return ["show", "init", "insert", "edit", "generate", "rm", "mv", "cp"]
 
-    def _getCommands(self):
+    def _get_commands(self):
         # We will crash here if pass is not installed.
         # TODO: Find a nice way to notify the user they need to install pass
         commandText = check_output([self.binary, "--help"])
@@ -66,12 +66,12 @@ class Module(ModuleBase):
             strippedLine = line.lstrip().decode("utf-8")
             if strippedLine[:4] == "pass":
                 command = strippedLine[5:]
-                for supportedCommand in self._getSupportedCommands():
+                for supportedCommand in self._get_supported_commands():
                     if command.startswith(supportedCommand):
-                        self.q.put([Action.addCommand, command])
+                        self.q.put([Action.add_command, command])
 
-    def _getEntries(self):
-        passDir = self._getDataLocation()
+    def _get_entries(self):
+        passDir = self._get_data_location()
 
         unsortedPasswords = []
         for root, dirs, files in os.walk(passDir):
@@ -81,16 +81,16 @@ class Module(ModuleBase):
 
         for password in sorted(unsortedPasswords, key=lambda name: os.path.getatime(os.path.join(root, name)), reverse=True):
             entry = password[len(passDir):-4]
-            self.q.put([Action.addEntry, entry])
+            self.q.put([Action.add_entry, entry])
 
-    def _runCommand(self, command, printOnSuccess=False, hideErrors=False, prefillInput=''):
+    def _run_command(self, command, printOnSuccess=False, hideErrors=False, prefillInput=''):
         # Ensure this is a valid command
-        if command[0] not in self._getSupportedCommands():
+        if command[0] not in self._get_supported_commands():
             return None
 
         # If we edit a password, make sure to get the original input first so we can show the user
         if command[0] == "edit" and len(command) == 2:
-            prefillData = self._runCommand(["show", command[1]], hideErrors=True)
+            prefillData = self._run_command(["show", command[1]], hideErrors=True)
 
             if self.proc['result'] == pexpect.TIMEOUT:
                 return None
@@ -98,15 +98,15 @@ class Module(ModuleBase):
             if prefillData is None:
                 prefillData = ''
 
-            return self._runCommand(["insert", "-fm", command[1]], printOnSuccess=True, prefillInput=prefillData.rstrip())
+            return self._run_command(["insert", "-fm", command[1]], printOnSuccess=True, prefillInput=prefillData.rstrip())
 
         sanitizedCommandList = [quote(commandPart) for commandPart in command]
         command = " ".join(sanitizedCommandList)
 
         proc = pexpect.spawn('/bin/sh', ['-c', self.binary + " " + command + (" 2>/dev/null" if hideErrors else "")])
-        return self._processProcOutput(proc, command, printOnSuccess, hideErrors, prefillInput)
+        return self._process_proc_output(proc, command, printOnSuccess, hideErrors, prefillInput)
 
-    def _processProcOutput(self, proc, command, printOnSuccess=False, hideErrors=False, prefillInput=''):
+    def _process_proc_output(self, proc, command, printOnSuccess=False, hideErrors=False, prefillInput=''):
         possibleResults = [pexpect.EOF, pexpect.TIMEOUT, "[Y/n]", "[y/N]", "Enter password ", "Retype password ", " and press Ctrl+D when finished:"]
         result = proc.expect_exact(possibleResults, timeout=3)
         if result == 0:
@@ -114,9 +114,9 @@ class Module(ModuleBase):
             exitCode = proc.sendline("echo $?")
         elif result == 1:
             self.proc = {'result': possibleResults[result]}
-            self.q.put([Action.addError, "Timeout error while running '{}'".format(command)])
+            self.q.put([Action.add_error, "Timeout error while running '{}'".format(command)])
             if proc.before:
-                self.q.put([Action.addError, "Command output: {}".format(self.ANSIEscapeRegex.sub('', proc.before.decode("utf-8")))])
+                self.q.put([Action.add_error, "Command output: {}".format(self.ANSIEscapeRegex.sub('', proc.before.decode("utf-8")))])
 
             return None
         elif result == 2 or result == 3:
@@ -126,21 +126,21 @@ class Module(ModuleBase):
             if (result == 2):
                 self.proc = {'proc': proc,
                              'command': command,
-                             'type': Action.askQuestionDefaultYes,
+                             'type': Action.ask_question_default_yes,
                              'printOnSuccess': printOnSuccess,
                              'hideErrors': hideErrors,
                              'prefillInput': prefillInput,
                              'result': possibleResults[result]}
-                self.q.put([Action.askQuestionDefaultYes, question])
+                self.q.put([Action.ask_question_default_yes, question])
             else:
                 self.proc = {'proc': proc,
                              'command': command,
-                             'type': Action.askQuestionDefaultNo,
+                             'type': Action.ask_question_default_no,
                              'printOnSuccess': printOnSuccess,
                              'hideErrors': hideErrors,
                              'prefillInput': prefillInput,
                              'result': possibleResults[result]}
-                self.q.put([Action.askQuestionDefaultNo, question])
+                self.q.put([Action.ask_question_default_no, question])
 
             return None
         elif result == 4 or result == 5:
@@ -148,23 +148,23 @@ class Module(ModuleBase):
             proc.setecho(False)
             self.proc = {'proc': proc,
                          'command': command,
-                         'type': Action.askInputPassword,
+                         'type': Action.ask_input_password,
                          'printOnSuccess': printOnSuccess,
                          'hideErrors': hideErrors,
                          'prefillInput': prefillInput,
                          'result': possibleResults[result]}
-            self.q.put([Action.askInputPassword, proc.after.decode("utf-8")])
+            self.q.put([Action.ask_input_password, proc.after.decode("utf-8")])
 
             return None
         elif result == 6:
             self.proc = {'proc': proc,
                          'command': command,
-                         'type': Action.askInputMultiLine,
+                         'type': Action.ask_input_multi_line,
                          'printOnSuccess': printOnSuccess,
                          'hideErrors': hideErrors,
                          'prefillInput': prefillInput,
                          'result': possibleResults[result]}
-            self.q.put([Action.askInputMultiLine, proc.before.decode("utf-8").lstrip(), prefillInput])
+            self.q.put([Action.ask_input_multi_line, proc.before.decode("utf-8").lstrip(), prefillInput])
 
             proc.setecho(False)
 
@@ -175,31 +175,31 @@ class Module(ModuleBase):
 
         message = self.ANSIEscapeRegex.sub('', proc.before.decode("utf-8")) if proc.before else ""
 
-        self.q.put([Action.setFilter, ""])
+        self.q.put([Action.set_filter, ""])
 
         if exitCode == 0:
             if printOnSuccess and message:
-                self.q.put([Action.addMessage, message])
+                self.q.put([Action.add_message, message])
 
             return message
         else:
-            self.q.put([Action.addError, message if message else "Error code {} running '{}'. More info may be logged to the console".format(str(exitCode), command)])
+            self.q.put([Action.add_error, message if message else "Error code {} running '{}'. More info may be logged to the console".format(str(exitCode), command)])
 
             return None
 
-    def processResponse(self, response):
-        if self.proc['type'] == Action.askQuestionDefaultYes or self.proc['type'] == Action.askQuestionDefaultNo:
+    def process_response(self, response):
+        if self.proc['type'] == Action.ask_question_default_yes or self.proc['type'] == Action.ask_question_default_no:
             self.proc['proc'].waitnoecho()
             self.proc['proc'].sendline('y' if response else 'n')
             self.proc['proc'].setecho(True)
-        elif self.proc['type'] == Action.askInput or self.proc['type'] == Action.askInputPassword:
+        elif self.proc['type'] == Action.ask_input or self.proc['type'] == Action.ask_input_password:
             self.proc['proc'].waitnoecho()
             if response is None:
                 self.proc['proc'].close()
             else:
                 self.proc['proc'].sendline(response)
                 self.proc['proc'].setecho(True)
-        elif self.proc['type'] == Action.askInputMultiLine:
+        elif self.proc['type'] == Action.ask_input_multi_line:
             self.proc['proc'].waitnoecho()
             if response is None:
                 # At this point, pass won't let us exit out safely, so we
@@ -213,49 +213,48 @@ class Module(ModuleBase):
             self.proc['proc'].sendcontrol("d")
             self.proc['proc'].setecho(True)
 
-        self._processProcOutput(self.proc['proc'], self.proc['command'], printOnSuccess=self.proc['printOnSuccess'], hideErrors=self.proc['hideErrors'], prefillInput=self.proc['prefillInput'])
-
+        self._process_proc_output(self.proc['proc'], self.proc['command'], printOnSuccess=self.proc['printOnSuccess'], hideErrors=self.proc['hideErrors'], prefillInput=self.proc['prefillInput'])
 
     def stop(self):
         self.notifier.stop()
 
-    def selectionMade(self, selection):
+    def selection_made(self, selection):
         if len(selection) == 0:
             # We're at the main menu
             self.passwordEntries = {}
-            self.q.put([Action.setHeader])
-            self.q.put([Action.replaceCommandList, []])
-            self.q.put([Action.replaceEntryList, []])
-            self._getCommands()
-            self._getEntries()
+            self.q.put([Action.set_header])
+            self.q.put([Action.replace_command_list, []])
+            self.q.put([Action.replace_entry_list, []])
+            self._get_commands()
+            self._get_entries()
         elif len(selection) == 1:
             if selection[0]["type"] == SelectionType.command:
                 parts = selection[0]["value"].split(" ")
-                self._runCommand(parts)
-                self.q.put([Action.setSelection, []])
+                self._run_command(parts)
+                self.q.put([Action.set_selection, []])
             elif selection[0]["type"] == SelectionType.entry:
-                results = self._runCommand(["show", selection[0]["value"]], hideErrors=True)
+                results = self._run_command(["show", selection[0]["value"]], hideErrors=True)
                 if results is None:
-                    self.q.put([Action.setSelection, []])
+                    self.q.put([Action.set_selection, []])
                     return
 
-                self.q.put([Action.setHeader, selection[0]["value"]])
-                self.q.put([Action.replaceEntryList, []])
-                self.q.put([Action.replaceCommandList, []])
+                self.q.put([Action.set_header, selection[0]["value"]])
+                self.q.put([Action.replace_entry_list, []])
+                self.q.put([Action.replace_command_list, []])
 
                 for line in results.rstrip().splitlines():
                     if len(self.passwordEntries) == 0:
                         self.passwordEntries["********"] = line
-                        self.q.put([Action.addEntry, "********"])
+                        self.q.put([Action.add_entry, "********"])
                     else:
                         self.passwordEntries[line] = line
-                        self.q.put([Action.addEntry, line])
+                        self.q.put([Action.add_entry, line])
             else:
-                self.q.put([Action.criticalError, "Unexpected selectionMade value: {}".format(selection)])
+                self.q.put([Action.critical_error, "Unexpected selection_made value: {}".format(selection)])
         elif len(selection) == 2:
             # We're selecting a password
             if selection[1]["value"] == "********":
-                self.q.put([Action.copyToClipboard, self.passwordEntries["********"]])
+                self.q.put([Action.copy_to_clipboard, self.passwordEntries["********"]])
             else:
                 # Get the final part to prepare for copying. For example, if
                 # the entry is named URL: https://example.org/", only copy
@@ -263,11 +262,11 @@ class Module(ModuleBase):
                 copyStringParts = self.passwordEntries[selection[1]["value"]].split(": ", 1)
 
                 copyString = copyStringParts[1] if len(copyStringParts) > 1 else copyStringParts[0]
-                self.q.put([Action.copyToClipboard, copyString])
+                self.q.put([Action.copy_to_clipboard, copyString])
 
             self.q.put([Action.close])
         else:
-            self.q.put([Action.criticalError, "Unexpected selectionMade value: {}".format(selection)])
+            self.q.put([Action.critical_error, "Unexpected selection_made value: {}".format(selection)])
 
 class EventHandler(pyinotify.ProcessEvent):
     def __init__(self, q, store):
@@ -278,17 +277,17 @@ class EventHandler(pyinotify.ProcessEvent):
         if event.dir or len(self.store.passwordEntries) > 0:
             return
 
-        entryName = event.pathname[len(self.store._getDataLocation()):-4]
+        entryName = event.pathname[len(self.store._get_data_location()):-4]
 
-        self.q.put([Action.prependEntry, entryName])
+        self.q.put([Action.prepend_entry, entryName])
 
     def process_IN_DELETE(self, event):
         if event.dir or len(self.store.passwordEntries) > 0:
             return
 
-        entryName = event.pathname[len(self.store._getDataLocation()):-4]
+        entryName = event.pathname[len(self.store._get_data_location()):-4]
 
-        self.q.put([Action.removeEntry, entryName])
+        self.q.put([Action.remove_entry, entryName])
 
     def process_IN_MOVED_FROM(self, event):
         self.process_IN_DELETE(event)
@@ -300,7 +299,7 @@ class EventHandler(pyinotify.ProcessEvent):
         if event.dir or len(self.store.passwordEntries) > 0:
             return
 
-        entryName = event.pathname[len(self.store._getDataLocation()):-4]
+        entryName = event.pathname[len(self.store._get_data_location()):-4]
 
-        self.q.put([Action.prependEntry, entryName])
-        self.q.put([Action.removeEntry, entryName])
+        self.q.put([Action.prepend_entry, entryName])
+        self.q.put([Action.remove_entry, entryName])
