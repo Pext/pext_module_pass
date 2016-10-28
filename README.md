@@ -15,5 +15,9 @@ front-end to the command-line password manager
 
     sudo dnf install python3 python3-pexpect python3-inotify pass
 
+## Arch Linux
+
+    sudo pacman -S python3 python-pexpect python-pyinotify pass
+    
 # License
 GPLv3+.
