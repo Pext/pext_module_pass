@@ -7,17 +7,17 @@ front-end to the command-line password manager
 - binary: Use a custom binary (default: "pass")
 
 # Dependencies
+## Arch
+
+    sudo pacman -S python-pexpect python-pyinotify pass
+
 ## Debian
 
-    sudo apt-get install python3 python3-pexpect python3-pyinotify pass
+    sudo apt-get install python3-pexpect python3-pyinotify pass
 
 ## Fedora
 
-    sudo dnf install python3 python3-pexpect python3-inotify pass
+    sudo dnf install python3-pexpect python3-inotify pass
 
-## Arch Linux
-
-    sudo pacman -S python3 python-pexpect python-pyinotify pass
-    
 # License
 GPLv3+.
