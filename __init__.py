@@ -15,7 +15,7 @@
 
 import re
 import os
-from os.path import expanduser
+from os.path import dirname, expanduser
 from subprocess import check_output
 from shlex import quote
 
@@ -273,21 +273,30 @@ class EventHandler(pyinotify.ProcessEvent):
         self.q = q
         self.store = store
 
+        self.ignoredNames = ['.gpg-id', '.stfolder']
+        self.ignoredDirs = ['.git']
+
     def process_IN_CREATE(self, event):
         if event.dir or len(self.store.passwordEntries) > 0:
             return
 
-        entryName = event.pathname[len(self.store._get_data_location()):-4]
+        entryName = event.pathname[len(self.store._get_data_location()):]
 
-        self.q.put([Action.prepend_entry, entryName])
+        if entryName in self.ignoredNames or dirname(entryName) in self.ignoredDirs:
+            return
+
+        self.q.put([Action.prepend_entry, entryName[:-4]])
 
     def process_IN_DELETE(self, event):
         if event.dir or len(self.store.passwordEntries) > 0:
             return
 
-        entryName = event.pathname[len(self.store._get_data_location()):-4]
+        entryName = event.pathname[len(self.store._get_data_location()):]
 
-        self.q.put([Action.remove_entry, entryName])
+        if entryName in self.ignoredNames or dirname(entryName) in self.ignoredDirs:
+            return
+
+        self.q.put([Action.remove_entry, entryName[:-4]])
 
     def process_IN_MOVED_FROM(self, event):
         self.process_IN_DELETE(event)
@@ -299,7 +308,10 @@ class EventHandler(pyinotify.ProcessEvent):
         if event.dir or len(self.store.passwordEntries) > 0:
             return
 
-        entryName = event.pathname[len(self.store._get_data_location()):-4]
+        entryName = event.pathname[len(self.store._get_data_location()):]
 
-        self.q.put([Action.prepend_entry, entryName])
-        self.q.put([Action.remove_entry, entryName])
+        if entryName in self.ignoredNames or dirname(entryName) in self.ignoredDirs:
+            return
+
+        self.q.put([Action.prepend_entry, entryName[:-4]])
+        self.q.put([Action.remove_entry, entryName[:-4]])
