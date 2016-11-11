@@ -15,7 +15,7 @@
 
 import re
 import os
-from os.path import dirname, expanduser
+from os.path import expanduser
 from subprocess import check_output
 from shlex import quote
 
@@ -273,16 +273,13 @@ class EventHandler(pyinotify.ProcessEvent):
         self.q = q
         self.store = store
 
-        self.ignoredNames = ['.gpg-id', '.stfolder']
-        self.ignoredDirs = ['.git']
-
     def process_IN_CREATE(self, event):
         if event.dir or len(self.store.passwordEntries) > 0:
             return
 
         entryName = event.pathname[len(self.store._get_data_location()):]
 
-        if entryName in self.ignoredNames or dirname(entryName) in self.ignoredDirs:
+        if entryName[-4:] != ".gpg":
             return
 
         self.q.put([Action.prepend_entry, entryName[:-4]])
@@ -293,7 +290,7 @@ class EventHandler(pyinotify.ProcessEvent):
 
         entryName = event.pathname[len(self.store._get_data_location()):]
 
-        if entryName in self.ignoredNames or dirname(entryName) in self.ignoredDirs:
+        if entryName[-4:] != ".gpg":
             return
 
         self.q.put([Action.remove_entry, entryName[:-4]])
@@ -310,7 +307,7 @@ class EventHandler(pyinotify.ProcessEvent):
 
         entryName = event.pathname[len(self.store._get_data_location()):]
 
-        if entryName in self.ignoredNames or dirname(entryName) in self.ignoredDirs:
+        if entryName[-4:] != ".gpg":
             return
 
         self.q.put([Action.prepend_entry, entryName[:-4]])
