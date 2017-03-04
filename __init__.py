@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+# Copyright (C) 2016 - 2017 Sylvia van Os <sylvia@hackerchick.me>
+#
 # Pext pass module is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or
@@ -52,7 +54,14 @@ class Module(ModuleBase):
         self.notifier.start()
 
     def _get_data_location(self):
-        return expanduser("~") + "/.password-store/"
+        dirname = expanduser("~") + "/.password-store/"
+        try:
+            os.mkdir(dirname)
+        except OSError:
+            # Probably already exists, that's okay
+            pass
+
+        return dirname
 
     def _get_supported_commands(self):
         return ["show", "init", "insert", "edit", "generate", "rm", "mv", "cp"]
