@@ -5,6 +5,7 @@ front-end to the command-line password manager
 
 # Supported flags
 - binary: Use a custom binary (default: "pass")
+- directory: Use a custom directory (default: "~/.password-store/")
 
 # Dependencies
 ## Arch

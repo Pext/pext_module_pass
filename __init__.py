@@ -32,6 +32,13 @@ import pyinotify
 class Module(ModuleBase):
     def init(self, settings, q):
         self.binary = "pass" if ('binary' not in settings) else settings['binary']
+        self.data_location = expanduser("~/.password-store/") if ('directory' not in settings) else expanduser(settings['directory'])
+
+        try:
+            os.mkdir(self.data_location)
+        except OSError:
+            # Probably already exists, that's okay
+            pass
 
         self.q = q
 
@@ -54,14 +61,7 @@ class Module(ModuleBase):
         self.notifier.start()
 
     def _get_data_location(self):
-        dirname = expanduser("~") + "/.password-store/"
-        try:
-            os.mkdir(dirname)
-        except OSError:
-            # Probably already exists, that's okay
-            pass
-
-        return dirname
+        return self.data_location
 
     def _get_supported_commands(self):
         return ["show", "init", "insert", "edit", "generate", "rm", "mv", "cp"]
@@ -112,7 +112,8 @@ class Module(ModuleBase):
         sanitizedCommandList = [quote(commandPart) for commandPart in command]
         command = " ".join(sanitizedCommandList)
 
-        proc = pexpect.spawn('/bin/sh', ['-c', self.binary + " " + command + (" 2>/dev/null" if hideErrors else "")])
+        proc = pexpect.spawn('/bin/sh', ['-c', self.binary + " " + command + (" 2>/dev/null" if hideErrors else "")],
+                             env={'PASSWORD_STORE_DIR': self._get_data_location()})
         return self._process_proc_output(proc, command, printOnSuccess, hideErrors, prefillInput)
 
     def _process_proc_output(self, proc, command, printOnSuccess=False, hideErrors=False, prefillInput=''):
