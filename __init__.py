@@ -33,6 +33,7 @@ class Module(ModuleBase):
     def init(self, settings, q):
         self.binary = "pass" if ('binary' not in settings) else settings['binary']
         self.data_location = expanduser("~/.password-store/") if ('directory' not in settings) else expanduser(settings['directory'])
+        os.environ['PASSWORD_STORE_DIR'] = self.data_location
 
         try:
             os.mkdir(self.data_location)
@@ -112,8 +113,7 @@ class Module(ModuleBase):
         sanitizedCommandList = [quote(commandPart) for commandPart in command]
         command = " ".join(sanitizedCommandList)
 
-        proc = pexpect.spawn('/bin/sh', ['-c', self.binary + " " + command + (" 2>/dev/null" if hideErrors else "")],
-                             env={'PASSWORD_STORE_DIR': self._get_data_location()})
+        proc = pexpect.spawn('/bin/sh', ['-c', self.binary + " " + command + (" 2>/dev/null" if hideErrors else "")])
         return self._process_proc_output(proc, command, printOnSuccess, hideErrors, prefillInput)
 
     def _process_proc_output(self, proc, command, printOnSuccess=False, hideErrors=False, prefillInput=''):
