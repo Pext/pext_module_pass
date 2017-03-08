@@ -26,7 +26,8 @@ import pexpect
 from pext_base import ModuleBase
 from pext_helpers import Action, SelectionType
 
-import pyinotify
+from watchdog.events import FileSystemEventHandler
+from watchdog.observers import Observer
 
 
 class Module(ModuleBase):
@@ -49,17 +50,14 @@ class Module(ModuleBase):
         self._get_commands()
         self._get_entries()
 
-        self._init_inotify(q)
+        self._init_watchdog(q)
 
-    def _init_inotify(self, q):
+    def _init_watchdog(self, q):
         # Initialize the EventHandler and make it watch the password store
-        eventHandler = EventHandler(q, self)
-        watchManager = pyinotify.WatchManager()
-        self.notifier = pyinotify.ThreadedNotifier(watchManager, eventHandler)
-        watchedEvents = pyinotify.IN_CREATE | pyinotify.IN_DELETE | pyinotify.IN_MOVED_FROM | pyinotify.IN_MOVED_TO | pyinotify.IN_OPEN
-        watchManager.add_watch(self._get_data_location(), watchedEvents, rec=True, auto_add=True)
-        self.notifier.daemon = True
-        self.notifier.start()
+        event_handler = EventHandler(q, self)
+        self.observer = Observer()
+        self.observer.schedule(event_handler, self._get_data_location(), recursive=True)
+        self.observer.start()
 
     def _get_data_location(self):
         return self.data_location
@@ -226,7 +224,7 @@ class Module(ModuleBase):
         self._process_proc_output(self.proc['proc'], self.proc['command'], printOnSuccess=self.proc['printOnSuccess'], hideErrors=self.proc['hideErrors'], prefillInput=self.proc['prefillInput'])
 
     def stop(self):
-        self.notifier.stop()
+        self.observer.stop()
 
     def selection_made(self, selection):
         if len(selection) == 0:
@@ -278,47 +276,32 @@ class Module(ModuleBase):
         else:
             self.q.put([Action.critical_error, "Unexpected selection_made value: {}".format(selection)])
 
-class EventHandler(pyinotify.ProcessEvent):
+class EventHandler(FileSystemEventHandler):
     def __init__(self, q, store):
         self.q = q
         self.store = store
 
-    def process_IN_CREATE(self, event):
-        if event.dir or len(self.store.passwordEntries) > 0:
+    def on_deleted(self, event):
+        if event.is_directory or len(self.store.passwordEntries) > 0:
             return
 
-        entryName = event.pathname[len(self.store._get_data_location()):]
+        entry_name = event.src_path[len(self.store._get_data_location()):]
 
-        if entryName[-4:] != ".gpg":
+        if entry_name[-4:] != ".gpg":
             return
 
-        self.q.put([Action.prepend_entry, entryName[:-4]])
+        self.q.put([Action.remove_entry, entry_name[:-4]])
 
-    def process_IN_DELETE(self, event):
-        if event.dir or len(self.store.passwordEntries) > 0:
+    def on_modified(self, event):
+        if event.is_directory or len(self.store.passwordEntries) > 0:
             return
 
-        entryName = event.pathname[len(self.store._get_data_location()):]
+        entry_name = event.src_path[len(self.store._get_data_location()):]
 
-        if entryName[-4:] != ".gpg":
+        if entry_name[-4:] != ".gpg":
             return
 
-        self.q.put([Action.remove_entry, entryName[:-4]])
-
-    def process_IN_MOVED_FROM(self, event):
-        self.process_IN_DELETE(event)
-
-    def process_IN_MOVED_TO(self, event):
-        self.process_IN_CREATE(event)
-
-    def process_IN_OPEN(self, event):
-        if event.dir or len(self.store.passwordEntries) > 0:
-            return
-
-        entryName = event.pathname[len(self.store._get_data_location()):]
-
-        if entryName[-4:] != ".gpg":
-            return
-
-        self.q.put([Action.prepend_entry, entryName[:-4]])
-        self.q.put([Action.remove_entry, entryName[:-4]])
+        self.q.put([Action.prepend_entry, entry_name[:-4]])
+        # As this event also gets called when a file gets created, it may
+        # generate warnings in Pext to call this. These warnings are harmless
+        self.q.put([Action.remove_entry, entry_name[:-4]])
