@@ -119,7 +119,6 @@ class Module(ModuleBase):
         result = proc.expect_exact(possibleResults, timeout=3)
         if result == 0:
             self.proc = {'result': possibleResults[result]}
-            exitCode = proc.sendline("echo $?")
         elif result == 1:
             self.proc = {'result': possibleResults[result]}
             self.q.put([Action.add_error, "Timeout error while running '{}'".format(command)])
