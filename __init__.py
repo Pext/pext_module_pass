@@ -62,8 +62,8 @@ class Module(ModuleBase):
     def _get_data_location(self):
         return self.data_location
 
-    def _get_supported_commands(self):
-        return ["show", "init", "insert", "edit", "generate", "rm", "mv", "cp"]
+    def _get_unsupported_commands(self):
+        return ["[ls]", "find", "[show]", "grep"]
 
     def _get_commands(self):
         # We will crash here if pass is not installed.
@@ -74,9 +74,8 @@ class Module(ModuleBase):
             strippedLine = line.lstrip().decode("utf-8")
             if strippedLine[:4] == "pass":
                 command = strippedLine[5:]
-                for supportedCommand in self._get_supported_commands():
-                    if command.startswith(supportedCommand):
-                        self.q.put([Action.add_command, command])
+                if not command.split(" ", 1)[0] in self._get_unsupported_commands():
+                    self.q.put([Action.add_command, command])
 
     def _get_entries(self):
         passDir = self._get_data_location()
@@ -92,10 +91,6 @@ class Module(ModuleBase):
             self.q.put([Action.add_entry, entry])
 
     def _run_command(self, command, printOnSuccess=False, hideErrors=False, prefillInput=''):
-        # Ensure this is a valid command
-        if command[0] not in self._get_supported_commands():
-            return None
-
         # If we edit a password, make sure to get the original input first so we can show the user
         if command[0] == "edit" and len(command) == 2:
             prefillData = self._run_command(["show", command[1]], hideErrors=True)
