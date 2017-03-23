@@ -10,15 +10,15 @@ front-end to the command-line password manager
 # Dependencies
 ## Arch
 
-    sudo pacman -S python-pexpect python-watchdog pass
+    sudo pacman -S pass
 
 ## Debian
 
-    sudo apt-get install python3-pexpect python3-watchdog pass
+    sudo apt-get install pass
 
 ## Fedora
 
-    sudo dnf install python3-pexpect python3-watchdog pass
+    sudo dnf install pass
 
 # License
 GPLv3+.
