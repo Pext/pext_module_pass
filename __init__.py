@@ -66,9 +66,11 @@ class Module(ModuleBase):
         return ["[ls]", "find", "[show]", "grep"]
 
     def _get_commands(self):
-        # We will crash here if pass is not installed.
-        # TODO: Find a nice way to notify the user they need to install pass
-        commandText = check_output([self.binary, "--help"])
+        try:
+            commandText = check_output([self.binary, "--help"])
+        except FileNotFoundError:
+            self.q.put([Action.critical_error, "pass is not installed. Please see https://www.passwordstore.org/"])
+            return
 
         for line in commandText.splitlines():
             strippedLine = line.lstrip().decode("utf-8")
