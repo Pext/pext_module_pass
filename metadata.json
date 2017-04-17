@@ -4,7 +4,7 @@
   "description": "Allows Pext to do password management through pass",
   "homepage": "https://pext.hackerchick.me/",
   "license": "GPL-3.0+",
-  "urls": [
+  "git_urls": [
     "https://github.com/Pext/pext_module_pass",
     "https://notabug.org/Pext/pext_module_pass"
   ]
