@@ -7,5 +7,14 @@
   "git_urls": [
     "https://github.com/Pext/pext_module_pass",
     "https://notabug.org/Pext/pext_module_pass"
-  ]
+  ],
+  "settings": [{
+    "name": "binary",
+    "description": "Binary to call for pass operations",
+    "default": "pass"
+  }, {
+    "name": "directory",
+    "description": "Password store directory",
+    "default": "~/.password-store/"
+  }]
 }
