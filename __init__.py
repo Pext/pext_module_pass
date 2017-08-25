@@ -75,12 +75,25 @@ class Module(ModuleBase):
             self.q.put([Action.critical_error, "pass is not installed. Please see https://www.passwordstore.org/"])
             return
 
+        command = None
+        command_description = ""
         for line in commandText.splitlines():
             strippedLine = line.lstrip().decode("utf-8")
-            if strippedLine[:4] == "pass":
-                command = strippedLine[5:]
-                if not command.split(" ", 1)[0] in self._get_unsupported_commands():
-                    self.q.put([Action.add_command, command])
+            if strippedLine[:4] == "pass" or not strippedLine:
+                if command_description and self.settings['_api_version'] >= [0, 3, 0]:
+                    self.q.put([Action.set_info, [{"type": SelectionType.command, "value": command}], "<b>{}</b><br/><br/>{}".format(html.escape(command), command_description)])
+                    command_description = ""
+
+                if strippedLine[:4] == "pass":
+                    command = strippedLine[5:]
+                    if not command.split(" ", 1)[0] in self._get_unsupported_commands():
+                        self.q.put([Action.add_command, command])
+                    else:
+                        command = None
+
+            elif command:
+                command_description += "{} ".format(html.escape(strippedLine))
+
 
     def _get_entries(self):
         passDir = self._get_data_location()
