@@ -15,8 +15,10 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+import html
 import re
 import os
+from datetime import datetime
 from os.path import expanduser
 from subprocess import check_output
 from shlex import quote
@@ -43,6 +45,7 @@ class Module(ModuleBase):
             pass
 
         self.q = q
+        self.settings = settings
 
         self.ANSIEscapeRegex = re.compile('(\x9B|\x1B\[)[0-?]*[ -\/]*[@-~]')
         self.passwordEntries = {}
@@ -91,6 +94,9 @@ class Module(ModuleBase):
         for password in sorted(unsortedPasswords, key=lambda name: os.path.getatime(os.path.join(root, name)), reverse=True):
             entry = password[len(passDir):-4]
             self.q.put([Action.add_entry, entry])
+            if self.settings['_api_version'] >= [0, 3, 0]:
+                self.q.put([Action.set_info, [{"type": SelectionType.entry, "value": entry}], "<b>{}</b><br/><br/><b>Last opened</b><br/>{}<br/><br/><b>Last modified</b><br/>{}".format(html.escape(entry), datetime.fromtimestamp(os.path.getatime(password)).replace(microsecond=0), datetime.fromtimestamp(os.path.getmtime(password)).replace(microsecond=0))])
+
 
     def _run_command(self, command, printOnSuccess=False, hideErrors=False, prefillInput=''):
         # If we edit a password, make sure to get the original input first so we can show the user
