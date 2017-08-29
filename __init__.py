@@ -80,8 +80,8 @@ class Module(ModuleBase):
         for line in commandText.splitlines():
             strippedLine = line.lstrip().decode("utf-8")
             if strippedLine[:4] == "pass" or not strippedLine:
-                if command_description and self.settings['_api_version'] >= [0, 3, 0]:
-                    self.q.put([Action.set_info, [{"type": SelectionType.command, "value": command}], "<b>{}</b><br/><br/>{}".format(html.escape(command), command_description)])
+                if command_description and self.settings['_api_version'] >= [0, 3, 1]:
+                    self.q.put([Action.set_command_info, command, "<b>{}</b><br/><br/>{}".format(html.escape(command), command_description)])
                     command_description = ""
 
                 if strippedLine[:4] == "pass":
@@ -107,8 +107,8 @@ class Module(ModuleBase):
         for password in sorted(unsortedPasswords, key=lambda name: os.path.getatime(os.path.join(root, name)), reverse=True):
             entry = password[len(passDir):-4]
             self.q.put([Action.add_entry, entry])
-            if self.settings['_api_version'] >= [0, 3, 0]:
-                self.q.put([Action.set_info, [{"type": SelectionType.entry, "value": entry}], "<b>{}</b><br/><br/><b>Last opened</b><br/>{}<br/><br/><b>Last modified</b><br/>{}".format(html.escape(entry), datetime.fromtimestamp(os.path.getatime(password)).replace(microsecond=0), datetime.fromtimestamp(os.path.getmtime(password)).replace(microsecond=0))])
+            if self.settings['_api_version'] >= [0, 3, 1]:
+                self.q.put([Action.set_entry_info, entry, "<b>{}</b><br/><br/><b>Last opened</b><br/>{}<br/><br/><b>Last modified</b><br/>{}".format(html.escape(entry), datetime.fromtimestamp(os.path.getatime(password)).replace(microsecond=0), datetime.fromtimestamp(os.path.getmtime(password)).replace(microsecond=0))])
 
 
     def _run_command(self, command, printOnSuccess=False, hideErrors=False, prefillInput=''):
