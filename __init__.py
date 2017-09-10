@@ -109,6 +109,8 @@ class Module(ModuleBase):
             self.q.put([Action.add_entry, entry])
             if self.settings['_api_version'] >= [0, 3, 1]:
                 self.q.put([Action.set_entry_info, entry, "<b>{}</b><br/><br/><b>Last opened</b><br/>{}<br/><br/><b>Last modified</b><br/>{}".format(html.escape(entry), datetime.fromtimestamp(os.path.getatime(password)).replace(microsecond=0), datetime.fromtimestamp(os.path.getmtime(password)).replace(microsecond=0))])
+            if self.settings['_api_version'] >= [0, 4, 0]:
+                self.q.put([Action.set_entry_context, entry, ["Edit", "Remove"]])
 
 
     def _run_command(self, command, printOnSuccess=False, hideErrors=False, prefillInput=''):
@@ -256,6 +258,16 @@ class Module(ModuleBase):
                 self._run_command(parts)
                 self.q.put([Action.set_selection, []])
             elif selection[0]["type"] == SelectionType.entry:
+                if self.settings['_api_version'] >= [0, 4, 0]:
+                    if selection[0]["context_option"] == "Edit":
+                        self._run_command(["edit", selection[0]["value"]], hideErrors=True)
+                        self.q.put([Action.set_selection, []])
+                        return
+                    elif selection[0]["context_option"] == "Edit":
+                        self._run_command(["rm", selection[0]["value"]], hideErrors=True)
+                        self.q.put([Action.set_selection, []])
+                        return
+
                 results = self._run_command(["show", selection[0]["value"]], hideErrors=True)
                 if results is None:
                     self.q.put([Action.set_selection, []])
