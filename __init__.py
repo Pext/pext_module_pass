@@ -263,7 +263,7 @@ class Module(ModuleBase):
                         self._run_command(["edit", selection[0]["value"]], hideErrors=True)
                         self.q.put([Action.set_selection, []])
                         return
-                    elif selection[0]["context_option"] == "Edit":
+                    elif selection[0]["context_option"] == "Remove":
                         self._run_command(["rm", selection[0]["value"]], hideErrors=True)
                         self.q.put([Action.set_selection, []])
                         return
