@@ -110,7 +110,7 @@ class Module(ModuleBase):
             if self.settings['_api_version'] >= [0, 3, 1]:
                 self.q.put([Action.set_entry_info, entry, "<b>{}</b><br/><br/><b>Last opened</b><br/>{}<br/><br/><b>Last modified</b><br/>{}".format(html.escape(entry), datetime.fromtimestamp(os.path.getatime(password)).replace(microsecond=0), datetime.fromtimestamp(os.path.getmtime(password)).replace(microsecond=0))])
             if self.settings['_api_version'] >= [0, 4, 0]:
-                self.q.put([Action.set_entry_context, entry, ["Edit", "Remove"]])
+                self.q.put([Action.set_entry_context, entry, ["Open", "Edit", "Remove"]])
 
 
     def _run_command(self, command, printOnSuccess=False, hideErrors=False, prefillInput=''):
