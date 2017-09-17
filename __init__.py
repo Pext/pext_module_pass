@@ -15,6 +15,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+import gettext
 import html
 import re
 import os
@@ -34,6 +35,14 @@ from watchdog.observers import Observer
 
 class Module(ModuleBase):
     def init(self, settings, q):
+        try:
+            lang = gettext.translation('pext_module_pass', localedir=os.path.join(os.path.dirname(os.path.abspath(__file__)), 'locale'), languages=[settings['_locale']])
+        except FileNotFoundError:
+            lang = gettext.NullTranslations()
+            print("No {} translation available for pext_module_pass".format(settings['_locale']))
+
+        lang.install()
+
         self.binary = "pass" if ('binary' not in settings) else settings['binary']
         self.data_location = expanduser("~/.password-store/") if ('directory' not in settings) else expanduser(settings['directory'])
         os.environ['PASSWORD_STORE_DIR'] = self.data_location
@@ -72,7 +81,7 @@ class Module(ModuleBase):
         try:
             commandText = check_output([self.binary, "--help"])
         except FileNotFoundError:
-            self.q.put([Action.critical_error, "pass is not installed. Please see https://www.passwordstore.org/"])
+            self.q.put([Action.critical_error, _("pass is not installed. Please see https://www.passwordstore.org/")])
             return
 
         command = None
@@ -108,9 +117,9 @@ class Module(ModuleBase):
             entry = password[len(passDir):-4]
             self.q.put([Action.add_entry, entry])
             if self.settings['_api_version'] >= [0, 3, 1]:
-                self.q.put([Action.set_entry_info, entry, "<b>{}</b><br/><br/><b>Last opened</b><br/>{}<br/><br/><b>Last modified</b><br/>{}".format(html.escape(entry), datetime.fromtimestamp(os.path.getatime(password)).replace(microsecond=0), datetime.fromtimestamp(os.path.getmtime(password)).replace(microsecond=0))])
+                self.q.put([Action.set_entry_info, entry, _("<b>{}</b><br/><br/><b>Last opened</b><br/>{}<br/><br/><b>Last modified</b><br/>{}").format(html.escape(entry), datetime.fromtimestamp(os.path.getatime(password)).replace(microsecond=0), datetime.fromtimestamp(os.path.getmtime(password)).replace(microsecond=0))])
             if self.settings['_api_version'] >= [0, 4, 0]:
-                self.q.put([Action.set_entry_context, entry, ["Open", "Edit", "Remove"]])
+                self.q.put([Action.set_entry_context, entry, [_("Open"), _("Edit"), _("Remove")]])
 
 
     def _run_command(self, command, printOnSuccess=False, hideErrors=False, prefillInput=''):
@@ -139,9 +148,9 @@ class Module(ModuleBase):
             self.proc = {'result': possibleResults[result]}
         elif result == 1:
             self.proc = {'result': possibleResults[result]}
-            self.q.put([Action.add_error, "Timeout error while running '{}'".format(command)])
+            self.q.put([Action.add_error, _("Timeout error while running '{}'").format(command)])
             if proc.before:
-                self.q.put([Action.add_error, "Command output: {}".format(self.ANSIEscapeRegex.sub('', proc.before.decode("utf-8")))])
+                self.q.put([Action.add_error, _("Command output: {}").format(self.ANSIEscapeRegex.sub('', proc.before.decode("utf-8")))])
 
             return None
         elif result == 2 or result == 3:
@@ -208,7 +217,7 @@ class Module(ModuleBase):
 
             return message
         else:
-            self.q.put([Action.add_error, message if message else "Error code {} running '{}'. More info may be logged to the console".format(str(exitCode), command)])
+            self.q.put([Action.add_error, message if message else _("Error code {} running '{}'. More info may be logged to the console").format(str(exitCode), command)])
 
             return None
 
@@ -259,11 +268,11 @@ class Module(ModuleBase):
                 self.q.put([Action.set_selection, []])
             elif selection[0]["type"] == SelectionType.entry:
                 if self.settings['_api_version'] >= [0, 4, 0]:
-                    if selection[0]["context_option"] == "Edit":
+                    if selection[0]["context_option"] == _("Edit"):
                         self._run_command(["edit", selection[0]["value"]], hideErrors=True)
                         self.q.put([Action.set_selection, []])
                         return
-                    elif selection[0]["context_option"] == "Remove":
+                    elif selection[0]["context_option"] == _("Remove"):
                         self._run_command(["rm", selection[0]["value"]], hideErrors=True)
                         self.q.put([Action.set_selection, []])
                         return
@@ -285,7 +294,7 @@ class Module(ModuleBase):
                         self.passwordEntries[line] = line
                         self.q.put([Action.add_entry, line])
             else:
-                self.q.put([Action.critical_error, "Unexpected selection_made value: {}".format(selection)])
+                self.q.put([Action.critical_error, _("Unexpected selection_made value: {}").format(selection)])
         elif len(selection) == 2:
             # We're selecting a password
             if selection[1]["value"] == "********":
@@ -301,7 +310,7 @@ class Module(ModuleBase):
 
             self.q.put([Action.close])
         else:
-            self.q.put([Action.critical_error, "Unexpected selection_made value: {}".format(selection)])
+            self.q.put([Action.critical_error, _("Unexpected selection_made value: {}").format(selection)])
 
 class EventHandler(FileSystemEventHandler):
     def __init__(self, q, store):
