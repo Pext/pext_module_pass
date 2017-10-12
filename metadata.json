@@ -16,5 +16,9 @@
     "name": "directory",
     "description": "Password store directory",
     "default": "~/.password-store/"
-  }]
+  }],
+  "platforms": [
+    "Linux",
+    "Darwin"
+  ]
 }
