@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2017-09-17 15:10+CEST\n"
-"PO-Revision-Date: 2017-10-21 05:09+0000\n"
+"PO-Revision-Date: 2017-10-22 05:56+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål "
 "<https://hosted.weblate.org/projects/pext/pext_module_pass/nb_NO/>\n"
@@ -42,7 +42,7 @@ msgstr "Fjern"
 
 #: __init__.py:145
 msgid "Timeout error while running '{}'"
-msgstr "Tisavbrudd under kjøring av '{}'"
+msgstr "Tidsavbrudd under kjøring av '{}'"
 
 #: __init__.py:147
 msgid "Command output: {}"
