@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2017-09-17 15:10+CEST\n"
-"PO-Revision-Date: 2017-10-20 11:47+0000\n"
+"PO-Revision-Date: 2017-10-21 05:09+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål "
 "<https://hosted.weblate.org/projects/pext/pext_module_pass/nb_NO/>\n"
@@ -42,16 +42,17 @@ msgstr "Fjern"
 
 #: __init__.py:145
 msgid "Timeout error while running '{}'"
-msgstr ""
+msgstr "Tisavbrudd under kjøring av '{}'"
 
 #: __init__.py:147
 msgid "Command output: {}"
-msgstr ""
+msgstr "Kommandolinjeutdata: {}"
 
 #: __init__.py:214
 msgid "Error code {} running '{}'. More info may be logged to the console"
 msgstr ""
+"Feilkode {} under kjøring av '{}'. Mer info kan ha blitt logget til konsollen"
 
 #: __init__.py:291 __init__.py:307
 msgid "Unexpected selection_made value: {}"
-msgstr ""
+msgstr "Uventet selection_made -verdi: {}"
