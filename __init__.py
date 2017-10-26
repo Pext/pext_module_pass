@@ -134,7 +134,7 @@ class Module(ModuleBase):
 
     def _process_proc_output(self, proc, command, printOnSuccess=False, hideErrors=False, prefillInput=''):
         possibleResults = [pexpect.EOF, pexpect.TIMEOUT, "[Y/n]", "[y/N]", "Enter password ", "Retype password ", " and press Ctrl+D when finished:"]
-        result = proc.expect_exact(possibleResults, timeout=3)
+        result = proc.expect_exact(possibleResults, timeout=30 if self.settings['_api_version'] >= [0, 7, 0] else 3)
         if result == 0:
             self.proc = {'result': possibleResults[result]}
         elif result == 1:
