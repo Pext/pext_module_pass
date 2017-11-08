@@ -6,47 +6,53 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2017-09-17 15:10+CEST\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2017-11-08 19:46+0000\n"
+"Last-Translator: Emily <fuchslein@hackerchick.me>\n"
+"Language-Team: Spanish "
+"<https://hosted.weblate.org/projects/pext/pext_module_pass/es/>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.18-dev\n"
 "Generated-By: pygettext.py 1.5\n"
 
 #: __init__.py:78
 msgid "pass is not installed. Please see https://www.passwordstore.org/"
-msgstr ""
+msgstr "pass no está instalado. Por favor visita https://www.passwordstore.org/"
 
 #: __init__.py:114
 msgid "<b>{}</b><br/><br/><b>Last opened</b><br/>{}<br/><br/><b>Last modified</b><br/>{}"
 msgstr ""
+"<b>{}</b><br/><br/><b>Último abierto</b><br/>{}<br/><br/><b>Última "
+"modificación</b><br/>{}"
 
 #: __init__.py:116
 msgid "Open"
-msgstr ""
+msgstr "Abrir"
 
 #: __init__.py:116 __init__.py:265
 msgid "Edit"
-msgstr ""
+msgstr "Editar"
 
 #: __init__.py:116 __init__.py:269
 msgid "Remove"
-msgstr ""
+msgstr "Eliminar"
 
 #: __init__.py:145
 msgid "Timeout error while running '{}'"
-msgstr ""
+msgstr "Error de tiempo de espera mientras ejecutando '{}'"
 
 #: __init__.py:147
 msgid "Command output: {}"
-msgstr ""
+msgstr "Salida de comando: {}"
 
 #: __init__.py:214
 msgid "Error code {} running '{}'. More info may be logged to the console"
 msgstr ""
+"Código de error {} ejecutando '{}'. Para más información revise la consola"
 
 #: __init__.py:291 __init__.py:307
 msgid "Unexpected selection_made value: {}"
-msgstr ""
+msgstr "Valor de selection_made inesperado: {}"
