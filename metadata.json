@@ -1,11 +1,11 @@
 {
-  "name": "Password Management",
+  "name": "Password Storage",
   "developer": "Sylvia van Os (Pext lead developer)",
   "description": "Allows Pext to do password management through pass",
   "homepage": "https://pext.hackerchick.me/",
   "license": "GPL-3.0+",
   "git_urls": [
-    "https://github.com/Pext/pext_module_pass""
+    "https://github.com/Pext/pext_module_pass"
   ],
   "settings": [{
     "name": "binary",
