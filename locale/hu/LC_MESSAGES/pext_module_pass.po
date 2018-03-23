@@ -1,0 +1,52 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR ORGANIZATION
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-09-17 15:10+CEST\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: hu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.5\n"
+
+#: __init__.py:78
+msgid "pass is not installed. Please see https://www.passwordstore.org/"
+msgstr ""
+
+#: __init__.py:114
+msgid "<b>{}</b><br/><br/><b>Last opened</b><br/>{}<br/><br/><b>Last modified</b><br/>{}"
+msgstr ""
+
+#: __init__.py:116
+msgid "Open"
+msgstr ""
+
+#: __init__.py:116 __init__.py:265
+msgid "Edit"
+msgstr ""
+
+#: __init__.py:116 __init__.py:269
+msgid "Remove"
+msgstr ""
+
+#: __init__.py:145
+msgid "Timeout error while running '{}'"
+msgstr ""
+
+#: __init__.py:147
+msgid "Command output: {}"
+msgstr ""
+
+#: __init__.py:214
+msgid "Error code {} running '{}'. More info may be logged to the console"
+msgstr ""
+
+#: __init__.py:291 __init__.py:307
+msgid "Unexpected selection_made value: {}"
+msgstr ""
