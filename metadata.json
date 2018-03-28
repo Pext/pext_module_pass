@@ -1,4 +1,5 @@
 {
+  "id": "pext.module.pass",
   "name": "Password Store",
   "developer": "Sylvia van Os (Pext lead developer)",
   "description": "Allows Pext to do password management through pass",
