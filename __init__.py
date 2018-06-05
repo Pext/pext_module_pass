@@ -17,6 +17,7 @@
 
 import gettext
 import html
+import platform
 import re
 import os
 from datetime import datetime
@@ -35,6 +36,10 @@ from watchdog.observers import Observer
 
 class Module(ModuleBase):
     def init(self, settings, q):
+        if platform.system() == 'Darwin':
+            # Explicitly add support for MacGPG2
+            os.environ['PATH'] = os.environ['PATH'] + ':/usr/local/MacGPG2/bin'
+
         try:
             lang = gettext.translation('pext_module_pass', localedir=os.path.join(os.path.dirname(os.path.abspath(__file__)), 'locale'), languages=[settings['_locale']])
         except FileNotFoundError:
