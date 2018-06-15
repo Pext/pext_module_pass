@@ -128,6 +128,11 @@ class Module(ModuleBase):
 
 
     def _run_command(self, command, printOnSuccess=False, hideErrors=False, prefillInput=''):
+        if len(command) == 1:
+            self.proc = {'command': command[0]}
+            self.q.put([Action.ask_input, _("{} what?").format(command[0].capitalize())])
+            return
+
         # If we edit a password, make sure to get the original input first so we can show the user
         if command[0] == "edit" and len(command) == 2:
             prefillData = self._run_command(["show", command[1]], hideErrors=True)
@@ -227,6 +232,11 @@ class Module(ModuleBase):
             return None
 
     def process_response(self, response):
+        if not 'proc' in self.proc:
+            if response:
+                self._run_command([self.proc['command']] + response.split(" "))
+            return
+
         if self.proc['type'] == Action.ask_question_default_yes or self.proc['type'] == Action.ask_question_default_no:
             self.proc['proc'].waitnoecho()
             self.proc['proc'].sendline('y' if response else 'n')
