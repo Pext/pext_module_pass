@@ -80,7 +80,7 @@ class Module(ModuleBase):
         return self.data_location
 
     def _get_unsupported_commands(self):
-        return ["[ls]", "find", "[show]", "grep"]
+        return ["[ls]", "find", "[show]", "grep", "version", "help"]
 
     def _get_commands(self):
         try:
