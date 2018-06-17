@@ -168,7 +168,8 @@ class Module(ModuleBase):
         sanitizedCommandList = [quote(commandPart) for commandPart in command]
         command = " ".join(sanitizedCommandList)
 
-        proc = PopenSpawn("bash -c {}".format(quote("{} {} {}".format(self.binary, command, ("2>/dev/null" if hideErrors else "")))))
+        env = os.environ.copy()
+        proc = PopenSpawn("bash -c {}".format(quote("{} {} {}".format(self.binary, command, ("2>/dev/null" if hideErrors else "")))), env=env)
         return self._process_proc_output(proc, command, printOnSuccess, hideErrors, prefillInput)
 
     def _process_proc_output(self, proc, command, printOnSuccess=False, hideErrors=False, prefillInput=''):
