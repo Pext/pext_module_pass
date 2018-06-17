@@ -48,6 +48,14 @@ class Module(ModuleBase):
 
         lang.install()
 
+        if platform.system() == 'Windows':
+            # Check if stuff is set up properly
+            try:
+                check_output(['bash', '-c', 'exit'])
+            except FileNotFoundError:
+                self.q.put([Action.critical_error, _("Bash is not installed. Please install a Linux distribution (such as Ubuntu) from the Windows store")])
+                return
+
         self.binary = "pass" if ('binary' not in settings) else settings['binary']
         self.data_location = expanduser("~/.password-store/") if ('directory' not in settings) else expanduser(settings['directory'])
         os.environ['PASSWORD_STORE_DIR'] = self.data_location
@@ -84,9 +92,12 @@ class Module(ModuleBase):
 
     def _get_commands(self):
         try:
-            commandText = check_output([self.binary, "--help"])
+            if platform.system() == 'Windows':
+                commandText = check_output(['bash', '-c', self.binary, "--help"])
+            else:
+                commandText = check_output([self.binary, "--help"])
         except FileNotFoundError:
-            self.q.put([Action.critical_error, _("pass is not installed. Please see https://www.passwordstore.org/")])
+            self.q.put([Action.critical_error, _("Pass is not installed. Please see https://www.passwordstore.org/")])
             return
 
         command = None
@@ -148,7 +159,7 @@ class Module(ModuleBase):
         sanitizedCommandList = [quote(commandPart) for commandPart in command]
         command = " ".join(sanitizedCommandList)
 
-        proc = pexpect.spawn('/bin/sh', ['-c', self.binary + " " + command + (" 2>/dev/null" if hideErrors else "")])
+        proc = pexpect.spawn('bash', ['-c', self.binary + " " + command + (" 2>/dev/null" if hideErrors else "")])
         return self._process_proc_output(proc, command, printOnSuccess, hideErrors, prefillInput)
 
     def _process_proc_output(self, proc, command, printOnSuccess=False, hideErrors=False, prefillInput=''):
