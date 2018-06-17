@@ -227,7 +227,7 @@ class Module(ModuleBase):
             return None
 
         proc.sendeof()
-        exitCode = proc.exitstatus
+        exitCode = proc.wait()
 
         message = self.ANSIEscapeRegex.sub('', proc.before.decode("utf-8")) if proc.before else ""
 
