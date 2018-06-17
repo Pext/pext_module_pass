@@ -21,8 +21,8 @@ import platform
 import re
 import os
 from datetime import datetime
-from os.path import expanduser
-from subprocess import check_output
+from os.path import expanduser, normcase
+from subprocess import CalledProcessError, check_output
 from shlex import quote
 
 import pexpect
@@ -52,12 +52,12 @@ class Module(ModuleBase):
             # Check if stuff is set up properly
             try:
                 check_output(['bash', '-c', 'exit'])
-            except FileNotFoundError:
+            except CalledProcessError:
                 self.q.put([Action.critical_error, _("Bash is not installed. Please install a Linux distribution (such as Ubuntu) from the Windows store")])
                 return
 
         self.binary = "pass" if ('binary' not in settings) else settings['binary']
-        self.data_location = expanduser("~/.password-store/") if ('directory' not in settings) else expanduser(settings['directory'])
+        self.data_location = expanduser(normcase("~/.password-store/")) if ('directory' not in settings) else expanduser(normcase(settings['directory']))
         os.environ['PASSWORD_STORE_DIR'] = self.data_location
 
         try:
@@ -93,10 +93,10 @@ class Module(ModuleBase):
     def _get_commands(self):
         try:
             if platform.system() == 'Windows':
-                commandText = check_output(['bash', '-c', self.binary, "--help"])
+                commandText = check_output(['bash', '-c', quote(self.binary + "--help")])
             else:
                 commandText = check_output([self.binary, "--help"])
-        except FileNotFoundError:
+        except CalledProcessError:
             self.q.put([Action.critical_error, _("Pass is not installed. Please see https://www.passwordstore.org/")])
             return
 
@@ -159,7 +159,7 @@ class Module(ModuleBase):
         sanitizedCommandList = [quote(commandPart) for commandPart in command]
         command = " ".join(sanitizedCommandList)
 
-        proc = pexpect.spawn('bash', ['-c', self.binary + " " + command + (" 2>/dev/null" if hideErrors else "")])
+        proc = pexpect.spawn('bash', ['-c', "{} {} {}".format(self.binary, quote(command) + ("2>/dev/null" if hideErrors else ""))])
         return self._process_proc_output(proc, command, printOnSuccess, hideErrors, prefillInput)
 
     def _process_proc_output(self, proc, command, printOnSuccess=False, hideErrors=False, prefillInput=''):
