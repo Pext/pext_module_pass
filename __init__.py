@@ -226,7 +226,7 @@ class Module(ModuleBase):
 
             return None
 
-        proc.close()
+        proc.sendeof()
         exitCode = proc.exitstatus
 
         message = self.ANSIEscapeRegex.sub('', proc.before.decode("utf-8")) if proc.before else ""
@@ -256,7 +256,7 @@ class Module(ModuleBase):
         elif self.proc['type'] == Action.ask_input or self.proc['type'] == Action.ask_input_password:
             self.proc['proc'].waitnoecho()
             if response is None:
-                self.proc['proc'].close()
+                self.proc['proc'].sendeof()
             else:
                 self.proc['proc'].sendline(response)
                 self.proc['proc'].setecho(True)
