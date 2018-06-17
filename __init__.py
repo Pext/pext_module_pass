@@ -26,6 +26,7 @@ from subprocess import CalledProcessError, check_output
 from shlex import quote
 
 import pexpect
+from pexpect.popen_spawn import PopenSpawn
 
 from pext_base import ModuleBase
 from pext_helpers import Action, SelectionType
@@ -159,7 +160,7 @@ class Module(ModuleBase):
         sanitizedCommandList = [quote(commandPart) for commandPart in command]
         command = " ".join(sanitizedCommandList)
 
-        proc = pexpect.popen_spawn.PopenSpawn("bash -c {} {} {}".format(self.binary, quote(command), ("2>/dev/null" if hideErrors else "")))
+        proc = PopenSpawn("bash -c {} {} {}".format(self.binary, quote(command), ("2>/dev/null" if hideErrors else "")))
         return self._process_proc_output(proc, command, printOnSuccess, hideErrors, prefillInput)
 
     def _process_proc_output(self, proc, command, printOnSuccess=False, hideErrors=False, prefillInput=''):
