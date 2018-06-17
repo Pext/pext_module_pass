@@ -145,6 +145,10 @@ class Module(ModuleBase):
             self.q.put([Action.ask_input, _("{} what?").format(command[0].capitalize())])
             return
 
+        # We really want insert to have -m
+        if command[0] == "insert":
+            command = [command[0], "-m"] + command[1:]
+
         # If we edit a password, make sure to get the original input first so we can show the user
         if command[0] == "edit" and len(command) == 2:
             prefillData = self._run_command(["show", command[1]], hideErrors=True)
