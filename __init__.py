@@ -176,7 +176,6 @@ class Module(ModuleBase):
 
             return None
         elif result == 2 or result == 3:
-            proc.setecho(False)
             question = proc.before.decode("utf-8")
 
             if (result == 2):
@@ -201,7 +200,6 @@ class Module(ModuleBase):
             return None
         elif result == 4 or result == 5:
             printOnSuccess = False
-            proc.setecho(False)
             self.proc = {'proc': proc,
                          'command': command,
                          'type': Action.ask_input_password,
@@ -221,8 +219,6 @@ class Module(ModuleBase):
                          'prefillInput': prefillInput,
                          'result': possibleResults[result]}
             self.q.put([Action.ask_input_multi_line, proc.before.decode("utf-8").lstrip(), prefillInput])
-
-            proc.setecho(False)
 
             return None
 
@@ -250,18 +246,13 @@ class Module(ModuleBase):
             return
 
         if self.proc['type'] == Action.ask_question_default_yes or self.proc['type'] == Action.ask_question_default_no:
-            self.proc['proc'].waitnoecho()
             self.proc['proc'].sendline('y' if response else 'n')
-            self.proc['proc'].setecho(True)
         elif self.proc['type'] == Action.ask_input or self.proc['type'] == Action.ask_input_password:
-            self.proc['proc'].waitnoecho()
             if response is None:
                 self.proc['proc'].sendeof()
             else:
                 self.proc['proc'].sendline(response)
-                self.proc['proc'].setecho(True)
         elif self.proc['type'] == Action.ask_input_multi_line:
-            self.proc['proc'].waitnoecho()
             if response is None:
                 # At this point, pass won't let us exit out safely, so we
                 # write the prefilled data
@@ -271,8 +262,7 @@ class Module(ModuleBase):
                 for line in response.splitlines():
                     self.proc['proc'].sendline(line)
 
-            self.proc['proc'].sendcontrol("d")
-            self.proc['proc'].setecho(True)
+            self.proc['proc'].sendeof()
 
         self._process_proc_output(self.proc['proc'], self.proc['command'], printOnSuccess=self.proc['printOnSuccess'], hideErrors=self.proc['hideErrors'], prefillInput=self.proc['prefillInput'])
 
