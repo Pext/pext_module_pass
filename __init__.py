@@ -93,7 +93,7 @@ class Module(ModuleBase):
     def _get_commands(self):
         try:
             if platform.system() == 'Windows':
-                commandText = check_output(['bash', '-c', quote(self.binary + "--help")])
+                commandText = check_output(['bash', '-c', "{} {}".format(self.binary, "--help")])
             else:
                 commandText = check_output([self.binary, "--help"])
         except CalledProcessError:
