@@ -59,7 +59,10 @@ class Module(ModuleBase):
 
         self.binary = "pass" if ('binary' not in settings) else settings['binary']
         self.data_location = expanduser(normcase("~/.password-store/")) if ('directory' not in settings) else expanduser(normcase(settings['directory']))
-        os.environ['PASSWORD_STORE_DIR'] = self.data_location
+        if platform.system() == 'Windows':
+            os.environ['PASSWORD_STORE_DIR'] = "/mnt/{}/{}".format(os.path.splitdrive(self.data_location.replace("\\", "/")))
+        else:
+            os.environ['PASSWORD_STORE_DIR'] = self.data_location
 
         try:
             os.mkdir(self.data_location)
