@@ -61,7 +61,7 @@ class Module(ModuleBase):
         self.data_location = expanduser(normcase("~/.password-store/")) if ('directory' not in settings) else expanduser(normcase(settings['directory']))
         if platform.system() == 'Windows':
             location = list(os.path.splitdrive(self.data_location.replace("\\", "/")))
-            os.environ['PASSWORD_STORE_DIR'] = "/mnt/{}/{}".format(location[0], location[1])
+            os.environ['PASSWORD_STORE_DIR'] = "/mnt/{}/{}".format(location[0][0].lower(), location[1])
         else:
             os.environ['PASSWORD_STORE_DIR'] = self.data_location
 
