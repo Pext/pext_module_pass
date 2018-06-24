@@ -6,26 +6,31 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2018-06-24 17:30+CEST\n"
-"PO-Revision-Date: 2017-09-17 15:16+0200\n"
-"Last-Translator: \n"
-"Language-Team: \n"
+"PO-Revision-Date: 2018-06-24 15:59+0000\n"
+"Last-Translator: Sylvia van Os <sylvia@hackerchick.me>\n"
+"Language-Team: Dutch <https://hosted.weblate.org/projects/pext/"
+"pext_module_pass/nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 3.1-dev\n"
 "Generated-By: pygettext.py 1.5\n"
-"X-Generator: Poedit 2.0.3\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: __init__.py:57
 msgid ""
 "Bash is not installed. Please install a Linux distribution (such as Ubuntu) "
 "from the Windows store"
 msgstr ""
+"Bash is niet geïnstalleerd. Installeer een Linux distributie (bijvoorbeeld "
+"Ubuntu) van de Windows store"
 
 #: __init__.py:105
 msgid "Pass is not installed. Please see https://www.passwordstore.org/"
 msgstr ""
+"Pass is niet geïnstalleerd. Kijk voor installatieinstructies op "
+"https://www.passwordstore.org/"
 
 #: __init__.py:141
 msgid ""
@@ -49,7 +54,7 @@ msgstr "Verwijder"
 
 #: __init__.py:149
 msgid "{} what?"
-msgstr ""
+msgstr "{} wat?"
 
 #: __init__.py:181
 msgid "Timeout error while running '{}'"
@@ -71,19 +76,19 @@ msgstr "Onverwachtte selection_made waarde: {}"
 
 #: generate_metadata.py:40
 msgid "Password Store"
-msgstr ""
+msgstr "Password Store"
 
 #: generate_metadata.py:42
 msgid "Allows Pext to do password management through pass"
-msgstr ""
+msgstr "Stelt Pext in staat om wachtwoordbeheer te doen via pass"
 
 #: generate_metadata.py:47
 msgid "Binary to call for pass operations"
-msgstr ""
+msgstr "Applicatie om aan te roepen voor pass operaties"
 
 #: generate_metadata.py:51
 msgid "Password Store directory"
-msgstr ""
+msgstr "Password Store map"
 
 #~ msgid "pass is not installed. Please see https://www.passwordstore.org/"
 #~ msgstr ""
