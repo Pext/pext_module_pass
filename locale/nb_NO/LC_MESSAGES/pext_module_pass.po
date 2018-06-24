@@ -6,16 +6,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2018-06-24 17:30+CEST\n"
-"PO-Revision-Date: 2017-10-22 05:56+0000\n"
+"PO-Revision-Date: 2018-06-24 23:47+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/pext/"
-"pext_module_pass/nb_NO/>\n"
+"pext_module_pass/nb/>\n"
 "Language: nb_NO\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.17\n"
+"X-Generator: Weblate 3.1-dev\n"
 "Generated-By: pygettext.py 1.5\n"
 
 #: __init__.py:57
@@ -23,10 +23,12 @@ msgid ""
 "Bash is not installed. Please install a Linux distribution (such as Ubuntu) "
 "from the Windows store"
 msgstr ""
+"Bash er ikke installert. Installer en Linux|GNU-distribusjon (som Ubuntu) "
+"fra Windows-butikken"
 
 #: __init__.py:105
 msgid "Pass is not installed. Please see https://www.passwordstore.org/"
-msgstr ""
+msgstr "Pass er ikke installert. Sjekk https://www.passwordstore.org/"
 
 #: __init__.py:141
 msgid ""
@@ -50,7 +52,7 @@ msgstr "Fjern"
 
 #: __init__.py:149
 msgid "{} what?"
-msgstr ""
+msgstr "{} hva?"
 
 #: __init__.py:181
 msgid "Timeout error while running '{}'"
@@ -71,19 +73,19 @@ msgstr "Uventet selection_made -verdi: {}"
 
 #: generate_metadata.py:40
 msgid "Password Store"
-msgstr ""
+msgstr "Passordlagring"
 
 #: generate_metadata.py:42
 msgid "Allows Pext to do password management through pass"
-msgstr ""
+msgstr "Tillater Pext å håntere passord gjennom pass"
 
 #: generate_metadata.py:47
 msgid "Binary to call for pass operations"
-msgstr ""
+msgstr "Binærfil å kalle for pass-operasjoner"
 
 #: generate_metadata.py:51
 msgid "Password Store directory"
-msgstr ""
+msgstr "Passordlagermappe"
 
 #~ msgid "pass is not installed. Please see https://www.passwordstore.org/"
 #~ msgstr "pass er ikke installert. Sjekk https://www.passwordstore.org/"
