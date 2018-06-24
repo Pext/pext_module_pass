@@ -11,3 +11,4 @@ python3 generate_metadata.py
 
 # Copy to names with country code
 cp metadata_nl.json metadata_nl_NL.json
+cp metadata_es.json metadata_es_ES.json
