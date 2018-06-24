@@ -1,1 +1,28 @@
-metadata_nl.json
+{
+  "description": "Stelt Pext in staat om wachtwoordbeheer te doen via pass",
+  "developer": "Sylvia van Os",
+  "git_urls": [
+    "https://github.com/Pext/pext_module_pass"
+  ],
+  "homepage": "https://pext.hackerchick.me/",
+  "id": "pext.module.pass",
+  "license": "GPL-3.0+",
+  "name": "Password Store",
+  "platforms": [
+    "Linux",
+    "Darwin",
+    "Windows"
+  ],
+  "settings": [
+    {
+      "defaults": "pass",
+      "description": "Applicatie om aan te roepen voor pass operaties",
+      "name": "binary"
+    },
+    {
+      "default": "~/.password-store/",
+      "description": "Password Store map",
+      "name": "directory"
+    }
+  ]
+}

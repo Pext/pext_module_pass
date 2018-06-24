@@ -8,3 +8,6 @@ for dir in locale/*/LC_MESSAGES; do
 done
 
 python3 generate_metadata.py
+
+# Copy to names with country code
+cp metadata_nl.json metadata_nl_NL.json
