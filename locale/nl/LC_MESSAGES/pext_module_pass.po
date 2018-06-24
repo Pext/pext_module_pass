@@ -5,58 +5,87 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2017-09-17 15:10+CEST\n"
+"POT-Creation-Date: 2018-06-24 17:30+CEST\n"
 "PO-Revision-Date: 2017-09-17 15:16+0200\n"
+"Last-Translator: \n"
 "Language-Team: \n"
+"Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: pygettext.py 1.5\n"
 "X-Generator: Poedit 2.0.3\n"
-"Last-Translator: \n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Language: nl\n"
 
-#: __init__.py:78
-msgid "pass is not installed. Please see https://www.passwordstore.org/"
+#: __init__.py:57
+msgid ""
+"Bash is not installed. Please install a Linux distribution (such as Ubuntu) "
+"from the Windows store"
 msgstr ""
-"pass is niet geïnstalleerd. Ga naar https://www.passwordstore.org/ voor "
-"installatieinstructies."
 
-#: __init__.py:114
+#: __init__.py:105
+msgid "Pass is not installed. Please see https://www.passwordstore.org/"
+msgstr ""
+
+#: __init__.py:141
 msgid ""
 "<b>{}</b><br/><br/><b>Last opened</b><br/>{}<br/><br/><b>Last modified</"
 "b><br/>{}"
 msgstr ""
-"<b>{}</b><br/><br/><b>Laatst geopend</b><br/>{}<br/><br/><b>Laatst "
-"bewerkt</b><br/>{}"
+"<b>{}</b><br/><br/><b>Laatst geopend</b><br/>{}<br/><br/><b>Laatst bewerkt</"
+"b><br/>{}"
 
-#: __init__.py:116
+#: __init__.py:143
 msgid "Open"
 msgstr "Open"
 
-#: __init__.py:116 __init__.py:265
+#: __init__.py:143 __init__.py:296
 msgid "Edit"
 msgstr "Bewerk"
 
-#: __init__.py:116 __init__.py:269
+#: __init__.py:143 __init__.py:300
 msgid "Remove"
 msgstr "Verwijder"
 
-#: __init__.py:145
+#: __init__.py:149
+msgid "{} what?"
+msgstr ""
+
+#: __init__.py:181
 msgid "Timeout error while running '{}'"
 msgstr "Timeout fout tijdens het uitvoeren van '{}'"
 
-#: __init__.py:147
+#: __init__.py:183
 msgid "Command output: {}"
 msgstr "Commandouitvoer: {}"
 
-#: __init__.py:214
+#: __init__.py:246
 msgid "Error code {} running '{}'. More info may be logged to the console"
 msgstr ""
-"Foutcode {} tijdens uitvoeren van '{}'. Meer informatie is mogelijk "
-"naar de console geschreven"
+"Foutcode {} tijdens uitvoeren van '{}'. Meer informatie is mogelijk naar de "
+"console geschreven"
 
-#: __init__.py:291 __init__.py:307
+#: __init__.py:322 __init__.py:338
 msgid "Unexpected selection_made value: {}"
 msgstr "Onverwachtte selection_made waarde: {}"
+
+#: generate_metadata.py:40
+msgid "Password Store"
+msgstr ""
+
+#: generate_metadata.py:42
+msgid "Allows Pext to do password management through pass"
+msgstr ""
+
+#: generate_metadata.py:47
+msgid "Binary to call for pass operations"
+msgstr ""
+
+#: generate_metadata.py:51
+msgid "Password Store directory"
+msgstr ""
+
+#~ msgid "pass is not installed. Please see https://www.passwordstore.org/"
+#~ msgstr ""
+#~ "pass is niet geïnstalleerd. Ga naar https://www.passwordstore.org/ voor "
+#~ "installatieinstructies."
