@@ -1,5 +1,5 @@
 {
-  "description": "Allows Pext to do password management through pass",
+  "description": "Tillater Pext \u00e5 h\u00e5ntere passord gjennom pass",
   "developer": "Sylvia van Os",
   "git_urls": [
     "https://github.com/Pext/pext_module_pass"
@@ -7,7 +7,7 @@
   "homepage": "https://pext.hackerchick.me/",
   "id": "pext.module.pass",
   "license": "GPL-3.0+",
-  "name": "Password Store",
+  "name": "Passordlagring",
   "platforms": [
     "Linux",
     "Darwin",
@@ -16,12 +16,12 @@
   "settings": [
     {
       "defaults": "pass",
-      "description": "Binary to call for pass operations",
+      "description": "Bin\u00e6rfil \u00e5 kalle for pass-operasjoner",
       "name": "binary"
     },
     {
       "default": "~/.password-store/",
-      "description": "Password Store directory",
+      "description": "Passordlagermappe",
       "name": "directory"
     }
   ]
