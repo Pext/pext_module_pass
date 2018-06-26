@@ -7,7 +7,7 @@
   "homepage": "https://pext.hackerchick.me/",
   "id": "pext.module.pass",
   "license": "GPL-3.0+",
-  "name": "Password Store",
+  "name": "Wachtwoordopslag",
   "platforms": [
     "Linux",
     "Darwin",
@@ -16,12 +16,12 @@
   "settings": [
     {
       "defaults": "pass",
-      "description": "Applicatie om aan te roepen voor pass operaties",
+      "description": "Aan te roepen applicatie voor pass-operaties",
       "name": "binary"
     },
     {
       "default": "~/.password-store/",
-      "description": "Password Store map",
+      "description": "Wachtwoordopslag-map",
       "name": "directory"
     }
   ]

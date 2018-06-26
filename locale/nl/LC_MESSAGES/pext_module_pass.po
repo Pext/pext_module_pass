@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2018-06-24 17:30+CEST\n"
-"PO-Revision-Date: 2018-06-24 15:59+0000\n"
-"Last-Translator: Sylvia van Os <sylvia@hackerchick.me>\n"
+"PO-Revision-Date: 2018-06-25 19:36+0000\n"
+"Last-Translator: Heimen Stoffels <vistausss@outlook.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/pext/"
 "pext_module_pass/nl/>\n"
 "Language: nl\n"
@@ -23,13 +23,13 @@ msgid ""
 "Bash is not installed. Please install a Linux distribution (such as Ubuntu) "
 "from the Windows store"
 msgstr ""
-"Bash is niet geïnstalleerd. Installeer een Linux distributie (bijvoorbeeld "
-"Ubuntu) van de Windows store"
+"Bash is niet geïnstalleerd. Installeer een Linux-distributie (bijvoorbeeld "
+"Ubuntu) uit de Windows Store"
 
 #: __init__.py:105
 msgid "Pass is not installed. Please see https://www.passwordstore.org/"
 msgstr ""
-"Pass is niet geïnstalleerd. Kijk voor installatieinstructies op "
+"Pass is niet geïnstalleerd. Kijk voor installatie-instructies op "
 "https://www.passwordstore.org/"
 
 #: __init__.py:141
@@ -42,15 +42,15 @@ msgstr ""
 
 #: __init__.py:143
 msgid "Open"
-msgstr "Open"
+msgstr "Openen"
 
 #: __init__.py:143 __init__.py:296
 msgid "Edit"
-msgstr "Bewerk"
+msgstr "Bewerken"
 
 #: __init__.py:143 __init__.py:300
 msgid "Remove"
-msgstr "Verwijder"
+msgstr "Verwijderen"
 
 #: __init__.py:149
 msgid "{} what?"
@@ -58,11 +58,11 @@ msgstr "{} wat?"
 
 #: __init__.py:181
 msgid "Timeout error while running '{}'"
-msgstr "Timeout fout tijdens het uitvoeren van '{}'"
+msgstr "Time-outfout tijdens het uitvoeren van '{}'"
 
 #: __init__.py:183
 msgid "Command output: {}"
-msgstr "Commandouitvoer: {}"
+msgstr "Opdrachtuitvoer: {}"
 
 #: __init__.py:246
 msgid "Error code {} running '{}'. More info may be logged to the console"
@@ -72,11 +72,11 @@ msgstr ""
 
 #: __init__.py:322 __init__.py:338
 msgid "Unexpected selection_made value: {}"
-msgstr "Onverwachtte selection_made waarde: {}"
+msgstr "Onverwachte selection_made-waarde: {}"
 
 #: generate_metadata.py:40
 msgid "Password Store"
-msgstr "Password Store"
+msgstr "Wachtwoordopslag"
 
 #: generate_metadata.py:42
 msgid "Allows Pext to do password management through pass"
@@ -84,11 +84,11 @@ msgstr "Stelt Pext in staat om wachtwoordbeheer te doen via pass"
 
 #: generate_metadata.py:47
 msgid "Binary to call for pass operations"
-msgstr "Applicatie om aan te roepen voor pass operaties"
+msgstr "Aan te roepen applicatie voor pass-operaties"
 
 #: generate_metadata.py:51
 msgid "Password Store directory"
-msgstr "Password Store map"
+msgstr "Wachtwoordopslag-map"
 
 #~ msgid "pass is not installed. Please see https://www.passwordstore.org/"
 #~ msgstr ""
