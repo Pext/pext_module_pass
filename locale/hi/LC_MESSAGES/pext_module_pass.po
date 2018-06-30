@@ -6,71 +6,79 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2018-06-24 17:31+CEST\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2018-06-30 10:08+0000\n"
+"Last-Translator: Satyam Singh <Singh.satyam2345@gmail.com>\n"
+"Language-Team: Hindi <https://hosted.weblate.org/projects/pext/"
+"pext_module_pass/hi/>\n"
 "Language: hi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 3.1-dev\n"
 "Generated-By: pygettext.py 1.5\n"
 
 #: __init__.py:57
 msgid "Bash is not installed. Please install a Linux distribution (such as Ubuntu) from the Windows store"
 msgstr ""
+"बैश (bash) स्थापित नहीं है । कृपया विंडोज स्टोर से एक  लिनक्स  वितरण (जैसे  "
+"उबुन्टु)  स्थापित करें"
 
 #: __init__.py:105
 msgid "Pass is not installed. Please see https://www.passwordstore.org/"
-msgstr ""
+msgstr "पास स्थापित नहीं है। कृपया https://www.passwordstore.org/ देखें"
 
 #: __init__.py:141
 msgid "<b>{}</b><br/><br/><b>Last opened</b><br/>{}<br/><br/><b>Last modified</b><br/>{}"
 msgstr ""
+"<b>1{}</b>2<br/>3<br/>4<b>5आखिरी बार खोला गया</b>6<br/>7{}<br/>8<br/"
+">9<b>0अंतिम बार संशोधन</b><br/>{}"
 
 #: __init__.py:143
 msgid "Open"
-msgstr ""
+msgstr "खोले"
 
 #: __init__.py:143 __init__.py:296
 msgid "Edit"
-msgstr ""
+msgstr "संपादन"
 
 #: __init__.py:143 __init__.py:300
 msgid "Remove"
-msgstr ""
+msgstr "हटाएँ"
 
 #: __init__.py:149
 msgid "{} what?"
-msgstr ""
+msgstr "{} क्या?"
 
 #: __init__.py:181
 msgid "Timeout error while running '{}'"
-msgstr ""
+msgstr "' {} ' चलाते समय समयबाह्य त्रुटि"
 
 #: __init__.py:183
 msgid "Command output: {}"
-msgstr ""
+msgstr "आदेश आउटपुट: {}"
 
 #: __init__.py:246
 msgid "Error code {} running '{}'. More info may be logged to the console"
 msgstr ""
+"त्रुटि कोड {} चल रहा है ' {} ' । अधिक जानकारी कंसोल में इकट्ठा हो सकती है"
 
 #: __init__.py:322 __init__.py:338
 msgid "Unexpected selection_made value: {}"
-msgstr ""
+msgstr "अनपेक्षित selection_made मान: {}"
 
 #: generate_metadata.py:40
 msgid "Password Store"
-msgstr ""
+msgstr "पासवर्ड स्टोर"
 
 #: generate_metadata.py:42
 msgid "Allows Pext to do password management through pass"
-msgstr ""
+msgstr "पैक्स्ट को पास के माध्यम से पासवर्ड प्रबंधन करने के लिए अनुमति दे"
 
 #: generate_metadata.py:47
 msgid "Binary to call for pass operations"
-msgstr ""
+msgstr "पास संचालन के लिए बाइनरी कॉल"
 
 #: generate_metadata.py:51
 msgid "Password Store directory"
-msgstr ""
+msgstr "पासवर्ड संग्रह निर्देशिका"
