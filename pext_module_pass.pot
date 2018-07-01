@@ -16,7 +16,7 @@ msgstr ""
 
 
 #: __init__.py:57
-msgid "Bash is not installed. Please install a Linux distribution (such as Ubuntu) from the Windows store"
+msgid "Bash is not installed. Please install a GNU/Linux distribution (such as Ubuntu) from the Microsoft Store"
 msgstr ""
 
 #: __init__.py:105
