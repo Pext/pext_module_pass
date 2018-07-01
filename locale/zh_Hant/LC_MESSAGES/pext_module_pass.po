@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2018-06-24 17:30+CEST\n"
-"PO-Revision-Date: 2018-01-04 23:07+0000\n"
+"PO-Revision-Date: 2018-07-01 13:25+0000\n"
 "Last-Translator: Jeff Huang <s8321414@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <https://hosted.weblate.org/projects/"
 "pext/pext_module_pass/zh_Hant/>\n"
@@ -15,18 +15,18 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.19-dev\n"
+"X-Generator: Weblate 3.1-dev\n"
 "Generated-By: pygettext.py 1.5\n"
 
 #: __init__.py:57
 msgid ""
 "Bash is not installed. Please install a Linux distribution (such as Ubuntu) "
 "from the Windows store"
-msgstr ""
+msgstr "未安裝 bash。請從 Windows 商店中安裝一個 Linux 散佈版（如 Ubuntu）"
 
 #: __init__.py:105
 msgid "Pass is not installed. Please see https://www.passwordstore.org/"
-msgstr ""
+msgstr "未安裝 pass。請見 https://www.passwordstore.org/"
 
 #: __init__.py:141
 msgid ""
@@ -49,7 +49,7 @@ msgstr "移除"
 
 #: __init__.py:149
 msgid "{} what?"
-msgstr ""
+msgstr "{} 什麼？"
 
 #: __init__.py:181
 msgid "Timeout error while running '{}'"
@@ -69,19 +69,19 @@ msgstr "未預期的 selection_made 值：{}"
 
 #: generate_metadata.py:40
 msgid "Password Store"
-msgstr ""
+msgstr "密碼儲存"
 
 #: generate_metadata.py:42
 msgid "Allows Pext to do password management through pass"
-msgstr ""
+msgstr "讓 Pext 可以透過 pass 進行密碼管理"
 
 #: generate_metadata.py:47
 msgid "Binary to call for pass operations"
-msgstr ""
+msgstr "要呼叫 pass 操作的二進位檔"
 
 #: generate_metadata.py:51
 msgid "Password Store directory"
-msgstr ""
+msgstr "密碼儲存目錄"
 
 #~ msgid "pass is not installed. Please see https://www.passwordstore.org/"
 #~ msgstr "pass 未安裝。請見 https://www.passwordstore.org/"
