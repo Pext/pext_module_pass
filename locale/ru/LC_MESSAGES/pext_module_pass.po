@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2018-06-24 17:30+CEST\n"
+"POT-Creation-Date: 2018-07-01 18:50+CEST\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -18,11 +18,11 @@ msgstr ""
 #: __init__.py:57
 msgid ""
 "Bash is not installed. Please install a Linux distribution (such as Ubuntu) "
-"from the Windows store"
+"from the Microsoft store."
 msgstr ""
 
 #: __init__.py:105
-msgid "Pass is not installed. Please see https://www.passwordstore.org/"
+msgid "Pass is not installed. Please see https://www.passwordstore.org/."
 msgstr ""
 
 #: __init__.py:141

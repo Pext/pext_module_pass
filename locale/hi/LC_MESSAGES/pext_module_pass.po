@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2018-06-24 17:31+CEST\n"
+"POT-Creation-Date: 2018-07-01 18:50+CEST\n"
 "PO-Revision-Date: 2018-06-30 10:08+0000\n"
 "Last-Translator: Satyam Singh <Singh.satyam2345@gmail.com>\n"
 "Language-Team: Hindi <https://hosted.weblate.org/projects/pext/"
@@ -19,17 +19,19 @@ msgstr ""
 "Generated-By: pygettext.py 1.5\n"
 
 #: __init__.py:57
-msgid "Bash is not installed. Please install a Linux distribution (such as Ubuntu) from the Windows store"
+msgid ""
+"Bash is not installed. Please install a Linux distribution (such as Ubuntu) "
+"from the Microsoft store."
 msgstr ""
-"बैश (bash) स्थापित नहीं है । कृपया विंडोज स्टोर से एक  लिनक्स  वितरण (जैसे  "
-"उबुन्टु)  स्थापित करें"
 
 #: __init__.py:105
-msgid "Pass is not installed. Please see https://www.passwordstore.org/"
-msgstr "पास स्थापित नहीं है। कृपया https://www.passwordstore.org/ देखें"
+msgid "Pass is not installed. Please see https://www.passwordstore.org/."
+msgstr ""
 
 #: __init__.py:141
-msgid "<b>{}</b><br/><br/><b>Last opened</b><br/>{}<br/><br/><b>Last modified</b><br/>{}"
+msgid ""
+"<b>{}</b><br/><br/><b>Last opened</b><br/>{}<br/><br/><b>Last modified</"
+"b><br/>{}"
 msgstr ""
 "<b>1{}</b>2<br/>3<br/>4<b>5आखिरी बार खोला गया</b>6<br/>7{}<br/>8<br/"
 ">9<b>0अंतिम बार संशोधन</b><br/>{}"
@@ -60,8 +62,7 @@ msgstr "आदेश आउटपुट: {}"
 
 #: __init__.py:246
 msgid "Error code {} running '{}'. More info may be logged to the console"
-msgstr ""
-"त्रुटि कोड {} चल रहा है ' {} ' । अधिक जानकारी कंसोल में इकट्ठा हो सकती है"
+msgstr "त्रुटि कोड {} चल रहा है ' {} ' । अधिक जानकारी कंसोल में इकट्ठा हो सकती है"
 
 #: __init__.py:322 __init__.py:338
 msgid "Unexpected selection_made value: {}"
@@ -82,3 +83,13 @@ msgstr "पास संचालन के लिए बाइनरी कॉ�
 #: generate_metadata.py:51
 msgid "Password Store directory"
 msgstr "पासवर्ड संग्रह निर्देशिका"
+
+#~ msgid ""
+#~ "Bash is not installed. Please install a Linux distribution (such as "
+#~ "Ubuntu) from the Windows store"
+#~ msgstr ""
+#~ "बैश (bash) स्थापित नहीं है । कृपया विंडोज स्टोर से एक  लिनक्स  वितरण (जैसे  उबुन्टु)  "
+#~ "स्थापित करें"
+
+#~ msgid "Pass is not installed. Please see https://www.passwordstore.org/"
+#~ msgstr "पास स्थापित नहीं है। कृपया https://www.passwordstore.org/ देखें"

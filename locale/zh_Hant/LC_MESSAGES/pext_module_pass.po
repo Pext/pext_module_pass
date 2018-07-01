@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2018-06-24 17:30+CEST\n"
+"POT-Creation-Date: 2018-07-01 18:50+CEST\n"
 "PO-Revision-Date: 2018-07-01 13:25+0000\n"
 "Last-Translator: Jeff Huang <s8321414@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <https://hosted.weblate.org/projects/"
@@ -21,12 +21,12 @@ msgstr ""
 #: __init__.py:57
 msgid ""
 "Bash is not installed. Please install a Linux distribution (such as Ubuntu) "
-"from the Windows store"
-msgstr "未安裝 bash。請從 Windows 商店中安裝一個 Linux 散佈版（如 Ubuntu）"
+"from the Microsoft store."
+msgstr ""
 
 #: __init__.py:105
-msgid "Pass is not installed. Please see https://www.passwordstore.org/"
-msgstr "未安裝 pass。請見 https://www.passwordstore.org/"
+msgid "Pass is not installed. Please see https://www.passwordstore.org/."
+msgstr ""
 
 #: __init__.py:141
 msgid ""
@@ -82,6 +82,14 @@ msgstr "要呼叫 pass 操作的二進位檔"
 #: generate_metadata.py:51
 msgid "Password Store directory"
 msgstr "密碼儲存目錄"
+
+#~ msgid ""
+#~ "Bash is not installed. Please install a Linux distribution (such as "
+#~ "Ubuntu) from the Windows store"
+#~ msgstr "未安裝 bash。請從 Windows 商店中安裝一個 Linux 散佈版（如 Ubuntu）"
+
+#~ msgid "Pass is not installed. Please see https://www.passwordstore.org/"
+#~ msgstr "未安裝 pass。請見 https://www.passwordstore.org/"
 
 #~ msgid "pass is not installed. Please see https://www.passwordstore.org/"
 #~ msgstr "pass 未安裝。請見 https://www.passwordstore.org/"

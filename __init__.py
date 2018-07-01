@@ -54,7 +54,7 @@ class Module(ModuleBase):
             try:
                 check_output(['bash', '-c', 'exit'])
             except CalledProcessError:
-                self.q.put([Action.critical_error, _("Bash is not installed. Please install a Linux distribution (such as Ubuntu) from the Windows store")])
+                self.q.put([Action.critical_error, _("Bash is not installed. Please install a Linux distribution (such as Ubuntu) from the Microsoft store.")])
                 return
 
         self.binary = "pass" if ('binary' not in settings) else settings['binary']
@@ -102,7 +102,7 @@ class Module(ModuleBase):
             else:
                 commandText = check_output([self.binary, "--help"])
         except CalledProcessError:
-            self.q.put([Action.critical_error, _("Pass is not installed. Please see https://www.passwordstore.org/")])
+            self.q.put([Action.critical_error, _("Pass is not installed. Please see https://www.passwordstore.org/.")])
             return
 
         command = None

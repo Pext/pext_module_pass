@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2018-06-24 17:30+CEST\n"
+"POT-Creation-Date: 2018-07-01 18:50+CEST\n"
 "PO-Revision-Date: 2018-06-24 18:43+0000\n"
 "Last-Translator: Rose Marie <rosegarcia@protonmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/pext/"
@@ -21,15 +21,12 @@ msgstr ""
 #: __init__.py:57
 msgid ""
 "Bash is not installed. Please install a Linux distribution (such as Ubuntu) "
-"from the Windows store"
+"from the Microsoft store."
 msgstr ""
-"Bash no está instalado. Instale una distribución de Linux (como Ubuntu) "
-"desde la tienda de Windows"
 
 #: __init__.py:105
-msgid "Pass is not installed. Please see https://www.passwordstore.org/"
+msgid "Pass is not installed. Please see https://www.passwordstore.org/."
 msgstr ""
-"Pase no está instalado. Por favor, consulte https://www.passwordstore.org/"
 
 #: __init__.py:141
 msgid ""
@@ -87,6 +84,17 @@ msgstr "Binario para llamar para operaciones de pase"
 #: generate_metadata.py:51
 msgid "Password Store directory"
 msgstr "Directorio de la tienda de Contraseña"
+
+#~ msgid ""
+#~ "Bash is not installed. Please install a Linux distribution (such as "
+#~ "Ubuntu) from the Windows store"
+#~ msgstr ""
+#~ "Bash no está instalado. Instale una distribución de Linux (como Ubuntu) "
+#~ "desde la tienda de Windows"
+
+#~ msgid "Pass is not installed. Please see https://www.passwordstore.org/"
+#~ msgstr ""
+#~ "Pase no está instalado. Por favor, consulte https://www.passwordstore.org/"
 
 #~ msgid "pass is not installed. Please see https://www.passwordstore.org/"
 #~ msgstr ""
