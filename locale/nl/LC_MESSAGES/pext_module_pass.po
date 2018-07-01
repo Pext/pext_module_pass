@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2018-07-01 18:50+CEST\n"
-"PO-Revision-Date: 2018-06-25 19:36+0000\n"
+"PO-Revision-Date: 2018-07-01 18:25+0000\n"
 "Last-Translator: Heimen Stoffels <vistausss@outlook.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/pext/"
 "pext_module_pass/nl/>\n"
@@ -23,10 +23,12 @@ msgid ""
 "Bash is not installed. Please install a Linux distribution (such as Ubuntu) "
 "from the Microsoft store."
 msgstr ""
+"Bash is niet geïnstalleerd. Installeer een Linux-distributie (zoals bijv. "
+"Ubuntu) uit de Microsoft-winkel."
 
 #: __init__.py:105
 msgid "Pass is not installed. Please see https://www.passwordstore.org/."
-msgstr ""
+msgstr "Pass is niet geïnstalleerd. Zie https://www.passwordstore.org/."
 
 #: __init__.py:141
 msgid ""
