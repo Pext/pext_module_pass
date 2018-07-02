@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2018-07-01 18:50+CEST\n"
-"PO-Revision-Date: 2018-07-01 13:25+0000\n"
+"PO-Revision-Date: 2018-07-02 03:01+0000\n"
 "Last-Translator: Jeff Huang <s8321414@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <https://hosted.weblate.org/projects/"
 "pext/pext_module_pass/zh_Hant/>\n"
@@ -22,11 +22,11 @@ msgstr ""
 msgid ""
 "Bash is not installed. Please install a Linux distribution (such as Ubuntu) "
 "from the Microsoft store."
-msgstr ""
+msgstr "未安裝 bash。請從微軟商店中安裝一個 Linux 散佈版（如 Ubuntu）。"
 
 #: __init__.py:105
 msgid "Pass is not installed. Please see https://www.passwordstore.org/."
-msgstr ""
+msgstr "未安裝 pass。請見 https://www.passwordstore.org/ 。"
 
 #: __init__.py:141
 msgid ""
