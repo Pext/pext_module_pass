@@ -1,5 +1,5 @@
 {
-  "description": "Allows Pext to do password management through pass",
+  "description": "Pozwala Pext'owi zarz\u0105dza\u0107 has\u0142ami przez pass",
   "developer": "Sylvia van Os",
   "git_urls": [
     "https://github.com/Pext/pext_module_pass"
@@ -16,12 +16,12 @@
   "settings": [
     {
       "defaults": "pass",
-      "description": "Binary to call for pass operations",
+      "description": "Plik binarny inicjuj\u0105cy operacje pass",
       "name": "binary"
     },
     {
       "default": "~/.password-store/",
-      "description": "Password Store directory",
+      "description": "Katalog Password Store",
       "name": "directory"
     }
   ]
