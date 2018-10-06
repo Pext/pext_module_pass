@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2018-07-01 18:50+CEST\n"
-"PO-Revision-Date: 2018-03-24 21:37+0000\n"
+"PO-Revision-Date: 2018-10-05 14:27+0000\n"
 "Last-Translator: Szöllősi Attila <ata2001@airmail.cc>\n"
 "Language-Team: Hungarian <https://hosted.weblate.org/projects/pext/"
 "pext_module_pass/hu/>\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.20-dev\n"
+"X-Generator: Weblate 3.2\n"
 "Generated-By: pygettext.py 1.5\n"
 
 #: __init__.py:57
@@ -23,10 +23,14 @@ msgid ""
 "Bash is not installed. Please install a Linux distribution (such as Ubuntu) "
 "from the Microsoft store."
 msgstr ""
+"A Bash nincs telepítve. Telepítsen egy Linux disztribúciót (pl. Ubuntu) a "
+"Microsoft áruházból."
 
 #: __init__.py:105
 msgid "Pass is not installed. Please see https://www.passwordstore.org/."
 msgstr ""
+"A Pass nincs telepítve. Kérjük látogasson el a https://www.passwordstore.org/"
+" címen található weboldalra."
 
 #: __init__.py:141
 msgid ""
@@ -50,7 +54,7 @@ msgstr "Eltávolítás"
 
 #: __init__.py:149
 msgid "{} what?"
-msgstr ""
+msgstr "{} mi?"
 
 #: __init__.py:181
 msgid "Timeout error while running '{}'"
@@ -72,19 +76,19 @@ msgstr "Váratlan selection_made érték: {}"
 
 #: generate_metadata.py:40
 msgid "Password Store"
-msgstr ""
+msgstr "Jelszókezelő"
 
 #: generate_metadata.py:42
 msgid "Allows Pext to do password management through pass"
-msgstr ""
+msgstr "Engedélyezi a jelszavak kezelését pass parancssoros felületén keresztül"
 
 #: generate_metadata.py:47
 msgid "Binary to call for pass operations"
-msgstr ""
+msgstr "pass bináris"
 
 #: generate_metadata.py:51
 msgid "Password Store directory"
-msgstr ""
+msgstr "Jelszókezelő könyvtára"
 
 #~ msgid "pass is not installed. Please see https://www.passwordstore.org/"
 #~ msgstr ""
