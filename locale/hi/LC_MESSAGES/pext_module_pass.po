@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2018-07-01 18:50+CEST\n"
-"PO-Revision-Date: 2018-06-30 10:08+0000\n"
-"Last-Translator: Satyam Singh <Singh.satyam2345@gmail.com>\n"
+"PO-Revision-Date: 2018-10-12 07:29+0000\n"
+"Last-Translator: Aayush Gupta <aayushgupta219@gmail.com>\n"
 "Language-Team: Hindi <https://hosted.weblate.org/projects/pext/"
 "pext_module_pass/hi/>\n"
 "Language: hi\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 3.1-dev\n"
+"X-Generator: Weblate 3.2.1\n"
 "Generated-By: pygettext.py 1.5\n"
 
 #: __init__.py:57
@@ -23,10 +23,12 @@ msgid ""
 "Bash is not installed. Please install a Linux distribution (such as Ubuntu) "
 "from the Microsoft store."
 msgstr ""
+"बैश इंस्टॉल नहीं है। कृपया माइक्रोसॉफ्ट स्टोर से कोई एक लाइनक्स डिस्ट्रीब्यू"
+"शन (जैसे की उबुंटू) इंस्टॉल करें।"
 
 #: __init__.py:105
 msgid "Pass is not installed. Please see https://www.passwordstore.org/."
-msgstr ""
+msgstr "पास इंस्टॉल नहीं हैं। कृपया https://www.passwordstore.org/ देखें।"
 
 #: __init__.py:141
 msgid ""
