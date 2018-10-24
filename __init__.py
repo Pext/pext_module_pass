@@ -105,18 +105,20 @@ class Module(ModuleBase):
             self.q.put([Action.critical_error, _("Pass is not installed. Please see https://www.passwordstore.org/.")])
             return
 
+        full_command = None
         command = None
         command_description = ""
         for line in commandText.splitlines():
             strippedLine = line.lstrip().decode("utf-8")
             if strippedLine[:4] == "pass" or not strippedLine:
                 if command_description and self.settings['_api_version'] >= [0, 3, 1]:
-                    self.q.put([Action.set_command_info, command, "<b>{}</b><br/><br/>{}".format(html.escape(command), command_description)])
+                    self.q.put([Action.set_command_info, command, "<b>{}</b><br/><br/>{}".format(html.escape(full_command), command_description)])
                     command_description = ""
 
                 if strippedLine[:4] == "pass":
-                    command = strippedLine[5:]
-                    if not command.split(" ", 1)[0] in self._get_unsupported_commands():
+                    full_command = strippedLine[5:]
+                    command = full_command.split(" ", 1)[0]
+                    if command not in self._get_unsupported_commands():
                         self.q.put([Action.add_command, command])
                     else:
                         command = None
