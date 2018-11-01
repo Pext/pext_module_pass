@@ -290,7 +290,7 @@ class Module(ModuleBase):
             self._get_entries()
         elif len(selection) == 1:
             if selection[0]["type"] == SelectionType.command:
-                if self.settings['_api_version'] >= [0, 8, 0]:
+                if self.settings['_api_version'] >= [0, 8, 0] and selection[0]["args"]:
                     parts = selection[0]["value"].split(" ") + selection[0]["args"].split(" ")
                 else:
                     parts = selection[0]["value"].split(" ")
