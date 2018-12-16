@@ -250,8 +250,8 @@ class Module(ModuleBase):
             return None
 
     def process_response(self, response):
-        if not 'proc' in self.proc:
-            if response:
+        if 'proc' not in self.proc:
+            if response and 'command' in self.proc:
                 self._run_command([self.proc['command']] + response.split(" "))
             return
 
