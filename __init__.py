@@ -93,7 +93,8 @@ class Module(ModuleBase):
         return self.data_location
 
     def _get_unsupported_commands(self):
-        return ["[ls]", "find", "[show]", "grep", "version", "help"]
+        # Not necessarily all unsupported, also those better suited for the context menu
+        return ["[ls]", "[show]", "find", "grep", "help", "mv", "rm", "version"]
 
     def _get_commands(self):
         try:
@@ -105,18 +106,20 @@ class Module(ModuleBase):
             self.q.put([Action.critical_error, _("Pass is not installed. Please see https://www.passwordstore.org/.")])
             return
 
+        full_command = None
         command = None
         command_description = ""
         for line in commandText.splitlines():
             strippedLine = line.lstrip().decode("utf-8")
             if strippedLine[:4] == "pass" or not strippedLine:
                 if command_description and self.settings['_api_version'] >= [0, 3, 1]:
-                    self.q.put([Action.set_command_info, command, "<b>{}</b><br/><br/>{}".format(html.escape(command), command_description)])
+                    self.q.put([Action.set_command_info, command, "<b>{}</b><br/><br/>{}".format(html.escape(full_command), command_description)])
                     command_description = ""
 
                 if strippedLine[:4] == "pass":
-                    command = strippedLine[5:]
-                    if not command.split(" ", 1)[0] in self._get_unsupported_commands():
+                    full_command = strippedLine[5:]
+                    command = full_command.split(" ", 1)[0]
+                    if command not in self._get_unsupported_commands():
                         self.q.put([Action.add_command, command])
                     else:
                         command = None
@@ -140,7 +143,7 @@ class Module(ModuleBase):
             if self.settings['_api_version'] >= [0, 3, 1]:
                 self.q.put([Action.set_entry_info, entry, _("<b>{}</b><br/><br/><b>Last opened</b><br/>{}<br/><br/><b>Last modified</b><br/>{}").format(html.escape(entry), datetime.fromtimestamp(os.path.getatime(password)).replace(microsecond=0), datetime.fromtimestamp(os.path.getmtime(password)).replace(microsecond=0))])
             if self.settings['_api_version'] >= [0, 4, 0]:
-                self.q.put([Action.set_entry_context, entry, [_("Open"), _("Edit"), _("Remove")]])
+                self.q.put([Action.set_entry_context, entry, [_("Open"), _("Edit"), _("Rename"), _("Remove")]])
 
 
     def _run_command(self, command, printOnSuccess=False, hideErrors=False, prefillInput=''):
@@ -166,9 +169,8 @@ class Module(ModuleBase):
             return self._run_command(["insert", "-fm", command[1]], printOnSuccess=True, prefillInput=prefillData.rstrip())
 
         sanitizedCommandList = [quote(commandPart) for commandPart in command]
-        command = " ".join(sanitizedCommandList)
 
-        proc = PopenSpawn("bash -c {}".format(quote("PASSWORD_STORE_DIR={} {} {} {}".format(os.environ['PASSWORD_STORE_DIR'], self.binary, command, ("2>/dev/null" if hideErrors else "")))))
+        proc = PopenSpawn("bash -c {}".format(quote("PASSWORD_STORE_DIR={} {} {} {}".format(os.environ['PASSWORD_STORE_DIR'], self.binary, " ".join(sanitizedCommandList), ("2>/dev/null" if hideErrors else "")))))
         return self._process_proc_output(proc, command, printOnSuccess, hideErrors, prefillInput)
 
     def _process_proc_output(self, proc, command, printOnSuccess=False, hideErrors=False, prefillInput=''):
@@ -178,7 +180,7 @@ class Module(ModuleBase):
             self.proc = {'result': possibleResults[result]}
         elif result == 1:
             self.proc = {'result': possibleResults[result]}
-            self.q.put([Action.add_error, _("Timeout error while running '{}'").format(command)])
+            self.q.put([Action.add_error, _("Timeout error while running '{}'").format(" ".join(command))])
             if proc.before:
                 self.q.put([Action.add_error, _("Command output: {}").format(self.ANSIEscapeRegex.sub('', proc.before.decode("utf-8")))])
 
@@ -248,9 +250,9 @@ class Module(ModuleBase):
             return None
 
     def process_response(self, response):
-        if not 'proc' in self.proc:
-            if response:
-                self._run_command([self.proc['command']] + response.split(" "))
+        if 'proc' not in self.proc:
+            if response and 'command' in self.proc:
+                self._run_command(self.proc['command'] + response.split(" "))
             return
 
         if self.proc['type'] == Action.ask_question_default_yes or self.proc['type'] == Action.ask_question_default_no:
@@ -288,13 +290,21 @@ class Module(ModuleBase):
             self._get_entries()
         elif len(selection) == 1:
             if selection[0]["type"] == SelectionType.command:
-                parts = selection[0]["value"].split(" ")
+                if self.settings['_api_version'] >= [0, 8, 0] and selection[0]["args"]:
+                    parts = selection[0]["value"].split(" ") + selection[0]["args"].split(" ")
+                else:
+                    parts = selection[0]["value"].split(" ")
                 self._run_command(parts)
                 self.q.put([Action.set_selection, []])
             elif selection[0]["type"] == SelectionType.entry:
                 if self.settings['_api_version'] >= [0, 4, 0]:
                     if selection[0]["context_option"] == _("Edit"):
                         self._run_command(["edit", selection[0]["value"]], hideErrors=True)
+                        self.q.put([Action.set_selection, []])
+                        return
+                    elif selection[0]["context_option"] == _("Rename"):
+                        self.proc = {'command': ["mv", selection[0]["value"]]}
+                        self.q.put([Action.ask_input, _("Choose a new name for {}").format(selection[0]["value"])])
                         self.q.put([Action.set_selection, []])
                         return
                     elif selection[0]["context_option"] == _("Remove"):
@@ -362,7 +372,28 @@ class EventHandler(FileSystemEventHandler):
         if entry_name[-4:] != ".gpg":
             return
 
-        self.q.put([Action.prepend_entry, entry_name[:-4]])
         # As this event also gets called when a file gets created, it may
         # generate warnings in Pext to call this. These warnings are harmless
         self.q.put([Action.remove_entry, entry_name[:-4]])
+        self.q.put([Action.prepend_entry, entry_name[:-4]])
+        if self.store.settings['_api_version'] >= [0, 3, 1]:
+            self.q.put([Action.set_entry_info, entry_name[-4:], _("<b>{}</b><br/><br/><b>Last opened</b><br/>{}<br/><br/><b>Last modified</b><br/>{}").format(html.escape(entry_name[-4:]), datetime.fromtimestamp(os.path.getatime(event.src_path)).replace(microsecond=0), datetime.fromtimestamp(os.path.getmtime(event.src_path)).replace(microsecond=0))])
+        if self.store.settings['_api_version'] >= [0, 4, 0]:
+            self.q.put([Action.set_entry_context, event.src_path, [_("Open"), _("Edit"), _("Rename"), _("Remove")]])
+
+    def on_moved(self, event):
+        if event.is_directory or len(self.store.passwordEntries) > 0:
+            return
+
+        old_entry_name = event.src_path[len(self.store._get_data_location()):]
+        new_entry_name = event.dest_path[len(self.store._get_data_location()):]
+
+        if old_entry_name[-4:] != ".gpg":
+            return
+
+        self.q.put([Action.remove_entry, old_entry_name[:-4]])
+        self.q.put([Action.prepend_entry, new_entry_name[:-4]])
+        if self.store.settings['_api_version'] >= [0, 3, 1]:
+            self.q.put([Action.set_entry_info, new_entry_name[:-4], _("<b>{}</b><br/><br/><b>Last opened</b><br/>{}<br/><br/><b>Last modified</b><br/>{}").format(html.escape(new_entry_name[:-4]), datetime.fromtimestamp(os.path.getatime(event.dest_path)).replace(microsecond=0), datetime.fromtimestamp(os.path.getmtime(event.dest_path)).replace(microsecond=0))])
+        if self.store.settings['_api_version'] >= [0, 4, 0]:
+            self.q.put([Action.set_entry_context, new_entry_name[:-4], [_("Open"), _("Edit"), _("Rename"), _("Remove")]])

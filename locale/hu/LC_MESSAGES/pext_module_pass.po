@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2018-07-01 18:50+CEST\n"
+"POT-Creation-Date: 2019-01-30 21:53+CET\n"
 "PO-Revision-Date: 2018-10-05 14:27+0000\n"
 "Last-Translator: Szöllősi Attila <ata2001@airmail.cc>\n"
 "Language-Team: Hungarian <https://hosted.weblate.org/projects/pext/"
@@ -26,13 +26,13 @@ msgstr ""
 "A Bash nincs telepítve. Telepítsen egy Linux disztribúciót (pl. Ubuntu) a "
 "Microsoft áruházból."
 
-#: __init__.py:105
+#: __init__.py:106
 msgid "Pass is not installed. Please see https://www.passwordstore.org/."
 msgstr ""
-"A Pass nincs telepítve. Kérjük látogasson el a https://www.passwordstore.org/"
-" címen található weboldalra."
+"A Pass nincs telepítve. Kérjük látogasson el a https://www.passwordstore."
+"org/ címen található weboldalra."
 
-#: __init__.py:141
+#: __init__.py:144 __init__.py:380 __init__.py:397
 msgid ""
 "<b>{}</b><br/><br/><b>Last opened</b><br/>{}<br/><br/><b>Last modified</"
 "b><br/>{}"
@@ -40,37 +40,45 @@ msgstr ""
 "<b>{}</b><br/><br/><b>Legutóbb megnyitva</b><br/>{}<br/><br/><b>Legutóbb "
 "módosítva</b><br/>{}"
 
-#: __init__.py:143
-msgid "Open"
-msgstr "Megnyitás"
-
-#: __init__.py:143 __init__.py:296
+#: __init__.py:146 __init__.py:301 __init__.py:382 __init__.py:399
 msgid "Edit"
 msgstr "Szerkesztés"
 
-#: __init__.py:143 __init__.py:300
+#: __init__.py:146 __init__.py:305 __init__.py:382 __init__.py:399
+msgid "Rename"
+msgstr ""
+
+#: __init__.py:146 __init__.py:310 __init__.py:382 __init__.py:399
 msgid "Remove"
 msgstr "Eltávolítás"
 
-#: __init__.py:149
+#: __init__.py:146 __init__.py:382 __init__.py:399
+msgid "Open"
+msgstr "Megnyitás"
+
+#: __init__.py:152
 msgid "{} what?"
 msgstr "{} mi?"
 
-#: __init__.py:181
+#: __init__.py:183
 msgid "Timeout error while running '{}'"
 msgstr "Időtúllépés '{}' futtatása közben"
 
-#: __init__.py:183
+#: __init__.py:185
 msgid "Command output: {}"
 msgstr "Parancs kimenete: {}"
 
-#: __init__.py:246
+#: __init__.py:248
 msgid "Error code {} running '{}'. More info may be logged to the console"
 msgstr ""
 "Hiba lépett fel a(z) '{1}' parancs futtatása közben. Hibakód: {0}. További "
 "részletekért nézze meg a konzol naplót."
 
-#: __init__.py:322 __init__.py:338
+#: __init__.py:307
+msgid "Choose a new name for {}"
+msgstr ""
+
+#: __init__.py:332 __init__.py:348
 msgid "Unexpected selection_made value: {}"
 msgstr "Váratlan selection_made érték: {}"
 
@@ -80,7 +88,8 @@ msgstr "Jelszókezelő"
 
 #: generate_metadata.py:42
 msgid "Allows Pext to do password management through pass"
-msgstr "Engedélyezi a jelszavak kezelését pass parancssoros felületén keresztül"
+msgstr ""
+"Engedélyezi a jelszavak kezelését pass parancssoros felületén keresztül"
 
 #: generate_metadata.py:47
 msgid "Binary to call for pass operations"

@@ -1,5 +1,5 @@
 {
-  "description": "Allows Pext to do password management through pass",
+  "description": "Enged\u00e9lyezi a jelszavak kezel\u00e9s\u00e9t pass parancssoros fel\u00fclet\u00e9n kereszt\u00fcl",
   "developer": "Sylvia van Os",
   "git_urls": [
     "https://github.com/Pext/pext_module_pass"
@@ -7,7 +7,7 @@
   "homepage": "https://pext.hackerchick.me/",
   "id": "pext.module.pass",
   "license": "GPL-3.0+",
-  "name": "Password Store",
+  "name": "Jelsz\u00f3kezel\u0151",
   "platforms": [
     "Linux",
     "Darwin",
@@ -16,12 +16,12 @@
   "settings": [
     {
       "defaults": "pass",
-      "description": "Binary to call for pass operations",
+      "description": "pass bin\u00e1ris",
       "name": "binary"
     },
     {
       "default": "~/.password-store/",
-      "description": "Password Store directory",
+      "description": "Jelsz\u00f3kezel\u0151 k\u00f6nyvt\u00e1ra",
       "name": "directory"
     }
   ]
