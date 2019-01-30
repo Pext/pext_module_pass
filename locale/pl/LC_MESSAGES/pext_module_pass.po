@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2018-07-01 18:50+CEST\n"
+"POT-Creation-Date: 2019-01-30 21:35+CET\n"
 "PO-Revision-Date: 2018-07-01 17:02+0000\n"
 "Last-Translator: Konrad <ewentualxpl@gmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/pext/"
@@ -27,13 +27,13 @@ msgstr ""
 "Bash nie jest zainstalowany. Proszę zainstaluj dystrybucję GNU/Linux'a (taką "
 "jak Ubuntu) ze Sklepu Microsoft."
 
-#: __init__.py:105
+#: __init__.py:106
 msgid "Pass is not installed. Please see https://www.passwordstore.org/."
 msgstr ""
-"Pass nie jest zainstalowany. Proszę zajrzyj na https://www.passwordstore.org/"
-"."
+"Pass nie jest zainstalowany. Proszę zajrzyj na https://www.passwordstore."
+"org/."
 
-#: __init__.py:141
+#: __init__.py:144
 msgid ""
 "<b>{}</b><br/><br/><b>Last opened</b><br/>{}<br/><br/><b>Last modified</"
 "b><br/>{}"
@@ -41,37 +41,46 @@ msgstr ""
 "<b>{}</b><br/><br/><b>Ostatnio otwarty</b><br/>{}<br/><br/><b>Ostatnio "
 "zmodyfikowany</b><br/>{}"
 
-#: __init__.py:143
+#: __init__.py:146
 msgid "Open"
 msgstr "Otwórz"
 
-#: __init__.py:143 __init__.py:296
+#: __init__.py:146 __init__.py:303
 msgid "Edit"
 msgstr "Edytuj"
 
-#: __init__.py:143 __init__.py:300
+#: __init__.py:146 __init__.py:307
+msgid "Rename"
+msgstr ""
+
+#: __init__.py:146 __init__.py:312
 msgid "Remove"
 msgstr "Usuń"
 
-#: __init__.py:149
+#: __init__.py:152
 msgid "{} what?"
 msgstr "{} co?"
 
-#: __init__.py:181
+#: __init__.py:185
 msgid "Timeout error while running '{}'"
-msgstr "Błąd podczas działania '{}' - wystąpiło przekroczenie czasu oczekiwania"
+msgstr ""
+"Błąd podczas działania '{}' - wystąpiło przekroczenie czasu oczekiwania"
 
-#: __init__.py:183
+#: __init__.py:187
 msgid "Command output: {}"
 msgstr "Dane wyjściowe komendy: {}"
 
-#: __init__.py:246
+#: __init__.py:250
 msgid "Error code {} running '{}'. More info may be logged to the console"
 msgstr ""
 "Kod błędu {} podczas działania '{}'. Więcej informacji może być zapisane w "
 "logu w konsoli"
 
-#: __init__.py:322 __init__.py:338
+#: __init__.py:309
+msgid "Choose a new name for {}"
+msgstr ""
+
+#: __init__.py:334 __init__.py:350
 msgid "Unexpected selection_made value: {}"
 msgstr "Niespodziewana wartość selection_made: {}"
 

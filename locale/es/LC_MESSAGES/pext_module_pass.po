@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2018-07-01 18:50+CEST\n"
+"POT-Creation-Date: 2019-01-30 21:35+CET\n"
 "PO-Revision-Date: 2018-07-12 19:32+0000\n"
 "Last-Translator: Rose Marie <rosegarcia@protonmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/pext/"
@@ -26,12 +26,12 @@ msgstr ""
 "Bash no está instalado. Instale una distribución de Linux (como Ubuntu) "
 "desde la tienda de Microsoft."
 
-#: __init__.py:105
+#: __init__.py:106
 msgid "Pass is not installed. Please see https://www.passwordstore.org/."
 msgstr ""
 "Pass no está instalado. Por favor, visita https://www.passwordstore.org/."
 
-#: __init__.py:141
+#: __init__.py:144
 msgid ""
 "<b>{}</b><br/><br/><b>Last opened</b><br/>{}<br/><br/><b>Last modified</"
 "b><br/>{}"
@@ -39,36 +39,44 @@ msgstr ""
 "<b>{}</b><br/><br/><b>Último abierto</b><br/>{}<br/><br/><b>Última "
 "modificación</b><br/>{}"
 
-#: __init__.py:143
+#: __init__.py:146
 msgid "Open"
 msgstr "Abrir"
 
-#: __init__.py:143 __init__.py:296
+#: __init__.py:146 __init__.py:303
 msgid "Edit"
 msgstr "Editar"
 
-#: __init__.py:143 __init__.py:300
+#: __init__.py:146 __init__.py:307
+msgid "Rename"
+msgstr ""
+
+#: __init__.py:146 __init__.py:312
 msgid "Remove"
 msgstr "Eliminar"
 
-#: __init__.py:149
+#: __init__.py:152
 msgid "{} what?"
 msgstr "{} ¿qué?"
 
-#: __init__.py:181
+#: __init__.py:185
 msgid "Timeout error while running '{}'"
 msgstr "Error de tiempo de espera mientras ejecutando '{}'"
 
-#: __init__.py:183
+#: __init__.py:187
 msgid "Command output: {}"
 msgstr "Salida de comando: {}"
 
-#: __init__.py:246
+#: __init__.py:250
 msgid "Error code {} running '{}'. More info may be logged to the console"
 msgstr ""
 "Código de error {} ejecutando '{}'. Para más información revise la consola"
 
-#: __init__.py:322 __init__.py:338
+#: __init__.py:309
+msgid "Choose a new name for {}"
+msgstr ""
+
+#: __init__.py:334 __init__.py:350
 msgid "Unexpected selection_made value: {}"
 msgstr "Valor de selection_made inesperado: {}"
 

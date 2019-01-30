@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2018-07-01 18:50+CEST\n"
+"POT-Creation-Date: 2019-01-30 21:35+CET\n"
 "PO-Revision-Date: 2018-09-06 19:26+0000\n"
 "Last-Translator: Nelly Simkova <sk8higher@iballwasrawt.ru>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/pext/"
@@ -14,8 +14,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
-"4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 3.2-dev\n"
 "Generated-By: pygettext.py 1.5\n"
 
@@ -27,47 +27,55 @@ msgstr ""
 "Bash не установлен. Пожалуйста, установите дистрибутив Linux (например, "
 "Ubuntu) из магазина Microsoft."
 
-#: __init__.py:105
+#: __init__.py:106
 msgid "Pass is not installed. Please see https://www.passwordstore.org/."
 msgstr ""
 "Pass не установлен. Просмотрите эту страницу https://www.passwordstore.org/."
 
-#: __init__.py:141
+#: __init__.py:144
 msgid ""
 "<b>{}</b><br/><br/><b>Last opened</b><br/>{}<br/><br/><b>Last modified</"
 "b><br/>{}"
 msgstr ""
 "<b>{}</b><br/><br/><b>Открыто</b><br/>{}<br/><br/><b>Изменено</b><br/>{}"
 
-#: __init__.py:143
+#: __init__.py:146
 msgid "Open"
 msgstr "Открыть"
 
-#: __init__.py:143 __init__.py:296
+#: __init__.py:146 __init__.py:303
 msgid "Edit"
 msgstr "Изменить"
 
-#: __init__.py:143 __init__.py:300
+#: __init__.py:146 __init__.py:307
+msgid "Rename"
+msgstr ""
+
+#: __init__.py:146 __init__.py:312
 msgid "Remove"
 msgstr "Удалить"
 
-#: __init__.py:149
+#: __init__.py:152
 msgid "{} what?"
 msgstr "{} что?"
 
-#: __init__.py:181
+#: __init__.py:185
 msgid "Timeout error while running '{}'"
 msgstr "Превышенно время ожидания при выполнении '{}'"
 
-#: __init__.py:183
+#: __init__.py:187
 msgid "Command output: {}"
 msgstr "Вывод команды: {}"
 
-#: __init__.py:246
+#: __init__.py:250
 msgid "Error code {} running '{}'. More info may be logged to the console"
 msgstr "Ошибка с кодом {} при выполнении '{}'. Больше информации в консоли"
 
-#: __init__.py:322 __init__.py:338
+#: __init__.py:309
+msgid "Choose a new name for {}"
+msgstr ""
+
+#: __init__.py:334 __init__.py:350
 msgid "Unexpected selection_made value: {}"
 msgstr "Неожиданное значение selection_made: {}"
 

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2018-07-01 18:50+CEST\n"
+"POT-Creation-Date: 2019-01-30 21:35+CET\n"
 "PO-Revision-Date: 2018-07-01 18:25+0000\n"
 "Last-Translator: Heimen Stoffels <vistausss@outlook.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/pext/"
@@ -26,11 +26,11 @@ msgstr ""
 "Bash is niet geïnstalleerd. Installeer een Linux-distributie (zoals bijv. "
 "Ubuntu) uit de Microsoft-winkel."
 
-#: __init__.py:105
+#: __init__.py:106
 msgid "Pass is not installed. Please see https://www.passwordstore.org/."
 msgstr "Pass is niet geïnstalleerd. Zie https://www.passwordstore.org/."
 
-#: __init__.py:141
+#: __init__.py:144
 msgid ""
 "<b>{}</b><br/><br/><b>Last opened</b><br/>{}<br/><br/><b>Last modified</"
 "b><br/>{}"
@@ -38,37 +38,45 @@ msgstr ""
 "<b>{}</b><br/><br/><b>Laatst geopend</b><br/>{}<br/><br/><b>Laatst bewerkt</"
 "b><br/>{}"
 
-#: __init__.py:143
+#: __init__.py:146
 msgid "Open"
 msgstr "Openen"
 
-#: __init__.py:143 __init__.py:296
+#: __init__.py:146 __init__.py:303
 msgid "Edit"
 msgstr "Bewerken"
 
-#: __init__.py:143 __init__.py:300
+#: __init__.py:146 __init__.py:307
+msgid "Rename"
+msgstr ""
+
+#: __init__.py:146 __init__.py:312
 msgid "Remove"
 msgstr "Verwijderen"
 
-#: __init__.py:149
+#: __init__.py:152
 msgid "{} what?"
 msgstr "{} wat?"
 
-#: __init__.py:181
+#: __init__.py:185
 msgid "Timeout error while running '{}'"
 msgstr "Time-outfout tijdens het uitvoeren van '{}'"
 
-#: __init__.py:183
+#: __init__.py:187
 msgid "Command output: {}"
 msgstr "Opdrachtuitvoer: {}"
 
-#: __init__.py:246
+#: __init__.py:250
 msgid "Error code {} running '{}'. More info may be logged to the console"
 msgstr ""
 "Foutcode {} tijdens uitvoeren van '{}'. Meer informatie is mogelijk naar de "
 "console geschreven"
 
-#: __init__.py:322 __init__.py:338
+#: __init__.py:309
+msgid "Choose a new name for {}"
+msgstr ""
+
+#: __init__.py:334 __init__.py:350
 msgid "Unexpected selection_made value: {}"
 msgstr "Onverwachte selection_made-waarde: {}"
 

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2018-07-01 18:50+CEST\n"
+"POT-Creation-Date: 2019-01-30 21:35+CET\n"
 "PO-Revision-Date: 2018-06-30 10:08+0000\n"
 "Last-Translator: Satyam Singh <Singh.satyam2345@gmail.com>\n"
 "Language-Team: Hindi <https://hosted.weblate.org/projects/pext/"
@@ -24,11 +24,11 @@ msgid ""
 "from the Microsoft store."
 msgstr ""
 
-#: __init__.py:105
+#: __init__.py:106
 msgid "Pass is not installed. Please see https://www.passwordstore.org/."
 msgstr ""
 
-#: __init__.py:141
+#: __init__.py:144
 msgid ""
 "<b>{}</b><br/><br/><b>Last opened</b><br/>{}<br/><br/><b>Last modified</"
 "b><br/>{}"
@@ -36,35 +36,43 @@ msgstr ""
 "<b>1{}</b>2<br/>3<br/>4<b>5आखिरी बार खोला गया</b>6<br/>7{}<br/>8<br/"
 ">9<b>0अंतिम बार संशोधन</b><br/>{}"
 
-#: __init__.py:143
+#: __init__.py:146
 msgid "Open"
 msgstr "खोले"
 
-#: __init__.py:143 __init__.py:296
+#: __init__.py:146 __init__.py:303
 msgid "Edit"
 msgstr "संपादन"
 
-#: __init__.py:143 __init__.py:300
+#: __init__.py:146 __init__.py:307
+msgid "Rename"
+msgstr ""
+
+#: __init__.py:146 __init__.py:312
 msgid "Remove"
 msgstr "हटाएँ"
 
-#: __init__.py:149
+#: __init__.py:152
 msgid "{} what?"
 msgstr "{} क्या?"
 
-#: __init__.py:181
+#: __init__.py:185
 msgid "Timeout error while running '{}'"
 msgstr "' {} ' चलाते समय समयबाह्य त्रुटि"
 
-#: __init__.py:183
+#: __init__.py:187
 msgid "Command output: {}"
 msgstr "आदेश आउटपुट: {}"
 
-#: __init__.py:246
+#: __init__.py:250
 msgid "Error code {} running '{}'. More info may be logged to the console"
 msgstr "त्रुटि कोड {} चल रहा है ' {} ' । अधिक जानकारी कंसोल में इकट्ठा हो सकती है"
 
-#: __init__.py:322 __init__.py:338
+#: __init__.py:309
+msgid "Choose a new name for {}"
+msgstr ""
+
+#: __init__.py:334 __init__.py:350
 msgid "Unexpected selection_made value: {}"
 msgstr "अनपेक्षित selection_made मान: {}"
 

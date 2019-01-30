@@ -93,7 +93,8 @@ class Module(ModuleBase):
         return self.data_location
 
     def _get_unsupported_commands(self):
-        return ["[ls]", "find", "[show]", "grep", "version", "help"]
+        # Not necessarily all unsupported, also those better suited for the context menu
+        return ["[ls]", "[show]", "find", "grep", "help", "mv", "rm", "version"]
 
     def _get_commands(self):
         try:
@@ -142,7 +143,7 @@ class Module(ModuleBase):
             if self.settings['_api_version'] >= [0, 3, 1]:
                 self.q.put([Action.set_entry_info, entry, _("<b>{}</b><br/><br/><b>Last opened</b><br/>{}<br/><br/><b>Last modified</b><br/>{}").format(html.escape(entry), datetime.fromtimestamp(os.path.getatime(password)).replace(microsecond=0), datetime.fromtimestamp(os.path.getmtime(password)).replace(microsecond=0))])
             if self.settings['_api_version'] >= [0, 4, 0]:
-                self.q.put([Action.set_entry_context, entry, [_("Open"), _("Edit"), _("Remove")]])
+                self.q.put([Action.set_entry_context, entry, [_("Open"), _("Edit"), _("Rename"), _("Remove")]])
 
 
     def _run_command(self, command, printOnSuccess=False, hideErrors=False, prefillInput=''):
@@ -168,9 +169,8 @@ class Module(ModuleBase):
             return self._run_command(["insert", "-fm", command[1]], printOnSuccess=True, prefillInput=prefillData.rstrip())
 
         sanitizedCommandList = [quote(commandPart) for commandPart in command]
-        command = " ".join(sanitizedCommandList)
 
-        proc = PopenSpawn("bash -c {}".format(quote("PASSWORD_STORE_DIR={} {} {} {}".format(os.environ['PASSWORD_STORE_DIR'], self.binary, command, ("2>/dev/null" if hideErrors else "")))))
+        proc = PopenSpawn("bash -c {}".format(quote("PASSWORD_STORE_DIR={} {} {} {}".format(os.environ['PASSWORD_STORE_DIR'], self.binary, " ".join(sanitizedCommandList), ("2>/dev/null" if hideErrors else "")))))
         return self._process_proc_output(proc, command, printOnSuccess, hideErrors, prefillInput)
 
     def _process_proc_output(self, proc, command, printOnSuccess=False, hideErrors=False, prefillInput=''):
@@ -180,7 +180,7 @@ class Module(ModuleBase):
             self.proc = {'result': possibleResults[result]}
         elif result == 1:
             self.proc = {'result': possibleResults[result]}
-            self.q.put([Action.add_error, _("Timeout error while running '{}'").format(command)])
+            self.q.put([Action.add_error, _("Timeout error while running '{}'").format(" ".join(command))])
             if proc.before:
                 self.q.put([Action.add_error, _("Command output: {}").format(self.ANSIEscapeRegex.sub('', proc.before.decode("utf-8")))])
 
@@ -252,7 +252,7 @@ class Module(ModuleBase):
     def process_response(self, response):
         if 'proc' not in self.proc:
             if response and 'command' in self.proc:
-                self._run_command([self.proc['command']] + response.split(" "))
+                self._run_command(self.proc['command'] + response.split(" "))
             return
 
         if self.proc['type'] == Action.ask_question_default_yes or self.proc['type'] == Action.ask_question_default_no:
@@ -300,6 +300,11 @@ class Module(ModuleBase):
                 if self.settings['_api_version'] >= [0, 4, 0]:
                     if selection[0]["context_option"] == _("Edit"):
                         self._run_command(["edit", selection[0]["value"]], hideErrors=True)
+                        self.q.put([Action.set_selection, []])
+                        return
+                    elif selection[0]["context_option"] == _("Rename"):
+                        self.proc = {'command': ["mv", selection[0]["value"]]}
+                        self.q.put([Action.ask_input, _("Choose a new name for {}").format(selection[0]["value"])])
                         self.q.put([Action.set_selection, []])
                         return
                     elif selection[0]["context_option"] == _("Remove"):
