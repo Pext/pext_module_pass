@@ -372,7 +372,28 @@ class EventHandler(FileSystemEventHandler):
         if entry_name[-4:] != ".gpg":
             return
 
-        self.q.put([Action.prepend_entry, entry_name[:-4]])
         # As this event also gets called when a file gets created, it may
         # generate warnings in Pext to call this. These warnings are harmless
         self.q.put([Action.remove_entry, entry_name[:-4]])
+        self.q.put([Action.prepend_entry, entry_name[:-4]])
+        if self.store.settings['_api_version'] >= [0, 3, 1]:
+            self.q.put([Action.set_entry_info, entry_name[-4:], _("<b>{}</b><br/><br/><b>Last opened</b><br/>{}<br/><br/><b>Last modified</b><br/>{}").format(html.escape(entry_name[-4:]), datetime.fromtimestamp(os.path.getatime(event.src_path)).replace(microsecond=0), datetime.fromtimestamp(os.path.getmtime(event.src_path)).replace(microsecond=0))])
+        if self.store.settings['_api_version'] >= [0, 4, 0]:
+            self.q.put([Action.set_entry_context, event.src_path, [_("Open"), _("Edit"), _("Rename"), _("Remove")]])
+
+    def on_moved(self, event):
+        if event.is_directory or len(self.store.passwordEntries) > 0:
+            return
+
+        old_entry_name = event.src_path[len(self.store._get_data_location()):]
+        new_entry_name = event.dest_path[len(self.store._get_data_location()):]
+
+        if old_entry_name[-4:] != ".gpg":
+            return
+
+        self.q.put([Action.remove_entry, old_entry_name[:-4]])
+        self.q.put([Action.prepend_entry, new_entry_name[:-4]])
+        if self.store.settings['_api_version'] >= [0, 3, 1]:
+            self.q.put([Action.set_entry_info, new_entry_name[:-4], _("<b>{}</b><br/><br/><b>Last opened</b><br/>{}<br/><br/><b>Last modified</b><br/>{}").format(html.escape(new_entry_name[:-4]), datetime.fromtimestamp(os.path.getatime(event.dest_path)).replace(microsecond=0), datetime.fromtimestamp(os.path.getmtime(event.dest_path)).replace(microsecond=0))])
+        if self.store.settings['_api_version'] >= [0, 4, 0]:
+            self.q.put([Action.set_entry_context, new_entry_name[:-4], [_("Open"), _("Edit"), _("Rename"), _("Remove")]])
