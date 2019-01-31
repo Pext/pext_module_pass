@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2019-01-30 21:53+CET\n"
-"PO-Revision-Date: 2018-07-02 03:01+0000\n"
+"PO-Revision-Date: 2019-02-01 04:10+0000\n"
 "Last-Translator: Jeff Huang <s8321414@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <https://hosted.weblate.org/projects/"
 "pext/pext_module_pass/zh_Hant/>\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 3.1-dev\n"
+"X-Generator: Weblate 3.5-dev\n"
 "Generated-By: pygettext.py 1.5\n"
 
 #: __init__.py:57
@@ -41,7 +41,7 @@ msgstr "編輯"
 
 #: __init__.py:146 __init__.py:305 __init__.py:382 __init__.py:399
 msgid "Rename"
-msgstr ""
+msgstr "重新命名"
 
 #: __init__.py:146 __init__.py:310 __init__.py:382 __init__.py:399
 msgid "Remove"
@@ -69,7 +69,7 @@ msgstr "錯誤代碼 {} 執行 '{}'。更多資訊將會被紀錄在終端機中
 
 #: __init__.py:307
 msgid "Choose a new name for {}"
-msgstr ""
+msgstr "為 {} 選擇新名稱"
 
 #: __init__.py:332 __init__.py:348
 msgid "Unexpected selection_made value: {}"
