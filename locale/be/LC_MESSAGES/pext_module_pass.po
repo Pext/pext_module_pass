@@ -1,0 +1,84 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR ORGANIZATION
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2019-02-04 19:16+CET\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: be\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.5\n"
+
+#: __init__.py:57
+msgid "Bash is not installed. Please install a Linux distribution (such as Ubuntu) from the Microsoft store."
+msgstr ""
+
+#: __init__.py:106
+msgid "Pass is not installed. Please see https://www.passwordstore.org/."
+msgstr ""
+
+#: __init__.py:144 __init__.py:380 __init__.py:397
+msgid "<b>{}</b><br/><br/><b>Last opened</b><br/>{}<br/><br/><b>Last modified</b><br/>{}"
+msgstr ""
+
+#: __init__.py:146 __init__.py:301 __init__.py:382 __init__.py:399
+msgid "Edit"
+msgstr ""
+
+#: __init__.py:146 __init__.py:305 __init__.py:382 __init__.py:399
+msgid "Rename"
+msgstr ""
+
+#: __init__.py:146 __init__.py:310 __init__.py:382 __init__.py:399
+msgid "Remove"
+msgstr ""
+
+#: __init__.py:146 __init__.py:382 __init__.py:399
+msgid "Open"
+msgstr ""
+
+#: __init__.py:152
+msgid "{} what?"
+msgstr ""
+
+#: __init__.py:183
+msgid "Timeout error while running '{}'"
+msgstr ""
+
+#: __init__.py:185
+msgid "Command output: {}"
+msgstr ""
+
+#: __init__.py:248
+msgid "Error code {} running '{}'. More info may be logged to the console"
+msgstr ""
+
+#: __init__.py:307
+msgid "Choose a new name for {}"
+msgstr ""
+
+#: __init__.py:332 __init__.py:348
+msgid "Unexpected selection_made value: {}"
+msgstr ""
+
+#: generate_metadata.py:40
+msgid "Password Store"
+msgstr ""
+
+#: generate_metadata.py:42
+msgid "Allows Pext to do password management through pass"
+msgstr ""
+
+#: generate_metadata.py:47
+msgid "Binary to call for pass operations"
+msgstr ""
+
+#: generate_metadata.py:51
+msgid "Password Store directory"
+msgstr ""
