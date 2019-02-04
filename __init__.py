@@ -25,6 +25,8 @@ from os.path import expanduser, normcase
 from subprocess import CalledProcessError, check_output
 from shlex import quote
 
+from babel.dates import format_datetime
+
 import pexpect
 from pexpect.popen_spawn import PopenSpawn
 
@@ -141,7 +143,7 @@ class Module(ModuleBase):
             entry = password[len(passDir):-4]
             self.q.put([Action.add_entry, entry])
             if self.settings['_api_version'] >= [0, 3, 1]:
-                self.q.put([Action.set_entry_info, entry, _("<b>{}</b><br/><br/><b>Last opened</b><br/>{}<br/><br/><b>Last modified</b><br/>{}").format(html.escape(entry), datetime.fromtimestamp(os.path.getatime(password)).replace(microsecond=0), datetime.fromtimestamp(os.path.getmtime(password)).replace(microsecond=0))])
+                self.q.put([Action.set_entry_info, entry, _("<b>{}</b><br/><br/><b>Last opened</b><br/>{}<br/><br/><b>Last modified</b><br/>{}").format(html.escape(entry), format_datetime(datetime.fromtimestamp(os.path.getatime(password)).replace(microsecond=0), locale=self.settings['_locale']), format_datetime(datetime.fromtimestamp(os.path.getmtime(password)).replace(microsecond=0), locale=self.settings['_locale']))])
             if self.settings['_api_version'] >= [0, 4, 0]:
                 self.q.put([Action.set_entry_context, entry, [_("Open"), _("Edit"), _("Rename"), _("Remove")]])
 
@@ -377,7 +379,7 @@ class EventHandler(FileSystemEventHandler):
         self.q.put([Action.remove_entry, entry_name[:-4]])
         self.q.put([Action.prepend_entry, entry_name[:-4]])
         if self.store.settings['_api_version'] >= [0, 3, 1]:
-            self.q.put([Action.set_entry_info, entry_name[-4:], _("<b>{}</b><br/><br/><b>Last opened</b><br/>{}<br/><br/><b>Last modified</b><br/>{}").format(html.escape(entry_name[-4:]), datetime.fromtimestamp(os.path.getatime(event.src_path)).replace(microsecond=0), datetime.fromtimestamp(os.path.getmtime(event.src_path)).replace(microsecond=0))])
+            self.q.put([Action.set_entry_info, entry_name[-4:], _("<b>{}</b><br/><br/><b>Last opened</b><br/>{}<br/><br/><b>Last modified</b><br/>{}").format(html.escape(entry_name[-4:]), format_datetime(datetime.fromtimestamp(os.path.getatime(event.src_path)).replace(microsecond=0), locale=self.store.settings['_locale']), format_datetime(datetime.fromtimestamp(os.path.getmtime(event.src_path)).replace(microsecond=0), locale=self.store.settings['_locale']))])
         if self.store.settings['_api_version'] >= [0, 4, 0]:
             self.q.put([Action.set_entry_context, event.src_path, [_("Open"), _("Edit"), _("Rename"), _("Remove")]])
 
@@ -394,6 +396,6 @@ class EventHandler(FileSystemEventHandler):
         self.q.put([Action.remove_entry, old_entry_name[:-4]])
         self.q.put([Action.prepend_entry, new_entry_name[:-4]])
         if self.store.settings['_api_version'] >= [0, 3, 1]:
-            self.q.put([Action.set_entry_info, new_entry_name[:-4], _("<b>{}</b><br/><br/><b>Last opened</b><br/>{}<br/><br/><b>Last modified</b><br/>{}").format(html.escape(new_entry_name[:-4]), datetime.fromtimestamp(os.path.getatime(event.dest_path)).replace(microsecond=0), datetime.fromtimestamp(os.path.getmtime(event.dest_path)).replace(microsecond=0))])
+            self.q.put([Action.set_entry_info, new_entry_name[:-4], _("<b>{}</b><br/><br/><b>Last opened</b><br/>{}<br/><br/><b>Last modified</b><br/>{}").format(html.escape(new_entry_name[:-4]), format_datetime(datetime.fromtimestamp(os.path.getatime(event.dest_path)).replace(microsecond=0), locale=self.store.settings['_locale']), format_datetime(datetime.fromtimestamp(os.path.getmtime(event.dest_path)).replace(microsecond=0), locale=self.store.settings['_locale']))])
         if self.store.settings['_api_version'] >= [0, 4, 0]:
             self.q.put([Action.set_entry_context, new_entry_name[:-4], [_("Open"), _("Edit"), _("Rename"), _("Remove")]])
