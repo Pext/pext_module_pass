@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2019-01-30 21:53+CET\n"
-"PO-Revision-Date: 2018-07-12 19:32+0000\n"
-"Last-Translator: Rose Marie <rosegarcia@protonmail.com>\n"
+"PO-Revision-Date: 2019-02-04 19:39+0000\n"
+"Last-Translator: Henley Garcia <henleygarcia54@gmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/pext/"
 "pext_module_pass/es/>\n"
 "Language: es\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.1-dev\n"
+"X-Generator: Weblate 3.5-dev\n"
 "Generated-By: pygettext.py 1.5\n"
 
 #: __init__.py:57
@@ -45,7 +45,7 @@ msgstr "Editar"
 
 #: __init__.py:146 __init__.py:305 __init__.py:382 __init__.py:399
 msgid "Rename"
-msgstr ""
+msgstr "Rebautizar"
 
 #: __init__.py:146 __init__.py:310 __init__.py:382 __init__.py:399
 msgid "Remove"
@@ -74,7 +74,7 @@ msgstr ""
 
 #: __init__.py:307
 msgid "Choose a new name for {}"
-msgstr ""
+msgstr "Elige un nombre nuevo para {}"
 
 #: __init__.py:332 __init__.py:348
 msgid "Unexpected selection_made value: {}"
