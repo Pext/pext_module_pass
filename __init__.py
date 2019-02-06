@@ -319,7 +319,8 @@ class Module(ModuleBase):
                     self.q.put([Action.set_selection, []])
                     return
 
-                self.q.put([Action.set_header, selection[0]["value"]])
+                if self.settings['_api_version'] <= [0, 9, 0]:
+                    self.q.put([Action.set_header, selection[0]["value"]])
                 self.q.put([Action.replace_entry_list, []])
                 self.q.put([Action.replace_command_list, []])
 
