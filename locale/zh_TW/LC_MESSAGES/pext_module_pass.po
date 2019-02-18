@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-01-30 21:53+CET\n"
+"POT-Creation-Date: 2019-02-18 21:06+CET\n"
 "PO-Revision-Date: 2019-02-01 04:10+0000\n"
 "Last-Translator: Jeff Huang <s8321414@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <https://hosted.weblate.org/projects/"
@@ -18,60 +18,60 @@ msgstr ""
 "X-Generator: Weblate 3.5-dev\n"
 "Generated-By: pygettext.py 1.5\n"
 
-#: __init__.py:57
+#: __init__.py:59
 msgid ""
 "Bash is not installed. Please install a Linux distribution (such as Ubuntu) "
 "from the Microsoft store."
 msgstr "未安裝 bash。請從微軟商店中安裝一個 Linux 散佈版（如 Ubuntu）。"
 
-#: __init__.py:106
+#: __init__.py:108
 msgid "Pass is not installed. Please see https://www.passwordstore.org/."
 msgstr "未安裝 pass。請見 https://www.passwordstore.org/ 。"
 
-#: __init__.py:144 __init__.py:380 __init__.py:397
+#: __init__.py:146 __init__.py:383 __init__.py:400
 msgid ""
 "<b>{}</b><br/><br/><b>Last opened</b><br/>{}<br/><br/><b>Last modified</"
 "b><br/>{}"
 msgstr ""
 "<b>{}</b><br/><br/><b>最近開啟</b><br/>{}<br/><br/><b>最近修改</b><br/>{}"
 
-#: __init__.py:146 __init__.py:301 __init__.py:382 __init__.py:399
+#: __init__.py:148 __init__.py:303 __init__.py:385 __init__.py:402
 msgid "Edit"
 msgstr "編輯"
 
-#: __init__.py:146 __init__.py:305 __init__.py:382 __init__.py:399
+#: __init__.py:148 __init__.py:307 __init__.py:385 __init__.py:402
 msgid "Rename"
 msgstr "重新命名"
 
-#: __init__.py:146 __init__.py:310 __init__.py:382 __init__.py:399
+#: __init__.py:148 __init__.py:312 __init__.py:385 __init__.py:402
 msgid "Remove"
 msgstr "移除"
 
-#: __init__.py:146 __init__.py:382 __init__.py:399
+#: __init__.py:148 __init__.py:385 __init__.py:402
 msgid "Open"
 msgstr "開啟"
 
-#: __init__.py:152
+#: __init__.py:154
 msgid "{} what?"
 msgstr "{} 什麼？"
 
-#: __init__.py:183
+#: __init__.py:185
 msgid "Timeout error while running '{}'"
 msgstr "當執行 '{}' 時發生逾時錯誤"
 
-#: __init__.py:185
+#: __init__.py:187
 msgid "Command output: {}"
 msgstr "指令輸出：{}"
 
-#: __init__.py:248
+#: __init__.py:250
 msgid "Error code {} running '{}'. More info may be logged to the console"
 msgstr "錯誤代碼 {} 執行 '{}'。更多資訊將會被紀錄在終端機中"
 
-#: __init__.py:307
+#: __init__.py:309
 msgid "Choose a new name for {}"
 msgstr "為 {} 選擇新名稱"
 
-#: __init__.py:332 __init__.py:348
+#: __init__.py:335 __init__.py:351
 msgid "Unexpected selection_made value: {}"
 msgstr "未預期的 selection_made 值：{}"
 

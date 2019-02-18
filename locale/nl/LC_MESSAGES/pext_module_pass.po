@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2019-01-30 21:53+CET\n"
+"POT-Creation-Date: 2019-02-18 21:06+CET\n"
 "PO-Revision-Date: 2019-02-01 04:10+0000\n"
 "Last-Translator: Heimen Stoffels <vistausss@outlook.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/pext/"
@@ -18,7 +18,7 @@ msgstr ""
 "X-Generator: Weblate 3.5-dev\n"
 "Generated-By: pygettext.py 1.5\n"
 
-#: __init__.py:57
+#: __init__.py:59
 msgid ""
 "Bash is not installed. Please install a Linux distribution (such as Ubuntu) "
 "from the Microsoft store."
@@ -26,11 +26,11 @@ msgstr ""
 "Bash is niet geïnstalleerd. Installeer een Linux-distributie (zoals bijv. "
 "Ubuntu) uit de Microsoft-winkel."
 
-#: __init__.py:106
+#: __init__.py:108
 msgid "Pass is not installed. Please see https://www.passwordstore.org/."
 msgstr "Pass is niet geïnstalleerd. Zie https://www.passwordstore.org/."
 
-#: __init__.py:144 __init__.py:380 __init__.py:397
+#: __init__.py:146 __init__.py:383 __init__.py:400
 msgid ""
 "<b>{}</b><br/><br/><b>Last opened</b><br/>{}<br/><br/><b>Last modified</"
 "b><br/>{}"
@@ -38,45 +38,45 @@ msgstr ""
 "<b>{}</b><br/><br/><b>Laatst geopend</b><br/>{}<br/><br/><b>Laatst bewerkt</"
 "b><br/>{}"
 
-#: __init__.py:146 __init__.py:301 __init__.py:382 __init__.py:399
+#: __init__.py:148 __init__.py:303 __init__.py:385 __init__.py:402
 msgid "Edit"
 msgstr "Bewerken"
 
-#: __init__.py:146 __init__.py:305 __init__.py:382 __init__.py:399
+#: __init__.py:148 __init__.py:307 __init__.py:385 __init__.py:402
 msgid "Rename"
 msgstr "Naam wijzigen"
 
-#: __init__.py:146 __init__.py:310 __init__.py:382 __init__.py:399
+#: __init__.py:148 __init__.py:312 __init__.py:385 __init__.py:402
 msgid "Remove"
 msgstr "Verwijderen"
 
-#: __init__.py:146 __init__.py:382 __init__.py:399
+#: __init__.py:148 __init__.py:385 __init__.py:402
 msgid "Open"
 msgstr "Openen"
 
-#: __init__.py:152
+#: __init__.py:154
 msgid "{} what?"
 msgstr "{} wat?"
 
-#: __init__.py:183
+#: __init__.py:185
 msgid "Timeout error while running '{}'"
 msgstr "Time-outfout tijdens het uitvoeren van '{}'"
 
-#: __init__.py:185
+#: __init__.py:187
 msgid "Command output: {}"
 msgstr "Opdrachtuitvoer: {}"
 
-#: __init__.py:248
+#: __init__.py:250
 msgid "Error code {} running '{}'. More info may be logged to the console"
 msgstr ""
 "Foutcode {} tijdens uitvoeren van '{}'. Meer informatie is mogelijk naar de "
 "console geschreven"
 
-#: __init__.py:307
+#: __init__.py:309
 msgid "Choose a new name for {}"
 msgstr "Geef een nieuwe naam aan {}"
 
-#: __init__.py:332 __init__.py:348
+#: __init__.py:335 __init__.py:351
 msgid "Unexpected selection_made value: {}"
 msgstr "Onverwachte selection_made-waarde: {}"
 

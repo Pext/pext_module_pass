@@ -1,0 +1,28 @@
+{
+  "description": "Allows Pext to do password management through pass",
+  "developer": "Sylvia van Os",
+  "git_urls": [
+    "https://github.com/Pext/pext_module_pass"
+  ],
+  "homepage": "https://pext.hackerchick.me/",
+  "id": "pext.module.pass",
+  "license": "GPL-3.0+",
+  "name": "Password Store",
+  "platforms": [
+    "Linux",
+    "Darwin",
+    "Windows"
+  ],
+  "settings": [
+    {
+      "defaults": "pass",
+      "description": "Binary to call for pass operations",
+      "name": "binary"
+    },
+    {
+      "default": "~/.password-store/",
+      "description": "Password Store directory",
+      "name": "directory"
+    }
+  ]
+}
