@@ -324,7 +324,14 @@ class Module(ModuleBase):
                 self.q.put([Action.replace_entry_list, []])
                 self.q.put([Action.replace_command_list, []])
 
-                for line in results.rstrip().splitlines():
+                result_lines = results.rstrip().splitlines()
+                # If only a password and no other fields, select password immediately
+                if len(result_lines) == 1:
+                    self.q.put([Action.copy_to_clipboard, result_lines[0]])
+                    self.q.put([Action.close])
+                    return
+
+                for line in result_lines:
                     if len(self.passwordEntries) == 0:
                         self.passwordEntries["********"] = line
                         self.q.put([Action.add_entry, "********"])
