@@ -4,7 +4,7 @@
   "git_urls": [
     "https://github.com/Pext/pext_module_pass"
   ],
-  "homepage": "https://pext.hackerchick.me/",
+  "homepage": "https://pext.io/",
   "id": "pext.module.pass",
   "license": "GPL-3.0+",
   "name": "Wachtwoordopslag",

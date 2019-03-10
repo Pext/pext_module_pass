@@ -40,7 +40,7 @@ for language in languages:
                'name': _('Password Store'),
                'developer': 'Sylvia van Os',
                'description': _('Allows Pext to do password management through pass'),
-               'homepage': 'https://pext.hackerchick.me/',
+               'homepage': 'https://pext.io/',
                'license': 'GPL-3.0+',
                'git_urls': ['https://github.com/Pext/pext_module_pass'],
                'settings': [{'name': 'binary',
