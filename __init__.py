@@ -102,7 +102,7 @@ class Module(ModuleBase):
         extra_filter = []
         if self.settings['_api_version'] >= [0, 11, 0]:
             extra_filter = ["insert", "generate", "git", "init"]
-        return ["[ls]", "[show]", "find", "grep", "help", "mv", "rm", "version"] + extra_filter
+        return ["[ls]", "[show]", "cp", "edit", "find", "grep", "help", "mv", "rm", "version"] + extra_filter
 
     def _get_commands(self):
         try:
@@ -151,7 +151,7 @@ class Module(ModuleBase):
             if self.settings['_api_version'] >= [0, 3, 1]:
                 self.q.put([Action.set_entry_info, entry, _("<b>{}</b><br/><br/><b>Last opened</b><br/>{}<br/><br/><b>Last modified</b><br/>{}").format(html.escape(entry), format_datetime(datetime.fromtimestamp(os.path.getatime(password)).replace(microsecond=0), locale=self.settings['_locale']), format_datetime(datetime.fromtimestamp(os.path.getmtime(password)).replace(microsecond=0), locale=self.settings['_locale']))])
             if self.settings['_api_version'] >= [0, 4, 0]:
-                self.q.put([Action.set_entry_context, entry, [_("Open"), _("Edit"), _("Rename"), _("Remove")]])
+                self.q.put([Action.set_entry_context, entry, [_("Open"), _("Edit"), _("Copy"), _("Rename"), _("Remove")]])
 
 
     def _run_command(self, command, printOnSuccess=False, hideErrors=False, prefillInput=''):
@@ -308,6 +308,11 @@ class Module(ModuleBase):
                 if self.settings['_api_version'] >= [0, 4, 0]:
                     if selection[0]["context_option"] == _("Edit"):
                         self._run_command(["edit", selection[0]["value"]], hideErrors=True)
+                        self.q.put([Action.set_selection, []])
+                        return
+                    elif selection[0]["context_option"] == _("Copy"):
+                        self.proc = {'command': ["cp", selection[0]["value"]]}
+                        self.q.put([Action.ask_input, _("Choose a name for the copy of {}").format(selection[0]["value"])])
                         self.q.put([Action.set_selection, []])
                         return
                     elif selection[0]["context_option"] == _("Rename"):

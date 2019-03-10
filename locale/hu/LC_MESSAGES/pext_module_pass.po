@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-03-10 21:33+CET\n"
+"POT-Creation-Date: 2019-03-10 21:39+CET\n"
 "PO-Revision-Date: 2018-10-05 14:27+0000\n"
 "Last-Translator: Szöllősi Attila <ata2001@airmail.cc>\n"
 "Language-Team: Hungarian <https://hosted.weblate.org/projects/pext/"
@@ -26,19 +26,19 @@ msgstr ""
 "A Bash nincs telepítve. Telepítsen egy Linux disztribúciót (pl. Ubuntu) a "
 "Microsoft áruházból."
 
-#: __init__.py:86 __init__.py:349
+#: __init__.py:86 __init__.py:354
 msgid "Insert"
 msgstr ""
 
-#: __init__.py:86 __init__.py:353
+#: __init__.py:86 __init__.py:358
 msgid "Generate"
 msgstr ""
 
-#: __init__.py:86 __init__.py:357
+#: __init__.py:86 __init__.py:362
 msgid "Git"
 msgstr ""
 
-#: __init__.py:86 __init__.py:361
+#: __init__.py:86 __init__.py:366
 msgid "Initialize"
 msgstr ""
 
@@ -48,7 +48,7 @@ msgstr ""
 "A Pass nincs telepítve. Kérjük látogasson el a https://www.passwordstore."
 "org/ címen található weboldalra."
 
-#: __init__.py:152 __init__.py:414 __init__.py:431
+#: __init__.py:152 __init__.py:419 __init__.py:436
 msgid ""
 "<b>{}</b><br/><br/><b>Last opened</b><br/>{}<br/><br/><b>Last modified</"
 "b><br/>{}"
@@ -56,19 +56,23 @@ msgstr ""
 "<b>{}</b><br/><br/><b>Legutóbb megnyitva</b><br/>{}<br/><br/><b>Legutóbb "
 "módosítva</b><br/>{}"
 
-#: __init__.py:154 __init__.py:309 __init__.py:416 __init__.py:433
+#: __init__.py:154 __init__.py:309 __init__.py:421 __init__.py:438
 msgid "Edit"
 msgstr "Szerkesztés"
 
-#: __init__.py:154 __init__.py:313 __init__.py:416 __init__.py:433
+#: __init__.py:154 __init__.py:313
+msgid "Copy"
+msgstr ""
+
+#: __init__.py:154 __init__.py:318 __init__.py:421 __init__.py:438
 msgid "Rename"
 msgstr ""
 
-#: __init__.py:154 __init__.py:318 __init__.py:416 __init__.py:433
+#: __init__.py:154 __init__.py:323 __init__.py:421 __init__.py:438
 msgid "Remove"
 msgstr "Eltávolítás"
 
-#: __init__.py:154 __init__.py:416 __init__.py:433
+#: __init__.py:154 __init__.py:421 __init__.py:438
 msgid "Open"
 msgstr "Megnyitás"
 
@@ -91,10 +95,14 @@ msgstr ""
 "részletekért nézze meg a konzol naplót."
 
 #: __init__.py:315
+msgid "Choose a name for the copy of {}"
+msgstr ""
+
+#: __init__.py:320
 msgid "Choose a new name for {}"
 msgstr ""
 
-#: __init__.py:366 __init__.py:382
+#: __init__.py:371 __init__.py:387
 msgid "Unexpected selection_made value: {}"
 msgstr "Váratlan selection_made érték: {}"
 
