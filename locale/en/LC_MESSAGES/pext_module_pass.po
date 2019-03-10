@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-02-04 19:16+CET\n"
+"POT-Creation-Date: 2019-03-10 21:33+CET\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -15,55 +15,75 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: pygettext.py 1.5\n"
 
-#: __init__.py:57
-msgid "Bash is not installed. Please install a Linux distribution (such as Ubuntu) from the Microsoft store."
+#: __init__.py:59
+msgid ""
+"Bash is not installed. Please install a Linux distribution (such as Ubuntu) "
+"from the Microsoft store."
 msgstr ""
 
-#: __init__.py:106
+#: __init__.py:86 __init__.py:349
+msgid "Insert"
+msgstr ""
+
+#: __init__.py:86 __init__.py:353
+msgid "Generate"
+msgstr ""
+
+#: __init__.py:86 __init__.py:357
+msgid "Git"
+msgstr ""
+
+#: __init__.py:86 __init__.py:361
+msgid "Initialize"
+msgstr ""
+
+#: __init__.py:114
 msgid "Pass is not installed. Please see https://www.passwordstore.org/."
 msgstr ""
 
-#: __init__.py:144 __init__.py:380 __init__.py:397
-msgid "<b>{}</b><br/><br/><b>Last opened</b><br/>{}<br/><br/><b>Last modified</b><br/>{}"
+#: __init__.py:152 __init__.py:414 __init__.py:431
+msgid ""
+"<b>{}</b><br/><br/><b>Last opened</b><br/>{}<br/><br/><b>Last modified</"
+"b><br/>{}"
 msgstr ""
 
-#: __init__.py:146 __init__.py:301 __init__.py:382 __init__.py:399
+#: __init__.py:154 __init__.py:309 __init__.py:416 __init__.py:433
 msgid "Edit"
 msgstr ""
 
-#: __init__.py:146 __init__.py:305 __init__.py:382 __init__.py:399
+#: __init__.py:154 __init__.py:313 __init__.py:416 __init__.py:433
 msgid "Rename"
 msgstr ""
 
-#: __init__.py:146 __init__.py:310 __init__.py:382 __init__.py:399
+#: __init__.py:154 __init__.py:318 __init__.py:416 __init__.py:433
 msgid "Remove"
 msgstr ""
 
-#: __init__.py:146 __init__.py:382 __init__.py:399
+#: __init__.py:154 __init__.py:416 __init__.py:433
 msgid "Open"
 msgstr ""
 
-#: __init__.py:152
+#: __init__.py:160
 msgid "{} what?"
 msgstr ""
 
-#: __init__.py:183
+#: __init__.py:191
 msgid "Timeout error while running '{}'"
 msgstr ""
 
-#: __init__.py:185
+#: __init__.py:193
 msgid "Command output: {}"
 msgstr ""
 
-#: __init__.py:248
+#: __init__.py:256
 msgid "Error code {} running '{}'. More info may be logged to the console"
 msgstr ""
 
-#: __init__.py:307
+#: __init__.py:315
 msgid "Choose a new name for {}"
 msgstr ""
 
-#: __init__.py:332 __init__.py:348
+#: __init__.py:366 __init__.py:382
 msgid "Unexpected selection_made value: {}"
 msgstr ""
 

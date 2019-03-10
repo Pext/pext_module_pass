@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-02-18 21:06+CET\n"
+"POT-Creation-Date: 2019-03-10 21:33+CET\n"
 "PO-Revision-Date: 2019-02-04 19:39+0000\n"
 "Last-Translator: Henley Garcia <henleygarcia54@gmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/pext/"
@@ -26,12 +26,28 @@ msgstr ""
 "Bash no está instalado. Instale una distribución de Linux (como Ubuntu) "
 "desde la tienda de Microsoft."
 
-#: __init__.py:108
+#: __init__.py:86 __init__.py:349
+msgid "Insert"
+msgstr ""
+
+#: __init__.py:86 __init__.py:353
+msgid "Generate"
+msgstr ""
+
+#: __init__.py:86 __init__.py:357
+msgid "Git"
+msgstr ""
+
+#: __init__.py:86 __init__.py:361
+msgid "Initialize"
+msgstr ""
+
+#: __init__.py:114
 msgid "Pass is not installed. Please see https://www.passwordstore.org/."
 msgstr ""
 "Pass no está instalado. Por favor, visita https://www.passwordstore.org/."
 
-#: __init__.py:146 __init__.py:383 __init__.py:400
+#: __init__.py:152 __init__.py:414 __init__.py:431
 msgid ""
 "<b>{}</b><br/><br/><b>Last opened</b><br/>{}<br/><br/><b>Last modified</"
 "b><br/>{}"
@@ -39,44 +55,44 @@ msgstr ""
 "<b>{}</b><br/><br/><b>Último abierto</b><br/>{}<br/><br/><b>Última "
 "modificación</b><br/>{}"
 
-#: __init__.py:148 __init__.py:303 __init__.py:385 __init__.py:402
+#: __init__.py:154 __init__.py:309 __init__.py:416 __init__.py:433
 msgid "Edit"
 msgstr "Editar"
 
-#: __init__.py:148 __init__.py:307 __init__.py:385 __init__.py:402
+#: __init__.py:154 __init__.py:313 __init__.py:416 __init__.py:433
 msgid "Rename"
 msgstr "Rebautizar"
 
-#: __init__.py:148 __init__.py:312 __init__.py:385 __init__.py:402
+#: __init__.py:154 __init__.py:318 __init__.py:416 __init__.py:433
 msgid "Remove"
 msgstr "Eliminar"
 
-#: __init__.py:148 __init__.py:385 __init__.py:402
+#: __init__.py:154 __init__.py:416 __init__.py:433
 msgid "Open"
 msgstr "Abrir"
 
-#: __init__.py:154
+#: __init__.py:160
 msgid "{} what?"
 msgstr "{} ¿qué?"
 
-#: __init__.py:185
+#: __init__.py:191
 msgid "Timeout error while running '{}'"
 msgstr "Error de tiempo de espera mientras ejecutando '{}'"
 
-#: __init__.py:187
+#: __init__.py:193
 msgid "Command output: {}"
 msgstr "Salida de comando: {}"
 
-#: __init__.py:250
+#: __init__.py:256
 msgid "Error code {} running '{}'. More info may be logged to the console"
 msgstr ""
 "Código de error {} ejecutando '{}'. Para más información revise la consola"
 
-#: __init__.py:309
+#: __init__.py:315
 msgid "Choose a new name for {}"
 msgstr "Elige un nombre nuevo para {}"
 
-#: __init__.py:335 __init__.py:351
+#: __init__.py:366 __init__.py:382
 msgid "Unexpected selection_made value: {}"
 msgstr "Valor de selection_made inesperado: {}"
 
