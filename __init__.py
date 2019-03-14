@@ -79,11 +79,11 @@ class Module(ModuleBase):
         self.ANSIEscapeRegex = re.compile('(\x9B|\x1B\[)[0-?]*[ -\/]*[@-~]')
         self.passwordEntries = {}
 
-        self._get_commands()
-        self._get_entries()
-
         if self.settings['_api_version'] >= [0, 11, 0]:
             self.q.put([Action.set_base_context, [_("Insert"), _("Generate"), _("Git"), _("Initialize")]])
+
+        self._get_commands()
+        self._get_entries()
 
         self._init_watchdog(q)
 
