@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-03-10 21:39+CET\n"
+"POT-Creation-Date: 2019-03-21 22:22+CET\n"
 "PO-Revision-Date: 2018-07-01 17:02+0000\n"
 "Last-Translator: Konrad <ewentualxpl@gmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/pext/"
@@ -27,19 +27,19 @@ msgstr ""
 "Bash nie jest zainstalowany. Proszę zainstaluj dystrybucję GNU/Linux'a (taką "
 "jak Ubuntu) ze Sklepu Microsoft."
 
-#: __init__.py:86 __init__.py:354
+#: __init__.py:83 __init__.py:354
 msgid "Insert"
 msgstr ""
 
-#: __init__.py:86 __init__.py:358
+#: __init__.py:83 __init__.py:358
 msgid "Generate"
 msgstr ""
 
-#: __init__.py:86 __init__.py:362
+#: __init__.py:83 __init__.py:362
 msgid "Git"
 msgstr ""
 
-#: __init__.py:86 __init__.py:366
+#: __init__.py:83 __init__.py:366
 msgid "Initialize"
 msgstr ""
 

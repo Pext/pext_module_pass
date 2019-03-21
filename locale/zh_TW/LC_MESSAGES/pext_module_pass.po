@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-03-10 21:39+CET\n"
+"POT-Creation-Date: 2019-03-21 22:22+CET\n"
 "PO-Revision-Date: 2019-03-12 16:03+0000\n"
 "Last-Translator: Jeff Huang <s8321414@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <https://hosted.weblate.org/projects/"
@@ -24,19 +24,19 @@ msgid ""
 "from the Microsoft store."
 msgstr "未安裝 bash。請從微軟商店中安裝一個 Linux 散佈版（如 Ubuntu）。"
 
-#: __init__.py:86 __init__.py:354
+#: __init__.py:83 __init__.py:354
 msgid "Insert"
 msgstr "插入"
 
-#: __init__.py:86 __init__.py:358
+#: __init__.py:83 __init__.py:358
 msgid "Generate"
 msgstr "生成"
 
-#: __init__.py:86 __init__.py:362
+#: __init__.py:83 __init__.py:362
 msgid "Git"
 msgstr "Git"
 
-#: __init__.py:86 __init__.py:366
+#: __init__.py:83 __init__.py:366
 msgid "Initialize"
 msgstr "初始化"
 

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-03-10 21:39+CET\n"
+"POT-Creation-Date: 2019-03-21 22:22+CET\n"
 "PO-Revision-Date: 2018-10-05 14:27+0000\n"
 "Last-Translator: Szöllősi Attila <ata2001@airmail.cc>\n"
 "Language-Team: Hungarian <https://hosted.weblate.org/projects/pext/"
@@ -26,19 +26,19 @@ msgstr ""
 "A Bash nincs telepítve. Telepítsen egy Linux disztribúciót (pl. Ubuntu) a "
 "Microsoft áruházból."
 
-#: __init__.py:86 __init__.py:354
+#: __init__.py:83 __init__.py:354
 msgid "Insert"
 msgstr ""
 
-#: __init__.py:86 __init__.py:358
+#: __init__.py:83 __init__.py:358
 msgid "Generate"
 msgstr ""
 
-#: __init__.py:86 __init__.py:362
+#: __init__.py:83 __init__.py:362
 msgid "Git"
 msgstr ""
 
-#: __init__.py:86 __init__.py:366
+#: __init__.py:83 __init__.py:366
 msgid "Initialize"
 msgstr ""
 

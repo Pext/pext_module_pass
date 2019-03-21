@@ -1,5 +1,5 @@
 {
-  "description": "Allows Pext to do password management through pass",
+  "description": "Permet \u00e0 Pext de g\u00e9rer les mots de passe en pass",
   "developer": "Sylvia van Os",
   "git_urls": [
     "https://github.com/Pext/pext_module_pass"
@@ -7,7 +7,7 @@
   "homepage": "https://pext.io/",
   "id": "pext.module.pass",
   "license": "GPL-3.0+",
-  "name": "Password Store",
+  "name": "Banque de mots de passe",
   "platforms": [
     "Linux",
     "Darwin",
@@ -16,12 +16,12 @@
   "settings": [
     {
       "defaults": "pass",
-      "description": "Binary to call for pass operations",
+      "description": "Binaire \u00e0 appeler pour les op\u00e9rations de pass",
       "name": "binary"
     },
     {
       "default": "~/.password-store/",
-      "description": "Password Store directory",
+      "description": "R\u00e9pertoire de mots de passe",
       "name": "directory"
     }
   ]

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-03-10 21:39+CET\n"
+"POT-Creation-Date: 2019-03-21 22:22+CET\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -21,19 +21,19 @@ msgid ""
 "from the Microsoft store."
 msgstr ""
 
-#: __init__.py:86 __init__.py:354
+#: __init__.py:83 __init__.py:354
 msgid "Insert"
 msgstr ""
 
-#: __init__.py:86 __init__.py:358
+#: __init__.py:83 __init__.py:358
 msgid "Generate"
 msgstr ""
 
-#: __init__.py:86 __init__.py:362
+#: __init__.py:83 __init__.py:362
 msgid "Git"
 msgstr ""
 
-#: __init__.py:86 __init__.py:366
+#: __init__.py:83 __init__.py:366
 msgid "Initialize"
 msgstr ""
 

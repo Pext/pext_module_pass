@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-03-10 21:39+CET\n"
+"POT-Creation-Date: 2019-03-21 22:22+CET\n"
 "PO-Revision-Date: 2019-03-12 16:03+0000\n"
 "Last-Translator: Aayush Gupta <aayushgupta219@gmail.com>\n"
 "Language-Team: Hindi <https://hosted.weblate.org/projects/pext/"
@@ -26,19 +26,19 @@ msgstr ""
 "बैश इंस्टॉल नहीं है। कृपया माइक्रोसॉफ्ट स्टोर से कोई एक लाइनक्स डिस्ट्रीब्यूशन (जैसे की उबुंटू) "
 "इंस्टॉल करें।"
 
-#: __init__.py:86 __init__.py:354
+#: __init__.py:83 __init__.py:354
 msgid "Insert"
 msgstr "डाले"
 
-#: __init__.py:86 __init__.py:358
+#: __init__.py:83 __init__.py:358
 msgid "Generate"
 msgstr "उत्पन्न"
 
-#: __init__.py:86 __init__.py:362
+#: __init__.py:83 __init__.py:362
 msgid "Git"
 msgstr "Git"
 
-#: __init__.py:86 __init__.py:366
+#: __init__.py:83 __init__.py:366
 msgid "Initialize"
 msgstr "इनीशियलाइज़"
 
