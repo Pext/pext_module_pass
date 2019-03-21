@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2019-03-10 21:39+CET\n"
-"PO-Revision-Date: 2018-06-30 10:08+0000\n"
-"Last-Translator: Satyam Singh <Singh.satyam2345@gmail.com>\n"
+"PO-Revision-Date: 2019-03-12 16:03+0000\n"
+"Last-Translator: Aayush Gupta <aayushgupta219@gmail.com>\n"
 "Language-Team: Hindi <https://hosted.weblate.org/projects/pext/"
 "pext_module_pass/hi/>\n"
 "Language: hi\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 3.2.1\n"
+"X-Generator: Weblate 3.5.1\n"
 "Generated-By: pygettext.py 1.5\n"
 
 #: __init__.py:59
@@ -28,19 +28,19 @@ msgstr ""
 
 #: __init__.py:86 __init__.py:354
 msgid "Insert"
-msgstr ""
+msgstr "डाले"
 
 #: __init__.py:86 __init__.py:358
 msgid "Generate"
-msgstr ""
+msgstr "उत्पन्न"
 
 #: __init__.py:86 __init__.py:362
 msgid "Git"
-msgstr ""
+msgstr "Git"
 
 #: __init__.py:86 __init__.py:366
 msgid "Initialize"
-msgstr ""
+msgstr "इनीशियलाइज़"
 
 #: __init__.py:114
 msgid "Pass is not installed. Please see https://www.passwordstore.org/."
@@ -60,11 +60,11 @@ msgstr "संपादन"
 
 #: __init__.py:154 __init__.py:313
 msgid "Copy"
-msgstr ""
+msgstr "कापी"
 
 #: __init__.py:154 __init__.py:318 __init__.py:421 __init__.py:438
 msgid "Rename"
-msgstr ""
+msgstr "नाम बदलें"
 
 #: __init__.py:154 __init__.py:323 __init__.py:421 __init__.py:438
 msgid "Remove"
@@ -92,15 +92,15 @@ msgstr "त्रुटि कोड {} चल रहा है ' {} ' । अ�
 
 #: __init__.py:315
 msgid "Choose a name for the copy of {}"
-msgstr ""
+msgstr "की प्रति के लिए एक नाम चुनें {}"
 
 #: __init__.py:320
 msgid "Choose a new name for {}"
-msgstr ""
+msgstr "के लिए एक नया नाम चुनें {}"
 
 #: __init__.py:371 __init__.py:387
 msgid "Unexpected selection_made value: {}"
-msgstr "अनपेक्षित selection_made मान: {}"
+msgstr "अप्रत्याशित चयन_ मान: {}"
 
 #: generate_metadata.py:40
 msgid "Password Store"

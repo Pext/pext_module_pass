@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2019-03-10 21:39+CET\n"
-"PO-Revision-Date: 2019-02-16 02:25+0000\n"
+"PO-Revision-Date: 2019-03-12 16:04+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/pext/"
 "pext_module_pass/nb_NO/>\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.5-dev\n"
+"X-Generator: Weblate 3.5.1\n"
 "Generated-By: pygettext.py 1.5\n"
 
 #: __init__.py:59
@@ -28,19 +28,19 @@ msgstr ""
 
 #: __init__.py:86 __init__.py:354
 msgid "Insert"
-msgstr ""
+msgstr "Sett inn"
 
 #: __init__.py:86 __init__.py:358
 msgid "Generate"
-msgstr ""
+msgstr "Generer"
 
 #: __init__.py:86 __init__.py:362
 msgid "Git"
-msgstr ""
+msgstr "Git"
 
 #: __init__.py:86 __init__.py:366
 msgid "Initialize"
-msgstr ""
+msgstr "Igangsett"
 
 #: __init__.py:114
 msgid "Pass is not installed. Please see https://www.passwordstore.org/."
@@ -60,7 +60,7 @@ msgstr "Rediger"
 
 #: __init__.py:154 __init__.py:313
 msgid "Copy"
-msgstr ""
+msgstr "Kopier"
 
 #: __init__.py:154 __init__.py:318 __init__.py:421 __init__.py:438
 msgid "Rename"
@@ -93,7 +93,7 @@ msgstr ""
 
 #: __init__.py:315
 msgid "Choose a name for the copy of {}"
-msgstr ""
+msgstr "Velg navn for kopien av {}"
 
 #: __init__.py:320
 msgid "Choose a new name for {}"
