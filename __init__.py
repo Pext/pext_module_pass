@@ -156,7 +156,7 @@ class Module(ModuleBase):
 
     def _run_command(self, command, printOnSuccess=False, hideErrors=False, prefillInput=''):
         if len(command) == 1:
-            self.proc = {'command': command[0]}
+            self.proc = {'command': command}
             self.q.put([Action.ask_input, _("{} what?").format(command[0].capitalize())])
             return
 
@@ -260,7 +260,7 @@ class Module(ModuleBase):
     def process_response(self, response):
         if 'proc' not in self.proc:
             if response and 'command' in self.proc:
-                self._run_command(self.proc['command'].split(" ") + response.split(" "))
+                self._run_command(self.proc['command'] + response.split(" "))
             return
 
         if self.proc['type'] == Action.ask_question_default_yes or self.proc['type'] == Action.ask_question_default_no:
