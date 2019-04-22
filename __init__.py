@@ -296,6 +296,27 @@ class Module(ModuleBase):
             self.q.put([Action.replace_entry_list, []])
             self._get_commands()
             self._get_entries()
+        elif selection[-1]["type"] == SelectionType.none:
+            # Global context menu option
+            if self.settings['_api_version'] >= [0, 11, 0]:
+                if selection[-1]["context_option"] == _("Insert"):
+                    self._run_command(["insert"], hideErrors=True)
+                    self.q.put([Action.set_selection, []])
+                    return
+                elif selection[-1]["context_option"] == _("Generate"):
+                    self._run_command(["generate"], hideErrors=True)
+                    self.q.put([Action.set_selection, []])
+                    return
+                elif selection[-1]["context_option"] == _("Git"):
+                    self._run_command(["git"], hideErrors=True)
+                    self.q.put([Action.set_selection, []])
+                    return
+                elif selection[-1]["context_option"] == _("Initialize"):
+                    self._run_command(["init"], hideErrors=True)
+                    self.q.put([Action.set_selection, []])
+                    return
+                else:
+                    self.q.put([Action.critical_error, _("Unexpected selection_made value: {}").format(selection)])
         elif len(selection) == 1:
             if selection[0]["type"] == SelectionType.command:
                 if self.settings['_api_version'] >= [0, 8, 0] and selection[0]["args"]:
@@ -349,24 +370,6 @@ class Module(ModuleBase):
                     else:
                         self.passwordEntries[line] = line
                         self.q.put([Action.add_entry, line])
-            elif selection[0]["type"] == SelectionType.none:
-                if self.settings['_api_version'] >= [0, 11, 0]:
-                    if selection[0]["context_option"] == _("Insert"):
-                        self._run_command(["insert"], hideErrors=True)
-                        self.q.put([Action.set_selection, []])
-                        return
-                    elif selection[0]["context_option"] == _("Generate"):
-                        self._run_command(["generate"], hideErrors=True)
-                        self.q.put([Action.set_selection, []])
-                        return
-                    elif selection[0]["context_option"] == _("Git"):
-                        self._run_command(["git"], hideErrors=True)
-                        self.q.put([Action.set_selection, []])
-                        return
-                    elif selection[0]["context_option"] == _("Initialize"):
-                        self._run_command(["init"], hideErrors=True)
-                        self.q.put([Action.set_selection, []])
-                        return
             else:
                 self.q.put([Action.critical_error, _("Unexpected selection_made value: {}").format(selection)])
         elif len(selection) == 2:
