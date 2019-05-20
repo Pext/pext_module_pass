@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2019-03-10 21:39+CET\n"
-"PO-Revision-Date: 2019-03-19 16:04+0000\n"
-"Last-Translator: Nelly Simkova <sk8higher@iballwasrawt.ru>\n"
+"PO-Revision-Date: 2019-05-21 12:41+0000\n"
+"Last-Translator: Viktar Vauchkevich <victorenator@gmail.com>\n"
 "Language-Team: Belarusian <https://hosted.weblate.org/projects/pext/"
 "pext_module_pass/be/>\n"
 "Language: be\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
 "4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 3.6-dev\n"
+"X-Generator: Weblate 3.7-dev\n"
 "Generated-By: pygettext.py 1.5\n"
 
 #: __init__.py:59
@@ -24,7 +24,7 @@ msgid ""
 "Bash is not installed. Please install a Linux distribution (such as Ubuntu) "
 "from the Microsoft store."
 msgstr ""
-"Bash не ўстаноўлен. Калі ласка, усталюйце дыстрыбутыў Linux (напрыклад, "
+"Bash не ўсталяваны. Калі ласка, усталюйце дыстрыбутыў Linux (напрыклад, "
 "Ubuntu) з Microsoft Store."
 
 #: __init__.py:86 __init__.py:354
@@ -58,11 +58,11 @@ msgstr ""
 
 #: __init__.py:154 __init__.py:309 __init__.py:421 __init__.py:438
 msgid "Edit"
-msgstr "Рэдакцiраваць"
+msgstr "Змяніць"
 
 #: __init__.py:154 __init__.py:313
 msgid "Copy"
-msgstr "Капiраваць"
+msgstr "Капiяваць"
 
 #: __init__.py:154 __init__.py:318 __init__.py:421 __init__.py:438
 msgid "Rename"
@@ -86,21 +86,19 @@ msgstr "Памылка тайм-аўту падчас працы '{}'"
 
 #: __init__.py:193
 msgid "Command output: {}"
-msgstr "Выснова каманды: {}"
+msgstr "Вывад каманды: {}"
 
 #: __init__.py:256
 msgid "Error code {} running '{}'. More info may be logged to the console"
-msgstr ""
-"Код памылкі {} пры працы '{}'. Больш падрабязнай інфармацыi можна ўвайсці ў "
-"кансоль"
+msgstr "Код памылкі {} пры працы '{}'. Больш звестак можна ўбачыць у кансолі"
 
 #: __init__.py:315
 msgid "Choose a name for the copy of {}"
-msgstr "Выберыце імя для копіі {}"
+msgstr "Абярыце назву для копіі {}"
 
 #: __init__.py:320
 msgid "Choose a new name for {}"
-msgstr "Выберыце новае імя для {}"
+msgstr "Абярыце новаю назву для {}"
 
 #: __init__.py:371 __init__.py:387
 msgid "Unexpected selection_made value: {}"
@@ -108,16 +106,16 @@ msgstr "Нечаканае значэнне selection_made: {}"
 
 #: generate_metadata.py:40
 msgid "Password Store"
-msgstr "Крама паролей"
+msgstr "Сховішча пароляў"
 
 #: generate_metadata.py:42
 msgid "Allows Pext to do password management through pass"
-msgstr "Дазваляе Pext рабіць кіраванне паролямі праз pass"
+msgstr "Дазваляе Pext кіраваць паролямі праз pass"
 
 #: generate_metadata.py:47
 msgid "Binary to call for pass operations"
-msgstr ""
+msgstr "Бінарны файл для аперацый pass"
 
 #: generate_metadata.py:51
 msgid "Password Store directory"
-msgstr "Дырэкторыя для хранення паролей"
+msgstr "Каталог сховішча пароляў"
