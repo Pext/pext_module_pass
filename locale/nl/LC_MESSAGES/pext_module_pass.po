@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2019-03-21 22:22+CET\n"
+"POT-Creation-Date: 2019-06-22 17:37+CEST\n"
 "PO-Revision-Date: 2019-03-12 16:03+0000\n"
 "Last-Translator: Heimen Stoffels <vistausss@outlook.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/pext/"
@@ -26,19 +26,19 @@ msgstr ""
 "Bash is niet geïnstalleerd. Installeer een Linux-distributie (zoals bijv. "
 "Ubuntu) uit de Microsoft-winkel."
 
-#: __init__.py:83 __init__.py:354
+#: __init__.py:83 __init__.py:302
 msgid "Insert"
 msgstr "Invoegen"
 
-#: __init__.py:83 __init__.py:358
+#: __init__.py:83 __init__.py:306
 msgid "Generate"
 msgstr "Genereren"
 
-#: __init__.py:83 __init__.py:362
+#: __init__.py:83 __init__.py:310
 msgid "Git"
 msgstr "Git"
 
-#: __init__.py:83 __init__.py:366
+#: __init__.py:83 __init__.py:314
 msgid "Initialize"
 msgstr "Initialiseren"
 
@@ -46,7 +46,7 @@ msgstr "Initialiseren"
 msgid "Pass is not installed. Please see https://www.passwordstore.org/."
 msgstr "Pass is niet geïnstalleerd. Zie https://www.passwordstore.org/."
 
-#: __init__.py:152 __init__.py:419 __init__.py:436
+#: __init__.py:152 __init__.py:422 __init__.py:439
 msgid ""
 "<b>{}</b><br/><br/><b>Last opened</b><br/>{}<br/><br/><b>Last modified</"
 "b><br/>{}"
@@ -54,23 +54,23 @@ msgstr ""
 "<b>{}</b><br/><br/><b>Laatst geopend</b><br/>{}<br/><br/><b>Laatst bewerkt</"
 "b><br/>{}"
 
-#: __init__.py:154 __init__.py:309 __init__.py:421 __init__.py:438
+#: __init__.py:154 __init__.py:330 __init__.py:424 __init__.py:441
 msgid "Edit"
 msgstr "Bewerken"
 
-#: __init__.py:154 __init__.py:313
+#: __init__.py:154 __init__.py:334
 msgid "Copy"
 msgstr "Kopiëren"
 
-#: __init__.py:154 __init__.py:318 __init__.py:421 __init__.py:438
+#: __init__.py:154 __init__.py:339 __init__.py:424 __init__.py:441
 msgid "Rename"
 msgstr "Naam wijzigen"
 
-#: __init__.py:154 __init__.py:323 __init__.py:421 __init__.py:438
+#: __init__.py:154 __init__.py:344 __init__.py:424 __init__.py:441
 msgid "Remove"
 msgstr "Verwijderen"
 
-#: __init__.py:154 __init__.py:421 __init__.py:438
+#: __init__.py:154 __init__.py:424 __init__.py:441
 msgid "Open"
 msgstr "Openen"
 
@@ -92,17 +92,17 @@ msgstr ""
 "Foutcode {} tijdens uitvoeren van '{}'. Meer informatie is mogelijk naar de "
 "console geschreven"
 
-#: __init__.py:315
+#: __init__.py:319 __init__.py:374 __init__.py:390
+msgid "Unexpected selection_made value: {}"
+msgstr "Onverwachte selection_made-waarde: {}"
+
+#: __init__.py:336
 msgid "Choose a name for the copy of {}"
 msgstr "Kies een naam voor de kopie van {}"
 
-#: __init__.py:320
+#: __init__.py:341
 msgid "Choose a new name for {}"
 msgstr "Geef een nieuwe naam aan {}"
-
-#: __init__.py:371 __init__.py:387
-msgid "Unexpected selection_made value: {}"
-msgstr "Onverwachte selection_made-waarde: {}"
 
 #: generate_metadata.py:40
 msgid "Password Store"

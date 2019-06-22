@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-03-21 22:22+CET\n"
+"POT-Creation-Date: 2019-06-22 17:37+CEST\n"
 "PO-Revision-Date: 2019-03-19 16:04+0000\n"
 "Last-Translator: Claire Goulet <claire.m.goulet@gmail.com>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/pext/"
@@ -26,19 +26,19 @@ msgstr ""
 "Bash n'est pas installé. Veuillez installer une distribution Linux (telle "
 "que Ubuntu) à partir du magasin Microsoft."
 
-#: __init__.py:83 __init__.py:354
+#: __init__.py:83 __init__.py:302
 msgid "Insert"
 msgstr "Insérer"
 
-#: __init__.py:83 __init__.py:358
+#: __init__.py:83 __init__.py:306
 msgid "Generate"
 msgstr "Produire"
 
-#: __init__.py:83 __init__.py:362
+#: __init__.py:83 __init__.py:310
 msgid "Git"
 msgstr "Git"
 
-#: __init__.py:83 __init__.py:366
+#: __init__.py:83 __init__.py:314
 msgid "Initialize"
 msgstr "Initialiser"
 
@@ -47,7 +47,7 @@ msgid "Pass is not installed. Please see https://www.passwordstore.org/."
 msgstr ""
 "Pass n'est pas installé. Veuillez consulter https://www.passwordstore.org/."
 
-#: __init__.py:152 __init__.py:419 __init__.py:436
+#: __init__.py:152 __init__.py:422 __init__.py:439
 msgid ""
 "<b>{}</b><br/><br/><b>Last opened</b><br/>{}<br/><br/><b>Last modified</"
 "b><br/>{}"
@@ -55,23 +55,23 @@ msgstr ""
 "<b>{}</b><br/><br/><b>Dernière ouverture</b><br/>{}<br/><br/><b>Dernière "
 "modification</b><br/>{}"
 
-#: __init__.py:154 __init__.py:309 __init__.py:421 __init__.py:438
+#: __init__.py:154 __init__.py:330 __init__.py:424 __init__.py:441
 msgid "Edit"
 msgstr "Modifier"
 
-#: __init__.py:154 __init__.py:313
+#: __init__.py:154 __init__.py:334
 msgid "Copy"
 msgstr "Copie"
 
-#: __init__.py:154 __init__.py:318 __init__.py:421 __init__.py:438
+#: __init__.py:154 __init__.py:339 __init__.py:424 __init__.py:441
 msgid "Rename"
 msgstr "Renommer"
 
-#: __init__.py:154 __init__.py:323 __init__.py:421 __init__.py:438
+#: __init__.py:154 __init__.py:344 __init__.py:424 __init__.py:441
 msgid "Remove"
 msgstr "Retirer"
 
-#: __init__.py:154 __init__.py:421 __init__.py:438
+#: __init__.py:154 __init__.py:424 __init__.py:441
 msgid "Open"
 msgstr "Ouvrir"
 
@@ -93,17 +93,17 @@ msgstr ""
 "Code d'erreur {} en cours d'exécution '{}'. Plus d'informations peuvent être "
 "connectées à la console"
 
-#: __init__.py:315
+#: __init__.py:319 __init__.py:374 __init__.py:390
+msgid "Unexpected selection_made value: {}"
+msgstr "Sélection inattendue faite: {}"
+
+#: __init__.py:336
 msgid "Choose a name for the copy of {}"
 msgstr "Choisissez un nom pour la copie de {}"
 
-#: __init__.py:320
+#: __init__.py:341
 msgid "Choose a new name for {}"
 msgstr "Choisissez un nouveau nom pour {}"
-
-#: __init__.py:371 __init__.py:387
-msgid "Unexpected selection_made value: {}"
-msgstr "Sélection inattendue faite: {}"
 
 #: generate_metadata.py:40
 msgid "Password Store"

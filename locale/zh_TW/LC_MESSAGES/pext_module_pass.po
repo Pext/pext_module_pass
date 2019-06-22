@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-03-21 22:22+CET\n"
+"POT-Creation-Date: 2019-06-22 17:37+CEST\n"
 "PO-Revision-Date: 2019-03-12 16:03+0000\n"
 "Last-Translator: Jeff Huang <s8321414@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <https://hosted.weblate.org/projects/"
@@ -24,19 +24,19 @@ msgid ""
 "from the Microsoft store."
 msgstr "未安裝 bash。請從微軟商店中安裝一個 Linux 散佈版（如 Ubuntu）。"
 
-#: __init__.py:83 __init__.py:354
+#: __init__.py:83 __init__.py:302
 msgid "Insert"
 msgstr "插入"
 
-#: __init__.py:83 __init__.py:358
+#: __init__.py:83 __init__.py:306
 msgid "Generate"
 msgstr "生成"
 
-#: __init__.py:83 __init__.py:362
+#: __init__.py:83 __init__.py:310
 msgid "Git"
 msgstr "Git"
 
-#: __init__.py:83 __init__.py:366
+#: __init__.py:83 __init__.py:314
 msgid "Initialize"
 msgstr "初始化"
 
@@ -44,30 +44,30 @@ msgstr "初始化"
 msgid "Pass is not installed. Please see https://www.passwordstore.org/."
 msgstr "未安裝 pass。請見 https://www.passwordstore.org/ 。"
 
-#: __init__.py:152 __init__.py:419 __init__.py:436
+#: __init__.py:152 __init__.py:422 __init__.py:439
 msgid ""
 "<b>{}</b><br/><br/><b>Last opened</b><br/>{}<br/><br/><b>Last modified</"
 "b><br/>{}"
 msgstr ""
 "<b>{}</b><br/><br/><b>最近開啟</b><br/>{}<br/><br/><b>最近修改</b><br/>{}"
 
-#: __init__.py:154 __init__.py:309 __init__.py:421 __init__.py:438
+#: __init__.py:154 __init__.py:330 __init__.py:424 __init__.py:441
 msgid "Edit"
 msgstr "編輯"
 
-#: __init__.py:154 __init__.py:313
+#: __init__.py:154 __init__.py:334
 msgid "Copy"
 msgstr "複製"
 
-#: __init__.py:154 __init__.py:318 __init__.py:421 __init__.py:438
+#: __init__.py:154 __init__.py:339 __init__.py:424 __init__.py:441
 msgid "Rename"
 msgstr "重新命名"
 
-#: __init__.py:154 __init__.py:323 __init__.py:421 __init__.py:438
+#: __init__.py:154 __init__.py:344 __init__.py:424 __init__.py:441
 msgid "Remove"
 msgstr "移除"
 
-#: __init__.py:154 __init__.py:421 __init__.py:438
+#: __init__.py:154 __init__.py:424 __init__.py:441
 msgid "Open"
 msgstr "開啟"
 
@@ -87,17 +87,17 @@ msgstr "指令輸出：{}"
 msgid "Error code {} running '{}'. More info may be logged to the console"
 msgstr "錯誤代碼 {} 執行 '{}'。更多資訊將會被紀錄在終端機中"
 
-#: __init__.py:315
+#: __init__.py:319 __init__.py:374 __init__.py:390
+msgid "Unexpected selection_made value: {}"
+msgstr "未預期的 selection_made 值：{}"
+
+#: __init__.py:336
 msgid "Choose a name for the copy of {}"
 msgstr "選擇 {} 副本的名稱"
 
-#: __init__.py:320
+#: __init__.py:341
 msgid "Choose a new name for {}"
 msgstr "為 {} 選擇新名稱"
-
-#: __init__.py:371 __init__.py:387
-msgid "Unexpected selection_made value: {}"
-msgstr "未預期的 selection_made 值：{}"
 
 #: generate_metadata.py:40
 msgid "Password Store"

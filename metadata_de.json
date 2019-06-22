@@ -1,0 +1,28 @@
+{
+  "description": "Erm\u00f6glicht es Pext, die Passwortverwaltung \u00fcber Pass durchzuf\u00fchren",
+  "developer": "Sylvia van Os",
+  "git_urls": [
+    "https://github.com/Pext/pext_module_pass"
+  ],
+  "homepage": "https://pext.io/",
+  "id": "pext.module.pass",
+  "license": "GPL-3.0+",
+  "name": "Passwortspeicher",
+  "platforms": [
+    "Linux",
+    "Darwin",
+    "Windows"
+  ],
+  "settings": [
+    {
+      "defaults": "pass",
+      "description": "Bin\u00e4rdatei zum Aufruf von Pass-Operationen",
+      "name": "binary"
+    },
+    {
+      "default": "~/.password-store/",
+      "description": "Passwortspeicherverzeichnis",
+      "name": "directory"
+    }
+  ]
+}

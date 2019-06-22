@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-03-21 22:22+CET\n"
+"POT-Creation-Date: 2019-06-22 17:37+CEST\n"
 "PO-Revision-Date: 2019-03-19 16:04+0000\n"
 "Last-Translator: Nelly Simkova <sk8higher@iballwasrawt.ru>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/pext/"
@@ -27,19 +27,19 @@ msgstr ""
 "Bash не установлен. Пожалуйста, установите дистрибутив Linux (например, "
 "Ubuntu) из магазина Microsoft."
 
-#: __init__.py:83 __init__.py:354
+#: __init__.py:83 __init__.py:302
 msgid "Insert"
 msgstr "Вставить"
 
-#: __init__.py:83 __init__.py:358
+#: __init__.py:83 __init__.py:306
 msgid "Generate"
 msgstr "Сгенерировать"
 
-#: __init__.py:83 __init__.py:362
+#: __init__.py:83 __init__.py:310
 msgid "Git"
 msgstr "Git"
 
-#: __init__.py:83 __init__.py:366
+#: __init__.py:83 __init__.py:314
 msgid "Initialize"
 msgstr "Инициализировать"
 
@@ -48,30 +48,30 @@ msgid "Pass is not installed. Please see https://www.passwordstore.org/."
 msgstr ""
 "Pass не установлен. Просмотрите эту страницу https://www.passwordstore.org/."
 
-#: __init__.py:152 __init__.py:419 __init__.py:436
+#: __init__.py:152 __init__.py:422 __init__.py:439
 msgid ""
 "<b>{}</b><br/><br/><b>Last opened</b><br/>{}<br/><br/><b>Last modified</"
 "b><br/>{}"
 msgstr ""
 "<b>{}</b><br/><br/><b>Открыто</b><br/>{}<br/><br/><b>Изменено</b><br/>{}"
 
-#: __init__.py:154 __init__.py:309 __init__.py:421 __init__.py:438
+#: __init__.py:154 __init__.py:330 __init__.py:424 __init__.py:441
 msgid "Edit"
 msgstr "Изменить"
 
-#: __init__.py:154 __init__.py:313
+#: __init__.py:154 __init__.py:334
 msgid "Copy"
 msgstr "Скопировать"
 
-#: __init__.py:154 __init__.py:318 __init__.py:421 __init__.py:438
+#: __init__.py:154 __init__.py:339 __init__.py:424 __init__.py:441
 msgid "Rename"
 msgstr "Переименовать"
 
-#: __init__.py:154 __init__.py:323 __init__.py:421 __init__.py:438
+#: __init__.py:154 __init__.py:344 __init__.py:424 __init__.py:441
 msgid "Remove"
 msgstr "Удалить"
 
-#: __init__.py:154 __init__.py:421 __init__.py:438
+#: __init__.py:154 __init__.py:424 __init__.py:441
 msgid "Open"
 msgstr "Открыть"
 
@@ -91,17 +91,17 @@ msgstr "Вывод команды: {}"
 msgid "Error code {} running '{}'. More info may be logged to the console"
 msgstr "Ошибка с кодом {} при выполнении '{}'. Больше информации в консоли"
 
-#: __init__.py:315
+#: __init__.py:319 __init__.py:374 __init__.py:390
+msgid "Unexpected selection_made value: {}"
+msgstr "Неожиданное значение selection_made: {}"
+
+#: __init__.py:336
 msgid "Choose a name for the copy of {}"
 msgstr "Выбрать имя для копии {}"
 
-#: __init__.py:320
+#: __init__.py:341
 msgid "Choose a new name for {}"
 msgstr "Выбрать новое имя для {}"
-
-#: __init__.py:371 __init__.py:387
-msgid "Unexpected selection_made value: {}"
-msgstr "Неожиданное значение selection_made: {}"
 
 #: generate_metadata.py:40
 msgid "Password Store"

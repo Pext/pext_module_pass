@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-03-21 22:22+CET\n"
+"POT-Creation-Date: 2019-06-22 17:37+CEST\n"
 "PO-Revision-Date: 2019-03-12 16:03+0000\n"
 "Last-Translator: Aayush Gupta <aayushgupta219@gmail.com>\n"
 "Language-Team: Hindi <https://hosted.weblate.org/projects/pext/"
@@ -26,19 +26,19 @@ msgstr ""
 "बैश इंस्टॉल नहीं है। कृपया माइक्रोसॉफ्ट स्टोर से कोई एक लाइनक्स डिस्ट्रीब्यूशन (जैसे की उबुंटू) "
 "इंस्टॉल करें।"
 
-#: __init__.py:83 __init__.py:354
+#: __init__.py:83 __init__.py:302
 msgid "Insert"
 msgstr "डाले"
 
-#: __init__.py:83 __init__.py:358
+#: __init__.py:83 __init__.py:306
 msgid "Generate"
 msgstr "उत्पन्न"
 
-#: __init__.py:83 __init__.py:362
+#: __init__.py:83 __init__.py:310
 msgid "Git"
 msgstr "Git"
 
-#: __init__.py:83 __init__.py:366
+#: __init__.py:83 __init__.py:314
 msgid "Initialize"
 msgstr "इनीशियलाइज़"
 
@@ -46,7 +46,7 @@ msgstr "इनीशियलाइज़"
 msgid "Pass is not installed. Please see https://www.passwordstore.org/."
 msgstr "पास इंस्टॉल नहीं हैं। कृपया https://www.passwordstore.org/ देखें।"
 
-#: __init__.py:152 __init__.py:419 __init__.py:436
+#: __init__.py:152 __init__.py:422 __init__.py:439
 msgid ""
 "<b>{}</b><br/><br/><b>Last opened</b><br/>{}<br/><br/><b>Last modified</"
 "b><br/>{}"
@@ -54,23 +54,23 @@ msgstr ""
 "<b>1{}</b>2<br/>3<br/>4<b>5आखिरी बार खोला गया</b>6<br/>7{}<br/>8<br/"
 ">9<b>0अंतिम बार संशोधन</b><br/>{}"
 
-#: __init__.py:154 __init__.py:309 __init__.py:421 __init__.py:438
+#: __init__.py:154 __init__.py:330 __init__.py:424 __init__.py:441
 msgid "Edit"
 msgstr "संपादन"
 
-#: __init__.py:154 __init__.py:313
+#: __init__.py:154 __init__.py:334
 msgid "Copy"
 msgstr "कापी"
 
-#: __init__.py:154 __init__.py:318 __init__.py:421 __init__.py:438
+#: __init__.py:154 __init__.py:339 __init__.py:424 __init__.py:441
 msgid "Rename"
 msgstr "नाम बदलें"
 
-#: __init__.py:154 __init__.py:323 __init__.py:421 __init__.py:438
+#: __init__.py:154 __init__.py:344 __init__.py:424 __init__.py:441
 msgid "Remove"
 msgstr "हटाएँ"
 
-#: __init__.py:154 __init__.py:421 __init__.py:438
+#: __init__.py:154 __init__.py:424 __init__.py:441
 msgid "Open"
 msgstr "खोले"
 
@@ -90,17 +90,17 @@ msgstr "आदेश आउटपुट: {}"
 msgid "Error code {} running '{}'. More info may be logged to the console"
 msgstr "त्रुटि कोड {} चल रहा है ' {} ' । अधिक जानकारी कंसोल में इकट्ठा हो सकती है"
 
-#: __init__.py:315
+#: __init__.py:319 __init__.py:374 __init__.py:390
+msgid "Unexpected selection_made value: {}"
+msgstr "अप्रत्याशित चयन_ मान: {}"
+
+#: __init__.py:336
 msgid "Choose a name for the copy of {}"
 msgstr "की प्रति के लिए एक नाम चुनें {}"
 
-#: __init__.py:320
+#: __init__.py:341
 msgid "Choose a new name for {}"
 msgstr "के लिए एक नया नाम चुनें {}"
-
-#: __init__.py:371 __init__.py:387
-msgid "Unexpected selection_made value: {}"
-msgstr "अप्रत्याशित चयन_ मान: {}"
 
 #: generate_metadata.py:40
 msgid "Password Store"

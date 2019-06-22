@@ -5,9 +5,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-03-21 22:22+CET\n"
+"POT-Creation-Date: 2019-06-22 17:38+CEST\n"
 "PO-Revision-Date: 2019-03-19 16:04+0000\n"
-"Last-Translator: Nelly Simkova <sk8higher@iballwasrawt.ru>\n"
+"Last-Translator: Viktar Vauchkevich <victorenator@gmail.com>\n"
 "Language-Team: Belarusian <https://hosted.weblate.org/projects/pext/"
 "pext_module_pass/be/>\n"
 "Language: be\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 3.6-dev\n"
+"X-Generator: Weblate 3.7-dev\n"
 "Generated-By: pygettext.py 1.5\n"
 
 #: __init__.py:59
@@ -24,22 +24,22 @@ msgid ""
 "Bash is not installed. Please install a Linux distribution (such as Ubuntu) "
 "from the Microsoft store."
 msgstr ""
-"Bash не ўстаноўлен. Калі ласка, усталюйце дыстрыбутыў Linux (напрыклад, "
+"Bash не ўсталяваны. Калі ласка, усталюйце дыстрыбутыў Linux (напрыклад, "
 "Ubuntu) з Microsoft Store."
 
-#: __init__.py:83 __init__.py:354
+#: __init__.py:83 __init__.py:302
 msgid "Insert"
 msgstr "Уставiць"
 
-#: __init__.py:83 __init__.py:358
+#: __init__.py:83 __init__.py:306
 msgid "Generate"
 msgstr "Згенераваць"
 
-#: __init__.py:83 __init__.py:362
+#: __init__.py:83 __init__.py:310
 msgid "Git"
 msgstr "Git"
 
-#: __init__.py:83 __init__.py:366
+#: __init__.py:83 __init__.py:314
 msgid "Initialize"
 msgstr "Iніцыялізаваць"
 
@@ -48,7 +48,7 @@ msgid "Pass is not installed. Please see https://www.passwordstore.org/."
 msgstr ""
 "Pass не ўсталяваны. Калі ласка, паглядзіце https://www.passwordstore.org/."
 
-#: __init__.py:152 __init__.py:419 __init__.py:436
+#: __init__.py:152 __init__.py:422 __init__.py:439
 msgid ""
 "<b>{}</b><br/><br/><b>Last opened</b><br/>{}<br/><br/><b>Last modified</"
 "b><br/>{}"
@@ -56,23 +56,23 @@ msgstr ""
 "<b>{}</b><br/><br/><b>Апошні раз адкрыты</b><br/>{}<br/><br/><b>Апошнi раз "
 "мадыфікаваны</b><br/>{}"
 
-#: __init__.py:154 __init__.py:309 __init__.py:421 __init__.py:438
+#: __init__.py:154 __init__.py:330 __init__.py:424 __init__.py:441
 msgid "Edit"
-msgstr "Рэдакцiраваць"
+msgstr "Змяніць"
 
-#: __init__.py:154 __init__.py:313
+#: __init__.py:154 __init__.py:334
 msgid "Copy"
-msgstr "Капiраваць"
+msgstr "Капiяваць"
 
-#: __init__.py:154 __init__.py:318 __init__.py:421 __init__.py:438
+#: __init__.py:154 __init__.py:339 __init__.py:424 __init__.py:441
 msgid "Rename"
 msgstr "Пераназваць"
 
-#: __init__.py:154 __init__.py:323 __init__.py:421 __init__.py:438
+#: __init__.py:154 __init__.py:344 __init__.py:424 __init__.py:441
 msgid "Remove"
 msgstr "Выдалiць"
 
-#: __init__.py:154 __init__.py:421 __init__.py:438
+#: __init__.py:154 __init__.py:424 __init__.py:441
 msgid "Open"
 msgstr "Адкрыць"
 
@@ -86,38 +86,36 @@ msgstr "Памылка тайм-аўту падчас працы '{}'"
 
 #: __init__.py:193
 msgid "Command output: {}"
-msgstr "Выснова каманды: {}"
+msgstr "Вывад каманды: {}"
 
 #: __init__.py:256
 msgid "Error code {} running '{}'. More info may be logged to the console"
-msgstr ""
-"Код памылкі {} пры працы '{}'. Больш падрабязнай інфармацыi можна ўвайсці ў "
-"кансоль"
+msgstr "Код памылкі {} пры працы '{}'. Больш звестак можна ўбачыць у кансолі"
 
-#: __init__.py:315
-msgid "Choose a name for the copy of {}"
-msgstr "Выберыце імя для копіі {}"
-
-#: __init__.py:320
-msgid "Choose a new name for {}"
-msgstr "Выберыце новае імя для {}"
-
-#: __init__.py:371 __init__.py:387
+#: __init__.py:319 __init__.py:374 __init__.py:390
 msgid "Unexpected selection_made value: {}"
 msgstr "Нечаканае значэнне selection_made: {}"
 
+#: __init__.py:336
+msgid "Choose a name for the copy of {}"
+msgstr "Абярыце назву для копіі {}"
+
+#: __init__.py:341
+msgid "Choose a new name for {}"
+msgstr "Абярыце новаю назву для {}"
+
 #: generate_metadata.py:40
 msgid "Password Store"
-msgstr "Крама паролей"
+msgstr "Сховішча пароляў"
 
 #: generate_metadata.py:42
 msgid "Allows Pext to do password management through pass"
-msgstr "Дазваляе Pext рабіць кіраванне паролямі праз pass"
+msgstr "Дазваляе Pext кіраваць паролямі праз pass"
 
 #: generate_metadata.py:47
 msgid "Binary to call for pass operations"
-msgstr ""
+msgstr "Бінарны файл для аперацый pass"
 
 #: generate_metadata.py:51
 msgid "Password Store directory"
-msgstr "Дырэкторыя для хранення паролей"
+msgstr "Каталог сховішча пароляў"

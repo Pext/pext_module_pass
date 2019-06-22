@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-03-21 22:22+CET\n"
+"POT-Creation-Date: 2019-06-22 17:37+CEST\n"
 "PO-Revision-Date: 2018-10-05 14:27+0000\n"
 "Last-Translator: Szöllősi Attila <ata2001@airmail.cc>\n"
 "Language-Team: Hungarian <https://hosted.weblate.org/projects/pext/"
@@ -26,19 +26,19 @@ msgstr ""
 "A Bash nincs telepítve. Telepítsen egy Linux disztribúciót (pl. Ubuntu) a "
 "Microsoft áruházból."
 
-#: __init__.py:83 __init__.py:354
+#: __init__.py:83 __init__.py:302
 msgid "Insert"
 msgstr ""
 
-#: __init__.py:83 __init__.py:358
+#: __init__.py:83 __init__.py:306
 msgid "Generate"
 msgstr ""
 
-#: __init__.py:83 __init__.py:362
+#: __init__.py:83 __init__.py:310
 msgid "Git"
 msgstr ""
 
-#: __init__.py:83 __init__.py:366
+#: __init__.py:83 __init__.py:314
 msgid "Initialize"
 msgstr ""
 
@@ -48,7 +48,7 @@ msgstr ""
 "A Pass nincs telepítve. Kérjük látogasson el a https://www.passwordstore."
 "org/ címen található weboldalra."
 
-#: __init__.py:152 __init__.py:419 __init__.py:436
+#: __init__.py:152 __init__.py:422 __init__.py:439
 msgid ""
 "<b>{}</b><br/><br/><b>Last opened</b><br/>{}<br/><br/><b>Last modified</"
 "b><br/>{}"
@@ -56,23 +56,23 @@ msgstr ""
 "<b>{}</b><br/><br/><b>Legutóbb megnyitva</b><br/>{}<br/><br/><b>Legutóbb "
 "módosítva</b><br/>{}"
 
-#: __init__.py:154 __init__.py:309 __init__.py:421 __init__.py:438
+#: __init__.py:154 __init__.py:330 __init__.py:424 __init__.py:441
 msgid "Edit"
 msgstr "Szerkesztés"
 
-#: __init__.py:154 __init__.py:313
+#: __init__.py:154 __init__.py:334
 msgid "Copy"
 msgstr ""
 
-#: __init__.py:154 __init__.py:318 __init__.py:421 __init__.py:438
+#: __init__.py:154 __init__.py:339 __init__.py:424 __init__.py:441
 msgid "Rename"
 msgstr ""
 
-#: __init__.py:154 __init__.py:323 __init__.py:421 __init__.py:438
+#: __init__.py:154 __init__.py:344 __init__.py:424 __init__.py:441
 msgid "Remove"
 msgstr "Eltávolítás"
 
-#: __init__.py:154 __init__.py:421 __init__.py:438
+#: __init__.py:154 __init__.py:424 __init__.py:441
 msgid "Open"
 msgstr "Megnyitás"
 
@@ -94,17 +94,17 @@ msgstr ""
 "Hiba lépett fel a(z) '{1}' parancs futtatása közben. Hibakód: {0}. További "
 "részletekért nézze meg a konzol naplót."
 
-#: __init__.py:315
+#: __init__.py:319 __init__.py:374 __init__.py:390
+msgid "Unexpected selection_made value: {}"
+msgstr "Váratlan selection_made érték: {}"
+
+#: __init__.py:336
 msgid "Choose a name for the copy of {}"
 msgstr ""
 
-#: __init__.py:320
+#: __init__.py:341
 msgid "Choose a new name for {}"
 msgstr ""
-
-#: __init__.py:371 __init__.py:387
-msgid "Unexpected selection_made value: {}"
-msgstr "Váratlan selection_made érték: {}"
 
 #: generate_metadata.py:40
 msgid "Password Store"
