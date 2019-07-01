@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2019-06-22 17:37+CEST\n"
-"PO-Revision-Date: 2018-10-05 14:27+0000\n"
+"PO-Revision-Date: 2019-07-01 17:01+0000\n"
 "Last-Translator: Szöllősi Attila <ata2001@airmail.cc>\n"
 "Language-Team: Hungarian <https://hosted.weblate.org/projects/pext/"
 "pext_module_pass/hu/>\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.2\n"
+"X-Generator: Weblate 3.8-dev\n"
 "Generated-By: pygettext.py 1.5\n"
 
 #: __init__.py:59
@@ -28,19 +28,19 @@ msgstr ""
 
 #: __init__.py:83 __init__.py:302
 msgid "Insert"
-msgstr ""
+msgstr "Beillesztés"
 
 #: __init__.py:83 __init__.py:306
 msgid "Generate"
-msgstr ""
+msgstr "Generálás"
 
 #: __init__.py:83 __init__.py:310
 msgid "Git"
-msgstr ""
+msgstr "Git"
 
 #: __init__.py:83 __init__.py:314
 msgid "Initialize"
-msgstr ""
+msgstr "Inicializáció"
 
 #: __init__.py:114
 msgid "Pass is not installed. Please see https://www.passwordstore.org/."
@@ -62,11 +62,11 @@ msgstr "Szerkesztés"
 
 #: __init__.py:154 __init__.py:334
 msgid "Copy"
-msgstr ""
+msgstr "Másolás"
 
 #: __init__.py:154 __init__.py:339 __init__.py:424 __init__.py:441
 msgid "Rename"
-msgstr ""
+msgstr "Átnevezés"
 
 #: __init__.py:154 __init__.py:344 __init__.py:424 __init__.py:441
 msgid "Remove"
@@ -100,11 +100,11 @@ msgstr "Váratlan selection_made érték: {}"
 
 #: __init__.py:336
 msgid "Choose a name for the copy of {}"
-msgstr ""
+msgstr "Válasszon nevet a {} másolatának"
 
 #: __init__.py:341
 msgid "Choose a new name for {}"
-msgstr ""
+msgstr "Válasszon új nevet a {} bejegyzésnek"
 
 #: generate_metadata.py:40
 msgid "Password Store"
