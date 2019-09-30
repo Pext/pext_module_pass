@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2019-06-22 17:37+CEST\n"
-"PO-Revision-Date: 2019-03-19 16:04+0000\n"
-"Last-Translator: Claire Goulet <claire.m.goulet@gmail.com>\n"
+"PO-Revision-Date: 2019-08-28 11:24+0000\n"
+"Last-Translator: leela <53352@protonmail.com>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/pext/"
 "pext_module_pass/fr/>\n"
 "Language: fr\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 3.6-dev\n"
+"X-Generator: Weblate 3.9-dev\n"
 "Generated-By: pygettext.py 1.5\n"
 
 #: __init__.py:59
@@ -77,7 +77,7 @@ msgstr "Ouvrir"
 
 #: __init__.py:160
 msgid "{} what?"
-msgstr "{} quoi?"
+msgstr "{} quoi ?"
 
 #: __init__.py:191
 msgid "Timeout error while running '{}'"
