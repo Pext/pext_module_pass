@@ -385,6 +385,7 @@ class Module(ModuleBase):
                 copyString = copyStringParts[1] if len(copyStringParts) > 1 else copyStringParts[0]
                 self.q.put([Action.copy_to_clipboard, copyString])
 
+            self.passwordEntries = {}
             self.q.put([Action.close])
         else:
             self.q.put([Action.critical_error, _("Unexpected selection_made value: {}").format(selection)])
