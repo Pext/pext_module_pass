@@ -5,118 +5,104 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-06-22 17:37+CEST\n"
-"PO-Revision-Date: 2019-08-28 11:24+0000\n"
-"Last-Translator: leela <53352@protonmail.com>\n"
-"Language-Team: French <https://hosted.weblate.org/projects/pext/"
-"pext_module_pass/fr/>\n"
-"Language: fr\n"
+"POT-Creation-Date: 2019-06-22 17:38+CEST\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 3.9-dev\n"
 "Generated-By: pygettext.py 1.5\n"
 
 #: __init__.py:59
-msgid ""
-"Bash is not installed. Please install a Linux distribution (such as Ubuntu) "
-"from the Microsoft store."
+msgid "Bash is not installed. Please install a Linux distribution (such as Ubuntu) from the Microsoft store."
 msgstr ""
-"Bash n'est pas installé. Veuillez installer une distribution Linux (telle "
-"que Ubuntu) à partir du magasin Microsoft."
 
 #: __init__.py:83 __init__.py:302
 msgid "Insert"
-msgstr "Insérer"
+msgstr ""
 
 #: __init__.py:83 __init__.py:306
 msgid "Generate"
-msgstr "Produire"
+msgstr ""
 
 #: __init__.py:83 __init__.py:310
 msgid "Git"
-msgstr "Git"
+msgstr ""
 
 #: __init__.py:83 __init__.py:314
 msgid "Initialize"
-msgstr "Initialiser"
+msgstr ""
 
 #: __init__.py:114
 msgid "Pass is not installed. Please see https://www.passwordstore.org/."
 msgstr ""
-"Pass n'est pas installé. Veuillez consulter https://www.passwordstore.org/."
 
 #: __init__.py:152 __init__.py:422 __init__.py:439
-msgid ""
-"<b>{}</b><br/><br/><b>Last opened</b><br/>{}<br/><br/><b>Last modified</"
-"b><br/>{}"
+msgid "<b>{}</b><br/><br/><b>Last opened</b><br/>{}<br/><br/><b>Last modified</b><br/>{}"
 msgstr ""
-"<b>{}</b><br/><br/><b>Dernière ouverture</b><br/>{}<br/><br/><b>Dernière "
-"modification</b><br/>{}"
 
 #: __init__.py:154 __init__.py:330 __init__.py:424 __init__.py:441
 msgid "Edit"
-msgstr "Modifier"
+msgstr ""
 
 #: __init__.py:154 __init__.py:334
 msgid "Copy"
-msgstr "Copie"
+msgstr ""
 
 #: __init__.py:154 __init__.py:339 __init__.py:424 __init__.py:441
 msgid "Rename"
-msgstr "Renommer"
+msgstr ""
 
 #: __init__.py:154 __init__.py:344 __init__.py:424 __init__.py:441
 msgid "Remove"
-msgstr "Retirer"
+msgstr ""
 
 #: __init__.py:154 __init__.py:424 __init__.py:441
 msgid "Open"
-msgstr "Ouvrir"
+msgstr ""
 
 #: __init__.py:160
 msgid "{} what?"
-msgstr "{} quoi ?"
+msgstr ""
 
 #: __init__.py:191
 msgid "Timeout error while running '{}'"
-msgstr "Erreur de délai d'attente lors de l'exécution de '{}'"
+msgstr ""
 
 #: __init__.py:193
 msgid "Command output: {}"
-msgstr "Sortie de commande: {}"
+msgstr ""
 
 #: __init__.py:256
 msgid "Error code {} running '{}'. More info may be logged to the console"
 msgstr ""
-"Code d'erreur {} en cours d'exécution '{}'. Plus d'informations peuvent être "
-"connectées à la console"
 
 #: __init__.py:319 __init__.py:374 __init__.py:390
 msgid "Unexpected selection_made value: {}"
-msgstr "Sélection inattendue faite: {}"
+msgstr ""
 
 #: __init__.py:336
 msgid "Choose a name for the copy of {}"
-msgstr "Choisissez un nom pour la copie de {}"
+msgstr ""
 
 #: __init__.py:341
 msgid "Choose a new name for {}"
-msgstr "Choisissez un nouveau nom pour {}"
+msgstr ""
 
 #: generate_metadata.py:40
 msgid "Password Store"
-msgstr "Banque de mots de passe"
+msgstr ""
 
 #: generate_metadata.py:42
 msgid "Allows Pext to do password management through pass"
-msgstr "Permet à Pext de gérer les mots de passe en pass"
+msgstr ""
 
 #: generate_metadata.py:47
 msgid "Binary to call for pass operations"
-msgstr "Binaire à appeler pour les opérations de pass"
+msgstr ""
 
 #: generate_metadata.py:51
 msgid "Password Store directory"
-msgstr "Répertoire de mots de passe"
+msgstr ""
