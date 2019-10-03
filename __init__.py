@@ -98,75 +98,75 @@ class Module(ModuleBase):
         data = identifier.split()
         if data[0] == "copy":
             if len(data) == 1:
-                if response:
+                if response is not None:
                     self._copy(name=response)
                 else:
                     self._copy()
             else:
-                if response:
+                if response is not None:
                     self._copy(name=" ".join(data[1:]), copy_name=response)
                 else:
                     self._copy(name=" ".join(data[1:]))
-        if data[0] == "edit":
+        elif data[0] == "edit":
             if len(data) == 1:
-                if response:
+                if response is not None:
                     self._edit(name=response)
                 else:
                     self._edit()
             else:
-                if response:
+                if response is not None:
                     self._edit(name=" ".join(data[1:]), value=response)
                 else:
                     self._edit(name=" ".join(data[1:]))
         elif data[0] == "generate":
             if len(data) == 1:
-                if response:
+                if response is not None:
                     self._generate(name=response)
                 else:
                     self._generate()
             else:
-                if response:
+                if response is not None:
                     self._generate(name=" ".join(data[1:]), length=response)
                 else:
                     self._generate(name=" ".join(data[1:]))
         elif data[0] == "init":
-            if response:
+            if response is not None:
                 self._init(gpg_id=response)
             else:
                 self._init()
         elif data[0] == "insert":
             if len(data) == 1:
-                if response:
+                if response is not None:
                     self._insert(name=response)
                 else:
                     self._insert()
             else:
-                if response:
+                if response is not None:
                     self._insert(name=" ".join(data[1:]), value=response)
                 else:
                     self._insert(name=" ".join(data[1:]))
         elif data[0] == "remove":
             if len(data) == 1:
-                if response:
+                if response is not None:
                     self._remove(name=response)
                 else:
                     self._remove()
             else:
-                if response:
+                if response is not None:
                     self._remove(name=" ".join(data[1:]), confirmed=response)
                 else:
                     self._remove(name=" ".join(data[1:]))
         elif data[0] == "rename":
             if len(data) == 1:
-                if response:
+                if response is not None:
                     self._rename(name=response)
                 else:
                     self._rename()
             else:
-                if response:
-                    self._rename(name=" ".join(data[1]), new_name=response)
+                if response is not None:
+                    self._rename(name=" ".join(data[1:]), new_name=response)
                 else:
-                    self._rename(name=" ".join(data[1]))
+                    self._rename(name=" ".join(data[1:]))
         else:
             self.q.put([Action.critical_error, _("Unknown request received: {}").format(" ".join(data))])
 
@@ -174,9 +174,17 @@ class Module(ModuleBase):
         if not name:
             self.q.put([Action.ask_input, _("Copy which password?"), "", "copy"])
         elif not copy_name:
-            self.q.put([Action.ask_input, _("What should the copy of {} be named?"), name, "copy {}"])
+            self.q.put([Action.ask_input, _("What should the copy of {} be named?").format(name), name, "copy {}".format(name)])
         else:
-            shutil.copyfile(name, copy_name)
+            try:
+                shutil.copyfile(
+                    os.path.join(self._get_data_location(), "{}.gpg".format(name)),
+                    os.path.join(self._get_data_location(), "{}.gpg".format(copy_name))
+                )
+            except shutil.SameFileError:
+                self.q.put([Action.ask_input, _("What should the copy of {} be named?").format(name), name, "copy {}".format(name)])
+                return
+
             self.q.put([Action.set_selection, []])
 
     def _edit(self, name=None, value=None):
@@ -218,20 +226,25 @@ class Module(ModuleBase):
         if not name:
             self.q.put([Action.ask_input, _("Remove which password?"), "", "remove"])
         elif confirmed is None:
-            self.q.put([Action.ask_question, _("Are you sure you want to remove {}?").format(name), "remove {}"])
+            self.q.put([Action.ask_question, _("Are you sure you want to remove {}?").format(name), "remove {}".format(name)])
         elif not confirmed:
             return
         else:
-            os.remove(name)
+            os.remove(
+                os.path.join(self._get_data_location(), "{}.gpg".format(name)),
+            )
             self.q.put([Action.set_selection, []])
 
     def _rename(self, name=None, new_name=None):
         if not name:
             self.q.put([Action.ask_input, _("Rename which password?"), "", "rename"])
         elif not new_name:
-            self.q.put([Action.ask_input, _("What should the new name of {} be?"), name, "rename {}"])
+            self.q.put([Action.ask_input, _("What should the new name of {} be?").format(name), name, "rename {}".format(name)])
         else:
-            os.rename(name, new_name)
+            os.rename(
+                os.path.join(self._get_data_location(), "{}.gpg".format(name)),
+                os.path.join(self._get_data_location(), "{}.gpg".format(new_name))
+            )
             self.q.put([Action.set_selection, []])
 
     def stop(self):
