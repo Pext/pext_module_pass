@@ -31,10 +31,6 @@ import pypass
 from pext_base import ModuleBase
 from pext_helpers import Action, SelectionType
 
-from watchdog.events import FileSystemEventHandler
-from watchdog.observers import Observer
-
-
 class Module(ModuleBase):
     def init(self, settings, q):
         if platform.system() == 'Darwin':
@@ -66,17 +62,8 @@ class Module(ModuleBase):
 
         self._get_entries()
 
-        self._init_watchdog(q)
-
         if not os.path.join(self.data_location, ".gpg-id"):
             self._init()
-
-    def _init_watchdog(self, q):
-        # Initialize the EventHandler and make it watch the password store
-        event_handler = EventHandler(q, self)
-        self.observer = Observer()
-        self.observer.schedule(event_handler, self._get_data_location(), recursive=True)
-        self.observer.start()
 
     def _get_data_location(self):
         return self.data_location
@@ -247,9 +234,6 @@ class Module(ModuleBase):
             )
             self.q.put([Action.set_selection, []])
 
-    def stop(self):
-        self.observer.stop()
-
     def selection_made(self, selection):
         if len(selection) == 0:
             # We're at the main menu
@@ -330,50 +314,3 @@ class Module(ModuleBase):
             self.q.put([Action.close])
         else:
             self.q.put([Action.critical_error, _("Unexpected selection_made value: {}").format(selection)])
-
-class EventHandler(FileSystemEventHandler):
-    def __init__(self, q, store):
-        self.q = q
-        self.store = store
-
-    def on_deleted(self, event):
-        if event.is_directory or len(self.store.passwordEntries) > 0:
-            return
-
-        entry_name = event.src_path[len(self.store._get_data_location()):]
-
-        if entry_name[-4:] != ".gpg":
-            return
-
-        self.q.put([Action.remove_entry, entry_name[:-4]])
-
-    def on_modified(self, event):
-        if event.is_directory or len(self.store.passwordEntries) > 0:
-            return
-
-        entry_name = event.src_path[len(self.store._get_data_location()):]
-
-        if entry_name[-4:] != ".gpg":
-            return
-
-        # As this event also gets called when a file gets created, it may
-        # generate warnings in Pext to call this. These warnings are harmless
-        self.q.put([Action.remove_entry, entry_name[:-4]])
-        self.q.put([Action.prepend_entry, entry_name[:-4]])
-        self.q.put([Action.set_entry_info, entry_name[-4:], _("<b>{}</b><br/><br/><b>Last opened</b><br/>{}<br/><br/><b>Last modified</b><br/>{}").format(html.escape(entry_name[-4:]), format_datetime(datetime.fromtimestamp(os.path.getatime(event.src_path)).replace(microsecond=0), locale=self.store.settings['_locale']), format_datetime(datetime.fromtimestamp(os.path.getmtime(event.src_path)).replace(microsecond=0), locale=self.store.settings['_locale']))])
-        self.q.put([Action.set_entry_context, event.src_path, [_("Open"), _("Edit"), _("Rename"), _("Remove")]])
-
-    def on_moved(self, event):
-        if event.is_directory or len(self.store.passwordEntries) > 0:
-            return
-
-        old_entry_name = event.src_path[len(self.store._get_data_location()):]
-        new_entry_name = event.dest_path[len(self.store._get_data_location()):]
-
-        if old_entry_name[-4:] != ".gpg":
-            return
-
-        self.q.put([Action.remove_entry, old_entry_name[:-4]])
-        self.q.put([Action.prepend_entry, new_entry_name[:-4]])
-        self.q.put([Action.set_entry_info, new_entry_name[:-4], _("<b>{}</b><br/><br/><b>Last opened</b><br/>{}<br/><br/><b>Last modified</b><br/>{}").format(html.escape(new_entry_name[:-4]), format_datetime(datetime.fromtimestamp(os.path.getatime(event.dest_path)).replace(microsecond=0), locale=self.store.settings['_locale']), format_datetime(datetime.fromtimestamp(os.path.getmtime(event.dest_path)).replace(microsecond=0), locale=self.store.settings['_locale']))])
-        self.q.put([Action.set_entry_context, new_entry_name[:-4], [_("Open"), _("Edit"), _("Rename"), _("Remove")]])
