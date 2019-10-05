@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-10-05 19:10+CEST\n"
+"POT-Creation-Date: 2019-10-05 19:13+CEST\n"
 "PO-Revision-Date: 2019-07-01 17:01+0000\n"
 "Last-Translator: Szöllősi Attila <ata2001@airmail.cc>\n"
 "Language-Team: Hungarian <https://hosted.weblate.org/projects/pext/"
@@ -125,13 +125,12 @@ msgid "Allows Pext to do password management through pass"
 msgstr ""
 "Engedélyezi a jelszavak kezelését pass parancssoros felületén keresztül"
 
-#: generate_metadata.py:47
-msgid "Binary to call for pass operations"
-msgstr "pass bináris"
-
-#: generate_metadata.py:51
+#: generate_metadata.py:48
 msgid "Password Store directory"
 msgstr "Jelszókezelő könyvtára"
+
+#~ msgid "Binary to call for pass operations"
+#~ msgstr "pass bináris"
 
 #~ msgid ""
 #~ "Bash is not installed. Please install a Linux distribution (such as "

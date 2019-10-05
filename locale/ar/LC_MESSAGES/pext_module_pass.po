@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-10-05 19:10+CEST\n"
+"POT-Creation-Date: 2019-10-05 19:13+CEST\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -119,10 +119,6 @@ msgstr ""
 msgid "Allows Pext to do password management through pass"
 msgstr ""
 
-#: generate_metadata.py:47
-msgid "Binary to call for pass operations"
-msgstr ""
-
-#: generate_metadata.py:51
+#: generate_metadata.py:48
 msgid "Password Store directory"
 msgstr ""

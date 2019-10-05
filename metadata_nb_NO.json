@@ -15,11 +15,6 @@
   ],
   "settings": [
     {
-      "defaults": "pass",
-      "description": "Bin\u00e6rfil \u00e5 kalle for pass-operasjoner",
-      "name": "binary"
-    },
-    {
       "default": "~/.password-store/",
       "description": "Passordlagermappe",
       "name": "directory"

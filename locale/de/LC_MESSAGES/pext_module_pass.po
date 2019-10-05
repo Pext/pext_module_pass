@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-10-05 19:10+CEST\n"
+"POT-Creation-Date: 2019-10-05 19:13+CEST\n"
 "PO-Revision-Date: 2019-06-18 19:04+0000\n"
 "Last-Translator: ssantos <ssantos@web.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/pext/"
@@ -124,13 +124,12 @@ msgstr "Passwortspeicher"
 msgid "Allows Pext to do password management through pass"
 msgstr "Ermöglicht es Pext, die Passwortverwaltung über Pass durchzuführen"
 
-#: generate_metadata.py:47
-msgid "Binary to call for pass operations"
-msgstr "Binärdatei zum Aufruf von Pass-Operationen"
-
-#: generate_metadata.py:51
+#: generate_metadata.py:48
 msgid "Password Store directory"
 msgstr "Passwortspeicherverzeichnis"
+
+#~ msgid "Binary to call for pass operations"
+#~ msgstr "Binärdatei zum Aufruf von Pass-Operationen"
 
 #~ msgid ""
 #~ "Bash is not installed. Please install a Linux distribution (such as "

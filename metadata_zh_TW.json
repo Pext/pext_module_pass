@@ -15,11 +15,6 @@
   ],
   "settings": [
     {
-      "defaults": "pass",
-      "description": "\u8981\u547c\u53eb pass \u64cd\u4f5c\u7684\u4e8c\u9032\u4f4d\u6a94",
-      "name": "binary"
-    },
-    {
       "default": "~/.password-store/",
       "description": "\u5bc6\u78bc\u5132\u5b58\u76ee\u9304",
       "name": "directory"

@@ -15,11 +15,6 @@
   ],
   "settings": [
     {
-      "defaults": "pass",
-      "description": "Plik binarny inicjuj\u0105cy operacje pass",
-      "name": "binary"
-    },
-    {
       "default": "~/.password-store/",
       "description": "Katalog Password Store",
       "name": "directory"

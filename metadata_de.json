@@ -15,11 +15,6 @@
   ],
   "settings": [
     {
-      "defaults": "pass",
-      "description": "Bin\u00e4rdatei zum Aufruf von Pass-Operationen",
-      "name": "binary"
-    },
-    {
       "default": "~/.password-store/",
       "description": "Passwortspeicherverzeichnis",
       "name": "directory"

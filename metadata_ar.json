@@ -15,11 +15,6 @@
   ],
   "settings": [
     {
-      "defaults": "pass",
-      "description": "Binary to call for pass operations",
-      "name": "binary"
-    },
-    {
       "default": "~/.password-store/",
       "description": "Password Store directory",
       "name": "directory"

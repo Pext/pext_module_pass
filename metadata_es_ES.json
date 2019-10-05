@@ -15,11 +15,6 @@
   ],
   "settings": [
     {
-      "defaults": "pass",
-      "description": "Binario para llamar para operaciones de pase",
-      "name": "binary"
-    },
-    {
       "default": "~/.password-store/",
       "description": "Directorio de la tienda de Contrase\u00f1a",
       "name": "directory"

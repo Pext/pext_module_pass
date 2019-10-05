@@ -15,11 +15,6 @@
   ],
   "settings": [
     {
-      "defaults": "pass",
-      "description": "Aan te roepen applicatie voor pass-operaties",
-      "name": "binary"
-    },
-    {
       "default": "~/.password-store/",
       "description": "Wachtwoordopslag-map",
       "name": "directory"

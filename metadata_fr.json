@@ -15,11 +15,6 @@
   ],
   "settings": [
     {
-      "defaults": "pass",
-      "description": "Binaire \u00e0 appeler pour les op\u00e9rations de pass",
-      "name": "binary"
-    },
-    {
       "default": "~/.password-store/",
       "description": "R\u00e9pertoire de mots de passe",
       "name": "directory"
