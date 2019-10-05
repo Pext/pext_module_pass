@@ -176,7 +176,7 @@ class Module(ModuleBase):
 
     def _edit(self, name=None, value=None):
         if not name:
-            self.q.put([Action.ask_input, _("What is the name of this password to edit?"), "", "edit"])
+            self.q.put([Action.ask_input, _("What is the name of the password to edit?"), "", "edit"])
         elif not value:
             current_data = self.password_store.get_decrypted_password(name)
             self.q.put([Action.ask_input_multi_line, _("What should the value of {} be?").format(name), current_data, "edit {}".format(name)])
@@ -202,7 +202,7 @@ class Module(ModuleBase):
 
     def _insert(self, name=None, value=None):
         if not name:
-            self.q.put([Action.ask_input, _("What is the name of this password?"), "", 'insert'])
+            self.q.put([Action.ask_input, _("What is the name of the password?"), "", 'insert'])
         elif not value:
             self.q.put([Action.ask_input_multi_line, _("What should the value of {} be?").format(name), "", "insert {}".format(name)])
         else:

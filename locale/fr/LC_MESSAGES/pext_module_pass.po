@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-10-05 19:13+CEST\n"
+"POT-Creation-Date: 2019-10-05 20:14+CEST\n"
 "PO-Revision-Date: 2019-08-28 11:24+0000\n"
 "Last-Translator: leela <53352@protonmail.com>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/pext/"
@@ -73,7 +73,7 @@ msgid "What should the copy of {} be named?"
 msgstr ""
 
 #: __init__.py:179
-msgid "What is the name of this password to edit?"
+msgid "What is the name of the password to edit?"
 msgstr ""
 
 #: __init__.py:182 __init__.py:207
@@ -93,7 +93,7 @@ msgid "Please provide a GPG ID to initialize this directory with."
 msgstr ""
 
 #: __init__.py:205
-msgid "What is the name of this password?"
+msgid "What is the name of the password?"
 msgstr ""
 
 #: __init__.py:214
