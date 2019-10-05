@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2019-06-22 17:37+CEST\n"
+"POT-Creation-Date: 2019-10-05 19:10+CEST\n"
 "PO-Revision-Date: 2019-06-25 19:01+0000\n"
 "Last-Translator: Heimen Stoffels <vistausss@outlook.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/pext/"
@@ -18,35 +18,21 @@ msgstr ""
 "X-Generator: Weblate 3.7.1-dev\n"
 "Generated-By: pygettext.py 1.5\n"
 
-#: __init__.py:59
+#: __init__.py:55
 msgid ""
-"Bash is not installed. Please install a Linux distribution (such as Ubuntu) "
-"from the Microsoft store."
+"This module requires at least API version 0.11.1, you are using {}. Please "
+"update Pext."
 msgstr ""
-"Bash is niet geïnstalleerd. Installeer een Linux-distributie (bijv. Ubuntu) "
-"via de Microsoft-winkel."
 
-#: __init__.py:83 __init__.py:302
+#: __init__.py:61 __init__.py:247
 msgid "Insert"
 msgstr "Invoegen"
 
-#: __init__.py:83 __init__.py:306
+#: __init__.py:61 __init__.py:251
 msgid "Generate"
 msgstr "Genereren"
 
-#: __init__.py:83 __init__.py:310
-msgid "Git"
-msgstr "Git"
-
-#: __init__.py:83 __init__.py:314
-msgid "Initialize"
-msgstr "Initialiseren"
-
-#: __init__.py:114
-msgid "Pass is not installed. Please see https://www.passwordstore.org/."
-msgstr "Pass is niet geïnstalleerd. Zie https://www.passwordstore.org/."
-
-#: __init__.py:152 __init__.py:422 __init__.py:439
+#: __init__.py:77
 msgid ""
 "<b>{}</b><br/><br/><b>Last opened</b><br/>{}<br/><br/><b>Last modified</"
 "b><br/>{}"
@@ -54,55 +40,81 @@ msgstr ""
 "<b>{}</b><br/><br/><b>Laatst geopend</b><br/>{}<br/><br/><b>Laatst bewerkt</"
 "b><br/>{}"
 
-#: __init__.py:154 __init__.py:330 __init__.py:424 __init__.py:441
-msgid "Edit"
-msgstr "Bewerken"
-
-#: __init__.py:154 __init__.py:334
-msgid "Copy"
-msgstr "Kopiëren"
-
-#: __init__.py:154 __init__.py:339 __init__.py:424 __init__.py:441
-msgid "Rename"
-msgstr "Naam wijzigen"
-
-#: __init__.py:154 __init__.py:344 __init__.py:424 __init__.py:441
-msgid "Remove"
-msgstr "Verwijderen"
-
-#: __init__.py:154 __init__.py:424 __init__.py:441
+#: __init__.py:78
 msgid "Open"
 msgstr "Openen"
 
-#: __init__.py:160
-msgid "{} what?"
-msgstr "{} wat?"
+#: __init__.py:78 __init__.py:259
+msgid "Edit"
+msgstr "Bewerken"
+
+#: __init__.py:78 __init__.py:263
+msgid "Copy"
+msgstr "Kopiëren"
+
+#: __init__.py:78 __init__.py:267
+msgid "Rename"
+msgstr "Naam wijzigen"
+
+#: __init__.py:78 __init__.py:271
+msgid "Remove"
+msgstr "Verwijderen"
+
+#: __init__.py:158
+msgid "Unknown request received: {}"
+msgstr ""
+
+#: __init__.py:162
+msgid "Copy which password?"
+msgstr ""
+
+#: __init__.py:164 __init__.py:172
+msgid "What should the copy of {} be named?"
+msgstr ""
+
+#: __init__.py:179
+msgid "What is the name of this password to edit?"
+msgstr ""
+
+#: __init__.py:182 __init__.py:207
+msgid "What should the value of {} be?"
+msgstr ""
+
+#: __init__.py:189
+msgid "Generate a random password under which name?"
+msgstr ""
 
 #: __init__.py:191
-msgid "Timeout error while running '{}'"
-msgstr "Time-outfout tijdens het uitvoeren van '{}'"
-
-#: __init__.py:193
-msgid "Command output: {}"
-msgstr "Opdrachtuitvoer: {}"
-
-#: __init__.py:256
-msgid "Error code {} running '{}'. More info may be logged to the console"
+msgid "How many characters long should the password be?"
 msgstr ""
-"Foutcode {} tijdens uitvoeren van '{}'. Meer informatie is mogelijk naar de "
-"console geschreven"
 
-#: __init__.py:319 __init__.py:374 __init__.py:390
+#: __init__.py:198
+msgid "Please provide a GPG ID to initialize this directory with."
+msgstr ""
+
+#: __init__.py:205
+msgid "What is the name of this password?"
+msgstr ""
+
+#: __init__.py:214
+msgid "Remove which password?"
+msgstr ""
+
+#: __init__.py:216
+msgid "Are you sure you want to remove {}?"
+msgstr ""
+
+#: __init__.py:227
+msgid "Rename which password?"
+msgstr ""
+
+#: __init__.py:229
+msgid "What should the new name of {} be?"
+msgstr ""
+
+#: __init__.py:256 __init__.py:299 __init__.py:316
 msgid "Unexpected selection_made value: {}"
 msgstr "Onverwachte selection_made-waarde: {}"
-
-#: __init__.py:336
-msgid "Choose a name for the copy of {}"
-msgstr "Kies een naam voor de kopie van {}"
-
-#: __init__.py:341
-msgid "Choose a new name for {}"
-msgstr "Geef een nieuwe naam aan {}"
 
 #: generate_metadata.py:40
 msgid "Password Store"
@@ -119,6 +131,42 @@ msgstr "Aan te roepen applicatie voor pass-operaties"
 #: generate_metadata.py:51
 msgid "Password Store directory"
 msgstr "Wachtwoordopslag-map"
+
+#~ msgid ""
+#~ "Bash is not installed. Please install a Linux distribution (such as "
+#~ "Ubuntu) from the Microsoft store."
+#~ msgstr ""
+#~ "Bash is niet geïnstalleerd. Installeer een Linux-distributie (bijv. "
+#~ "Ubuntu) via de Microsoft-winkel."
+
+#~ msgid "Git"
+#~ msgstr "Git"
+
+#~ msgid "Initialize"
+#~ msgstr "Initialiseren"
+
+#~ msgid "Pass is not installed. Please see https://www.passwordstore.org/."
+#~ msgstr "Pass is niet geïnstalleerd. Zie https://www.passwordstore.org/."
+
+#~ msgid "{} what?"
+#~ msgstr "{} wat?"
+
+#~ msgid "Timeout error while running '{}'"
+#~ msgstr "Time-outfout tijdens het uitvoeren van '{}'"
+
+#~ msgid "Command output: {}"
+#~ msgstr "Opdrachtuitvoer: {}"
+
+#~ msgid "Error code {} running '{}'. More info may be logged to the console"
+#~ msgstr ""
+#~ "Foutcode {} tijdens uitvoeren van '{}'. Meer informatie is mogelijk naar "
+#~ "de console geschreven"
+
+#~ msgid "Choose a name for the copy of {}"
+#~ msgstr "Kies een naam voor de kopie van {}"
+
+#~ msgid "Choose a new name for {}"
+#~ msgstr "Geef een nieuwe naam aan {}"
 
 #~ msgid ""
 #~ "Bash is not installed. Please install a Linux distribution (such as "

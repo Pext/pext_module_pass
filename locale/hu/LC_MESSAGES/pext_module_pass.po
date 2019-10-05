@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-06-22 17:37+CEST\n"
+"POT-Creation-Date: 2019-10-05 19:10+CEST\n"
 "PO-Revision-Date: 2019-07-01 17:01+0000\n"
 "Last-Translator: Szöllősi Attila <ata2001@airmail.cc>\n"
 "Language-Team: Hungarian <https://hosted.weblate.org/projects/pext/"
@@ -18,37 +18,21 @@ msgstr ""
 "X-Generator: Weblate 3.8-dev\n"
 "Generated-By: pygettext.py 1.5\n"
 
-#: __init__.py:59
+#: __init__.py:55
 msgid ""
-"Bash is not installed. Please install a Linux distribution (such as Ubuntu) "
-"from the Microsoft store."
+"This module requires at least API version 0.11.1, you are using {}. Please "
+"update Pext."
 msgstr ""
-"A Bash nincs telepítve. Telepítsen egy Linux disztribúciót (pl. Ubuntu) a "
-"Microsoft áruházból."
 
-#: __init__.py:83 __init__.py:302
+#: __init__.py:61 __init__.py:247
 msgid "Insert"
 msgstr "Beillesztés"
 
-#: __init__.py:83 __init__.py:306
+#: __init__.py:61 __init__.py:251
 msgid "Generate"
 msgstr "Generálás"
 
-#: __init__.py:83 __init__.py:310
-msgid "Git"
-msgstr "Git"
-
-#: __init__.py:83 __init__.py:314
-msgid "Initialize"
-msgstr "Inicializáció"
-
-#: __init__.py:114
-msgid "Pass is not installed. Please see https://www.passwordstore.org/."
-msgstr ""
-"A Pass nincs telepítve. Kérjük látogasson el a https://www.passwordstore."
-"org/ címen található weboldalra."
-
-#: __init__.py:152 __init__.py:422 __init__.py:439
+#: __init__.py:77
 msgid ""
 "<b>{}</b><br/><br/><b>Last opened</b><br/>{}<br/><br/><b>Last modified</"
 "b><br/>{}"
@@ -56,55 +40,81 @@ msgstr ""
 "<b>{}</b><br/><br/><b>Legutóbb megnyitva</b><br/>{}<br/><br/><b>Legutóbb "
 "módosítva</b><br/>{}"
 
-#: __init__.py:154 __init__.py:330 __init__.py:424 __init__.py:441
-msgid "Edit"
-msgstr "Szerkesztés"
-
-#: __init__.py:154 __init__.py:334
-msgid "Copy"
-msgstr "Másolás"
-
-#: __init__.py:154 __init__.py:339 __init__.py:424 __init__.py:441
-msgid "Rename"
-msgstr "Átnevezés"
-
-#: __init__.py:154 __init__.py:344 __init__.py:424 __init__.py:441
-msgid "Remove"
-msgstr "Eltávolítás"
-
-#: __init__.py:154 __init__.py:424 __init__.py:441
+#: __init__.py:78
 msgid "Open"
 msgstr "Megnyitás"
 
-#: __init__.py:160
-msgid "{} what?"
-msgstr "{} mi?"
+#: __init__.py:78 __init__.py:259
+msgid "Edit"
+msgstr "Szerkesztés"
+
+#: __init__.py:78 __init__.py:263
+msgid "Copy"
+msgstr "Másolás"
+
+#: __init__.py:78 __init__.py:267
+msgid "Rename"
+msgstr "Átnevezés"
+
+#: __init__.py:78 __init__.py:271
+msgid "Remove"
+msgstr "Eltávolítás"
+
+#: __init__.py:158
+msgid "Unknown request received: {}"
+msgstr ""
+
+#: __init__.py:162
+msgid "Copy which password?"
+msgstr ""
+
+#: __init__.py:164 __init__.py:172
+msgid "What should the copy of {} be named?"
+msgstr ""
+
+#: __init__.py:179
+msgid "What is the name of this password to edit?"
+msgstr ""
+
+#: __init__.py:182 __init__.py:207
+msgid "What should the value of {} be?"
+msgstr ""
+
+#: __init__.py:189
+msgid "Generate a random password under which name?"
+msgstr ""
 
 #: __init__.py:191
-msgid "Timeout error while running '{}'"
-msgstr "Időtúllépés '{}' futtatása közben"
-
-#: __init__.py:193
-msgid "Command output: {}"
-msgstr "Parancs kimenete: {}"
-
-#: __init__.py:256
-msgid "Error code {} running '{}'. More info may be logged to the console"
+msgid "How many characters long should the password be?"
 msgstr ""
-"Hiba lépett fel a(z) '{1}' parancs futtatása közben. Hibakód: {0}. További "
-"részletekért nézze meg a konzol naplót."
 
-#: __init__.py:319 __init__.py:374 __init__.py:390
+#: __init__.py:198
+msgid "Please provide a GPG ID to initialize this directory with."
+msgstr ""
+
+#: __init__.py:205
+msgid "What is the name of this password?"
+msgstr ""
+
+#: __init__.py:214
+msgid "Remove which password?"
+msgstr ""
+
+#: __init__.py:216
+msgid "Are you sure you want to remove {}?"
+msgstr ""
+
+#: __init__.py:227
+msgid "Rename which password?"
+msgstr ""
+
+#: __init__.py:229
+msgid "What should the new name of {} be?"
+msgstr ""
+
+#: __init__.py:256 __init__.py:299 __init__.py:316
 msgid "Unexpected selection_made value: {}"
 msgstr "Váratlan selection_made érték: {}"
-
-#: __init__.py:336
-msgid "Choose a name for the copy of {}"
-msgstr "Válasszon nevet a {} másolatának"
-
-#: __init__.py:341
-msgid "Choose a new name for {}"
-msgstr "Válasszon új nevet a {} bejegyzésnek"
 
 #: generate_metadata.py:40
 msgid "Password Store"
@@ -122,6 +132,44 @@ msgstr "pass bináris"
 #: generate_metadata.py:51
 msgid "Password Store directory"
 msgstr "Jelszókezelő könyvtára"
+
+#~ msgid ""
+#~ "Bash is not installed. Please install a Linux distribution (such as "
+#~ "Ubuntu) from the Microsoft store."
+#~ msgstr ""
+#~ "A Bash nincs telepítve. Telepítsen egy Linux disztribúciót (pl. Ubuntu) a "
+#~ "Microsoft áruházból."
+
+#~ msgid "Git"
+#~ msgstr "Git"
+
+#~ msgid "Initialize"
+#~ msgstr "Inicializáció"
+
+#~ msgid "Pass is not installed. Please see https://www.passwordstore.org/."
+#~ msgstr ""
+#~ "A Pass nincs telepítve. Kérjük látogasson el a https://www.passwordstore."
+#~ "org/ címen található weboldalra."
+
+#~ msgid "{} what?"
+#~ msgstr "{} mi?"
+
+#~ msgid "Timeout error while running '{}'"
+#~ msgstr "Időtúllépés '{}' futtatása közben"
+
+#~ msgid "Command output: {}"
+#~ msgstr "Parancs kimenete: {}"
+
+#~ msgid "Error code {} running '{}'. More info may be logged to the console"
+#~ msgstr ""
+#~ "Hiba lépett fel a(z) '{1}' parancs futtatása közben. Hibakód: {0}. "
+#~ "További részletekért nézze meg a konzol naplót."
+
+#~ msgid "Choose a name for the copy of {}"
+#~ msgstr "Válasszon nevet a {} másolatának"
+
+#~ msgid "Choose a new name for {}"
+#~ msgstr "Válasszon új nevet a {} bejegyzésnek"
 
 #~ msgid "pass is not installed. Please see https://www.passwordstore.org/"
 #~ msgstr ""

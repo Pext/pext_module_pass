@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-06-22 17:37+CEST\n"
+"POT-Creation-Date: 2019-10-05 19:10+CEST\n"
 "PO-Revision-Date: 2019-03-12 16:03+0000\n"
 "Last-Translator: Aayush Gupta <aayushgupta219@gmail.com>\n"
 "Language-Team: Hindi <https://hosted.weblate.org/projects/pext/"
@@ -18,35 +18,21 @@ msgstr ""
 "X-Generator: Weblate 3.5.1\n"
 "Generated-By: pygettext.py 1.5\n"
 
-#: __init__.py:59
+#: __init__.py:55
 msgid ""
-"Bash is not installed. Please install a Linux distribution (such as Ubuntu) "
-"from the Microsoft store."
+"This module requires at least API version 0.11.1, you are using {}. Please "
+"update Pext."
 msgstr ""
-"बैश इंस्टॉल नहीं है। कृपया माइक्रोसॉफ्ट स्टोर से कोई एक लाइनक्स डिस्ट्रीब्यूशन (जैसे की उबुंटू) "
-"इंस्टॉल करें।"
 
-#: __init__.py:83 __init__.py:302
+#: __init__.py:61 __init__.py:247
 msgid "Insert"
 msgstr "डाले"
 
-#: __init__.py:83 __init__.py:306
+#: __init__.py:61 __init__.py:251
 msgid "Generate"
 msgstr "उत्पन्न"
 
-#: __init__.py:83 __init__.py:310
-msgid "Git"
-msgstr "Git"
-
-#: __init__.py:83 __init__.py:314
-msgid "Initialize"
-msgstr "इनीशियलाइज़"
-
-#: __init__.py:114
-msgid "Pass is not installed. Please see https://www.passwordstore.org/."
-msgstr "पास इंस्टॉल नहीं हैं। कृपया https://www.passwordstore.org/ देखें।"
-
-#: __init__.py:152 __init__.py:422 __init__.py:439
+#: __init__.py:77
 msgid ""
 "<b>{}</b><br/><br/><b>Last opened</b><br/>{}<br/><br/><b>Last modified</"
 "b><br/>{}"
@@ -54,53 +40,81 @@ msgstr ""
 "<b>1{}</b>2<br/>3<br/>4<b>5आखिरी बार खोला गया</b>6<br/>7{}<br/>8<br/"
 ">9<b>0अंतिम बार संशोधन</b><br/>{}"
 
-#: __init__.py:154 __init__.py:330 __init__.py:424 __init__.py:441
-msgid "Edit"
-msgstr "संपादन"
-
-#: __init__.py:154 __init__.py:334
-msgid "Copy"
-msgstr "कापी"
-
-#: __init__.py:154 __init__.py:339 __init__.py:424 __init__.py:441
-msgid "Rename"
-msgstr "नाम बदलें"
-
-#: __init__.py:154 __init__.py:344 __init__.py:424 __init__.py:441
-msgid "Remove"
-msgstr "हटाएँ"
-
-#: __init__.py:154 __init__.py:424 __init__.py:441
+#: __init__.py:78
 msgid "Open"
 msgstr "खोले"
 
-#: __init__.py:160
-msgid "{} what?"
-msgstr "{} क्या?"
+#: __init__.py:78 __init__.py:259
+msgid "Edit"
+msgstr "संपादन"
+
+#: __init__.py:78 __init__.py:263
+msgid "Copy"
+msgstr "कापी"
+
+#: __init__.py:78 __init__.py:267
+msgid "Rename"
+msgstr "नाम बदलें"
+
+#: __init__.py:78 __init__.py:271
+msgid "Remove"
+msgstr "हटाएँ"
+
+#: __init__.py:158
+msgid "Unknown request received: {}"
+msgstr ""
+
+#: __init__.py:162
+msgid "Copy which password?"
+msgstr ""
+
+#: __init__.py:164 __init__.py:172
+msgid "What should the copy of {} be named?"
+msgstr ""
+
+#: __init__.py:179
+msgid "What is the name of this password to edit?"
+msgstr ""
+
+#: __init__.py:182 __init__.py:207
+msgid "What should the value of {} be?"
+msgstr ""
+
+#: __init__.py:189
+msgid "Generate a random password under which name?"
+msgstr ""
 
 #: __init__.py:191
-msgid "Timeout error while running '{}'"
-msgstr "' {} ' चलाते समय समयबाह्य त्रुटि"
+msgid "How many characters long should the password be?"
+msgstr ""
 
-#: __init__.py:193
-msgid "Command output: {}"
-msgstr "आदेश आउटपुट: {}"
+#: __init__.py:198
+msgid "Please provide a GPG ID to initialize this directory with."
+msgstr ""
 
-#: __init__.py:256
-msgid "Error code {} running '{}'. More info may be logged to the console"
-msgstr "त्रुटि कोड {} चल रहा है ' {} ' । अधिक जानकारी कंसोल में इकट्ठा हो सकती है"
+#: __init__.py:205
+msgid "What is the name of this password?"
+msgstr ""
 
-#: __init__.py:319 __init__.py:374 __init__.py:390
+#: __init__.py:214
+msgid "Remove which password?"
+msgstr ""
+
+#: __init__.py:216
+msgid "Are you sure you want to remove {}?"
+msgstr ""
+
+#: __init__.py:227
+msgid "Rename which password?"
+msgstr ""
+
+#: __init__.py:229
+msgid "What should the new name of {} be?"
+msgstr ""
+
+#: __init__.py:256 __init__.py:299 __init__.py:316
 msgid "Unexpected selection_made value: {}"
 msgstr "अप्रत्याशित चयन_ मान: {}"
-
-#: __init__.py:336
-msgid "Choose a name for the copy of {}"
-msgstr "की प्रति के लिए एक नाम चुनें {}"
-
-#: __init__.py:341
-msgid "Choose a new name for {}"
-msgstr "के लिए एक नया नाम चुनें {}"
 
 #: generate_metadata.py:40
 msgid "Password Store"
@@ -117,6 +131,40 @@ msgstr "पास संचालन के लिए बाइनरी कॉ�
 #: generate_metadata.py:51
 msgid "Password Store directory"
 msgstr "पासवर्ड संग्रह निर्देशिका"
+
+#~ msgid ""
+#~ "Bash is not installed. Please install a Linux distribution (such as "
+#~ "Ubuntu) from the Microsoft store."
+#~ msgstr ""
+#~ "बैश इंस्टॉल नहीं है। कृपया माइक्रोसॉफ्ट स्टोर से कोई एक लाइनक्स डिस्ट्रीब्यूशन (जैसे की "
+#~ "उबुंटू) इंस्टॉल करें।"
+
+#~ msgid "Git"
+#~ msgstr "Git"
+
+#~ msgid "Initialize"
+#~ msgstr "इनीशियलाइज़"
+
+#~ msgid "Pass is not installed. Please see https://www.passwordstore.org/."
+#~ msgstr "पास इंस्टॉल नहीं हैं। कृपया https://www.passwordstore.org/ देखें।"
+
+#~ msgid "{} what?"
+#~ msgstr "{} क्या?"
+
+#~ msgid "Timeout error while running '{}'"
+#~ msgstr "' {} ' चलाते समय समयबाह्य त्रुटि"
+
+#~ msgid "Command output: {}"
+#~ msgstr "आदेश आउटपुट: {}"
+
+#~ msgid "Error code {} running '{}'. More info may be logged to the console"
+#~ msgstr "त्रुटि कोड {} चल रहा है ' {} ' । अधिक जानकारी कंसोल में इकट्ठा हो सकती है"
+
+#~ msgid "Choose a name for the copy of {}"
+#~ msgstr "की प्रति के लिए एक नाम चुनें {}"
+
+#~ msgid "Choose a new name for {}"
+#~ msgstr "के लिए एक नया नाम चुनें {}"
 
 #~ msgid ""
 #~ "Bash is not installed. Please install a Linux distribution (such as "
