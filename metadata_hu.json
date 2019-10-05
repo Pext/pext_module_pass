@@ -10,8 +10,7 @@
   "name": "Jelsz\u00f3kezel\u0151",
   "platforms": [
     "Linux",
-    "Darwin",
-    "Windows"
+    "Darwin"
   ],
   "settings": [
     {

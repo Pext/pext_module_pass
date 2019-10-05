@@ -10,8 +10,7 @@
   "name": "\u0425\u0440\u0430\u043d\u0438\u043b\u0438\u0449\u0435 \u043f\u0430\u0440\u043e\u043b\u0435\u0439",
   "platforms": [
     "Linux",
-    "Darwin",
-    "Windows"
+    "Darwin"
   ],
   "settings": [
     {

@@ -10,8 +10,7 @@
   "name": "Tienda de Contrase\u00f1a",
   "platforms": [
     "Linux",
-    "Darwin",
-    "Windows"
+    "Darwin"
   ],
   "settings": [
     {

@@ -48,5 +48,5 @@ for language in languages:
                              'description': _('Password Store directory'),
                              'default': '~/.password-store/'
                             }],
-               'platforms': ['Linux', 'Darwin', 'Windows']},
+               'platforms': ['Linux', 'Darwin']},
               metadata_file, indent=2, sort_keys=True)

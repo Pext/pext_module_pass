@@ -10,8 +10,7 @@
   "name": "Passordlagring",
   "platforms": [
     "Linux",
-    "Darwin",
-    "Windows"
+    "Darwin"
   ],
   "settings": [
     {

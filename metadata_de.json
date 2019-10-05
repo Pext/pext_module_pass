@@ -10,8 +10,7 @@
   "name": "Passwortspeicher",
   "platforms": [
     "Linux",
-    "Darwin",
-    "Windows"
+    "Darwin"
   ],
   "settings": [
     {

@@ -10,8 +10,7 @@
   "name": "Wachtwoordopslag",
   "platforms": [
     "Linux",
-    "Darwin",
-    "Windows"
+    "Darwin"
   ],
   "settings": [
     {

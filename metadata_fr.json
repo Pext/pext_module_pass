@@ -10,8 +10,7 @@
   "name": "Banque de mots de passe",
   "platforms": [
     "Linux",
-    "Darwin",
-    "Windows"
+    "Darwin"
   ],
   "settings": [
     {

@@ -10,8 +10,7 @@
   "name": "\u5bc6\u78bc\u5132\u5b58",
   "platforms": [
     "Linux",
-    "Darwin",
-    "Windows"
+    "Darwin"
   ],
   "settings": [
     {

@@ -10,8 +10,7 @@
   "name": "Password Store",
   "platforms": [
     "Linux",
-    "Darwin",
-    "Windows"
+    "Darwin"
   ],
   "settings": [
     {
