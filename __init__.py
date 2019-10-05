@@ -113,7 +113,7 @@ class Module(ModuleBase):
                     self._generate()
             else:
                 if response is not None:
-                    self._generate(name=" ".join(data[1:]), length=response)
+                    self._generate(name=" ".join(data[1:]), length=response if response else 15)
                 else:
                     self._generate(name=" ".join(data[1:]))
         elif data[0] == "init":
@@ -190,8 +190,8 @@ class Module(ModuleBase):
         elif not length:
             self.q.put([Action.ask_input, _("How many characters long should the password be?"), "15", "generate {}".format(name)])
         else:
-            self.password_store.generate_password(name, length=length, first_line_only=True)
-            self.q.put([Action.set_selection, []])
+            password = self.password_store.generate_password(name, length=int(length))
+            self._insert(name=name, value=password)
 
     def _init(self, gpg_id=None):
         if not gpg_id:
