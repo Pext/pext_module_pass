@@ -28,6 +28,8 @@ from babel.dates import format_datetime
 
 import pypass
 import pyotp
+import pyscreenshot
+import zbar
 
 from pext_base import ModuleBase
 from pext_helpers import Action, SelectionType
@@ -182,7 +184,26 @@ class Module(ModuleBase):
         if not name:
             self.q.put([Action.ask_input, _("Add OTP to which password?"), "", "add_otp"])
         elif not otp_type:
-            self.q.put([Action.ask_choice, _("Use which OTP type?"), ["TOTP", "HOTP"], "add_otp {}".format(name)])
+            screenshot = pyscreenshot.grab().convert('L')
+            qr_codes = zbar.Scanner().scan(screenshot)
+            autodetected = 0
+            for qr_code in qr_codes:
+                qr_data = qr_code.data.decode()
+                try:
+                    pyotp.parse_uri(qr_data)
+                except ValueError:
+                    continue
+
+                autodetected += 1
+                current_data = self.password_store.get_decrypted_password(name)
+                self.password_store.insert_password(name, "{}\n{}".format(current_data, qr_data))
+
+            if autodetected == 0:
+                self.q.put([Action.add_error, _("Could not detect any valid OTP QR codes on your screen. Continuing with manual configuration...")])
+                self.q.put([Action.ask_choice, _("Use which OTP type?"), ["TOTP", "HOTP"], "add_otp {}".format(name)])
+            else:
+                self.q.put([Action.add_message, _("Detected and added {} valid OTP QR code(s) on your screen.").format(str(autodetected))])
+                return
         elif not secret:
             self.q.put([Action.ask_input, _("What is the OTP secret?"), "", "add_otp {} {}".format(name, otp_type)])
         else:
