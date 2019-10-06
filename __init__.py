@@ -59,7 +59,7 @@ class Module(ModuleBase):
         self.ANSIEscapeRegex = re.compile('(\x9B|\x1B\[)[0-?]*[ -\/]*[@-~]')
         self.passwordEntries = {}
 
-        self.q.put([Action.set_base_context, [_("Insert"), _("Generate")]])
+        self.q.put([Action.set_base_context, [_("Create"), _("Generate")]])
 
         self._get_entries()
 
@@ -76,7 +76,10 @@ class Module(ModuleBase):
 
             self.q.put([Action.add_entry, entry])
             self.q.put([Action.set_entry_info, entry, _("<b>{}</b><br/><br/><b>Last opened</b><br/>{}<br/><br/><b>Last modified</b><br/>{}").format(html.escape(entry), format_datetime(datetime.fromtimestamp(os.path.getatime(entry_path)).replace(microsecond=0), locale=self.settings['_locale']), format_datetime(datetime.fromtimestamp(os.path.getmtime(entry_path)).replace(microsecond=0), locale=self.settings['_locale']))])
-            self.q.put([Action.set_entry_context, entry, [_("Open"), _("Edit"), _("Copy"), _("Rename"), _("Remove")]])
+            if self.settings['_api_version'] < [0, 12, 0]:
+                self.q.put([Action.set_entry_context, entry, [_("Open"), _("Edit"), _("Copy"), _("Rename"), _("Remove")]])
+            else:
+                self.q.put([Action.set_entry_context, entry, [_("Open"), _("Edit"), _("Copy"), _("Rename"), _("Add OTP")]])
 
     def process_response(self, response, identifier):
         # User cancellation
@@ -84,7 +87,24 @@ class Module(ModuleBase):
             return
 
         data = identifier.split()
-        if data[0] == "copy":
+        if data[0] == "add_otp":
+            if len(data) == 1:
+                if response is not None:
+                    self._add_otp(name=response)
+                else:
+                    self._add_otp()
+            else:
+                if response is not None:
+                    if data[-1] in ["TOTP", "HOTP"]:
+                        self._add_otp(name=" ".join(data[1:-1]), otp_type=data[-1], secret=response)
+                    else:
+                        self._add_otp(name=" ".join(data[1:]), otp_type=response)
+                else:
+                    if data[-1] in ["TOTP", "HOTP"]:
+                        self._add_otp(name=" ".join(data[1:-1], otp_type=data[-1]))
+                    else:
+                        self._add_otp(name=" ".join(data[1:]))
+        elif data[0] == "copy":
             if len(data) == 1:
                 if response is not None:
                     self._copy(name=response)
@@ -157,6 +177,24 @@ class Module(ModuleBase):
                     self._rename(name=" ".join(data[1:]))
         else:
             self.q.put([Action.critical_error, _("Unknown request received: {}").format(" ".join(data))])
+
+    def _add_otp(self, name=None, otp_type=None, secret=None):
+        if not name:
+            self.q.put([Action.ask_input, _("Add OTP to which password?"), "", "add_otp"])
+        elif not otp_type:
+            self.q.put([Action.ask_choice, _("Use which OTP type?"), ["TOTP", "HOTP"], "add_otp {}".format(name)])
+        elif not secret:
+            self.q.put([Action.ask_input, _("What is the OTP secret?"), "", "add_otp {} {}".format(name, otp_type)])
+        else:
+            if otp_type == "TOTP":
+                otp_uri = pyotp.TOTP(secret).provisioning_uri()
+            elif otp_type == "HOTP":
+                otp_uri = pyotp.HOTP(secret).provisioning_uri()
+            else:
+                return
+
+            current_data = self.password_store.get_decrypted_password(name)
+            self.password_store.insert_password(name, "{}\n{}".format(current_data, otp_uri))
 
     def _copy(self, name=None, copy_name=None):
         if not name:
@@ -245,7 +283,7 @@ class Module(ModuleBase):
             self._get_entries()
         elif selection[-1]["type"] == SelectionType.none:
             # Global context menu option
-            if selection[-1]["context_option"] == _("Insert"):
+            if selection[-1]["context_option"] == _("Create"):
                 self.q.put([Action.set_selection, []])
                 self._insert()
                 return
@@ -272,6 +310,10 @@ class Module(ModuleBase):
                 elif selection[0]["context_option"] == _("Remove"):
                     self.q.put([Action.set_selection, []])
                     self._remove(selection[0]["value"])
+                    return
+                elif selection[0]["context_option"] == _("Add OTP"):
+                    self.q.put([Action.set_selection, []])
+                    self._add_otp(selection[0]["value"])
                     return
 
                 results = self.password_store.get_decrypted_password(selection[0]["value"])

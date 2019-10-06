@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-10-05 20:14+CEST\n"
+"POT-Creation-Date: 2019-10-06 17:47+CEST\n"
 "PO-Revision-Date: 2019-03-12 16:03+0000\n"
 "Last-Translator: Jeff Huang <s8321414@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <https://hosted.weblate.org/projects/"
@@ -18,100 +18,116 @@ msgstr ""
 "X-Generator: Weblate 3.5.1\n"
 "Generated-By: pygettext.py 1.5\n"
 
-#: __init__.py:55
+#: __init__.py:56
 msgid ""
 "This module requires at least API version 0.11.1, you are using {}. Please "
 "update Pext."
 msgstr ""
 
-#: __init__.py:61 __init__.py:247
-msgid "Insert"
-msgstr "插入"
+#: __init__.py:62 __init__.py:286
+msgid "Create"
+msgstr ""
 
-#: __init__.py:61 __init__.py:251
+#: __init__.py:62 __init__.py:290
 msgid "Generate"
 msgstr "生成"
 
-#: __init__.py:77
+#: __init__.py:78
 msgid ""
 "<b>{}</b><br/><br/><b>Last opened</b><br/>{}<br/><br/><b>Last modified</"
 "b><br/>{}"
 msgstr ""
 "<b>{}</b><br/><br/><b>最近開啟</b><br/>{}<br/><br/><b>最近修改</b><br/>{}"
 
-#: __init__.py:78
+#: __init__.py:80 __init__.py:82
 msgid "Open"
 msgstr "開啟"
 
-#: __init__.py:78 __init__.py:259
+#: __init__.py:80 __init__.py:82 __init__.py:298
 msgid "Edit"
 msgstr "編輯"
 
-#: __init__.py:78 __init__.py:263
+#: __init__.py:80 __init__.py:82 __init__.py:302
 msgid "Copy"
 msgstr "複製"
 
-#: __init__.py:78 __init__.py:267
+#: __init__.py:80 __init__.py:82 __init__.py:306
 msgid "Rename"
 msgstr "重新命名"
 
-#: __init__.py:78 __init__.py:271
+#: __init__.py:80 __init__.py:310
 msgid "Remove"
 msgstr "移除"
 
-#: __init__.py:158
-msgid "Unknown request received: {}"
-msgstr ""
-
-#: __init__.py:162
-msgid "Copy which password?"
-msgstr ""
-
-#: __init__.py:164 __init__.py:172
-msgid "What should the copy of {} be named?"
+#: __init__.py:82 __init__.py:314
+msgid "Add OTP"
 msgstr ""
 
 #: __init__.py:179
+msgid "Unknown request received: {}"
+msgstr ""
+
+#: __init__.py:183
+msgid "Add OTP to which password?"
+msgstr ""
+
+#: __init__.py:185
+msgid "Use which OTP type?"
+msgstr ""
+
+#: __init__.py:187
+msgid "What is the OTP secret?"
+msgstr ""
+
+#: __init__.py:201
+msgid "Copy which password?"
+msgstr ""
+
+#: __init__.py:203 __init__.py:211
+msgid "What should the copy of {} be named?"
+msgstr ""
+
+#: __init__.py:218
 msgid "What is the name of the password to edit?"
 msgstr ""
 
-#: __init__.py:182 __init__.py:207
+#: __init__.py:221 __init__.py:246
 msgid "What should the value of {} be?"
 msgstr ""
 
-#: __init__.py:189
+#: __init__.py:228
 msgid "Generate a random password under which name?"
 msgstr ""
 
-#: __init__.py:191
+#: __init__.py:230
 msgid "How many characters long should the password be?"
 msgstr ""
 
-#: __init__.py:198
+#: __init__.py:237
 msgid "Please provide a GPG ID to initialize this directory with."
 msgstr ""
 
-#: __init__.py:205
+#: __init__.py:244
 msgid "What is the name of the password?"
 msgstr ""
 
-#: __init__.py:214
+#: __init__.py:253
 msgid "Remove which password?"
 msgstr ""
 
-#: __init__.py:216
+#: __init__.py:255
 msgid "Are you sure you want to remove {}?"
 msgstr ""
 
-#: __init__.py:227
+#: __init__.py:266
 msgid "Rename which password?"
 msgstr ""
 
-#: __init__.py:229
+#: __init__.py:268
 msgid "What should the new name of {} be?"
 msgstr ""
 
-#: __init__.py:256 __init__.py:299 __init__.py:316
+#: __init__.py:295 __init__.py:357 __init__.py:374
 msgid "Unexpected selection_made value: {}"
 msgstr "未預期的 selection_made 值：{}"
 
@@ -126,6 +142,9 @@ msgstr "讓 Pext 可以透過 pass 進行密碼管理"
 #: generate_metadata.py:48
 msgid "Password Store directory"
 msgstr "密碼儲存目錄"
+
+#~ msgid "Insert"
+#~ msgstr "插入"
 
 #~ msgid "Binary to call for pass operations"
 #~ msgstr "要呼叫 pass 操作的二進位檔"
