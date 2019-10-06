@@ -27,6 +27,7 @@ from os.path import expanduser, normcase
 from babel.dates import format_datetime
 
 import pypass
+import pyotp
 
 from pext_base import ModuleBase
 from pext_helpers import Action, SelectionType
@@ -282,6 +283,21 @@ class Module(ModuleBase):
                 self.q.put([Action.replace_command_list, []])
 
                 result_lines = results.rstrip().splitlines()
+
+                # Parse OTP
+                for number, line in enumerate(result_lines):
+                    try:
+                        otp = pyotp.parse_uri(line)
+                    except ValueError:
+                        continue
+
+                    if isinstance(otp, pyotp.TOTP):
+                        otp_code = otp.now()
+                    else:
+                        otp_code = otp.generate_otp()
+
+                    result_lines[number] = "OTP: {}".format(otp_code)
+
                 # If only a password and no other fields, select password immediately
                 if len(result_lines) == 1:
                     self.q.put([Action.copy_to_clipboard, result_lines[0]])

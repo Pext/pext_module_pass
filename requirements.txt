@@ -1,2 +1,3 @@
 pypass==0.2.1
 Babel==2.7.0
+git+https://github.com/TheLastProject/pyotp@d408c41aad8b0adec78b6af98534503dd0960bd8#egg=pyotp
