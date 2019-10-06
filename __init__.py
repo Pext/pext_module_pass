@@ -81,7 +81,7 @@ class Module(ModuleBase):
             if self.settings['_api_version'] < [0, 12, 0]:
                 self.q.put([Action.set_entry_context, entry, [_("Open"), _("Edit"), _("Copy"), _("Rename"), _("Remove")]])
             else:
-                self.q.put([Action.set_entry_context, entry, [_("Open"), _("Edit"), _("Copy"), _("Rename"), _("Add OTP")]])
+                self.q.put([Action.set_entry_context, entry, [_("Open"), _("Edit"), _("Copy"), _("Rename"), _("Remove"), _("Add OTP")]])
 
     def process_response(self, response, identifier):
         # User cancellation
