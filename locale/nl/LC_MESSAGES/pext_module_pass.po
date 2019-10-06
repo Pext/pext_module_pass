@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2019-10-05 20:14+CEST\n"
-"PO-Revision-Date: 2019-06-25 19:01+0000\n"
+"PO-Revision-Date: 2019-10-06 13:48+0000\n"
 "Last-Translator: Heimen Stoffels <vistausss@outlook.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/pext/"
 "pext_module_pass/nl/>\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.7.1-dev\n"
+"X-Generator: Weblate 3.9-dev\n"
 "Generated-By: pygettext.py 1.5\n"
 
 #: __init__.py:55
@@ -23,6 +23,8 @@ msgid ""
 "This module requires at least API version 0.11.1, you are using {}. Please "
 "update Pext."
 msgstr ""
+"Deze module vereist minimaal API-versie 0.11.1, maar jij gebruikt versie {}. "
+"Werk Pext bij."
 
 #: __init__.py:61 __init__.py:247
 msgid "Insert"
@@ -62,55 +64,55 @@ msgstr "Verwijderen"
 
 #: __init__.py:158
 msgid "Unknown request received: {}"
-msgstr ""
+msgstr "Onbekend verzoek ontvangen: {}"
 
 #: __init__.py:162
 msgid "Copy which password?"
-msgstr ""
+msgstr "Welk wachtwoord wil je kopiëren?"
 
 #: __init__.py:164 __init__.py:172
 msgid "What should the copy of {} be named?"
-msgstr ""
+msgstr "Welke naam moet de kopie van '{}' dragen?"
 
 #: __init__.py:179
 msgid "What is the name of the password to edit?"
-msgstr ""
+msgstr "Voer de naam in van het te wijzigen wachtwoord."
 
 #: __init__.py:182 __init__.py:207
 msgid "What should the value of {} be?"
-msgstr ""
+msgstr "Wat moet de waarde van '{}' zijn?"
 
 #: __init__.py:189
 msgid "Generate a random password under which name?"
-msgstr ""
+msgstr "Voer de naam in van het te genereren willekeurige wachtwoord."
 
 #: __init__.py:191
 msgid "How many characters long should the password be?"
-msgstr ""
+msgstr "Hoeveel tekens moet het wachtwoord bevatten?"
 
 #: __init__.py:198
 msgid "Please provide a GPG ID to initialize this directory with."
-msgstr ""
+msgstr "Voer een GPG-id in om deze map mee te initialiseren."
 
 #: __init__.py:205
 msgid "What is the name of the password?"
-msgstr ""
+msgstr "Voer de naam in van het wachtwoord."
 
 #: __init__.py:214
 msgid "Remove which password?"
-msgstr ""
+msgstr "Welk wachtwoord wil je verwijderen?"
 
 #: __init__.py:216
 msgid "Are you sure you want to remove {}?"
-msgstr ""
+msgstr "Weet je zeker dat je '{}' wilt verwijderen?"
 
 #: __init__.py:227
 msgid "Rename which password?"
-msgstr ""
+msgstr "Van welk wachtwoord wil je de naam wijzigen?"
 
 #: __init__.py:229
 msgid "What should the new name of {} be?"
-msgstr ""
+msgstr "Welke naam moet '{}' vanaf nu dragen?"
 
 #: __init__.py:256 __init__.py:299 __init__.py:316
 msgid "Unexpected selection_made value: {}"
