@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2019-10-06 19:07+CEST\n"
-"PO-Revision-Date: 2019-10-06 13:48+0000\n"
+"PO-Revision-Date: 2019-10-07 17:38+0000\n"
 "Last-Translator: Heimen Stoffels <vistausss@outlook.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/pext/"
 "pext_module_pass/nl/>\n"
@@ -28,7 +28,7 @@ msgstr ""
 
 #: __init__.py:64 __init__.py:307
 msgid "Create"
-msgstr ""
+msgstr "Maken"
 
 #: __init__.py:64 __init__.py:311
 msgid "Generate"
@@ -64,7 +64,7 @@ msgstr "Verwijderen"
 
 #: __init__.py:84 __init__.py:335
 msgid "Add OTP"
-msgstr ""
+msgstr "OTP toevoegen"
 
 #: __init__.py:181
 msgid "Unknown request received: {}"
@@ -72,25 +72,28 @@ msgstr "Onbekend verzoek ontvangen: {}"
 
 #: __init__.py:185
 msgid "Add OTP to which password?"
-msgstr ""
+msgstr "Aan welk wachtwoord wil je een OTP toevoegen?"
 
 #: __init__.py:202
 msgid ""
 "Could not detect any valid OTP QR codes on your screen. Continuing with "
 "manual configuration..."
 msgstr ""
+"Er zijn geen geldige OTP QR-codes aangetroffen op je scherm; bezig met laden "
+"van handmatig instellen..."
 
 #: __init__.py:203
 msgid "Use which OTP type?"
-msgstr ""
+msgstr "Welk soort OTP wil je gebruiken?"
 
 #: __init__.py:205
 msgid "Detected and added {} valid OTP QR code(s) on your screen."
 msgstr ""
+"Er zijn {} geldige OTP QR-code(s) op je scherm aangetroffen en toegevoegd."
 
 #: __init__.py:208
 msgid "What is the OTP secret?"
-msgstr ""
+msgstr "Wat is de OTP-toegangssleutel?"
 
 #: __init__.py:222
 msgid "Copy which password?"
