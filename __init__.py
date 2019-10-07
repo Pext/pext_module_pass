@@ -184,7 +184,7 @@ class Module(ModuleBase):
         if not name:
             self.q.put([Action.ask_input, _("Add OTP to which password?"), "", "add_otp"])
         elif not otp_type:
-            screenshot = pyscreenshot.grab().convert('L')
+            screenshot = pyscreenshot.grab(childprocess=False).convert('L')
             qr_codes = zbar.Scanner().scan(screenshot)
             autodetected = 0
             for qr_code in qr_codes:
