@@ -180,6 +180,23 @@ class Module(ModuleBase):
         else:
             self.q.put([Action.critical_error, _("Unknown request received: {}").format(" ".join(data))])
 
+    def _save_password(self, name, value):
+        if not value.endswith('\n'):
+            value = "{}\n".format(value)
+
+        self.password_store.insert_password(name, value)
+
+    def _append_password(self, name, value):
+        current_data = self.password_store.get_decrypted_password(name)
+
+        if not current_data.endswith('\n'):
+            current_data = "{}\n".format(current_data)
+
+        if not value.endswith('\n'):
+            value = "{}\n".format(value)
+
+        self.password_store.insert_password(name, "{}{}".format(current_data, value))
+
     def _add_otp(self, name=None, otp_type=None, secret=None):
         if not name:
             self.q.put([Action.ask_input, _("Add OTP to which password?"), "", "add_otp"])
@@ -195,8 +212,7 @@ class Module(ModuleBase):
                     continue
 
                 autodetected += 1
-                current_data = self.password_store.get_decrypted_password(name)
-                self.password_store.insert_password(name, "{}\n{}".format(current_data, qr_data))
+                self._append_password(name, qr_data)
 
             if autodetected == 0:
                 self.q.put([Action.add_error, _("Could not detect any valid OTP QR codes on your screen. Continuing with manual configuration...")])
@@ -214,8 +230,7 @@ class Module(ModuleBase):
             else:
                 return
 
-            current_data = self.password_store.get_decrypted_password(name)
-            self.password_store.insert_password(name, "{}\n{}".format(current_data, otp_uri))
+            self._append_password(name, otp_uri)
 
     def _copy(self, name=None, copy_name=None):
         if not name:
@@ -241,7 +256,7 @@ class Module(ModuleBase):
             current_data = self.password_store.get_decrypted_password(name)
             self.q.put([Action.ask_input_multi_line, _("What should the value of {} be?").format(name), current_data, "edit {}".format(name)])
         else:
-            self.password_store.insert_password(name, value)
+            self._save_password(name, value)
             self.q.put([Action.set_selection, []])
 
     def _generate(self, name=None, length=None):
@@ -266,7 +281,7 @@ class Module(ModuleBase):
         elif not value:
             self.q.put([Action.ask_input_multi_line, _("What should the value of {} be?").format(name), "", "insert {}".format(name)])
         else:
-            self.password_store.insert_password(name, value)
+            self._save_password(name, value)
             self.q.put([Action.set_selection, []])
 
     def _remove(self, name=None, confirmed=None):
