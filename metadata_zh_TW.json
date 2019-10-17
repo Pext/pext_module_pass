@@ -1,4 +1,6 @@
 {
+  "bugtracker": "https://github.com/Pext/pext_module_pass",
+  "bugtracker_type": "github",
   "description": "\u8b93 Pext \u53ef\u4ee5\u900f\u904e pass \u9032\u884c\u5bc6\u78bc\u7ba1\u7406",
   "developer": "Sylvia van Os",
   "git_urls": [

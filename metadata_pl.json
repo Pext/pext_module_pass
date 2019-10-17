@@ -1,4 +1,6 @@
 {
+  "bugtracker": "https://github.com/Pext/pext_module_pass",
+  "bugtracker_type": "github",
   "description": "Pozwala Pext'owi zarz\u0105dza\u0107 has\u0142ami przez pass",
   "developer": "Sylvia van Os",
   "git_urls": [

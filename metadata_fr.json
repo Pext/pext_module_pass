@@ -1,4 +1,6 @@
 {
+  "bugtracker": "https://github.com/Pext/pext_module_pass",
+  "bugtracker_type": "github",
   "description": "Permet \u00e0 Pext de g\u00e9rer les mots de passe en pass",
   "developer": "Sylvia van Os",
   "git_urls": [

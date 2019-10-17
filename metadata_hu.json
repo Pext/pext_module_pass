@@ -1,4 +1,6 @@
 {
+  "bugtracker": "https://github.com/Pext/pext_module_pass",
+  "bugtracker_type": "github",
   "description": "Enged\u00e9lyezi a jelszavak kezel\u00e9s\u00e9t pass parancssoros fel\u00fclet\u00e9n kereszt\u00fcl",
   "developer": "Sylvia van Os",
   "git_urls": [
