@@ -1,4 +1,6 @@
 {
+  "bugtracker": "https://github.com/Pext/pext_module_pass",
+  "bugtracker_type": "github",
   "description": "Permite a Pext hacer administraci\u00f3n de contrase\u00f1as a trav\u00e9s de pass",
   "developer": "Sylvia van Os",
   "git_urls": [

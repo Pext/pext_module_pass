@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-10-06 19:07+CEST\n"
+"POT-Creation-Date: 2019-10-29 19:17+CET\n"
 "PO-Revision-Date: 2019-10-14 17:52+0000\n"
 "Last-Translator: Sylvia van Os <sylvia@hackerchick.me>\n"
 "Language-Team: English <https://hosted.weblate.org/projects/pext/"
@@ -26,11 +26,11 @@ msgstr ""
 "This module requires at least API version 0.11.1, you are using {}. Please "
 "update Pext."
 
-#: __init__.py:64 __init__.py:307
+#: __init__.py:64 __init__.py:326
 msgid "Create"
 msgstr "Create"
 
-#: __init__.py:64 __init__.py:311
+#: __init__.py:64 __init__.py:330
 msgid "Generate"
 msgstr "Generate"
 
@@ -39,30 +39,30 @@ msgid ""
 "<b>{}</b><br/><br/><b>Last opened</b><br/>{}<br/><br/><b>Last modified</"
 "b><br/>{}"
 msgstr ""
-"<b>{}</b><br/><br/><b>Last opened</b><br/>{}<br/><br/><b>Last modified</b><"
-"br/>{}"
+"<b>{}</b><br/><br/><b>Last opened</b><br/>{}<br/><br/><b>Last modified</"
+"b><br/>{}"
 
 #: __init__.py:82 __init__.py:84
 msgid "Open"
 msgstr "Open"
 
-#: __init__.py:82 __init__.py:84 __init__.py:319
+#: __init__.py:82 __init__.py:84 __init__.py:338
 msgid "Edit"
 msgstr "Edit"
 
-#: __init__.py:82 __init__.py:84 __init__.py:323
+#: __init__.py:82 __init__.py:84 __init__.py:342
 msgid "Copy"
 msgstr "Copy"
 
-#: __init__.py:82 __init__.py:84 __init__.py:327
+#: __init__.py:82 __init__.py:84 __init__.py:346
 msgid "Rename"
 msgstr "Rename"
 
-#: __init__.py:82 __init__.py:84 __init__.py:331
+#: __init__.py:82 __init__.py:84 __init__.py:350
 msgid "Remove"
 msgstr "Remove"
 
-#: __init__.py:84 __init__.py:335
+#: __init__.py:84 __init__.py:354
 msgid "Add OTP"
 msgstr "Add OTP"
 
@@ -70,11 +70,11 @@ msgstr "Add OTP"
 msgid "Unknown request received: {}"
 msgstr "Unknown request received: {}"
 
-#: __init__.py:185
+#: __init__.py:202
 msgid "Add OTP to which password?"
 msgstr "Add OTP to which password?"
 
-#: __init__.py:202
+#: __init__.py:218
 msgid ""
 "Could not detect any valid OTP QR codes on your screen. Continuing with "
 "manual configuration..."
@@ -82,67 +82,63 @@ msgstr ""
 "Could not detect any valid OTP QR codes on your screen. Continuing with "
 "manual configuration..."
 
-#: __init__.py:203
+#: __init__.py:219
 msgid "Use which OTP type?"
 msgstr "Use which OTP type?"
 
-#: __init__.py:205
-msgid "Detected and added {} valid OTP QR code(s) on your screen."
-msgstr "Detected and added {} valid OTP QR code(s) on your screen."
-
-#: __init__.py:208
+#: __init__.py:228
 msgid "What is the OTP secret?"
 msgstr "What is the OTP secret?"
 
-#: __init__.py:222
+#: __init__.py:241
 msgid "Copy which password?"
 msgstr "Copy which password?"
 
-#: __init__.py:224 __init__.py:232
+#: __init__.py:243 __init__.py:251
 msgid "What should the copy of {} be named?"
 msgstr "What should the copy of {} be named?"
 
-#: __init__.py:239
+#: __init__.py:258
 msgid "What is the name of the password to edit?"
 msgstr "What is the name of the password to edit?"
 
-#: __init__.py:242 __init__.py:267
+#: __init__.py:261 __init__.py:286
 msgid "What should the value of {} be?"
 msgstr "What should the value of {} be?"
 
-#: __init__.py:249
+#: __init__.py:268
 msgid "Generate a random password under which name?"
 msgstr "Generate a random password under which name?"
 
-#: __init__.py:251
+#: __init__.py:270
 msgid "How many characters long should the password be?"
 msgstr "How many characters long should the password be?"
 
-#: __init__.py:258
+#: __init__.py:277
 msgid "Please provide a GPG ID to initialize this directory with."
 msgstr "Please provide a GPG ID to initialize this directory with."
 
-#: __init__.py:265
+#: __init__.py:284
 msgid "What is the name of the password?"
 msgstr "What is the name of the password?"
 
-#: __init__.py:274
+#: __init__.py:293
 msgid "Remove which password?"
 msgstr "Remove which password?"
 
-#: __init__.py:276
+#: __init__.py:295
 msgid "Are you sure you want to remove {}?"
 msgstr "Are you sure you want to remove {}?"
 
-#: __init__.py:287
+#: __init__.py:306
 msgid "Rename which password?"
 msgstr "Rename which password?"
 
-#: __init__.py:289
+#: __init__.py:308
 msgid "What should the new name of {} be?"
 msgstr "What should the new name of {} be?"
 
-#: __init__.py:316 __init__.py:378 __init__.py:395
+#: __init__.py:335 __init__.py:397 __init__.py:414
 msgid "Unexpected selection_made value: {}"
 msgstr "Unexpected selection_made value: {}"
 
@@ -154,6 +150,9 @@ msgstr "Password Store"
 msgid "Allows Pext to do password management through pass"
 msgstr "Allows Pext to do password management through pass"
 
-#: generate_metadata.py:48
+#: generate_metadata.py:50
 msgid "Password Store directory"
 msgstr "Password Store directory"
+
+#~ msgid "Detected and added {} valid OTP QR code(s) on your screen."
+#~ msgstr "Detected and added {} valid OTP QR code(s) on your screen."

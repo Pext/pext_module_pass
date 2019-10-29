@@ -218,7 +218,11 @@ class Module(ModuleBase):
                 self.q.put([Action.add_error, _("Could not detect any valid OTP QR codes on your screen. Continuing with manual configuration...")])
                 self.q.put([Action.ask_choice, _("Use which OTP type?"), ["TOTP", "HOTP"], "add_otp {}".format(name)])
             else:
-                self.q.put([Action.add_message, _("Detected and added {} valid OTP QR code(s) on your screen.").format(str(autodetected))])
+                self.q.put([Action.add_message, gettext.ngettext(
+                    "Detected and added {} valid OTP QR code on your screen.".format(str(autodetected)),
+                    "Detected and added {} valid OTP QR codes on your screen.".format(str(autodetected)),
+                    autodetected)
+                ])
                 return
         elif not secret:
             self.q.put([Action.ask_input, _("What is the OTP secret?"), "", "add_otp {} {}".format(name, otp_type)])

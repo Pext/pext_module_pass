@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-10-06 19:07+CEST\n"
+"POT-Creation-Date: 2019-10-29 19:17+CET\n"
 "PO-Revision-Date: 2019-10-12 15:52+0000\n"
 "Last-Translator: Aayush Gupta <aayushgupta219@gmail.com>\n"
 "Language-Team: Hindi <https://hosted.weblate.org/projects/pext/"
@@ -23,14 +23,14 @@ msgid ""
 "This module requires at least API version 0.11.1, you are using {}. Please "
 "update Pext."
 msgstr ""
-"इस मॉड्यूल को कम से कम API संस्करण 0.11.1 की आवश्यकता है, आप {} का उपयोग कर "
-"रहे हैं। कृपया Pext को अपडेट करें।"
+"इस मॉड्यूल को कम से कम API संस्करण 0.11.1 की आवश्यकता है, आप {} का उपयोग कर रहे हैं। "
+"कृपया Pext को अपडेट करें।"
 
-#: __init__.py:64 __init__.py:307
+#: __init__.py:64 __init__.py:326
 msgid "Create"
 msgstr "बनाएं"
 
-#: __init__.py:64 __init__.py:311
+#: __init__.py:64 __init__.py:330
 msgid "Generate"
 msgstr "उत्पन्न"
 
@@ -46,23 +46,23 @@ msgstr ""
 msgid "Open"
 msgstr "खोले"
 
-#: __init__.py:82 __init__.py:84 __init__.py:319
+#: __init__.py:82 __init__.py:84 __init__.py:338
 msgid "Edit"
 msgstr "संपादन"
 
-#: __init__.py:82 __init__.py:84 __init__.py:323
+#: __init__.py:82 __init__.py:84 __init__.py:342
 msgid "Copy"
 msgstr "कापी"
 
-#: __init__.py:82 __init__.py:84 __init__.py:327
+#: __init__.py:82 __init__.py:84 __init__.py:346
 msgid "Rename"
 msgstr "नाम बदलें"
 
-#: __init__.py:82 __init__.py:84 __init__.py:331
+#: __init__.py:82 __init__.py:84 __init__.py:350
 msgid "Remove"
 msgstr "हटाएँ"
 
-#: __init__.py:84 __init__.py:335
+#: __init__.py:84 __init__.py:354
 msgid "Add OTP"
 msgstr "OTP जोड़ें"
 
@@ -70,79 +70,75 @@ msgstr "OTP जोड़ें"
 msgid "Unknown request received: {}"
 msgstr "अज्ञात अनुरोध प्राप्त हुआ: {}"
 
-#: __init__.py:185
+#: __init__.py:202
 msgid "Add OTP to which password?"
 msgstr "किस पासवर्ड में OTP जोड़ें?"
 
-#: __init__.py:202
+#: __init__.py:218
 msgid ""
 "Could not detect any valid OTP QR codes on your screen. Continuing with "
 "manual configuration..."
 msgstr ""
-"आपकी स्क्रीन पर किसी भी मान्य OTP QR कोड का पता नहीं लगा सका। मैनुअल "
-"कॉन्फ़िगरेशन के साथ जारी ..."
+"आपकी स्क्रीन पर किसी भी मान्य OTP QR कोड का पता नहीं लगा सका। मैनुअल कॉन्फ़िगरेशन के "
+"साथ जारी ..."
 
-#: __init__.py:203
+#: __init__.py:219
 msgid "Use which OTP type?"
 msgstr "किस OTP प्रकार का उपयोग करें?"
 
-#: __init__.py:205
-msgid "Detected and added {} valid OTP QR code(s) on your screen."
-msgstr "पता लगाया और आपकी स्क्रीन पर {} वैध OTP QR कोड को जोड़ा।"
-
-#: __init__.py:208
+#: __init__.py:228
 msgid "What is the OTP secret?"
 msgstr "OTP रहस्य क्या है?"
 
-#: __init__.py:222
+#: __init__.py:241
 msgid "Copy which password?"
 msgstr "कौन सा पासवर्ड कॉपी करें?"
 
-#: __init__.py:224 __init__.py:232
+#: __init__.py:243 __init__.py:251
 msgid "What should the copy of {} be named?"
 msgstr "{} की कॉपी का क्या नाम होना चाहिए?"
 
-#: __init__.py:239
+#: __init__.py:258
 msgid "What is the name of the password to edit?"
 msgstr "संपादित करने के लिए पासवर्ड का क्या नाम है?"
 
-#: __init__.py:242 __init__.py:267
+#: __init__.py:261 __init__.py:286
 msgid "What should the value of {} be?"
 msgstr "{} का क्या मान होना चाहिए?"
 
-#: __init__.py:249
+#: __init__.py:268
 msgid "Generate a random password under which name?"
 msgstr "किस नाम के तहत एक बेतरतीब पासवर्ड उत्पन्न करें?"
 
-#: __init__.py:251
+#: __init__.py:270
 msgid "How many characters long should the password be?"
 msgstr "पासवर्ड कितने वर्णों का होना चाहिए?"
 
-#: __init__.py:258
+#: __init__.py:277
 msgid "Please provide a GPG ID to initialize this directory with."
 msgstr "कृपया इस डायरेक्टरी को आरंभ करने के लिए एक GPG ID प्रदान करें।"
 
-#: __init__.py:265
+#: __init__.py:284
 msgid "What is the name of the password?"
 msgstr "पासवर्ड का नाम क्या है?"
 
-#: __init__.py:274
+#: __init__.py:293
 msgid "Remove which password?"
 msgstr "कौन सा पासवर्ड निकालें?"
 
-#: __init__.py:276
+#: __init__.py:295
 msgid "Are you sure you want to remove {}?"
 msgstr "क्या आप सचमुच हटाना चाहते हैं {}?"
 
-#: __init__.py:287
+#: __init__.py:306
 msgid "Rename which password?"
 msgstr "किस पासवर्ड का नाम बदलें?"
 
-#: __init__.py:289
+#: __init__.py:308
 msgid "What should the new name of {} be?"
 msgstr "{} का नया नाम क्या होना चाहिए?"
 
-#: __init__.py:316 __init__.py:378 __init__.py:395
+#: __init__.py:335 __init__.py:397 __init__.py:414
 msgid "Unexpected selection_made value: {}"
 msgstr "अप्रत्याशित चयन_ मान: {}"
 
@@ -154,9 +150,12 @@ msgstr "पासवर्ड स्टोर"
 msgid "Allows Pext to do password management through pass"
 msgstr "पैक्स्ट को पास के माध्यम से पासवर्ड प्रबंधन करने के लिए अनुमति दे"
 
-#: generate_metadata.py:48
+#: generate_metadata.py:50
 msgid "Password Store directory"
 msgstr "पासवर्ड संग्रह निर्देशिका"
+
+#~ msgid "Detected and added {} valid OTP QR code(s) on your screen."
+#~ msgstr "पता लगाया और आपकी स्क्रीन पर {} वैध OTP QR कोड को जोड़ा।"
 
 #~ msgid "Insert"
 #~ msgstr "डाले"
