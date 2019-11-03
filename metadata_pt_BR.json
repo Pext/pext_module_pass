@@ -1,0 +1,33 @@
+{
+  "bugtracker": "https://github.com/Pext/pext_module_pass",
+  "bugtracker_type": "github",
+  "description": "Allows Pext to do password management through pass",
+  "developer": "Sylvia van Os",
+  "git_urls": [
+    "https://github.com/Pext/pext_module_pass"
+  ],
+  "homepage": "https://pext.io/",
+  "id": "pext.module.pass",
+  "license": "GPL-3.0+",
+  "name": "Password Store",
+  "platforms": [
+    "Linux",
+    "Darwin"
+  ],
+  "settings": [
+    {
+      "default": "~/.password-store/",
+      "description": "Password Store directory",
+      "name": "directory"
+    },
+    {
+      "default": "Yes",
+      "description": "Automatically pull and push changes to/from git",
+      "name": "use_git",
+      "options": [
+        "Yes",
+        "No"
+      ]
+    }
+  ]
+}
