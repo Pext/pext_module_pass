@@ -19,6 +19,15 @@
       "default": "~/.password-store/",
       "description": "R\u00e9pertoire de mots de passe",
       "name": "directory"
+    },
+    {
+      "default": "Yes",
+      "description": "Automatically pull and push changes to/from git",
+      "name": "use_git",
+      "options": [
+        "Yes",
+        "No"
+      ]
     }
   ]
 }

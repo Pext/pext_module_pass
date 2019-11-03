@@ -19,6 +19,15 @@
       "default": "~/.password-store/",
       "description": "Jelsz\u00f3kezel\u0151 k\u00f6nyvt\u00e1ra",
       "name": "directory"
+    },
+    {
+      "default": "Yes",
+      "description": "Automatically pull and push changes to/from git",
+      "name": "use_git",
+      "options": [
+        "Yes",
+        "No"
+      ]
     }
   ]
 }

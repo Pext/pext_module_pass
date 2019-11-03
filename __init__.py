@@ -18,13 +18,16 @@
 import gettext
 import html
 import platform
-import shutil
-import re
 import os
+import shutil
 from datetime import datetime
 from os.path import expanduser, normcase
 
 from babel.dates import format_datetime
+from dulwich import client, porcelain
+from dulwich.repo import Repo
+from dulwich.contrib.paramiko_vendor import ParamikoSSHVendor
+from paramiko import ssh_exception
 
 import pypass
 import pyotp
@@ -58,20 +61,47 @@ class Module(ModuleBase):
             self.q.put([Action.critical_error, _("This module requires at least API version 0.11.1, you are using {}. Please update Pext.").format(".".join([str(i) for i in self.settings['_api_version']]))])
             return
 
-        self.ANSIEscapeRegex = re.compile('(\x9B|\x1B\[)[0-?]*[ -\/]*[@-~]')
+        self.git_repo = os.path.join(self.data_location, ".git")
+        if not os.path.isdir(self.git_repo) or ('use_git' in self.settings and self.settings.use_git == _('No')):
+            self.git_repo = None
+
         self.passwordEntries = {}
 
         self.q.put([Action.set_base_context, [_("Create"), _("Generate")]])
 
         self._get_entries()
 
-        if not os.path.join(self.data_location, ".gpg-id"):
+        if not os.path.exists(os.path.join(self.data_location, ".gpg-id")):
             self._init()
+
+    def _git_pull(self):
+        if self.git_repo:
+            with Repo(self.git_repo) as repo:
+                config = repo.get_config()
+                remote_url = config.get(("remote".encode(), "origin".encode()), "url".encode()).decode()
+                client.get_ssh_vendor = ParamikoSSHVendor
+                try:
+                    porcelain.pull(repo, remote_url)
+                except ssh_exception.SSHException as e:
+                    self.q.put([Action.add_error, _("Failed to pull from git: {}").format(str(e))])
+
+    def _git_push(self):
+        if self.git_repo:
+            with Repo(self.git_repo) as repo:
+                config = repo.get_config()
+                remote_url = config.get(("remote".encode(), "origin".encode()), "url".encode()).decode()
+                client.get_ssh_vendor = ParamikoSSHVendor
+                try:
+                    porcelain.push(repo, remote_url, 'master')
+                except ssh_exception.SSHException as e:
+                    self.q.put([Action.add_error, _("Failed to push to git: {}").format(str(e))])
 
     def _get_data_location(self):
         return self.data_location
 
     def _get_entries(self):
+        self._git_pull()
+
         for password in sorted(self.password_store.get_passwords_list(), key=lambda name: os.path.getatime("{}.gpg".format(name)), reverse=True):
             entry_path = "{}.gpg".format(password)
             entry = password[len(self._get_data_location()):]
@@ -180,6 +210,9 @@ class Module(ModuleBase):
         else:
             self.q.put([Action.critical_error, _("Unknown request received: {}").format(" ".join(data))])
 
+        # Push on any changes
+        self._git_push()
+
     def _save_password(self, name, value):
         if not value.endswith('\n'):
             value = "{}\n".format(value)
@@ -218,11 +251,7 @@ class Module(ModuleBase):
                 self.q.put([Action.add_error, _("Could not detect any valid OTP QR codes on your screen. Continuing with manual configuration...")])
                 self.q.put([Action.ask_choice, _("Use which OTP type?"), ["TOTP", "HOTP"], "add_otp {}".format(name)])
             else:
-                self.q.put([Action.add_message, gettext.ngettext(
-                    "Detected and added {} valid OTP QR code on your screen.".format(str(autodetected)),
-                    "Detected and added {} valid OTP QR codes on your screen.".format(str(autodetected)),
-                    autodetected)
-                ])
+                self.q.put([Action.add_message, _("Detected and added {} valid OTP QR code(s) on your screen.").format(str(autodetected))])
                 return
         elif not secret:
             self.q.put([Action.ask_input, _("What is the OTP secret?"), "", "add_otp {} {}".format(name, otp_type)])

@@ -49,6 +49,12 @@ for language in languages:
                              'name': 'directory',
                              'description': _('Password Store directory'),
                              'default': '~/.password-store/'
+                            },
+                            {
+                              'name': 'use_git',
+                              'description': _('Automatically pull and push changes to/from git'),
+                              'options': [_('Yes'), _('No')],
+                              'default': _('Yes')
                             }],
                'platforms': ['Linux', 'Darwin']},
               metadata_file, indent=2, sort_keys=True)

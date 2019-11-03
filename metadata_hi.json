@@ -19,6 +19,15 @@
       "default": "~/.password-store/",
       "description": "\u092a\u093e\u0938\u0935\u0930\u094d\u0921 \u0938\u0902\u0917\u094d\u0930\u0939 \u0928\u093f\u0930\u094d\u0926\u0947\u0936\u093f\u0915\u093e",
       "name": "directory"
+    },
+    {
+      "default": "Yes",
+      "description": "Automatically pull and push changes to/from git",
+      "name": "use_git",
+      "options": [
+        "Yes",
+        "No"
+      ]
     }
   ]
 }
