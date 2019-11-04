@@ -62,7 +62,7 @@ class Module(ModuleBase):
             return
 
         self.git_repo = os.path.join(self.data_location, ".git")
-        if not os.path.isdir(self.git_repo) or ('use_git' in self.settings and self.settings.use_git == _('No')):
+        if not os.path.isdir(self.git_repo) or ('use_git' in self.settings and self.settings['use_git'] == _('No')):
             self.git_repo = None
 
         self.passwordEntries = {}
