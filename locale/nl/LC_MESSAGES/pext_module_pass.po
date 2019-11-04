@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2019-11-03 21:35+CET\n"
-"PO-Revision-Date: 2019-10-07 17:38+0000\n"
+"PO-Revision-Date: 2019-11-04 10:49+0000\n"
 "Last-Translator: Heimen Stoffels <vistausss@outlook.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/pext/"
 "pext_module_pass/nl/>\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.9-dev\n"
+"X-Generator: Weblate 3.10-dev\n"
 "Generated-By: pygettext.py 1.5\n"
 
 #: __init__.py:61
@@ -28,7 +28,7 @@ msgstr ""
 
 #: __init__.py:65 generate_metadata.py:56
 msgid "No"
-msgstr ""
+msgstr "Nee"
 
 #: __init__.py:70 __init__.py:355
 msgid "Create"
@@ -40,11 +40,11 @@ msgstr "Genereren"
 
 #: __init__.py:86
 msgid "Failed to pull from git: {}"
-msgstr ""
+msgstr "Kan niet ophalen van git: {}"
 
 #: __init__.py:97
 msgid "Failed to push to git: {}"
-msgstr ""
+msgstr "Kan niet uploaden naar git: {}"
 
 #: __init__.py:110
 msgid ""
@@ -173,11 +173,11 @@ msgstr "Wachtwoordopslag-map"
 
 #: generate_metadata.py:55
 msgid "Automatically pull and push changes to/from git"
-msgstr ""
+msgstr "Wijzigingen automatisch ophalen van/uploaden naar git"
 
 #: generate_metadata.py:56 generate_metadata.py:57
 msgid "Yes"
-msgstr ""
+msgstr "Ja"
 
 #~ msgid "Insert"
 #~ msgstr "Invoegen"
