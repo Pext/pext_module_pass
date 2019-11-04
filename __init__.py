@@ -61,8 +61,8 @@ class Module(ModuleBase):
             self.q.put([Action.critical_error, _("This module requires at least API version 0.11.1, you are using {}. Please update Pext.").format(".".join([str(i) for i in self.settings['_api_version']]))])
             return
 
-        self.git_repo = os.path.join(self.data_location, ".git")
-        if not os.path.isdir(self.git_repo) or ('use_git' in self.settings and self.settings['use_git'] == _('No')):
+        self.git_repo = self.data_location
+        if (not os.path.isdir(os.path.join(self.data_location, ".git"))) or ('use_git' in self.settings and self.settings['use_git'] == _('No')):
             self.git_repo = None
 
         self.passwordEntries = {}
