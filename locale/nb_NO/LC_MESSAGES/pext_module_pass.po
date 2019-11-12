@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2019-11-03 21:35+CET\n"
-"PO-Revision-Date: 2019-03-12 16:04+0000\n"
+"PO-Revision-Date: 2019-11-12 09:04+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/pext/"
 "pext_module_pass/nb_NO/>\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.5.1\n"
+"X-Generator: Weblate 3.10-dev\n"
 "Generated-By: pygettext.py 1.5\n"
 
 #: __init__.py:61
@@ -26,7 +26,7 @@ msgstr ""
 
 #: __init__.py:65 generate_metadata.py:56
 msgid "No"
-msgstr ""
+msgstr "Nei"
 
 #: __init__.py:70 __init__.py:355
 msgid "Create"
@@ -172,7 +172,7 @@ msgstr ""
 
 #: generate_metadata.py:56 generate_metadata.py:57
 msgid "Yes"
-msgstr ""
+msgstr "Ja"
 
 #~ msgid "Insert"
 #~ msgstr "Sett inn"
