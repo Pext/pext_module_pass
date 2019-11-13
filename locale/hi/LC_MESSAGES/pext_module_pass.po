@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2019-11-03 21:35+CET\n"
-"PO-Revision-Date: 2019-10-12 15:52+0000\n"
-"Last-Translator: Aayush Gupta <aayushgupta219@gmail.com>\n"
+"PO-Revision-Date: 2019-11-13 20:04+0000\n"
+"Last-Translator: Mitesh Sanjay Mutha <mtshmtha@gmail.com>\n"
 "Language-Team: Hindi <https://hosted.weblate.org/projects/pext/"
 "pext_module_pass/hi/>\n"
 "Language: hi\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 3.9-dev\n"
+"X-Generator: Weblate 3.10-dev\n"
 "Generated-By: pygettext.py 1.5\n"
 
 #: __init__.py:61
@@ -28,7 +28,7 @@ msgstr ""
 
 #: __init__.py:65 generate_metadata.py:56
 msgid "No"
-msgstr ""
+msgstr "नहीं"
 
 #: __init__.py:70 __init__.py:355
 msgid "Create"
@@ -40,11 +40,11 @@ msgstr "उत्पन्न"
 
 #: __init__.py:86
 msgid "Failed to pull from git: {}"
-msgstr ""
+msgstr "गिट से खींचने में नाकाम: {}"
 
 #: __init__.py:97
 msgid "Failed to push to git: {}"
-msgstr ""
+msgstr "गिट को पुश करने में नाकाम रहे: {}"
 
 #: __init__.py:110
 msgid ""
@@ -172,11 +172,11 @@ msgstr "पासवर्ड संग्रह निर्देशिका"
 
 #: generate_metadata.py:55
 msgid "Automatically pull and push changes to/from git"
-msgstr ""
+msgstr "स्वचालित रूप से गिट से पुश और पुल करे"
 
 #: generate_metadata.py:56 generate_metadata.py:57
 msgid "Yes"
-msgstr ""
+msgstr "हाँ"
 
 #~ msgid "Insert"
 #~ msgstr "डाले"
