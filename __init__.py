@@ -219,6 +219,10 @@ class Module(ModuleBase):
 
         self.password_store.insert_password(name, value)
 
+        if self.git_repo:
+            porcelain.add(self.git_repo, os.path.join(self._get_data_location(), "{}.gpg".format(name)))
+            porcelain.commit(self.git_repo, message="Created/Modified {} with Pext".format(name))
+
     def _append_password(self, name, value):
         current_data = self.password_store.get_decrypted_password(name)
 
@@ -229,6 +233,10 @@ class Module(ModuleBase):
             value = "{}\n".format(value)
 
         self.password_store.insert_password(name, "{}{}".format(current_data, value))
+
+        if self.git_repo:
+            porcelain.add(self.git_repo, os.path.join(self._get_data_location(), "{}.gpg".format(name)))
+            porcelain.commit(self.git_repo, message="Appended to {} with Pext".format(name))
 
     def _add_otp(self, name=None, otp_type=None, secret=None):
         if not name:
@@ -272,10 +280,13 @@ class Module(ModuleBase):
             self.q.put([Action.ask_input, _("What should the copy of {} be named?").format(name), name, "copy {}".format(name)])
         else:
             try:
-                shutil.copyfile(
-                    os.path.join(self._get_data_location(), "{}.gpg".format(name)),
-                    os.path.join(self._get_data_location(), "{}.gpg".format(copy_name))
-                )
+                original_file_path = os.path.join(self._get_data_location(), "{}.gpg".format(name))
+                copy_file_path = os.path.join(self._get_data_location(), "{}.gpg".format(copy_name))
+                shutil.copyfile(original_file_path, copy_file_path)
+
+                if self.git_repo:
+                    porcelain.add(self.git_repo, [copy_file_path])
+                    porcelain.commit(self.git_repo, message="Copied {} to {} with Pext".format(name, copy_name))
             except shutil.SameFileError:
                 self.q.put([Action.ask_input, _("What should the copy of {} be named?").format(name), name, "copy {}".format(name)])
                 return
@@ -325,10 +336,13 @@ class Module(ModuleBase):
         elif not confirmed:
             return
         else:
-            os.remove(
-                os.path.join(self._get_data_location(), "{}.gpg".format(name)),
-            )
+            file_path = os.path.join(self._get_data_location(), "{}.gpg".format(name))
+            os.remove(file_path)
             self.q.put([Action.set_selection, []])
+
+            if self.git_repo:
+                porcelain.add(self.git_repo, [file_path])
+                porcelain.commit(self.git_repo, message="Removed {} with Pext".format(name))
 
     def _rename(self, name=None, new_name=None):
         if not name:
@@ -336,11 +350,14 @@ class Module(ModuleBase):
         elif not new_name:
             self.q.put([Action.ask_input, _("What should the new name of {} be?").format(name), name, "rename {}".format(name)])
         else:
-            os.rename(
-                os.path.join(self._get_data_location(), "{}.gpg".format(name)),
-                os.path.join(self._get_data_location(), "{}.gpg".format(new_name))
-            )
+            old_file_path = os.path.join(self._get_data_location(), "{}.gpg".format(name))
+            new_file_path = os.path.join(self._get_data_location(), "{}.gpg".format(new_name))
+            os.rename(old_file_path, new_file_path)
             self.q.put([Action.set_selection, []])
+
+            if self.git_repo:
+                porcelain.add(self.git_repo, [old_file_path, new_file_path])
+                porcelain.commit(self.git_repo, message="Renamed {} to {} with Pext".format(name, new_name))
 
     def selection_made(self, selection):
         if len(selection) == 0:
