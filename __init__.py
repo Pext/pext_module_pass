@@ -25,6 +25,7 @@ from os.path import expanduser, normcase
 
 from babel.dates import format_datetime
 from dulwich import client, porcelain
+from dulwich.file import FileLocked
 from dulwich.repo import Repo
 from dulwich.contrib.paramiko_vendor import ParamikoSSHVendor
 from paramiko import ssh_exception
@@ -78,26 +79,36 @@ class Module(ModuleBase):
             self._init()
 
     def _git_pull(self):
-        if self.git_repo:
-            with Repo(self.git_repo) as repo:
-                config = repo.get_config()
-                remote_url = config.get(("remote".encode(), "origin".encode()), "url".encode()).decode()
-                client.get_ssh_vendor = ParamikoSSHVendor
-                try:
-                    porcelain.pull(repo, remote_url, password=self.settings['ssh_password'])
-                except ssh_exception.SSHException as e:
-                    self.q.put([Action.add_error, _("Failed to pull from git: {}").format(str(e))])
+        try:
+            if self.git_repo:
+                with Repo(self.git_repo) as repo:
+                    config = repo.get_config()
+                    remote_url = config.get(("remote".encode(), "origin".encode()), "url".encode()).decode()
+                    client.get_ssh_vendor = ParamikoSSHVendor
+                    try:
+                        porcelain.pull(repo, remote_url, password=self.settings['ssh_password'])
+                    except ssh_exception.SSHException as e:
+                        self.q.put([Action.add_error, _("Failed to pull from git: {}").format(str(e))])
+
+            return
+        except FileLocked:
+            print("File locked when trying to pull, giving up on this pull")
 
     def _git_push(self):
-        if self.git_repo:
-            with Repo(self.git_repo) as repo:
-                config = repo.get_config()
-                remote_url = config.get(("remote".encode(), "origin".encode()), "url".encode()).decode()
-                client.get_ssh_vendor = ParamikoSSHVendor
-                try:
-                    porcelain.push(repo, remote_url, 'master', password=self.settings['ssh_password'])
-                except ssh_exception.SSHException as e:
-                    self.q.put([Action.add_error, _("Failed to push to git: {}").format(str(e))])
+        try:
+            if self.git_repo:
+                with Repo(self.git_repo) as repo:
+                    config = repo.get_config()
+                    remote_url = config.get(("remote".encode(), "origin".encode()), "url".encode()).decode()
+                    client.get_ssh_vendor = ParamikoSSHVendor
+                    try:
+                        porcelain.push(repo, remote_url, 'master', password=self.settings['ssh_password'])
+                    except ssh_exception.SSHException as e:
+                        self.q.put([Action.add_error, _("Failed to push to git: {}").format(str(e))])
+
+            return
+        except FileLocked:
+            print("File locked when trying to push, giving up on this push")
 
     def _get_data_location(self):
         return self.data_location
@@ -213,9 +224,6 @@ class Module(ModuleBase):
         else:
             self.q.put([Action.critical_error, _("Unknown request received: {}").format(" ".join(data))])
 
-        # Push on any changes
-        self._git_push()
-
     def _save_password(self, name, value):
         if not value.endswith('\n'):
             value = "{}\n".format(value)
@@ -225,6 +233,7 @@ class Module(ModuleBase):
         if self.git_repo:
             porcelain.add(self.git_repo, os.path.join(self._get_data_location(), "{}.gpg".format(name)))
             porcelain.commit(self.git_repo, message="Created/Modified {} with Pext".format(name))
+            self._git_push()
 
     def _append_password(self, name, value):
         current_data = self.password_store.get_decrypted_password(name)
@@ -240,6 +249,7 @@ class Module(ModuleBase):
         if self.git_repo:
             porcelain.add(self.git_repo, os.path.join(self._get_data_location(), "{}.gpg".format(name)))
             porcelain.commit(self.git_repo, message="Appended to {} with Pext".format(name))
+            self._git_push()
 
     def _add_otp(self, name=None, otp_type=None, secret=None):
         if not name:
@@ -290,6 +300,7 @@ class Module(ModuleBase):
                 if self.git_repo:
                     porcelain.add(self.git_repo, [copy_file_path])
                     porcelain.commit(self.git_repo, message="Copied {} to {} with Pext".format(name, copy_name))
+                    self._git_push()
             except shutil.SameFileError:
                 self.q.put([Action.ask_input, _("What should the copy of {} be named?").format(name), name, "copy {}".format(name)])
                 return
@@ -341,11 +352,13 @@ class Module(ModuleBase):
         else:
             file_path = os.path.join(self._get_data_location(), "{}.gpg".format(name))
             os.remove(file_path)
-            self.q.put([Action.set_selection, []])
 
             if self.git_repo:
                 porcelain.add(self.git_repo, [file_path])
                 porcelain.commit(self.git_repo, message="Removed {} with Pext".format(name))
+                self._git_push()
+
+            self.q.put([Action.set_selection, []])
 
     def _rename(self, name=None, new_name=None):
         if not name:
@@ -356,11 +369,13 @@ class Module(ModuleBase):
             old_file_path = os.path.join(self._get_data_location(), "{}.gpg".format(name))
             new_file_path = os.path.join(self._get_data_location(), "{}.gpg".format(new_name))
             os.rename(old_file_path, new_file_path)
-            self.q.put([Action.set_selection, []])
 
             if self.git_repo:
                 porcelain.add(self.git_repo, [old_file_path, new_file_path])
                 porcelain.commit(self.git_repo, message="Renamed {} to {} with Pext".format(name, new_name))
+                self._git_push()
+
+            self.q.put([Action.set_selection, []])
 
     def selection_made(self, selection):
         if len(selection) == 0:
@@ -373,36 +388,36 @@ class Module(ModuleBase):
         elif selection[-1]["type"] == SelectionType.none:
             # Global context menu option
             if selection[-1]["context_option"] == _("Create"):
-                self.q.put([Action.set_selection, []])
                 self._insert()
+                self.q.put([Action.set_selection, []])
                 return
             elif selection[-1]["context_option"] == _("Generate"):
-                self.q.put([Action.set_selection, []])
                 self._generate()
+                self.q.put([Action.set_selection, []])
                 return
             else:
                 self.q.put([Action.critical_error, _("Unexpected selection_made value: {}").format(selection)])
         elif len(selection) == 1:
             if selection[0]["type"] == SelectionType.entry:
                 if selection[0]["context_option"] == _("Edit"):
-                    self.q.put([Action.set_selection, []])
                     self._edit(name=selection[0]["value"])
+                    self.q.put([Action.set_selection, []])
                     return
                 elif selection[0]["context_option"] == _("Copy"):
-                    self.q.put([Action.set_selection, []])
                     self._copy(name=selection[0]["value"])
+                    self.q.put([Action.set_selection, []])
                     return
                 elif selection[0]["context_option"] == _("Rename"):
-                    self.q.put([Action.set_selection, []])
                     self._rename(name=selection[0]["value"])
+                    self.q.put([Action.set_selection, []])
                     return
                 elif selection[0]["context_option"] == _("Remove"):
-                    self.q.put([Action.set_selection, []])
                     self._remove(selection[0]["value"])
+                    self.q.put([Action.set_selection, []])
                     return
                 elif selection[0]["context_option"] == _("Add OTP"):
-                    self.q.put([Action.set_selection, []])
                     self._add_otp(selection[0]["value"])
+                    self.q.put([Action.set_selection, []])
                     return
 
                 results = self.password_store.get_decrypted_password(selection[0]["value"])
