@@ -55,6 +55,11 @@ for language in languages:
                               'description': _('Automatically pull and push changes to/from git'),
                               'options': [_('Yes'), _('No')],
                               'default': _('Yes')
+                            },
+                            {
+                              'name': 'ssh_password',
+                              'description': _('Password of SSH key, if encrypted, for push/pull. Stored in plain text.'),
+                              'default': ''
                             }],
                'platforms': ['Linux', 'Darwin']},
               metadata_file, indent=2, sort_keys=True)

@@ -21,13 +21,18 @@
       "name": "directory"
     },
     {
-      "default": "Yes",
-      "description": "Automatically pull and push changes to/from git",
+      "default": "Ja",
+      "description": "Wijzigingen automatisch ophalen van/uploaden naar git",
       "name": "use_git",
       "options": [
-        "Yes",
-        "No"
+        "Ja",
+        "Nee"
       ]
+    },
+    {
+      "default": "",
+      "description": "Password of SSH key, if encrypted, for push/pull. Stored in plain text.",
+      "name": "ssh_password"
     }
   ]
 }

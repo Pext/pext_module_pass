@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-11-03 21:35+CET\n"
+"POT-Creation-Date: 2019-11-16 19:24+CET\n"
 "PO-Revision-Date: 2019-10-14 17:52+0000\n"
 "Last-Translator: Sylvia van Os <sylvia@hackerchick.me>\n"
 "Language-Team: English <https://hosted.weblate.org/projects/pext/"
@@ -18,7 +18,7 @@ msgstr ""
 "X-Generator: Weblate 3.9-dev\n"
 "Generated-By: pygettext.py 1.5\n"
 
-#: __init__.py:61
+#: __init__.py:64
 msgid ""
 "This module requires at least API version 0.11.1, you are using {}. Please "
 "update Pext."
@@ -26,27 +26,27 @@ msgstr ""
 "This module requires at least API version 0.11.1, you are using {}. Please "
 "update Pext."
 
-#: __init__.py:65 generate_metadata.py:56
+#: __init__.py:68 generate_metadata.py:56
 msgid "No"
 msgstr ""
 
-#: __init__.py:70 __init__.py:355
+#: __init__.py:73 __init__.py:375
 msgid "Create"
 msgstr "Create"
 
-#: __init__.py:70 __init__.py:359
+#: __init__.py:73 __init__.py:379
 msgid "Generate"
 msgstr "Generate"
 
-#: __init__.py:86
+#: __init__.py:89
 msgid "Failed to pull from git: {}"
 msgstr ""
 
-#: __init__.py:97
+#: __init__.py:100
 msgid "Failed to push to git: {}"
 msgstr ""
 
-#: __init__.py:110
+#: __init__.py:113
 msgid ""
 "<b>{}</b><br/><br/><b>Last opened</b><br/>{}<br/><br/><b>Last modified</"
 "b><br/>{}"
@@ -54,39 +54,39 @@ msgstr ""
 "<b>{}</b><br/><br/><b>Last opened</b><br/>{}<br/><br/><b>Last modified</"
 "b><br/>{}"
 
-#: __init__.py:112 __init__.py:114
+#: __init__.py:115 __init__.py:117
 msgid "Open"
 msgstr "Open"
 
-#: __init__.py:112 __init__.py:114 __init__.py:367
+#: __init__.py:115 __init__.py:117 __init__.py:387
 msgid "Edit"
 msgstr "Edit"
 
-#: __init__.py:112 __init__.py:114 __init__.py:371
+#: __init__.py:115 __init__.py:117 __init__.py:391
 msgid "Copy"
 msgstr "Copy"
 
-#: __init__.py:112 __init__.py:114 __init__.py:375
+#: __init__.py:115 __init__.py:117 __init__.py:395
 msgid "Rename"
 msgstr "Rename"
 
-#: __init__.py:112 __init__.py:114 __init__.py:379
+#: __init__.py:115 __init__.py:117 __init__.py:399
 msgid "Remove"
 msgstr "Remove"
 
-#: __init__.py:114 __init__.py:383
+#: __init__.py:117 __init__.py:403
 msgid "Add OTP"
 msgstr "Add OTP"
 
-#: __init__.py:211
+#: __init__.py:214
 msgid "Unknown request received: {}"
 msgstr "Unknown request received: {}"
 
-#: __init__.py:235
+#: __init__.py:246
 msgid "Add OTP to which password?"
 msgstr "Add OTP to which password?"
 
-#: __init__.py:251
+#: __init__.py:262
 msgid ""
 "Could not detect any valid OTP QR codes on your screen. Continuing with "
 "manual configuration..."
@@ -94,67 +94,67 @@ msgstr ""
 "Could not detect any valid OTP QR codes on your screen. Continuing with "
 "manual configuration..."
 
-#: __init__.py:252
+#: __init__.py:263
 msgid "Use which OTP type?"
 msgstr "Use which OTP type?"
 
-#: __init__.py:254
+#: __init__.py:265
 msgid "Detected and added {} valid OTP QR code(s) on your screen."
 msgstr "Detected and added {} valid OTP QR code(s) on your screen."
 
-#: __init__.py:257
+#: __init__.py:268
 msgid "What is the OTP secret?"
 msgstr "What is the OTP secret?"
 
-#: __init__.py:270
+#: __init__.py:281
 msgid "Copy which password?"
 msgstr "Copy which password?"
 
-#: __init__.py:272 __init__.py:280
+#: __init__.py:283 __init__.py:294
 msgid "What should the copy of {} be named?"
 msgstr "What should the copy of {} be named?"
 
-#: __init__.py:287
+#: __init__.py:301
 msgid "What is the name of the password to edit?"
 msgstr "What is the name of the password to edit?"
 
-#: __init__.py:290 __init__.py:315
+#: __init__.py:304 __init__.py:329
 msgid "What should the value of {} be?"
 msgstr "What should the value of {} be?"
 
-#: __init__.py:297
+#: __init__.py:311
 msgid "Generate a random password under which name?"
 msgstr "Generate a random password under which name?"
 
-#: __init__.py:299
+#: __init__.py:313
 msgid "How many characters long should the password be?"
 msgstr "How many characters long should the password be?"
 
-#: __init__.py:306
+#: __init__.py:320
 msgid "Please provide a GPG ID to initialize this directory with."
 msgstr "Please provide a GPG ID to initialize this directory with."
 
-#: __init__.py:313
+#: __init__.py:327
 msgid "What is the name of the password?"
 msgstr "What is the name of the password?"
 
-#: __init__.py:322
+#: __init__.py:336
 msgid "Remove which password?"
 msgstr "Remove which password?"
 
-#: __init__.py:324
+#: __init__.py:338
 msgid "Are you sure you want to remove {}?"
 msgstr "Are you sure you want to remove {}?"
 
-#: __init__.py:335
+#: __init__.py:352
 msgid "Rename which password?"
 msgstr "Rename which password?"
 
-#: __init__.py:337
+#: __init__.py:354
 msgid "What should the new name of {} be?"
 msgstr "What should the new name of {} be?"
 
-#: __init__.py:364 __init__.py:426 __init__.py:443
+#: __init__.py:384 __init__.py:446 __init__.py:463
 msgid "Unexpected selection_made value: {}"
 msgstr "Unexpected selection_made value: {}"
 
@@ -176,4 +176,8 @@ msgstr ""
 
 #: generate_metadata.py:56 generate_metadata.py:57
 msgid "Yes"
+msgstr ""
+
+#: generate_metadata.py:61
+msgid "Password of SSH key, if encrypted, for push/pull. Stored in plain text."
 msgstr ""

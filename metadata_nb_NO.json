@@ -21,13 +21,18 @@
       "name": "directory"
     },
     {
-      "default": "Yes",
+      "default": "Ja",
       "description": "Automatically pull and push changes to/from git",
       "name": "use_git",
       "options": [
-        "Yes",
-        "No"
+        "Ja",
+        "Nei"
       ]
+    },
+    {
+      "default": "",
+      "description": "Password of SSH key, if encrypted, for push/pull. Stored in plain text.",
+      "name": "ssh_password"
     }
   ]
 }

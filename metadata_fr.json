@@ -28,6 +28,11 @@
         "Yes",
         "No"
       ]
+    },
+    {
+      "default": "",
+      "description": "Password of SSH key, if encrypted, for push/pull. Stored in plain text.",
+      "name": "ssh_password"
     }
   ]
 }

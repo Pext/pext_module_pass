@@ -57,6 +57,9 @@ class Module(ModuleBase):
         self.q = q
         self.settings = settings
 
+        if 'ssh_password' not in self.settings or not self.settings['ssh_password']:
+            self.settings['ssh_password'] = None
+
         if self.settings['_api_version'] < [0, 11, 1]:
             self.q.put([Action.critical_error, _("This module requires at least API version 0.11.1, you are using {}. Please update Pext.").format(".".join([str(i) for i in self.settings['_api_version']]))])
             return
@@ -81,7 +84,7 @@ class Module(ModuleBase):
                 remote_url = config.get(("remote".encode(), "origin".encode()), "url".encode()).decode()
                 client.get_ssh_vendor = ParamikoSSHVendor
                 try:
-                    porcelain.pull(repo, remote_url)
+                    porcelain.pull(repo, remote_url, password=self.settings['ssh_password'])
                 except ssh_exception.SSHException as e:
                     self.q.put([Action.add_error, _("Failed to pull from git: {}").format(str(e))])
 
@@ -92,7 +95,7 @@ class Module(ModuleBase):
                 remote_url = config.get(("remote".encode(), "origin".encode()), "url".encode()).decode()
                 client.get_ssh_vendor = ParamikoSSHVendor
                 try:
-                    porcelain.push(repo, remote_url, 'master')
+                    porcelain.push(repo, remote_url, 'master', password=self.settings['ssh_password'])
                 except ssh_exception.SSHException as e:
                     self.q.put([Action.add_error, _("Failed to push to git: {}").format(str(e))])
 
