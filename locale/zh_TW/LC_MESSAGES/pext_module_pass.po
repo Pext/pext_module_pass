@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2019-11-16 19:24+CET\n"
-"PO-Revision-Date: 2019-11-04 10:49+0000\n"
+"PO-Revision-Date: 2019-11-19 03:04+0000\n"
 "Last-Translator: Jeff Huang <s8321414@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <https://hosted.weblate.org/projects/"
 "pext/pext_module_pass/zh_Hant/>\n"
@@ -175,7 +175,7 @@ msgstr "是"
 
 #: generate_metadata.py:61
 msgid "Password of SSH key, if encrypted, for push/pull. Stored in plain text."
-msgstr ""
+msgstr "SSH 金鑰的密碼（如果已加密），供推／拉使用。以純文字儲存。"
 
 #~ msgid "Insert"
 #~ msgstr "插入"
