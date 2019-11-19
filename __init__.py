@@ -20,8 +20,10 @@ import html
 import platform
 import os
 import shutil
+import threading
 from datetime import datetime
 from os.path import expanduser, normcase
+from time import sleep
 
 from babel.dates import format_datetime
 from dulwich import client, porcelain
@@ -51,6 +53,9 @@ class Module(ModuleBase):
             print("No {} translation available for pext_module_pass".format(settings['_locale']))
 
         lang.install()
+
+        self.result_display_thread = None
+        self.result_display_active = True
 
         self.data_location = expanduser(normcase("~/.password-store/")) if ('directory' not in settings) else expanduser(normcase(settings['directory']))
         self.password_store = pypass.PasswordStore(self.data_location)
@@ -377,15 +382,58 @@ class Module(ModuleBase):
 
             self.q.put([Action.set_selection, []])
 
+    def _display_results(self, results):
+        while self.result_display_active:
+            result_lines = results.rstrip().splitlines()
+            self.passwordEntries = {}
+            # Parse OTP
+            for number, line in enumerate(result_lines):
+                try:
+                    otp = pyotp.parse_uri(line)
+                except ValueError:
+                    continue
+
+                if isinstance(otp, pyotp.TOTP):
+                    otp_code = otp.now()
+                else:
+                    otp_code = otp.generate_otp()
+
+                result_lines[number] = "OTP: {}".format(otp_code)
+
+            # If only a password and no other fields, select password immediately
+            if len(result_lines) == 1:
+                self.q.put([Action.copy_to_clipboard, result_lines[0]])
+                self.q.put([Action.close])
+                return
+
+            for line in result_lines:
+                if len(self.passwordEntries) == 0:
+                    self.passwordEntries["********"] = line
+                else:
+                    self.passwordEntries[line] = line
+
+            self.q.put([Action.replace_entry_list, ["********"] + result_lines[1:]])
+
+            if self.result_display_active:
+                sleep(1)
+
     def selection_made(self, selection):
         if len(selection) == 0:
             # We're at the main menu
+            if self.result_display_thread:
+                self.result_display_active = False
+                self.result_display_thread.join()
+
             self.passwordEntries = {}
             self.q.put([Action.set_header])
             self.q.put([Action.replace_command_list, []])
             self.q.put([Action.replace_entry_list, []])
             self._get_entries()
         elif selection[-1]["type"] == SelectionType.none:
+            if self.result_display_thread:
+                self.result_display_active = False
+                self.result_display_thread.join()
+
             # Global context menu option
             if selection[-1]["context_option"] == _("Create"):
                 self._insert()
@@ -398,6 +446,10 @@ class Module(ModuleBase):
             else:
                 self.q.put([Action.critical_error, _("Unexpected selection_made value: {}").format(selection)])
         elif len(selection) == 1:
+            if self.result_display_thread:
+                self.result_display_active = False
+                self.result_display_thread.join()
+
             if selection[0]["type"] == SelectionType.entry:
                 if selection[0]["context_option"] == _("Edit"):
                     self._edit(name=selection[0]["value"])
@@ -428,39 +480,17 @@ class Module(ModuleBase):
                 self.q.put([Action.replace_entry_list, []])
                 self.q.put([Action.replace_command_list, []])
 
-                result_lines = results.rstrip().splitlines()
-
-                # Parse OTP
-                for number, line in enumerate(result_lines):
-                    try:
-                        otp = pyotp.parse_uri(line)
-                    except ValueError:
-                        continue
-
-                    if isinstance(otp, pyotp.TOTP):
-                        otp_code = otp.now()
-                    else:
-                        otp_code = otp.generate_otp()
-
-                    result_lines[number] = "OTP: {}".format(otp_code)
-
-                # If only a password and no other fields, select password immediately
-                if len(result_lines) == 1:
-                    self.q.put([Action.copy_to_clipboard, result_lines[0]])
-                    self.q.put([Action.close])
-                    return
-
-                for line in result_lines:
-                    if len(self.passwordEntries) == 0:
-                        self.passwordEntries["********"] = line
-                        self.q.put([Action.add_entry, "********"])
-                    else:
-                        self.passwordEntries[line] = line
-                        self.q.put([Action.add_entry, line])
+                self.result_display_active = True
+                self.result_display_thread = threading.Thread(target=self._display_results, args=(results,), daemon=True)
+                self.result_display_thread.start()
             else:
                 self.q.put([Action.critical_error, _("Unexpected selection_made value: {}").format(selection)])
         elif len(selection) == 2:
             # We're selecting a password
+            if self.result_display_thread:
+                self.result_display_active = False
+                self.result_display_thread.join()
+
             if selection[1]["value"] == "********":
                 self.q.put([Action.copy_to_clipboard, self.passwordEntries["********"]])
             else:
