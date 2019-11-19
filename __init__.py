@@ -92,7 +92,7 @@ class Module(ModuleBase):
                     client.get_ssh_vendor = ParamikoSSHVendor
                     try:
                         porcelain.pull(repo, remote_url, password=self.settings['ssh_password'])
-                    except ssh_exception.SSHException as e:
+                    except (ssh_exception.SSHException, OSError) as e:
                         self.q.put([Action.add_error, _("Failed to pull from git: {}").format(str(e))])
 
             return
@@ -108,7 +108,7 @@ class Module(ModuleBase):
                     client.get_ssh_vendor = ParamikoSSHVendor
                     try:
                         porcelain.push(repo, remote_url, 'master', password=self.settings['ssh_password'])
-                    except ssh_exception.SSHException as e:
+                    except (ssh_exception.SSHException, OSError) as e:
                         self.q.put([Action.add_error, _("Failed to push to git: {}").format(str(e))])
 
             return
