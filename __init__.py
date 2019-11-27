@@ -398,7 +398,8 @@ class Module(ModuleBase):
                 else:
                     otp_code = otp.generate_otp()
 
-                result_lines[number] = "OTP: {}".format(otp_code)
+                otp_description = "{} - {}".format(otp.issuer, otp.name) if otp.issuer else otp.name
+                result_lines[number] = "OTP ({}): {}".format(otp_description, otp_code)
 
             # If only a password and no other fields, select password immediately
             if len(result_lines) == 1:
