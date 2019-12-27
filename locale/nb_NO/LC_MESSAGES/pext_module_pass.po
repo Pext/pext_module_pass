@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2019-11-16 19:24+CET\n"
-"PO-Revision-Date: 2019-11-12 09:04+0000\n"
+"PO-Revision-Date: 2019-12-27 21:05+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/pext/"
 "pext_module_pass/nb_NO/>\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.10-dev\n"
+"X-Generator: Weblate 3.10\n"
 "Generated-By: pygettext.py 1.5\n"
 
 #: __init__.py:64
@@ -23,6 +23,7 @@ msgid ""
 "This module requires at least API version 0.11.1, you are using {}. Please "
 "update Pext."
 msgstr ""
+"Denne modulen krever minst API-versjon 0.11.1, du bruker {}. Oppgrader Pext."
 
 #: __init__.py:68 generate_metadata.py:56
 msgid "No"
@@ -30,7 +31,7 @@ msgstr "Nei"
 
 #: __init__.py:73 __init__.py:375
 msgid "Create"
-msgstr ""
+msgstr "Opprett"
 
 #: __init__.py:73 __init__.py:379
 msgid "Generate"
