@@ -52,7 +52,7 @@ for language in languages:
                             },
                             {
                               'name': 'use_git',
-                              'description': _('Automatically pull and push changes to/from git'),
+                              'description': _('Automatically pull and push changes to/from Git'),
                               'options': [_('Yes'), _('No')],
                               'default': _('Yes')
                             },
