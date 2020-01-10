@@ -314,7 +314,7 @@ class Module(ModuleBase):
 
     def _edit(self, name=None, value=None):
         if not name:
-            self.q.put([Action.ask_input, _("What password name do you want to edit?"), "", "edit"])
+            self.q.put([Action.ask_input, _("What password do you want to change?"), "", "edit"])
         elif not value:
             current_data = self.password_store.get_decrypted_password(name)
             self.q.put([Action.ask_input_multi_line, _("What should the value of {} be?").format(name), current_data, "edit {}".format(name)])
@@ -333,7 +333,7 @@ class Module(ModuleBase):
 
     def _init(self, gpg_id=None):
         if not gpg_id:
-            self.q.put([Action.ask_input, _("Please provide a GPG user ID to initialize this directory with."), "", "init"])
+            self.q.put([Action.ask_input, _("Please provide a GPG key ID to initialize this directory with."), "", "init"])
         else:
             self.password_store.init(gpg_id, self._get_data_location)
             self.q.put([Action.set_selection, []])
@@ -349,7 +349,7 @@ class Module(ModuleBase):
 
     def _remove(self, name=None, confirmed=None):
         if not name:
-            self.q.put([Action.ask_input, _("Which one of the passwords should be removed?"), "", "remove"])
+            self.q.put([Action.ask_input, _("What password do you want to remove?"), "", "remove"])
         elif confirmed is None:
             self.q.put([Action.ask_question, _("Are you sure you want to remove {}?").format(name), "remove {}".format(name)])
         elif not confirmed:
@@ -367,7 +367,7 @@ class Module(ModuleBase):
 
     def _rename(self, name=None, new_name=None):
         if not name:
-            self.q.put([Action.ask_input, _("Which one of the passwords should be removed?"), "", "rename"])
+            self.q.put([Action.ask_input, _("What password do you want to rename?"), "", "rename"])
         elif not new_name:
             self.q.put([Action.ask_input, _("What should the new name of {} be?").format(name), name, "rename {}".format(name)])
         else:
