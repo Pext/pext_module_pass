@@ -93,7 +93,7 @@ class Module(ModuleBase):
                     try:
                         porcelain.pull(repo, remote_url, password=self.settings['ssh_password'])
                     except (ssh_exception.SSHException, OSError) as e:
-                        self.q.put([Action.add_error, _("Failed to pull from git: {}").format(str(e))])
+                        self.q.put([Action.add_error, _("Failed to pull from Git: {}").format(str(e))])
 
             return
         except FileLocked:
@@ -109,7 +109,7 @@ class Module(ModuleBase):
                     try:
                         porcelain.push(repo, remote_url, 'master', password=self.settings['ssh_password'])
                     except (ssh_exception.SSHException, OSError) as e:
-                        self.q.put([Action.add_error, _("Failed to push to git: {}").format(str(e))])
+                        self.q.put([Action.add_error, _("Failed to push to Git: {}").format(str(e))])
 
             return
         except FileLocked:
@@ -258,7 +258,7 @@ class Module(ModuleBase):
 
     def _add_otp(self, name=None, otp_type=None, secret=None):
         if not name:
-            self.q.put([Action.ask_input, _("Add OTP to which password?"), "", "add_otp"])
+            self.q.put([Action.ask_input, _("What password should OTP be added to?"), "", "add_otp"])
         elif not otp_type:
             screenshot = pyscreenshot.grab(childprocess=False).convert('L')
             qr_codes = zbar.Scanner().scan(screenshot)
@@ -274,8 +274,8 @@ class Module(ModuleBase):
                 self._append_password(name, qr_data)
 
             if autodetected == 0:
-                self.q.put([Action.add_error, _("Could not detect any valid OTP QR codes on your screen. Continuing with manual configuration...")])
-                self.q.put([Action.ask_choice, _("Use which OTP type?"), ["TOTP", "HOTP"], "add_otp {}".format(name)])
+                self.q.put([Action.add_error, _("No valid OTP QR codes detected on your screen. Configuring manually…")])
+                self.q.put([Action.ask_choice, _("Which OTP type should be used?"), ["TOTP", "HOTP"], "add_otp {}".format(name)])
             else:
                 self.q.put([Action.add_message, _("Detected and added {} valid OTP QR code(s) on your screen.").format(str(autodetected))])
                 return
@@ -293,7 +293,7 @@ class Module(ModuleBase):
 
     def _copy(self, name=None, copy_name=None):
         if not name:
-            self.q.put([Action.ask_input, _("Copy which password?"), "", "copy"])
+            self.q.put([Action.ask_input, _("Which password do you want to copy?"), "", "copy"])
         elif not copy_name:
             self.q.put([Action.ask_input, _("What should the copy of {} be named?").format(name), name, "copy {}".format(name)])
         else:
@@ -314,7 +314,7 @@ class Module(ModuleBase):
 
     def _edit(self, name=None, value=None):
         if not name:
-            self.q.put([Action.ask_input, _("What is the name of the password to edit?"), "", "edit"])
+            self.q.put([Action.ask_input, _("What password do you want to change?"), "", "edit"])
         elif not value:
             current_data = self.password_store.get_decrypted_password(name)
             self.q.put([Action.ask_input_multi_line, _("What should the value of {} be?").format(name), current_data, "edit {}".format(name)])
@@ -324,16 +324,16 @@ class Module(ModuleBase):
 
     def _generate(self, name=None, length=None):
         if not name:
-            self.q.put([Action.ask_input, _("Generate a random password under which name?"), "", 'generate'])
+            self.q.put([Action.ask_input, _("What name do you want to generate a random password for?"), "", 'generate'])
         elif not length:
-            self.q.put([Action.ask_input, _("How many characters long should the password be?"), "15", "generate {}".format(name)])
+            self.q.put([Action.ask_input, _("How many characters should the password be?"), "15", "generate {}".format(name)])
         else:
             password = self.password_store.generate_password(name, length=int(length))
             self._insert(name=name, value=password)
 
     def _init(self, gpg_id=None):
         if not gpg_id:
-            self.q.put([Action.ask_input, _("Please provide a GPG ID to initialize this directory with."), "", "init"])
+            self.q.put([Action.ask_input, _("Please provide a GPG key ID to initialize this directory with."), "", "init"])
         else:
             self.password_store.init(gpg_id, self._get_data_location)
             self.q.put([Action.set_selection, []])
@@ -349,7 +349,7 @@ class Module(ModuleBase):
 
     def _remove(self, name=None, confirmed=None):
         if not name:
-            self.q.put([Action.ask_input, _("Remove which password?"), "", "remove"])
+            self.q.put([Action.ask_input, _("What password do you want to remove?"), "", "remove"])
         elif confirmed is None:
             self.q.put([Action.ask_question, _("Are you sure you want to remove {}?").format(name), "remove {}".format(name)])
         elif not confirmed:
@@ -367,7 +367,7 @@ class Module(ModuleBase):
 
     def _rename(self, name=None, new_name=None):
         if not name:
-            self.q.put([Action.ask_input, _("Rename which password?"), "", "rename"])
+            self.q.put([Action.ask_input, _("What password do you want to rename?"), "", "rename"])
         elif not new_name:
             self.q.put([Action.ask_input, _("What should the new name of {} be?").format(name), name, "rename {}".format(name)])
         else:
