@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2019-11-16 19:24+CET\n"
-"PO-Revision-Date: 2019-12-27 21:05+0000\n"
+"PO-Revision-Date: 2020-02-08 18:50+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/pext/"
 "pext_module_pass/nb_NO/>\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.10\n"
+"X-Generator: Weblate 3.11-dev\n"
 "Generated-By: pygettext.py 1.5\n"
 
 #: __init__.py:64
@@ -153,7 +153,7 @@ msgstr ""
 
 #: __init__.py:384 __init__.py:446 __init__.py:463
 msgid "Unexpected selection_made value: {}"
-msgstr "Uventet selection_made -verdi: {}"
+msgstr "Uventet selection_made-verdi: {}"
 
 #: generate_metadata.py:40
 msgid "Password Store"
