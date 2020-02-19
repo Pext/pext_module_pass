@@ -1,0 +1,168 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR ORGANIZATION
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2019-11-16 19:24+CET\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: pt_PT\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.5\n"
+
+#: __init__.py:64
+msgid "This module requires at least API version 0.11.1, you are using {}. Please update Pext."
+msgstr ""
+
+#: __init__.py:68 generate_metadata.py:56
+msgid "No"
+msgstr ""
+
+#: __init__.py:73 __init__.py:375
+msgid "Create"
+msgstr ""
+
+#: __init__.py:73 __init__.py:379
+msgid "Generate"
+msgstr ""
+
+#: __init__.py:89
+msgid "Failed to pull from git: {}"
+msgstr ""
+
+#: __init__.py:100
+msgid "Failed to push to git: {}"
+msgstr ""
+
+#: __init__.py:113
+msgid "<b>{}</b><br/><br/><b>Last opened</b><br/>{}<br/><br/><b>Last modified</b><br/>{}"
+msgstr ""
+
+#: __init__.py:115 __init__.py:117
+msgid "Open"
+msgstr ""
+
+#: __init__.py:115 __init__.py:117 __init__.py:387
+msgid "Edit"
+msgstr ""
+
+#: __init__.py:115 __init__.py:117 __init__.py:391
+msgid "Copy"
+msgstr ""
+
+#: __init__.py:115 __init__.py:117 __init__.py:395
+msgid "Rename"
+msgstr ""
+
+#: __init__.py:115 __init__.py:117 __init__.py:399
+msgid "Remove"
+msgstr ""
+
+#: __init__.py:117 __init__.py:403
+msgid "Add OTP"
+msgstr ""
+
+#: __init__.py:214
+msgid "Unknown request received: {}"
+msgstr ""
+
+#: __init__.py:246
+msgid "Add OTP to which password?"
+msgstr ""
+
+#: __init__.py:262
+msgid "Could not detect any valid OTP QR codes on your screen. Continuing with manual configuration..."
+msgstr ""
+
+#: __init__.py:263
+msgid "Use which OTP type?"
+msgstr ""
+
+#: __init__.py:265
+msgid "Detected and added {} valid OTP QR code(s) on your screen."
+msgstr ""
+
+#: __init__.py:268
+msgid "What is the OTP secret?"
+msgstr ""
+
+#: __init__.py:281
+msgid "Copy which password?"
+msgstr ""
+
+#: __init__.py:283 __init__.py:294
+msgid "What should the copy of {} be named?"
+msgstr ""
+
+#: __init__.py:301
+msgid "What is the name of the password to edit?"
+msgstr ""
+
+#: __init__.py:304 __init__.py:329
+msgid "What should the value of {} be?"
+msgstr ""
+
+#: __init__.py:311
+msgid "Generate a random password under which name?"
+msgstr ""
+
+#: __init__.py:313
+msgid "How many characters long should the password be?"
+msgstr ""
+
+#: __init__.py:320
+msgid "Please provide a GPG ID to initialize this directory with."
+msgstr ""
+
+#: __init__.py:327
+msgid "What is the name of the password?"
+msgstr ""
+
+#: __init__.py:336
+msgid "Remove which password?"
+msgstr ""
+
+#: __init__.py:338
+msgid "Are you sure you want to remove {}?"
+msgstr ""
+
+#: __init__.py:352
+msgid "Rename which password?"
+msgstr ""
+
+#: __init__.py:354
+msgid "What should the new name of {} be?"
+msgstr ""
+
+#: __init__.py:384 __init__.py:446 __init__.py:463
+msgid "Unexpected selection_made value: {}"
+msgstr ""
+
+#: generate_metadata.py:40
+msgid "Password Store"
+msgstr ""
+
+#: generate_metadata.py:42
+msgid "Allows Pext to do password management through pass"
+msgstr ""
+
+#: generate_metadata.py:50
+msgid "Password Store directory"
+msgstr ""
+
+#: generate_metadata.py:55
+msgid "Automatically pull and push changes to/from git"
+msgstr ""
+
+#: generate_metadata.py:56 generate_metadata.py:57
+msgid "Yes"
+msgstr ""
+
+#: generate_metadata.py:61
+msgid "Password of SSH key, if encrypted, for push/pull. Stored in plain text."
+msgstr ""
