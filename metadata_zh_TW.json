@@ -22,7 +22,7 @@
     },
     {
       "default": "\u662f",
-      "description": "\u81ea\u52d5\u5f9e git \u62c9\u53d6\u8b8a\u66f4\u6216\u63a8\u9001\u8b8a\u66f4\u5230 git",
+      "description": "Automatically pull and push changes to/from Git",
       "name": "use_git",
       "options": [
         "\u662f",
@@ -31,7 +31,7 @@
     },
     {
       "default": "",
-      "description": "Password of SSH key, if encrypted, for push/pull. Stored in plain text.",
+      "description": "SSH \u91d1\u9470\u7684\u5bc6\u78bc\uff08\u5982\u679c\u5df2\u52a0\u5bc6\uff09\uff0c\u4f9b\u63a8\uff0f\u62c9\u4f7f\u7528\u3002\u4ee5\u7d14\u6587\u5b57\u5132\u5b58\u3002",
       "name": "ssh_password"
     }
   ]

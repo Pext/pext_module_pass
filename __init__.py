@@ -128,9 +128,9 @@ class Module(ModuleBase):
             self.q.put([Action.add_entry, entry])
             self.q.put([Action.set_entry_info, entry, _("<b>{}</b><br/><br/><b>Last opened</b><br/>{}<br/><br/><b>Last modified</b><br/>{}").format(html.escape(entry), format_datetime(datetime.fromtimestamp(os.path.getatime(entry_path)).replace(microsecond=0), locale=self.settings['_locale']), format_datetime(datetime.fromtimestamp(os.path.getmtime(entry_path)).replace(microsecond=0), locale=self.settings['_locale']))])
             if self.settings['_api_version'] < [0, 12, 0]:
-                self.q.put([Action.set_entry_context, entry, [_("Open"), _("Edit"), _("Copy"), _("Rename"), _("Remove")]])
+                self.q.put([Action.set_entry_context, entry, [_("Open"), _("Edit password"), _("Edit other fields"), _("Copy"), _("Rename"), _("Remove")]])
             else:
-                self.q.put([Action.set_entry_context, entry, [_("Open"), _("Edit"), _("Copy"), _("Rename"), _("Remove"), _("Add OTP")]])
+                self.q.put([Action.set_entry_context, entry, [_("Open"), _("Edit password"), _("Edit other fields"), _("Add OTP"), _("Copy"), _("Rename"), _("Remove")]])
 
     def process_response(self, response, identifier):
         # User cancellation
@@ -166,17 +166,28 @@ class Module(ModuleBase):
                     self._copy(name=" ".join(data[1:]), copy_name=response)
                 else:
                     self._copy(name=" ".join(data[1:]))
-        elif data[0] == "edit":
+        elif data[0] == "edit_password":
             if len(data) == 1:
                 if response is not None:
-                    self._edit(name=response)
+                    self._edit_password(name=response)
                 else:
-                    self._edit()
+                    self._edit_password()
             else:
                 if response is not None:
-                    self._edit(name=" ".join(data[1:]), value=response)
+                    self._edit_password(name=" ".join(data[1:]), value=response)
                 else:
-                    self._edit(name=" ".join(data[1:]))
+                    self._edit_password(name=" ".join(data[1:]))
+        elif data[0] == "edit_other_fields":
+            if len(data) == 1:
+                if response is not None:
+                    self._edit_other_fields(name=response)
+                else:
+                    self._edit_other_fields()
+            else:
+                if response is not None:
+                    self._edit_other_fields(name=" ".join(data[1:]), value=response)
+                else:
+                    self._edit_other_fields(name=" ".join(data[1:]))
         elif data[0] == "generate":
             if len(data) == 1:
                 if response is not None:
@@ -312,15 +323,30 @@ class Module(ModuleBase):
 
             self.q.put([Action.set_selection, []])
 
-    def _edit(self, name=None, value=None):
+    def _edit_password(self, name=None, value=None):
         if not name:
             self.q.put([Action.ask_input, _("What password do you want to change?"), "", "edit"])
-        elif not value:
-            current_data = self.password_store.get_decrypted_password(name)
-            self.q.put([Action.ask_input_multi_line, _("What should the value of {} be?").format(name), current_data, "edit {}".format(name)])
         else:
-            self._save_password(name, value)
-            self.q.put([Action.set_selection, []])
+            if not value:
+                self.q.put([Action.ask_input_password, _("What should the value of {} be?").format(name), "", "edit_password {}".format(name)])
+            else:
+                current_data = self.password_store.get_decrypted_password(name).splitlines()
+                current_data[0] = value
+                self._save_password(name, '\n'.join(current_data))
+                self.q.put([Action.set_selection, []])
+
+    def _edit_other_fields(self, name=None, value=None):
+        if not name:
+            self.q.put([Action.ask_input, _("What password do you want to change fields of?"), "", "edit"])
+        else:
+            current_data = self.password_store.get_decrypted_password(name).splitlines()
+            fields = '\n'.join(current_data[1:]) if len(current_data) > 1 else ''
+            if not value:
+                self.q.put([Action.ask_input_multi_line, _("What should the value of the fields of {} be?").format(name), fields, "edit_other_fields {}".format(name)])
+            else:
+                data = "{}\n{}".format(current_data[0], value)
+                self._save_password(name, data)
+                self.q.put([Action.set_selection, []])
 
     def _generate(self, name=None, length=None):
         if not name:
@@ -342,7 +368,7 @@ class Module(ModuleBase):
         if not name:
             self.q.put([Action.ask_input, _("What is the name of the password?"), "", 'insert'])
         elif not value:
-            self.q.put([Action.ask_input_multi_line, _("What should the value of {} be?").format(name), "", "insert {}".format(name)])
+            self.q.put([Action.ask_input_password, _("What should the value of {} be?").format(name), "", "insert {}".format(name)])
         else:
             self._save_password(name, value)
             self.q.put([Action.set_selection, []])
@@ -452,8 +478,16 @@ class Module(ModuleBase):
                 self.result_display_thread.join()
 
             if selection[0]["type"] == SelectionType.entry:
-                if selection[0]["context_option"] == _("Edit"):
-                    self._edit(name=selection[0]["value"])
+                if selection[0]["context_option"] == _("Edit password"):
+                    self._edit_password(name=selection[0]["value"])
+                    self.q.put([Action.set_selection, []])
+                    return
+                elif selection[0]["context_option"] == _("Edit other fields"):
+                    self._edit_other_fields(name=selection[0]["value"])
+                    self.q.put([Action.set_selection, []])
+                    return
+                elif selection[0]["context_option"] == _("Add OTP"):
+                    self._add_otp(selection[0]["value"])
                     self.q.put([Action.set_selection, []])
                     return
                 elif selection[0]["context_option"] == _("Copy"):
@@ -466,10 +500,6 @@ class Module(ModuleBase):
                     return
                 elif selection[0]["context_option"] == _("Remove"):
                     self._remove(selection[0]["value"])
-                    self.q.put([Action.set_selection, []])
-                    return
-                elif selection[0]["context_option"] == _("Add OTP"):
-                    self._add_otp(selection[0]["value"])
                     self.q.put([Action.set_selection, []])
                     return
 

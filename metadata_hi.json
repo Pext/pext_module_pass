@@ -22,7 +22,7 @@
     },
     {
       "default": "\u0939\u093e\u0901",
-      "description": "\u0938\u094d\u0935\u091a\u093e\u0932\u093f\u0924 \u0930\u0942\u092a \u0938\u0947 \u0917\u093f\u091f \u0938\u0947 \u092a\u0941\u0936 \u0914\u0930 \u092a\u0941\u0932 \u0915\u0930\u0947",
+      "description": "Automatically pull and push changes to/from Git",
       "name": "use_git",
       "options": [
         "\u0939\u093e\u0901",
@@ -31,7 +31,7 @@
     },
     {
       "default": "",
-      "description": "Password of SSH key, if encrypted, for push/pull. Stored in plain text.",
+      "description": "SSH \u0915\u0941\u0902\u091c\u0940 \u0915\u093e \u092a\u093e\u0938\u0935\u0930\u094d\u0921, \u092f\u0926\u093f \u090f\u0928\u094d\u0915\u094d\u0930\u093f\u092a\u094d\u091f \u0915\u093f\u092f\u093e \u0917\u092f\u093e \u0939\u0948, \u0924\u094b \u092a\u0941\u0936 / \u092a\u0941\u0932 \u0915\u0947 \u0932\u093f\u090f\u0964 \u0938\u093e\u0926\u0947 \u092a\u093e\u0920 \u092e\u0947\u0902 \u0938\u0902\u0917\u094d\u0930\u0939\u0940\u0924\u0964",
       "name": "ssh_password"
     }
   ]

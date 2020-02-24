@@ -22,7 +22,7 @@
     },
     {
       "default": "Ja",
-      "description": "Wijzigingen automatisch ophalen van/uploaden naar git",
+      "description": "Automatically pull and push changes to/from Git",
       "name": "use_git",
       "options": [
         "Ja",
@@ -31,7 +31,7 @@
     },
     {
       "default": "",
-      "description": "Password of SSH key, if encrypted, for push/pull. Stored in plain text.",
+      "description": "Wachtwoord bij de SSH-sleutel (indien versleuteld) voor push/pull. Wordt opgeslagen met plattetekstopmaak.",
       "name": "ssh_password"
     }
   ]

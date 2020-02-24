@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-11-16 19:24+CET\n"
+"POT-Creation-Date: 2020-02-24 20:19+CET\n"
 "PO-Revision-Date: 2019-12-29 02:38+0000\n"
 "Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/pext/"
@@ -18,7 +18,7 @@ msgstr ""
 "X-Generator: Weblate 3.10\n"
 "Generated-By: pygettext.py 1.5\n"
 
-#: __init__.py:64
+#: __init__.py:70
 msgid ""
 "This module requires at least API version 0.11.1, you are using {}. Please "
 "update Pext."
@@ -26,27 +26,27 @@ msgstr ""
 "Este módulo necesita por lo menos la versión 0.11.1 de la API; usted utiliza "
 "{}. Actualice Pext."
 
-#: __init__.py:68 generate_metadata.py:56
+#: __init__.py:74 generate_metadata.py:56
 msgid "No"
 msgstr "No"
 
-#: __init__.py:73 __init__.py:375
+#: __init__.py:79 __init__.py:465
 msgid "Create"
 msgstr "Crear"
 
-#: __init__.py:73 __init__.py:379
+#: __init__.py:79 __init__.py:469
 msgid "Generate"
 msgstr "Generar"
 
-#: __init__.py:89
-msgid "Failed to pull from git: {}"
-msgstr "No se pudo incorporar desde Git: {}"
+#: __init__.py:96
+msgid "Failed to pull from Git: {}"
+msgstr ""
 
-#: __init__.py:100
-msgid "Failed to push to git: {}"
-msgstr "No se pudo enviar hacia Git: {}"
+#: __init__.py:112
+msgid "Failed to push to Git: {}"
+msgstr ""
 
-#: __init__.py:113
+#: __init__.py:129
 msgid ""
 "<b>{}</b><br/><br/><b>Last opened</b><br/>{}<br/><br/><b>Last modified</"
 "b><br/>{}"
@@ -54,108 +54,115 @@ msgstr ""
 "<b>{}</b><br/><br/><b>Última apertura</b><br/>{}<br/><br/><b>Última "
 "modificación</b><br/>{}"
 
-#: __init__.py:115 __init__.py:117
+#: __init__.py:131 __init__.py:133
 msgid "Open"
 msgstr "Abrir"
 
-#: __init__.py:115 __init__.py:117 __init__.py:387
-msgid "Edit"
-msgstr "Editar"
+#: __init__.py:131 __init__.py:133 __init__.py:481
+msgid "Edit password"
+msgstr ""
 
-#: __init__.py:115 __init__.py:117 __init__.py:391
+#: __init__.py:131 __init__.py:133 __init__.py:485
+msgid "Edit other fields"
+msgstr ""
+
+#: __init__.py:131 __init__.py:133 __init__.py:493
 msgid "Copy"
 msgstr "Copiar"
 
-#: __init__.py:115 __init__.py:117 __init__.py:395
+#: __init__.py:131 __init__.py:133 __init__.py:497
 msgid "Rename"
 msgstr "Cambiar nombre"
 
-#: __init__.py:115 __init__.py:117 __init__.py:399
+#: __init__.py:131 __init__.py:133 __init__.py:501
 msgid "Remove"
 msgstr "Eliminar"
 
-#: __init__.py:117 __init__.py:403
+#: __init__.py:133 __init__.py:489
 msgid "Add OTP"
 msgstr "Añadir OTP"
 
-#: __init__.py:214
+#: __init__.py:241
 msgid "Unknown request received: {}"
 msgstr "Se recibió una petición desconocida: {}"
 
-#: __init__.py:246
-msgid "Add OTP to which password?"
-msgstr "¿A cuál contraseña quiere añadir OTP?"
-
-#: __init__.py:262
-msgid ""
-"Could not detect any valid OTP QR codes on your screen. Continuing with "
-"manual configuration..."
+#: __init__.py:272
+msgid "What password should OTP be added to?"
 msgstr ""
-"No se pudo detectar ningún código QR de OTP válido en la pantalla. Se "
-"procederá a la configuración manual…"
 
-#: __init__.py:263
-msgid "Use which OTP type?"
-msgstr "¿Qué tipo de OTP quiere utilizar?"
+#: __init__.py:288
+msgid "No valid OTP QR codes detected on your screen. Configuring manually…"
+msgstr ""
 
-#: __init__.py:265
+#: __init__.py:289
+msgid "Which OTP type should be used?"
+msgstr ""
+
+#: __init__.py:291
 msgid "Detected and added {} valid OTP QR code(s) on your screen."
 msgstr "Se detectaron y añadieron {} códigos QR de OTP válidos en pantalla."
 
-#: __init__.py:268
+#: __init__.py:294
 msgid "What is the OTP secret?"
 msgstr "¿Cuál es el secreto de OTP?"
 
-#: __init__.py:281
-msgid "Copy which password?"
-msgstr "¿Cuál contraseña debe copiarse?"
+#: __init__.py:307
+msgid "Which password do you want to copy?"
+msgstr ""
 
-#: __init__.py:283 __init__.py:294
+#: __init__.py:309 __init__.py:321
 msgid "What should the copy of {} be named?"
 msgstr "¿Cómo debe denominarse la copia de {}?"
 
-#: __init__.py:301
-msgid "What is the name of the password to edit?"
-msgstr "¿Cuál es el nombre de la contraseña que ha de editarse?"
+#: __init__.py:328
+msgid "What password do you want to change?"
+msgstr ""
 
-#: __init__.py:304 __init__.py:329
+#: __init__.py:331 __init__.py:371
 msgid "What should the value of {} be?"
 msgstr "¿Cuál debe ser el valor de {}?"
 
-#: __init__.py:311
-msgid "Generate a random password under which name?"
-msgstr "¿Con qué nombre debe generarse una contraseña aleatoria?"
-
-#: __init__.py:313
-msgid "How many characters long should the password be?"
-msgstr "¿Cuán larga debe ser la contraseña, en caracteres?"
-
-#: __init__.py:320
-msgid "Please provide a GPG ID to initialize this directory with."
+#: __init__.py:340
+msgid "What password do you want to change fields of?"
 msgstr ""
-"Proporcione un identificador de GPG con el cual inicializar este directorio."
 
-#: __init__.py:327
+#: __init__.py:345
+msgid "What should the value of the fields of {} be?"
+msgstr ""
+
+#: __init__.py:353
+msgid "What name do you want to generate a random password for?"
+msgstr ""
+
+#: __init__.py:355
+msgid "How many characters should the password be?"
+msgstr ""
+
+#: __init__.py:362
+msgid "Please provide a GPG key ID to initialize this directory with."
+msgstr ""
+
+#: __init__.py:369
 msgid "What is the name of the password?"
 msgstr "¿Cuál es el nombre de la contraseña?"
 
-#: __init__.py:336
-msgid "Remove which password?"
-msgstr "¿Cuál contraseña ha de eliminarse?"
+#: __init__.py:378
+msgid "What password do you want to remove?"
+msgstr ""
 
-#: __init__.py:338
+#: __init__.py:380
 msgid "Are you sure you want to remove {}?"
 msgstr "¿Confirma que quiere eliminar {}?"
 
-#: __init__.py:352
-msgid "Rename which password?"
-msgstr "¿A cuál contraseña ha de cambiársele el nombre?"
+#: __init__.py:396
+msgid "What password do you want to rename?"
+msgstr ""
 
-#: __init__.py:354
+#: __init__.py:398
 msgid "What should the new name of {} be?"
 msgstr "¿Cómo debe denominarse ahora {}?"
 
-#: __init__.py:384 __init__.py:446 __init__.py:463
+#: __init__.py:474 __init__.py:518 __init__.py:539
 msgid "Unexpected selection_made value: {}"
 msgstr "Valor de selection_made inesperado: {}"
 
@@ -172,8 +179,8 @@ msgid "Password Store directory"
 msgstr "Directorio del Almacén de contraseñas"
 
 #: generate_metadata.py:55
-msgid "Automatically pull and push changes to/from git"
-msgstr "Incorporar y enviar cambios automáticamente desde/hacia Git"
+msgid "Automatically pull and push changes to/from Git"
+msgstr ""
 
 #: generate_metadata.py:56 generate_metadata.py:57
 msgid "Yes"
@@ -184,6 +191,54 @@ msgid "Password of SSH key, if encrypted, for push/pull. Stored in plain text."
 msgstr ""
 "Contraseña de la clave SSH, si se ha cifrado, para incorporar/enviar. Se "
 "almacena como texto sencillo."
+
+#~ msgid "Failed to pull from git: {}"
+#~ msgstr "No se pudo incorporar desde Git: {}"
+
+#~ msgid "Failed to push to git: {}"
+#~ msgstr "No se pudo enviar hacia Git: {}"
+
+#~ msgid "Edit"
+#~ msgstr "Editar"
+
+#~ msgid "Add OTP to which password?"
+#~ msgstr "¿A cuál contraseña quiere añadir OTP?"
+
+#~ msgid ""
+#~ "Could not detect any valid OTP QR codes on your screen. Continuing with "
+#~ "manual configuration..."
+#~ msgstr ""
+#~ "No se pudo detectar ningún código QR de OTP válido en la pantalla. Se "
+#~ "procederá a la configuración manual…"
+
+#~ msgid "Use which OTP type?"
+#~ msgstr "¿Qué tipo de OTP quiere utilizar?"
+
+#~ msgid "Copy which password?"
+#~ msgstr "¿Cuál contraseña debe copiarse?"
+
+#~ msgid "What is the name of the password to edit?"
+#~ msgstr "¿Cuál es el nombre de la contraseña que ha de editarse?"
+
+#~ msgid "Generate a random password under which name?"
+#~ msgstr "¿Con qué nombre debe generarse una contraseña aleatoria?"
+
+#~ msgid "How many characters long should the password be?"
+#~ msgstr "¿Cuán larga debe ser la contraseña, en caracteres?"
+
+#~ msgid "Please provide a GPG ID to initialize this directory with."
+#~ msgstr ""
+#~ "Proporcione un identificador de GPG con el cual inicializar este "
+#~ "directorio."
+
+#~ msgid "Remove which password?"
+#~ msgstr "¿Cuál contraseña ha de eliminarse?"
+
+#~ msgid "Rename which password?"
+#~ msgstr "¿A cuál contraseña ha de cambiársele el nombre?"
+
+#~ msgid "Automatically pull and push changes to/from git"
+#~ msgstr "Incorporar y enviar cambios automáticamente desde/hacia Git"
 
 #~ msgid "Insert"
 #~ msgstr "Insertar"

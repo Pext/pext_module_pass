@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-11-16 19:24+CET\n"
+"POT-Creation-Date: 2020-02-24 20:19+CET\n"
 "PO-Revision-Date: 2020-01-06 16:21+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/pext/"
@@ -18,7 +18,7 @@ msgstr ""
 "X-Generator: Weblate 3.10\n"
 "Generated-By: pygettext.py 1.5\n"
 
-#: __init__.py:64
+#: __init__.py:70
 msgid ""
 "This module requires at least API version 0.11.1, you are using {}. Please "
 "update Pext."
@@ -26,27 +26,27 @@ msgstr ""
 "Ce module nécessite au moins la version 0.11.1 de l'API, vous utilisez "
 "actuellement {}. Veuillez mettre à jour Pext."
 
-#: __init__.py:68 generate_metadata.py:56
+#: __init__.py:74 generate_metadata.py:56
 msgid "No"
 msgstr "Non"
 
-#: __init__.py:73 __init__.py:375
+#: __init__.py:79 __init__.py:465
 msgid "Create"
 msgstr "Créer"
 
-#: __init__.py:73 __init__.py:379
+#: __init__.py:79 __init__.py:469
 msgid "Generate"
 msgstr "Produire"
 
-#: __init__.py:89
-msgid "Failed to pull from git: {}"
-msgstr "Échec de la récupération depuis le dépôt git : {}"
+#: __init__.py:96
+msgid "Failed to pull from Git: {}"
+msgstr ""
 
-#: __init__.py:100
-msgid "Failed to push to git: {}"
-msgstr "Impossible d'envoyer vers le dépôt git : {0}"
+#: __init__.py:112
+msgid "Failed to push to Git: {}"
+msgstr ""
 
-#: __init__.py:113
+#: __init__.py:129
 msgid ""
 "<b>{}</b><br/><br/><b>Last opened</b><br/>{}<br/><br/><b>Last modified</"
 "b><br/>{}"
@@ -54,105 +54,115 @@ msgstr ""
 "<b>{}</b><br/><br/><b>Dernière ouverture</b><br/>{}<br/><br/><b>Dernière "
 "modification</b><br/>{}"
 
-#: __init__.py:115 __init__.py:117
+#: __init__.py:131 __init__.py:133
 msgid "Open"
 msgstr "Ouvrir"
 
-#: __init__.py:115 __init__.py:117 __init__.py:387
-msgid "Edit"
-msgstr "Modifier"
+#: __init__.py:131 __init__.py:133 __init__.py:481
+msgid "Edit password"
+msgstr ""
 
-#: __init__.py:115 __init__.py:117 __init__.py:391
+#: __init__.py:131 __init__.py:133 __init__.py:485
+msgid "Edit other fields"
+msgstr ""
+
+#: __init__.py:131 __init__.py:133 __init__.py:493
 msgid "Copy"
 msgstr "Copie"
 
-#: __init__.py:115 __init__.py:117 __init__.py:395
+#: __init__.py:131 __init__.py:133 __init__.py:497
 msgid "Rename"
 msgstr "Renommer"
 
-#: __init__.py:115 __init__.py:117 __init__.py:399
+#: __init__.py:131 __init__.py:133 __init__.py:501
 msgid "Remove"
 msgstr "Retirer"
 
-#: __init__.py:117 __init__.py:403
+#: __init__.py:133 __init__.py:489
 msgid "Add OTP"
 msgstr "Ajouter OTP"
 
-#: __init__.py:214
+#: __init__.py:241
 msgid "Unknown request received: {}"
 msgstr "Requête inconnue reçue : {}"
 
-#: __init__.py:246
-msgid "Add OTP to which password?"
+#: __init__.py:272
+msgid "What password should OTP be added to?"
 msgstr ""
 
-#: __init__.py:262
-msgid ""
-"Could not detect any valid OTP QR codes on your screen. Continuing with "
-"manual configuration..."
+#: __init__.py:288
+msgid "No valid OTP QR codes detected on your screen. Configuring manually…"
 msgstr ""
 
-#: __init__.py:263
-msgid "Use which OTP type?"
+#: __init__.py:289
+msgid "Which OTP type should be used?"
 msgstr ""
 
-#: __init__.py:265
+#: __init__.py:291
 msgid "Detected and added {} valid OTP QR code(s) on your screen."
 msgstr ""
 
-#: __init__.py:268
+#: __init__.py:294
 msgid "What is the OTP secret?"
 msgstr ""
 
-#: __init__.py:281
-msgid "Copy which password?"
+#: __init__.py:307
+msgid "Which password do you want to copy?"
 msgstr ""
 
-#: __init__.py:283 __init__.py:294
+#: __init__.py:309 __init__.py:321
 msgid "What should the copy of {} be named?"
 msgstr ""
 
-#: __init__.py:301
-msgid "What is the name of the password to edit?"
+#: __init__.py:328
+msgid "What password do you want to change?"
 msgstr ""
 
-#: __init__.py:304 __init__.py:329
+#: __init__.py:331 __init__.py:371
 msgid "What should the value of {} be?"
 msgstr ""
 
-#: __init__.py:311
-msgid "Generate a random password under which name?"
+#: __init__.py:340
+msgid "What password do you want to change fields of?"
 msgstr ""
 
-#: __init__.py:313
-msgid "How many characters long should the password be?"
+#: __init__.py:345
+msgid "What should the value of the fields of {} be?"
 msgstr ""
 
-#: __init__.py:320
-msgid "Please provide a GPG ID to initialize this directory with."
+#: __init__.py:353
+msgid "What name do you want to generate a random password for?"
 msgstr ""
 
-#: __init__.py:327
+#: __init__.py:355
+msgid "How many characters should the password be?"
+msgstr ""
+
+#: __init__.py:362
+msgid "Please provide a GPG key ID to initialize this directory with."
+msgstr ""
+
+#: __init__.py:369
 msgid "What is the name of the password?"
 msgstr ""
 
-#: __init__.py:336
-msgid "Remove which password?"
+#: __init__.py:378
+msgid "What password do you want to remove?"
 msgstr ""
 
-#: __init__.py:338
+#: __init__.py:380
 msgid "Are you sure you want to remove {}?"
 msgstr ""
 
-#: __init__.py:352
-msgid "Rename which password?"
+#: __init__.py:396
+msgid "What password do you want to rename?"
 msgstr ""
 
-#: __init__.py:354
+#: __init__.py:398
 msgid "What should the new name of {} be?"
 msgstr ""
 
-#: __init__.py:384 __init__.py:446 __init__.py:463
+#: __init__.py:474 __init__.py:518 __init__.py:539
 msgid "Unexpected selection_made value: {}"
 msgstr "Sélection inattendue faite: {}"
 
@@ -169,7 +179,7 @@ msgid "Password Store directory"
 msgstr "Répertoire de mots de passe"
 
 #: generate_metadata.py:55
-msgid "Automatically pull and push changes to/from git"
+msgid "Automatically pull and push changes to/from Git"
 msgstr ""
 
 #: generate_metadata.py:56 generate_metadata.py:57
@@ -179,6 +189,15 @@ msgstr ""
 #: generate_metadata.py:61
 msgid "Password of SSH key, if encrypted, for push/pull. Stored in plain text."
 msgstr ""
+
+#~ msgid "Failed to pull from git: {}"
+#~ msgstr "Échec de la récupération depuis le dépôt git : {}"
+
+#~ msgid "Failed to push to git: {}"
+#~ msgstr "Impossible d'envoyer vers le dépôt git : {0}"
+
+#~ msgid "Edit"
+#~ msgstr "Modifier"
 
 #~ msgid "Insert"
 #~ msgstr "Insérer"

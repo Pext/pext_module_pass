@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-11-16 19:24+CET\n"
+"POT-Creation-Date: 2020-02-24 20:19+CET\n"
 "PO-Revision-Date: 2020-01-20 12:21+0000\n"
 "Last-Translator: Aayush Gupta <aayushgupta219@gmail.com>\n"
 "Language-Team: Hindi <https://hosted.weblate.org/projects/pext/"
@@ -18,7 +18,7 @@ msgstr ""
 "X-Generator: Weblate 3.11-dev\n"
 "Generated-By: pygettext.py 1.5\n"
 
-#: __init__.py:64
+#: __init__.py:70
 msgid ""
 "This module requires at least API version 0.11.1, you are using {}. Please "
 "update Pext."
@@ -26,27 +26,27 @@ msgstr ""
 "इस मॉड्यूल को कम से कम API संस्करण 0.11.1 की आवश्यकता है, आप {} का उपयोग कर रहे हैं। "
 "कृपया Pext को अपडेट करें।"
 
-#: __init__.py:68 generate_metadata.py:56
+#: __init__.py:74 generate_metadata.py:56
 msgid "No"
 msgstr "नहीं"
 
-#: __init__.py:73 __init__.py:375
+#: __init__.py:79 __init__.py:465
 msgid "Create"
 msgstr "बनाएं"
 
-#: __init__.py:73 __init__.py:379
+#: __init__.py:79 __init__.py:469
 msgid "Generate"
 msgstr "उत्पन्न"
 
-#: __init__.py:89
-msgid "Failed to pull from git: {}"
-msgstr "गिट से खींचने में नाकाम: {}"
+#: __init__.py:96
+msgid "Failed to pull from Git: {}"
+msgstr ""
 
-#: __init__.py:100
-msgid "Failed to push to git: {}"
-msgstr "गिट को पुश करने में नाकाम रहे: {}"
+#: __init__.py:112
+msgid "Failed to push to Git: {}"
+msgstr ""
 
-#: __init__.py:113
+#: __init__.py:129
 msgid ""
 "<b>{}</b><br/><br/><b>Last opened</b><br/>{}<br/><br/><b>Last modified</"
 "b><br/>{}"
@@ -54,107 +54,115 @@ msgstr ""
 "<b>1{}</b>2<br/>3<br/>4<b>5आखिरी बार खोला गया</b>6<br/>7{}<br/>8<br/"
 ">9<b>0अंतिम बार संशोधन</b><br/>{}"
 
-#: __init__.py:115 __init__.py:117
+#: __init__.py:131 __init__.py:133
 msgid "Open"
 msgstr "खोले"
 
-#: __init__.py:115 __init__.py:117 __init__.py:387
-msgid "Edit"
-msgstr "संपादन"
+#: __init__.py:131 __init__.py:133 __init__.py:481
+msgid "Edit password"
+msgstr ""
 
-#: __init__.py:115 __init__.py:117 __init__.py:391
+#: __init__.py:131 __init__.py:133 __init__.py:485
+msgid "Edit other fields"
+msgstr ""
+
+#: __init__.py:131 __init__.py:133 __init__.py:493
 msgid "Copy"
 msgstr "कापी"
 
-#: __init__.py:115 __init__.py:117 __init__.py:395
+#: __init__.py:131 __init__.py:133 __init__.py:497
 msgid "Rename"
 msgstr "नाम बदलें"
 
-#: __init__.py:115 __init__.py:117 __init__.py:399
+#: __init__.py:131 __init__.py:133 __init__.py:501
 msgid "Remove"
 msgstr "हटाएँ"
 
-#: __init__.py:117 __init__.py:403
+#: __init__.py:133 __init__.py:489
 msgid "Add OTP"
 msgstr "OTP जोड़ें"
 
-#: __init__.py:214
+#: __init__.py:241
 msgid "Unknown request received: {}"
 msgstr "अज्ञात अनुरोध प्राप्त हुआ: {}"
 
-#: __init__.py:246
-msgid "Add OTP to which password?"
-msgstr "किस पासवर्ड में OTP जोड़ें?"
-
-#: __init__.py:262
-msgid ""
-"Could not detect any valid OTP QR codes on your screen. Continuing with "
-"manual configuration..."
+#: __init__.py:272
+msgid "What password should OTP be added to?"
 msgstr ""
-"आपकी स्क्रीन पर किसी भी मान्य OTP QR कोड का पता नहीं लगा सका। मैनुअल कॉन्फ़िगरेशन के "
-"साथ जारी ..."
 
-#: __init__.py:263
-msgid "Use which OTP type?"
-msgstr "किस OTP प्रकार का उपयोग करें?"
+#: __init__.py:288
+msgid "No valid OTP QR codes detected on your screen. Configuring manually…"
+msgstr ""
 
-#: __init__.py:265
+#: __init__.py:289
+msgid "Which OTP type should be used?"
+msgstr ""
+
+#: __init__.py:291
 msgid "Detected and added {} valid OTP QR code(s) on your screen."
 msgstr "पता लगाया और आपकी स्क्रीन पर {} वैध OTP QR कोड को जोड़ा।"
 
-#: __init__.py:268
+#: __init__.py:294
 msgid "What is the OTP secret?"
 msgstr "OTP रहस्य क्या है?"
 
-#: __init__.py:281
-msgid "Copy which password?"
-msgstr "कौन सा पासवर्ड कॉपी करें?"
+#: __init__.py:307
+msgid "Which password do you want to copy?"
+msgstr ""
 
-#: __init__.py:283 __init__.py:294
+#: __init__.py:309 __init__.py:321
 msgid "What should the copy of {} be named?"
 msgstr "{} की कॉपी का क्या नाम होना चाहिए?"
 
-#: __init__.py:301
-msgid "What is the name of the password to edit?"
-msgstr "संपादित करने के लिए पासवर्ड का क्या नाम है?"
+#: __init__.py:328
+msgid "What password do you want to change?"
+msgstr ""
 
-#: __init__.py:304 __init__.py:329
+#: __init__.py:331 __init__.py:371
 msgid "What should the value of {} be?"
 msgstr "{} का क्या मान होना चाहिए?"
 
-#: __init__.py:311
-msgid "Generate a random password under which name?"
-msgstr "किस नाम के तहत एक बेतरतीब पासवर्ड उत्पन्न करें?"
+#: __init__.py:340
+msgid "What password do you want to change fields of?"
+msgstr ""
 
-#: __init__.py:313
-msgid "How many characters long should the password be?"
-msgstr "पासवर्ड कितने वर्णों का होना चाहिए?"
+#: __init__.py:345
+msgid "What should the value of the fields of {} be?"
+msgstr ""
 
-#: __init__.py:320
-msgid "Please provide a GPG ID to initialize this directory with."
-msgstr "कृपया इस डायरेक्टरी को आरंभ करने के लिए एक GPG ID प्रदान करें।"
+#: __init__.py:353
+msgid "What name do you want to generate a random password for?"
+msgstr ""
 
-#: __init__.py:327
+#: __init__.py:355
+msgid "How many characters should the password be?"
+msgstr ""
+
+#: __init__.py:362
+msgid "Please provide a GPG key ID to initialize this directory with."
+msgstr ""
+
+#: __init__.py:369
 msgid "What is the name of the password?"
 msgstr "पासवर्ड का नाम क्या है?"
 
-#: __init__.py:336
-msgid "Remove which password?"
-msgstr "कौन सा पासवर्ड निकालें?"
+#: __init__.py:378
+msgid "What password do you want to remove?"
+msgstr ""
 
-#: __init__.py:338
+#: __init__.py:380
 msgid "Are you sure you want to remove {}?"
 msgstr "क्या आप सचमुच हटाना चाहते हैं {}?"
 
-#: __init__.py:352
-msgid "Rename which password?"
-msgstr "किस पासवर्ड का नाम बदलें?"
+#: __init__.py:396
+msgid "What password do you want to rename?"
+msgstr ""
 
-#: __init__.py:354
+#: __init__.py:398
 msgid "What should the new name of {} be?"
 msgstr "{} का नया नाम क्या होना चाहिए?"
 
-#: __init__.py:384 __init__.py:446 __init__.py:463
+#: __init__.py:474 __init__.py:518 __init__.py:539
 msgid "Unexpected selection_made value: {}"
 msgstr "अप्रत्याशित चयन_ मान: {}"
 
@@ -171,8 +179,8 @@ msgid "Password Store directory"
 msgstr "पासवर्ड संग्रह निर्देशिका"
 
 #: generate_metadata.py:55
-msgid "Automatically pull and push changes to/from git"
-msgstr "स्वचालित रूप से गिट से पुश और पुल करे"
+msgid "Automatically pull and push changes to/from Git"
+msgstr ""
 
 #: generate_metadata.py:56 generate_metadata.py:57
 msgid "Yes"
@@ -181,8 +189,54 @@ msgstr "हाँ"
 #: generate_metadata.py:61
 msgid "Password of SSH key, if encrypted, for push/pull. Stored in plain text."
 msgstr ""
-"SSH कुंजी का पासवर्ड, यदि एन्क्रिप्ट किया गया है, तो पुश / पुल के लिए। सादे "
-"पाठ में संग्रहीत।"
+"SSH कुंजी का पासवर्ड, यदि एन्क्रिप्ट किया गया है, तो पुश / पुल के लिए। सादे पाठ में "
+"संग्रहीत।"
+
+#~ msgid "Failed to pull from git: {}"
+#~ msgstr "गिट से खींचने में नाकाम: {}"
+
+#~ msgid "Failed to push to git: {}"
+#~ msgstr "गिट को पुश करने में नाकाम रहे: {}"
+
+#~ msgid "Edit"
+#~ msgstr "संपादन"
+
+#~ msgid "Add OTP to which password?"
+#~ msgstr "किस पासवर्ड में OTP जोड़ें?"
+
+#~ msgid ""
+#~ "Could not detect any valid OTP QR codes on your screen. Continuing with "
+#~ "manual configuration..."
+#~ msgstr ""
+#~ "आपकी स्क्रीन पर किसी भी मान्य OTP QR कोड का पता नहीं लगा सका। मैनुअल कॉन्फ़िगरेशन "
+#~ "के साथ जारी ..."
+
+#~ msgid "Use which OTP type?"
+#~ msgstr "किस OTP प्रकार का उपयोग करें?"
+
+#~ msgid "Copy which password?"
+#~ msgstr "कौन सा पासवर्ड कॉपी करें?"
+
+#~ msgid "What is the name of the password to edit?"
+#~ msgstr "संपादित करने के लिए पासवर्ड का क्या नाम है?"
+
+#~ msgid "Generate a random password under which name?"
+#~ msgstr "किस नाम के तहत एक बेतरतीब पासवर्ड उत्पन्न करें?"
+
+#~ msgid "How many characters long should the password be?"
+#~ msgstr "पासवर्ड कितने वर्णों का होना चाहिए?"
+
+#~ msgid "Please provide a GPG ID to initialize this directory with."
+#~ msgstr "कृपया इस डायरेक्टरी को आरंभ करने के लिए एक GPG ID प्रदान करें।"
+
+#~ msgid "Remove which password?"
+#~ msgstr "कौन सा पासवर्ड निकालें?"
+
+#~ msgid "Rename which password?"
+#~ msgstr "किस पासवर्ड का नाम बदलें?"
+
+#~ msgid "Automatically pull and push changes to/from git"
+#~ msgstr "स्वचालित रूप से गिट से पुश और पुल करे"
 
 #~ msgid "Insert"
 #~ msgstr "डाले"

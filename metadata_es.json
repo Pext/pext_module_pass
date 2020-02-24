@@ -1,7 +1,7 @@
 {
   "bugtracker": "https://github.com/Pext/pext_module_pass",
   "bugtracker_type": "github",
-  "description": "Permite a Pext hacer administraci\u00f3n de contrase\u00f1as a trav\u00e9s de pass",
+  "description": "Permite a Pext hacer gesti\u00f3n de contrase\u00f1as a trav\u00e9s de pass",
   "developer": "Sylvia van Os",
   "git_urls": [
     "https://github.com/Pext/pext_module_pass"
@@ -9,7 +9,7 @@
   "homepage": "https://pext.io/",
   "id": "pext.module.pass",
   "license": "GPL-3.0+",
-  "name": "Tienda de Contrase\u00f1a",
+  "name": "Almac\u00e9n de contrase\u00f1as",
   "platforms": [
     "Linux",
     "Darwin"
@@ -17,21 +17,21 @@
   "settings": [
     {
       "default": "~/.password-store/",
-      "description": "Directorio de la tienda de Contrase\u00f1a",
+      "description": "Directorio del Almac\u00e9n de contrase\u00f1as",
       "name": "directory"
     },
     {
-      "default": "Yes",
-      "description": "Automatically pull and push changes to/from git",
+      "default": "S\u00ed",
+      "description": "Automatically pull and push changes to/from Git",
       "name": "use_git",
       "options": [
-        "Yes",
+        "S\u00ed",
         "No"
       ]
     },
     {
       "default": "",
-      "description": "Password of SSH key, if encrypted, for push/pull. Stored in plain text.",
+      "description": "Contrase\u00f1a de la clave SSH, si se ha cifrado, para incorporar/enviar. Se almacena como texto sencillo.",
       "name": "ssh_password"
     }
   ]

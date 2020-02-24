@@ -22,7 +22,7 @@
     },
     {
       "default": "Yes",
-      "description": "Automatically pull and push changes to/from git",
+      "description": "Automatically pull and push changes to/from Git",
       "name": "use_git",
       "options": [
         "Yes",
