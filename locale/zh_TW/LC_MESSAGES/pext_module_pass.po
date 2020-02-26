@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2020-02-24 20:19+CET\n"
-"PO-Revision-Date: 2019-11-19 03:04+0000\n"
+"PO-Revision-Date: 2020-02-27 03:33+0000\n"
 "Last-Translator: Jeff Huang <s8321414@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <https://hosted.weblate.org/projects/"
 "pext/pext_module_pass/zh_Hant/>\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 3.10-dev\n"
+"X-Generator: Weblate 4.0-dev\n"
 "Generated-By: pygettext.py 1.5\n"
 
 #: __init__.py:70
@@ -38,11 +38,11 @@ msgstr "生成"
 
 #: __init__.py:96
 msgid "Failed to pull from Git: {}"
-msgstr ""
+msgstr "從 Git 拉取失敗：{}"
 
 #: __init__.py:112
 msgid "Failed to push to Git: {}"
-msgstr ""
+msgstr "推送至 Git 失敗：{}"
 
 #: __init__.py:129
 msgid ""
@@ -57,11 +57,11 @@ msgstr "開啟"
 
 #: __init__.py:131 __init__.py:133 __init__.py:481
 msgid "Edit password"
-msgstr ""
+msgstr "編輯密碼"
 
 #: __init__.py:131 __init__.py:133 __init__.py:485
 msgid "Edit other fields"
-msgstr ""
+msgstr "編輯其他欄位"
 
 #: __init__.py:131 __init__.py:133 __init__.py:493
 msgid "Copy"
@@ -85,15 +85,15 @@ msgstr "收到未知的請求： {}"
 
 #: __init__.py:272
 msgid "What password should OTP be added to?"
-msgstr ""
+msgstr "OTP 應該新增什麼密碼？"
 
 #: __init__.py:288
 msgid "No valid OTP QR codes detected on your screen. Configuring manually…"
-msgstr ""
+msgstr "未在您的畫面上偵測到有效的 OTP QR code。正在手動設定……"
 
 #: __init__.py:289
 msgid "Which OTP type should be used?"
-msgstr ""
+msgstr "應該使用哪種 OTP 類型？"
 
 #: __init__.py:291
 msgid "Detected and added {} valid OTP QR code(s) on your screen."
@@ -105,7 +105,7 @@ msgstr "這個 OTP 保護的是什麼？"
 
 #: __init__.py:307
 msgid "Which password do you want to copy?"
-msgstr ""
+msgstr "您想要複製哪種密碼？"
 
 #: __init__.py:309 __init__.py:321
 msgid "What should the copy of {} be named?"
@@ -113,7 +113,7 @@ msgstr "{} 的副本應該要叫什麼？"
 
 #: __init__.py:328
 msgid "What password do you want to change?"
-msgstr ""
+msgstr "您想要變更什麼密碼？"
 
 #: __init__.py:331 __init__.py:371
 msgid "What should the value of {} be?"
@@ -121,23 +121,23 @@ msgstr "{} 的值應該要是什麼？"
 
 #: __init__.py:340
 msgid "What password do you want to change fields of?"
-msgstr ""
+msgstr "您想要變更什麼欄位？"
 
 #: __init__.py:345
 msgid "What should the value of the fields of {} be?"
-msgstr ""
+msgstr "{} 欄位的值應該是什麼？"
 
 #: __init__.py:353
 msgid "What name do you want to generate a random password for?"
-msgstr ""
+msgstr "您想為哪個名字生成隨機密碼？"
 
 #: __init__.py:355
 msgid "How many characters should the password be?"
-msgstr ""
+msgstr "密碼應該要有多少字元？"
 
 #: __init__.py:362
 msgid "Please provide a GPG key ID to initialize this directory with."
-msgstr ""
+msgstr "請提供 GPG 金鑰 ID 以初始化此目錄。"
 
 #: __init__.py:369
 msgid "What is the name of the password?"
@@ -145,7 +145,7 @@ msgstr "密碼的名稱是什麼？"
 
 #: __init__.py:378
 msgid "What password do you want to remove?"
-msgstr ""
+msgstr "您想要移除什麼密碼？"
 
 #: __init__.py:380
 msgid "Are you sure you want to remove {}?"
@@ -153,7 +153,7 @@ msgstr "您確定您想要移除 {} 嗎？"
 
 #: __init__.py:396
 msgid "What password do you want to rename?"
-msgstr ""
+msgstr "您想要重新命名什麼密碼？"
 
 #: __init__.py:398
 msgid "What should the new name of {} be?"
@@ -177,7 +177,7 @@ msgstr "密碼儲存目錄"
 
 #: generate_metadata.py:55
 msgid "Automatically pull and push changes to/from Git"
-msgstr ""
+msgstr "自動到／從 Git 拉取與推送變更"
 
 #: generate_metadata.py:56 generate_metadata.py:57
 msgid "Yes"
