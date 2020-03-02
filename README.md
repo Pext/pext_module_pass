@@ -8,3 +8,8 @@ front-end to the command-line password manager
 
 # License
 GPLv3+.
+
+# Special thanks
+Special thanks to [HaveIBeenPwned](https://haveibeenpwned.com/) for
+providing a list of breaches. This has been retrieved from
+https://haveibeenpwned.com/api/v2/breaches.

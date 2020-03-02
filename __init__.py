@@ -17,11 +17,12 @@
 
 import gettext
 import html
+import json
 import platform
 import os
 import shutil
 import threading
-from datetime import datetime
+from datetime import date, datetime
 from os.path import expanduser, normcase
 from time import sleep
 
@@ -63,6 +64,9 @@ class Module(ModuleBase):
         self.q = q
         self.settings = settings
 
+        with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'breaches.json')) as breaches_json:
+            self.breaches = json.load(breaches_json)
+
         if 'ssh_password' not in self.settings or not self.settings['ssh_password']:
             self.settings['ssh_password'] = None
 
@@ -76,9 +80,9 @@ class Module(ModuleBase):
 
         self.passwordEntries = {}
 
-        self.q.put([Action.set_base_context, [_("Create"), _("Generate")]])
-
-        self._get_entries()
+        breached_account_count = self._get_entries()
+        if breached_account_count > 0:
+            self.q.put([Action.ask_question, _("We found {} account(s) that were likely involved in a data breach. You should change the passwords for these accounts as soon as possible. Do you want to view the accounts in question?").format(breached_account_count), "view_breaches"])
 
         if not os.path.exists(os.path.join(self.data_location, ".gpg-id")):
             self._init()
@@ -118,19 +122,43 @@ class Module(ModuleBase):
     def _get_data_location(self):
         return self.data_location
 
-    def _get_entries(self):
+    def _get_entries(self, breaches_only=False):
         self._git_pull()
+
+        breached_account_count = 0
 
         for password in sorted(self.password_store.get_passwords_list(), key=lambda name: os.path.getatime("{}.gpg".format(name)), reverse=True):
             entry_path = "{}.gpg".format(password)
             entry = password[len(self._get_data_location()):]
 
+            last_opened = datetime.fromtimestamp(os.path.getatime(entry_path))
+            last_modified = datetime.fromtimestamp(os.path.getmtime(entry_path))
+
+            # Get breach info
+            breach_info = ""
+            for breach in self.breaches:
+                if breach['Name'].lower() in entry.lower():
+                    if last_modified.date() <= date.fromisoformat(breach['BreachDate']):
+                        breach_info = "<br/><b>{}</b><br/>{}<br/><br/><i>{}</i><br/>".format(_("DATA BREACH FOUND"), breach['Description'], _("Info provided by HaveIBeenPwned"))
+                        breached_account_count += 1
+                        break
+            else:
+                if breaches_only:
+                    continue
+
             self.q.put([Action.add_entry, entry])
-            self.q.put([Action.set_entry_info, entry, _("<b>{}</b><br/><br/><b>Last opened</b><br/>{}<br/><br/><b>Last modified</b><br/>{}").format(html.escape(entry), format_datetime(datetime.fromtimestamp(os.path.getatime(entry_path)).replace(microsecond=0), locale=self.settings['_locale']), format_datetime(datetime.fromtimestamp(os.path.getmtime(entry_path)).replace(microsecond=0), locale=self.settings['_locale']))])
+            self.q.put([Action.set_entry_info, entry, _("<b>{}</b><br/>{}<br/><b>Last opened</b><br/>{}<br/><br/><b>Last modified</b><br/>{}").format(html.escape(entry), breach_info, format_datetime((last_opened).replace(microsecond=0), locale=self.settings['_locale']), format_datetime((last_modified).replace(microsecond=0), locale=self.settings['_locale']))])
             if self.settings['_api_version'] < [0, 12, 0]:
                 self.q.put([Action.set_entry_context, entry, [_("Open"), _("Edit password"), _("Edit other fields"), _("Copy"), _("Rename"), _("Remove")]])
             else:
                 self.q.put([Action.set_entry_context, entry, [_("Open"), _("Edit password"), _("Edit other fields"), _("Add OTP"), _("Copy"), _("Rename"), _("Remove")]])
+
+        if breached_account_count > 0:
+            self.q.put([Action.set_base_context, [_("Create"), _("Generate"), _("View data breaches")]])
+        else:
+            self.q.put([Action.set_base_context, [_("Create"), _("Generate")]])
+
+        return breached_account_count
 
     def process_response(self, response, identifier):
         # User cancellation
@@ -138,7 +166,10 @@ class Module(ModuleBase):
             return
 
         data = identifier.split()
-        if data[0] == "add_otp":
+        if data[0] == "view_breaches":
+            if response is True:
+                self.q.put([Action.set_selection, [{"type": SelectionType.none, "context_option": _("View data breaches"), "value": ""}]])
+        elif data[0] == "add_otp":
             if len(data) == 1:
                 if response is not None:
                     self._add_otp(name=response)
@@ -470,53 +501,17 @@ class Module(ModuleBase):
                 self._generate()
                 self.q.put([Action.set_selection, []])
                 return
-            else:
-                self.q.put([Action.critical_error, _("Unexpected selection_made value: {}").format(selection)])
-        elif len(selection) == 1:
-            if self.result_display_thread:
-                self.result_display_active = False
-                self.result_display_thread.join()
-
-            if selection[0]["type"] == SelectionType.entry:
-                if selection[0]["context_option"] == _("Edit password"):
-                    self._edit_password(name=selection[0]["value"])
-                    self.q.put([Action.set_selection, []])
-                    return
-                elif selection[0]["context_option"] == _("Edit other fields"):
-                    self._edit_other_fields(name=selection[0]["value"])
-                    self.q.put([Action.set_selection, []])
-                    return
-                elif selection[0]["context_option"] == _("Add OTP"):
-                    self._add_otp(selection[0]["value"])
-                    self.q.put([Action.set_selection, []])
-                    return
-                elif selection[0]["context_option"] == _("Copy"):
-                    self._copy(name=selection[0]["value"])
-                    self.q.put([Action.set_selection, []])
-                    return
-                elif selection[0]["context_option"] == _("Rename"):
-                    self._rename(name=selection[0]["value"])
-                    self.q.put([Action.set_selection, []])
-                    return
-                elif selection[0]["context_option"] == _("Remove"):
-                    self._remove(selection[0]["value"])
-                    self.q.put([Action.set_selection, []])
-                    return
-
-                results = self.password_store.get_decrypted_password(selection[0]["value"])
-                if results is None:
-                    self.q.put([Action.set_selection, []])
-                    return
-
-                self.q.put([Action.replace_entry_list, []])
+            elif selection[-1]["context_option"] == _("View data breaches"):
+                self.q.put([Action.set_header, _("Data breaches")])
                 self.q.put([Action.replace_command_list, []])
-
-                self.result_display_active = True
-                self.result_display_thread = threading.Thread(target=self._display_results, args=(results,), daemon=True)
-                self.result_display_thread.start()
+                self.q.put([Action.replace_entry_list, []])
+                if self._get_entries(breaches_only=True) == 0:
+                    self.q.put([Action.add_error, _("No breached accounts found")])
+                    self.q.put([Action.set_selection, []])
+                return
             else:
                 self.q.put([Action.critical_error, _("Unexpected selection_made value: {}").format(selection)])
-        elif len(selection) == 2:
+        elif len(selection) == 2 and selection[-2]["type"] != SelectionType.none and selection[-2]["context_option"] != _("View data breaches"):
             # We're selecting a password
             if self.result_display_thread:
                 self.result_display_active = False
@@ -536,4 +531,46 @@ class Module(ModuleBase):
             self.passwordEntries = {}
             self.q.put([Action.close])
         else:
-            self.q.put([Action.critical_error, _("Unexpected selection_made value: {}").format(selection)])
+            if self.result_display_thread:
+                self.result_display_active = False
+                self.result_display_thread.join()
+
+            if selection[-1]["type"] == SelectionType.entry:
+                if selection[-1]["context_option"] == _("Edit password"):
+                    self._edit_password(name=selection[-1]["value"])
+                    self.q.put([Action.set_selection, []])
+                    return
+                elif selection[-1]["context_option"] == _("Edit other fields"):
+                    self._edit_other_fields(name=selection[-1]["value"])
+                    self.q.put([Action.set_selection, []])
+                    return
+                elif selection[-1]["context_option"] == _("Add OTP"):
+                    self._add_otp(selection[-1]["value"])
+                    self.q.put([Action.set_selection, []])
+                    return
+                elif selection[-1]["context_option"] == _("Copy"):
+                    self._copy(name=selection[-1]["value"])
+                    self.q.put([Action.set_selection, []])
+                    return
+                elif selection[-1]["context_option"] == _("Rename"):
+                    self._rename(name=selection[-1]["value"])
+                    self.q.put([Action.set_selection, []])
+                    return
+                elif selection[-1]["context_option"] == _("Remove"):
+                    self._remove(selection[-1]["value"])
+                    self.q.put([Action.set_selection, []])
+                    return
+
+                results = self.password_store.get_decrypted_password(selection[-1]["value"])
+                if results is None:
+                    self.q.put([Action.set_selection, []])
+                    return
+
+                self.q.put([Action.replace_entry_list, []])
+                self.q.put([Action.replace_command_list, []])
+
+                self.result_display_active = True
+                self.result_display_thread = threading.Thread(target=self._display_results, args=(results,), daemon=True)
+                self.result_display_thread.start()
+            else:
+                self.q.put([Action.critical_error, _("Unexpected selection_made value: {}").format(selection)])

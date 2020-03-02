@@ -22,7 +22,7 @@
     },
     {
       "default": "Ja",
-      "description": "Automatically pull and push changes to/from Git",
+      "description": "Aanpassingen automatisch uploaden naar/ophalen van Git",
       "name": "use_git",
       "options": [
         "Ja",
