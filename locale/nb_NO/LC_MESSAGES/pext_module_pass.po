@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2020-02-24 20:19+CET\n"
-"PO-Revision-Date: 2020-02-08 18:50+0000\n"
+"PO-Revision-Date: 2020-03-02 02:33+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/pext/"
 "pext_module_pass/nb_NO/>\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.11-dev\n"
+"X-Generator: Weblate 4.0-dev\n"
 "Generated-By: pygettext.py 1.5\n"
 
 #: __init__.py:70
@@ -39,11 +39,11 @@ msgstr "Generer"
 
 #: __init__.py:96
 msgid "Failed to pull from Git: {}"
-msgstr ""
+msgstr "Kunne ikke utføre innhenting fra Git: {}"
 
 #: __init__.py:112
 msgid "Failed to push to Git: {}"
-msgstr ""
+msgstr "Klarte ikke å dytte til Git: {}"
 
 #: __init__.py:129
 msgid ""
@@ -59,11 +59,11 @@ msgstr "Åpne"
 
 #: __init__.py:131 __init__.py:133 __init__.py:481
 msgid "Edit password"
-msgstr ""
+msgstr "Rediger passord"
 
 #: __init__.py:131 __init__.py:133 __init__.py:485
 msgid "Edit other fields"
-msgstr ""
+msgstr "Rediger andre felter"
 
 #: __init__.py:131 __init__.py:133 __init__.py:493
 msgid "Copy"
@@ -79,87 +79,92 @@ msgstr "Fjern"
 
 #: __init__.py:133 __init__.py:489
 msgid "Add OTP"
-msgstr ""
+msgstr "Legg til OTP"
 
 #: __init__.py:241
 msgid "Unknown request received: {}"
-msgstr ""
+msgstr "Ukjent forespørsel mottatt: {}"
 
 #: __init__.py:272
+#, fuzzy
 msgid "What password should OTP be added to?"
-msgstr ""
+msgstr "Hvilket passord skal OTP legges til for?"
 
 #: __init__.py:288
 msgid "No valid OTP QR codes detected on your screen. Configuring manually…"
 msgstr ""
+"Ingen gyldige OTP-QR-koder oppdaget på skjermen din. Setter opp manuelt…"
 
 #: __init__.py:289
 msgid "Which OTP type should be used?"
-msgstr ""
+msgstr "Hvilken OTP-type skal anvendes?"
 
 #: __init__.py:291
+#, fuzzy
 msgid "Detected and added {} valid OTP QR code(s) on your screen."
-msgstr ""
+msgstr "Oppdaget og la til {} gyldig(e) OTP-QR-kode(r) på skjermen din."
 
 #: __init__.py:294
 msgid "What is the OTP secret?"
-msgstr ""
+msgstr "Hva er OTP-hemmeligheten?"
 
 #: __init__.py:307
 msgid "Which password do you want to copy?"
-msgstr ""
+msgstr "Hvilken passord ønsker du å kopiere?"
 
 #: __init__.py:309 __init__.py:321
+#, fuzzy
 msgid "What should the copy of {} be named?"
-msgstr ""
+msgstr "Angi nytt navn for kopien av {}."
 
 #: __init__.py:328
 msgid "What password do you want to change?"
-msgstr ""
+msgstr "Hvilket passord ønsker du å endre?"
 
 #: __init__.py:331 __init__.py:371
 msgid "What should the value of {} be?"
-msgstr ""
+msgstr "Hva skal verdien av {} være?"
 
 #: __init__.py:340
 msgid "What password do you want to change fields of?"
-msgstr ""
+msgstr "Hvordan felter tilhørende et passord ønsker du å endre?"
 
 #: __init__.py:345
 msgid "What should the value of the fields of {} be?"
-msgstr ""
+msgstr "Hva skal verdien av feltene av {} være?"
 
 #: __init__.py:353
 msgid "What name do you want to generate a random password for?"
-msgstr ""
+msgstr "Hvilket navn ønsker du å generere et tilfeldig passord for?"
 
 #: __init__.py:355
 msgid "How many characters should the password be?"
-msgstr ""
+msgstr "Hvor mange tegn skal passordet være?"
 
 #: __init__.py:362
 msgid "Please provide a GPG key ID to initialize this directory with."
-msgstr ""
+msgstr "Angi en GPG-nøkkel-ID å igangsette denne mappen med."
 
 #: __init__.py:369
 msgid "What is the name of the password?"
-msgstr ""
+msgstr "Hva er passordets navn?"
 
 #: __init__.py:378
 msgid "What password do you want to remove?"
-msgstr ""
+msgstr "Hvilket passord ønsker du å fjerne?"
 
 #: __init__.py:380
 msgid "Are you sure you want to remove {}?"
-msgstr ""
+msgstr "Er du sikker på at du ønsker å fjerne {}?"
 
 #: __init__.py:396
 msgid "What password do you want to rename?"
-msgstr ""
+msgstr "Hvilket passord ønsker du å gi et nytt navn?"
 
 #: __init__.py:398
+#, fuzzy
 msgid "What should the new name of {} be?"
-msgstr ""
+msgstr "Angi nytt navn for {}."
 
 #: __init__.py:474 __init__.py:518 __init__.py:539
 msgid "Unexpected selection_made value: {}"
@@ -178,16 +183,20 @@ msgid "Password Store directory"
 msgstr "Passordlagermappe"
 
 #: generate_metadata.py:55
+#, fuzzy
 msgid "Automatically pull and push changes to/from Git"
-msgstr ""
+msgstr "Hent og dytt endringer til/fra Git automatisk"
 
 #: generate_metadata.py:56 generate_metadata.py:57
 msgid "Yes"
 msgstr "Ja"
 
 #: generate_metadata.py:61
+#, fuzzy
 msgid "Password of SSH key, if encrypted, for push/pull. Stored in plain text."
 msgstr ""
+"Passord for SSH-nøkkel, hvis kryptert, for dytting/innhenting. Lagret i "
+"klartekst."
 
 #~ msgid "Edit"
 #~ msgstr "Rediger"
