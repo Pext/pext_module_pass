@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2020-03-02 20:53+CET\n"
-"PO-Revision-Date: 2020-02-25 20:33+0000\n"
+"PO-Revision-Date: 2020-03-03 20:33+0000\n"
 "Last-Translator: Heimen Stoffels <vistausss@outlook.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/pext/"
 "pext_module_pass/nl/>\n"
@@ -36,6 +36,9 @@ msgid ""
 "should change the passwords for these accounts as soon as possible. Do you "
 "want to view the accounts in question?"
 msgstr ""
+"We hebben {} account(s) aangetroffen die waarschijnlijk geopenbaard zijn. "
+"Pas de wachtwoorden van deze accounts zo snel mogelijk aan! Wil de accounts "
+"in kwestie tonen?"
 
 #: __init__.py:100
 msgid "Failed to pull from Git: {}"
@@ -47,17 +50,19 @@ msgstr "Uploaden naar Git mislukt: {}"
 
 #: __init__.py:142
 msgid "DATA BREACH FOUND"
-msgstr ""
+msgstr "GEGEVENSLEK AANGETROFFEN"
 
 #: __init__.py:142
 msgid "Info provided by HaveIBeenPwned"
-msgstr ""
+msgstr "Informatie beschikbaar gesteld door HaveIBeenPwned"
 
 #: __init__.py:150
 msgid ""
 "<b>{}</b><br/>{}<br/><b>Last opened</b><br/>{}<br/><br/><b>Last modified</"
 "b><br/>{}"
 msgstr ""
+"<b>{}</b><br/>{}<br/><b>Laatst geopend</b><br/>{}<br/><br/><b>Laatst "
+"aangepast</b><br/>{}"
 
 #: __init__.py:152 __init__.py:154
 msgid "Open"
@@ -97,7 +102,7 @@ msgstr "Genereren"
 
 #: __init__.py:157 __init__.py:171 __init__.py:504 __init__.py:514
 msgid "View data breaches"
-msgstr ""
+msgstr "Gegevenslekken tonen"
 
 #: __init__.py:272
 msgid "Unknown request received: {}"
@@ -182,11 +187,11 @@ msgstr "Welke naam moet '{}' vanaf nu dragen?"
 
 #: __init__.py:505
 msgid "Data breaches"
-msgstr ""
+msgstr "Gegevenslekken"
 
 #: __init__.py:509
 msgid "No breached accounts found"
-msgstr ""
+msgstr "Geen geopenbaarde accounts aangetroffen"
 
 #: __init__.py:513 __init__.py:576
 msgid "Unexpected selection_made value: {}"
