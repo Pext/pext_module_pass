@@ -18,22 +18,12 @@
 import gettext
 import html
 import json
-import platform
 import os
 import shutil
 import threading
 from datetime import date, datetime
-from os.path import expanduser, normcase
 from time import sleep
 
-from babel.dates import format_datetime
-from dulwich import client, porcelain
-from dulwich.file import FileLocked
-from dulwich.repo import Repo
-from dulwich.contrib.paramiko_vendor import ParamikoSSHVendor
-from paramiko import ssh_exception
-
-import pypass
 import pyotp
 import pyscreenshot
 import zbar
@@ -41,12 +31,9 @@ import zbar
 from pext_base import ModuleBase
 from pext_helpers import Action, SelectionType
 
+
 class Module(ModuleBase):
     def init(self, settings, q):
-        if platform.system() == 'Darwin':
-            # Explicitly add support for MacGPG2
-            os.environ['PATH'] = os.environ['PATH'] + ':/usr/local/MacGPG2/bin'
-
         try:
             lang = gettext.translation('pext_module_pass', localedir=os.path.join(os.path.dirname(os.path.abspath(__file__)), 'locale'), languages=[settings['_locale']])
         except FileNotFoundError:
@@ -58,107 +45,20 @@ class Module(ModuleBase):
         self.result_display_thread = None
         self.result_display_active = True
 
-        self.data_location = expanduser(normcase("~/.password-store/")) if ('directory' not in settings) else expanduser(normcase(settings['directory']))
-        self.password_store = pypass.PasswordStore(self.data_location)
-
         self.q = q
         self.settings = settings
 
         with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'breaches.json')) as breaches_json:
             self.breaches = json.load(breaches_json)
 
-        if 'ssh_password' not in self.settings or not self.settings['ssh_password']:
-            self.settings['ssh_password'] = None
-
         if self.settings['_api_version'] < [0, 11, 1]:
             self.q.put([Action.critical_error, _("This module requires at least API version 0.11.1, you are using {}. Please update Pext.").format(".".join([str(i) for i in self.settings['_api_version']]))])
             return
 
-        self.git_repo = self.data_location
-        if (not os.path.isdir(os.path.join(self.data_location, ".git"))) or ('use_git' in self.settings and self.settings['use_git'] == _('No')):
-            self.git_repo = None
+        from implementations.password_store import PasswordManager
+        self.password_manager = PasswordManager()
 
-        self.passwordEntries = {}
-
-        breached_account_count = self._get_entries()
-        if breached_account_count > 0:
-            self.q.put([Action.ask_question, _("We found {} account(s) that were likely involved in a data breach. You should change the passwords for these accounts as soon as possible. Do you want to view the accounts in question?").format(breached_account_count), "view_breaches"])
-
-        if not os.path.exists(os.path.join(self.data_location, ".gpg-id")):
-            self._init()
-
-    def _git_pull(self):
-        try:
-            if self.git_repo:
-                with Repo(self.git_repo) as repo:
-                    config = repo.get_config()
-                    remote_url = config.get(("remote".encode(), "origin".encode()), "url".encode()).decode()
-                    client.get_ssh_vendor = ParamikoSSHVendor
-                    try:
-                        porcelain.pull(repo, remote_url, password=self.settings['ssh_password'])
-                    except (ssh_exception.SSHException, OSError) as e:
-                        self.q.put([Action.add_error, _("Failed to pull from Git: {}").format(str(e))])
-
-            return
-        except FileLocked:
-            print("File locked when trying to pull, giving up on this pull")
-
-    def _git_push(self):
-        try:
-            if self.git_repo:
-                with Repo(self.git_repo) as repo:
-                    config = repo.get_config()
-                    remote_url = config.get(("remote".encode(), "origin".encode()), "url".encode()).decode()
-                    client.get_ssh_vendor = ParamikoSSHVendor
-                    try:
-                        porcelain.push(repo, remote_url, 'master', password=self.settings['ssh_password'])
-                    except (ssh_exception.SSHException, OSError) as e:
-                        self.q.put([Action.add_error, _("Failed to push to Git: {}").format(str(e))])
-
-            return
-        except FileLocked:
-            print("File locked when trying to push, giving up on this push")
-
-    def _get_data_location(self):
-        return self.data_location
-
-    def _get_entries(self, breaches_only=False):
-        self._git_pull()
-
-        breached_account_count = 0
-
-        for password in sorted(self.password_store.get_passwords_list(), key=lambda name: os.path.getatime("{}.gpg".format(name)), reverse=True):
-            entry_path = "{}.gpg".format(password)
-            entry = password[len(self._get_data_location()):]
-
-            last_opened = datetime.fromtimestamp(os.path.getatime(entry_path))
-            last_modified = datetime.fromtimestamp(os.path.getmtime(entry_path))
-
-            # Get breach info
-            breach_info = ""
-            for breach in self.breaches:
-                if breach['Name'].lower() in entry.lower():
-                    if last_modified.date() <= date.fromisoformat(breach['BreachDate']):
-                        breach_info = "<br/><b>{}</b><br/>{}<br/><br/><i>{}</i><br/>".format(_("DATA BREACH FOUND"), breach['Description'], _("Info provided by HaveIBeenPwned"))
-                        breached_account_count += 1
-                        break
-            else:
-                if breaches_only:
-                    continue
-
-            self.q.put([Action.add_entry, entry])
-            self.q.put([Action.set_entry_info, entry, _("<b>{}</b><br/>{}<br/><b>Last opened</b><br/>{}<br/><br/><b>Last modified</b><br/>{}").format(html.escape(entry), breach_info, format_datetime((last_opened).replace(microsecond=0), locale=self.settings['_locale']), format_datetime((last_modified).replace(microsecond=0), locale=self.settings['_locale']))])
-            if self.settings['_api_version'] < [0, 12, 0]:
-                self.q.put([Action.set_entry_context, entry, [_("Open"), _("Edit password"), _("Edit other fields"), _("Copy"), _("Rename"), _("Remove")]])
-            else:
-                self.q.put([Action.set_entry_context, entry, [_("Open"), _("Edit password"), _("Edit other fields"), _("Add OTP"), _("Copy"), _("Rename"), _("Remove")]])
-
-        if breached_account_count > 0:
-            self.q.put([Action.set_base_context, [_("Create"), _("Generate"), _("View data breaches")]])
-        else:
-            self.q.put([Action.set_base_context, [_("Create"), _("Generate")]])
-
-        return breached_account_count
+        self.q.put([Action.set_base_context, [_("Create"), _("Generate")]])
 
     def process_response(self, response, identifier):
         # User cancellation
