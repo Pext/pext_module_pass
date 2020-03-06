@@ -82,7 +82,7 @@ class Module(ModuleBase):
 
         breached_account_count = self._get_entries()
         if breached_account_count > 0:
-            self.q.put([Action.ask_question, _("We found {} account(s) that were likely involved in a data breach. You should change the passwords for these accounts as soon as possible. Do you want to view the accounts in question?").format(breached_account_count), "view_breaches"])
+            self.q.put([Action.ask_question, _("Found {} account(s) likely involved in a data breach. You should change the passwords for these accounts as soon as possible. Do you want to view the accounts in question?").format(breached_account_count), "view_breaches"])
 
         if not os.path.exists(os.path.join(self.data_location, ".gpg-id")):
             self._init()
