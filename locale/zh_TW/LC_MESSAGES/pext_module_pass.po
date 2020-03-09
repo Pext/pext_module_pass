@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2020-03-02 20:53+CET\n"
-"PO-Revision-Date: 2020-02-27 03:33+0000\n"
+"PO-Revision-Date: 2020-03-06 06:40+0000\n"
 "Last-Translator: Jeff Huang <s8321414@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <https://hosted.weblate.org/projects/"
 "pext/pext_module_pass/zh_Hant/>\n"
@@ -33,7 +33,7 @@ msgid ""
 "We found {} account(s) that were likely involved in a data breach. You "
 "should change the passwords for these accounts as soon as possible. Do you "
 "want to view the accounts in question?"
-msgstr ""
+msgstr "我們發現 {} 個帳號可能與資料洩漏有關。您應該盡快變更這些帳號的密碼。您想要查看有問題的帳號嗎？"
 
 #: __init__.py:100
 msgid "Failed to pull from Git: {}"
@@ -45,17 +45,17 @@ msgstr "推送至 Git 失敗：{}"
 
 #: __init__.py:142
 msgid "DATA BREACH FOUND"
-msgstr ""
+msgstr "發現資料洩漏"
 
 #: __init__.py:142
 msgid "Info provided by HaveIBeenPwned"
-msgstr ""
+msgstr "資訊由 HaveIBeenPwned 提供"
 
 #: __init__.py:150
 msgid ""
 "<b>{}</b><br/>{}<br/><b>Last opened</b><br/>{}<br/><br/><b>Last modified</"
 "b><br/>{}"
-msgstr ""
+msgstr "<b>{}</b><br/>{}<br/><b>上次開啟</b><br/>{}<br/><br/><b>上次修改</b><br/>{}"
 
 #: __init__.py:152 __init__.py:154
 msgid "Open"
@@ -95,7 +95,7 @@ msgstr "生成"
 
 #: __init__.py:157 __init__.py:171 __init__.py:504 __init__.py:514
 msgid "View data breaches"
-msgstr ""
+msgstr "檢視資料洩漏"
 
 #: __init__.py:272
 msgid "Unknown request received: {}"
@@ -179,11 +179,11 @@ msgstr "{} 的新名稱應該要是什麼？"
 
 #: __init__.py:505
 msgid "Data breaches"
-msgstr ""
+msgstr "資料洩漏"
 
 #: __init__.py:509
 msgid "No breached accounts found"
-msgstr ""
+msgstr "沒有找到洩漏的帳號"
 
 #: __init__.py:513 __init__.py:576
 msgid "Unexpected selection_made value: {}"

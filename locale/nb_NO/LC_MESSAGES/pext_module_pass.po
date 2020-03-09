@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2020-03-02 20:53+CET\n"
-"PO-Revision-Date: 2020-03-02 02:33+0000\n"
+"PO-Revision-Date: 2020-03-06 06:40+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/pext/"
 "pext_module_pass/nb_NO/>\n"
@@ -35,6 +35,9 @@ msgid ""
 "should change the passwords for these accounts as soon as possible. Do you "
 "want to view the accounts in question?"
 msgstr ""
+"Vi har funnet {} konto(er) som antagelig har blitt lekket. Du bør endre "
+"passordene for disse kontoene så snart som mulig. Ønsker du å vise kontoene "
+"det dreier seg om?"
 
 #: __init__.py:100
 msgid "Failed to pull from Git: {}"
@@ -46,17 +49,19 @@ msgstr "Klarte ikke å dytte til Git: {}"
 
 #: __init__.py:142
 msgid "DATA BREACH FOUND"
-msgstr ""
+msgstr "Datalekkasje funnet"
 
 #: __init__.py:142
 msgid "Info provided by HaveIBeenPwned"
-msgstr ""
+msgstr "Info fra HaveIBeenPwned"
 
 #: __init__.py:150
 msgid ""
 "<b>{}</b><br/>{}<br/><b>Last opened</b><br/>{}<br/><br/><b>Last modified</"
 "b><br/>{}"
 msgstr ""
+"<b>{}</b><br/>{}<br/><b>Sist åpnet</b><br/>{}<br/><br/><b>Sist endret</b><br/"
+">{}"
 
 #: __init__.py:152 __init__.py:154
 msgid "Open"
@@ -96,7 +101,7 @@ msgstr "Generer"
 
 #: __init__.py:157 __init__.py:171 __init__.py:504 __init__.py:514
 msgid "View data breaches"
-msgstr ""
+msgstr "Vis datalekkasjer"
 
 #: __init__.py:272
 msgid "Unknown request received: {}"
@@ -185,11 +190,11 @@ msgstr "Angi nytt navn for {}."
 
 #: __init__.py:505
 msgid "Data breaches"
-msgstr ""
+msgstr "Datalekkasjer"
 
 #: __init__.py:509
 msgid "No breached accounts found"
-msgstr ""
+msgstr "Fant ikke noen lekkede kontoer"
 
 #: __init__.py:513 __init__.py:576
 msgid "Unexpected selection_made value: {}"
