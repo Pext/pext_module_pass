@@ -24,7 +24,7 @@ import shutil
 import threading
 from datetime import date, datetime
 from os.path import expanduser, normcase
-from time import sleep
+from time import sleep, time
 
 from babel.dates import format_datetime
 from dulwich import client, porcelain
@@ -562,6 +562,12 @@ class Module(ModuleBase):
                     return
 
                 results = self.password_store.get_decrypted_password(selection[-1]["value"])
+
+                # Update access timestamp
+                filename = os.path.join(self._get_data_location(), "{}.gpg".format(selection[-1]["value"]))
+                stat = os.stat(filename)
+                os.utime(filename, times=(time(), stat.st_mtime))
+
                 if results is None:
                     self.q.put([Action.set_selection, []])
                     return
