@@ -92,11 +92,11 @@ class Module(ModuleBase):
             if self.git_repo:
                 with Repo(self.git_repo) as repo:
                     config = repo.get_config()
-                    remote_url = config.get(("remote".encode(), "origin".encode()), "url".encode()).decode()
                     client.get_ssh_vendor = ParamikoSSHVendor
                     try:
+                        remote_url = config.get(("remote".encode(), "origin".encode()), "url".encode()).decode()
                         porcelain.pull(repo, remote_url, password=self.settings['ssh_password'])
-                    except (ssh_exception.SSHException, OSError) as e:
+                    except (ssh_exception.SSHException, OSError, KeyError) as e:
                         self.q.put([Action.add_error, _("Failed to pull from Git: {}").format(str(e))])
 
             return
