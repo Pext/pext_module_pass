@@ -27,6 +27,7 @@ from os.path import expanduser, normcase
 from time import sleep, time
 
 from babel.dates import format_datetime
+from dateutil import parser as date_parser
 from dulwich import client, porcelain
 from dulwich.file import FileLocked
 from dulwich.repo import Repo
@@ -122,6 +123,13 @@ class Module(ModuleBase):
     def _get_data_location(self):
         return self.data_location
 
+    def _get_breach_info(self, entry, last_modified):
+        # Get breach info, or None if no breach detected
+        for breach in self.breaches:
+            if breach['Name'].lower() in entry.lower():
+                if last_modified.date() <= date_parser.isoparse(breach['BreachDate']).date():
+                    return (breach['Description'], _("Info provided by HaveIBeenPwned"))
+
     def _get_entries(self, breaches_only=False):
         self._git_pull()
 
@@ -136,15 +144,12 @@ class Module(ModuleBase):
 
             # Get breach info
             breach_info = ""
-            for breach in self.breaches:
-                if breach['Name'].lower() in entry.lower():
-                    if last_modified.date() <= date.fromisoformat(breach['BreachDate']):
-                        breach_info = "<br/><b>{}</b><br/>{}<br/><br/><i>{}</i><br/>".format(_("DATA BREACH FOUND"), breach['Description'], _("Info provided by HaveIBeenPwned"))
-                        breached_account_count += 1
-                        break
-            else:
-                if breaches_only:
-                    continue
+            breach = self._get_breach_info(entry, last_modified)
+            if breach:
+                breach_info = "<br/><b>{}</b><br/>{}<br/><br/><i>{}</i><br/>".format(_("DATA BREACH FOUND"), *breach)
+                breached_account_count += 1
+            elif breaches_only:
+                continue
 
             self.q.put([Action.add_entry, entry])
             self.q.put([Action.set_entry_info, entry, _("<b>{}</b><br/>{}<br/><b>Last opened</b><br/>{}<br/><br/><b>Last modified</b><br/>{}").format(html.escape(entry), breach_info, format_datetime((last_opened).replace(microsecond=0), locale=self.settings['_locale']), format_datetime((last_modified).replace(microsecond=0), locale=self.settings['_locale']))])
