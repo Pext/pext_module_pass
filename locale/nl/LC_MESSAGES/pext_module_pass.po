@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2020-04-05 00:37+CEST\n"
-"PO-Revision-Date: 2020-03-03 20:33+0000\n"
+"PO-Revision-Date: 2020-04-05 00:06+0000\n"
 "Last-Translator: Heimen Stoffels <vistausss@outlook.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/pext/"
 "pext_module_pass/nl/>\n"
@@ -20,7 +20,7 @@ msgstr ""
 
 #: __init__.py:72
 msgid "Failed to parse list of breaches: {}"
-msgstr ""
+msgstr "Kan de lijst met lekken niet ophalen: {}"
 
 #: __init__.py:78
 msgid ""
@@ -40,10 +40,13 @@ msgid ""
 "passwords for these accounts as soon as possible. Do you want to view the "
 "accounts in question?"
 msgstr ""
+"Er is/zijn {} account(s) aangetroffen waarvan mogelijk gegevens zijn "
+"uitgelekt. Verander z.s.m. de wachtwoorden van deze accounts. Wil je de "
+"accounts in kwestie tonen?"
 
 #: __init__.py:104
 msgid "Failed to pull from Git: {}"
-msgstr "Ophalen van Git minslukt: {}"
+msgstr "Ophalen van Git mislukt: {}"
 
 #: __init__.py:120
 msgid "Failed to push to Git: {}"
