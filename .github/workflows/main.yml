@@ -1,0 +1,17 @@
+jobs:
+  keep_file_updated:
+    runs-on: ubuntu-latest
+    name: Keep file updated
+    steps:
+    - name: Checkout repo
+      id: checkout
+      uses: actions/checkout@v2
+    - name: Update file
+      id: update_file
+      uses: TheLastProject/keep-remote-file-locally-up-to-date-action@v1
+      with:
+        url: https://haveibeenpwned.com/api/v2/breaches
+        file_in_repo: breaches.json
+on:
+  schedule
+    - cron: '0 0 * * *'
