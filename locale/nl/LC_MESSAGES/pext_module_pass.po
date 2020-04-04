@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-03-02 20:53+CET\n"
+"POT-Creation-Date: 2020-04-05 00:37+CEST\n"
 "PO-Revision-Date: 2020-03-03 20:33+0000\n"
 "Last-Translator: Heimen Stoffels <vistausss@outlook.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/pext/"
@@ -18,7 +18,11 @@ msgstr ""
 "X-Generator: Weblate 4.0-dev\n"
 "Generated-By: pygettext.py 1.5\n"
 
-#: __init__.py:74
+#: __init__.py:72
+msgid "Failed to parse list of breaches: {}"
+msgstr ""
+
+#: __init__.py:78
 msgid ""
 "This module requires at least API version 0.11.1, you are using {}. Please "
 "update Pext."
@@ -26,37 +30,34 @@ msgstr ""
 "Deze module vereist minimaal API-versie 0.11.1, maar jij gebruikt versie {}. "
 "Werk Pext bij."
 
-#: __init__.py:78 generate_metadata.py:56
+#: __init__.py:82 generate_metadata.py:56
 msgid "No"
 msgstr "Nee"
 
-#: __init__.py:85
+#: __init__.py:89
 msgid ""
-"We found {} account(s) that were likely involved in a data breach. You "
-"should change the passwords for these accounts as soon as possible. Do you "
-"want to view the accounts in question?"
+"Found {} account(s) likely involved in a data breach. You should change the "
+"passwords for these accounts as soon as possible. Do you want to view the "
+"accounts in question?"
 msgstr ""
-"We hebben {} account(s) aangetroffen die waarschijnlijk geopenbaard zijn. "
-"Pas de wachtwoorden van deze accounts zo snel mogelijk aan! Wil de accounts "
-"in kwestie tonen?"
 
-#: __init__.py:100
+#: __init__.py:104
 msgid "Failed to pull from Git: {}"
 msgstr "Ophalen van Git minslukt: {}"
 
-#: __init__.py:116
+#: __init__.py:120
 msgid "Failed to push to Git: {}"
 msgstr "Uploaden naar Git mislukt: {}"
 
-#: __init__.py:142
-msgid "DATA BREACH FOUND"
-msgstr "GEGEVENSLEK AANGETROFFEN"
-
-#: __init__.py:142
+#: __init__.py:134
 msgid "Info provided by HaveIBeenPwned"
 msgstr "Informatie beschikbaar gesteld door HaveIBeenPwned"
 
-#: __init__.py:150
+#: __init__.py:152
+msgid "DATA BREACH FOUND"
+msgstr "GEGEVENSLEK AANGETROFFEN"
+
+#: __init__.py:158
 msgid ""
 "<b>{}</b><br/>{}<br/><b>Last opened</b><br/>{}<br/><br/><b>Last modified</"
 "b><br/>{}"
@@ -64,136 +65,136 @@ msgstr ""
 "<b>{}</b><br/>{}<br/><b>Laatst geopend</b><br/>{}<br/><br/><b>Laatst "
 "aangepast</b><br/>{}"
 
-#: __init__.py:152 __init__.py:154
+#: __init__.py:160 __init__.py:162
 msgid "Open"
 msgstr "Openen"
 
-#: __init__.py:152 __init__.py:154 __init__.py:539
+#: __init__.py:160 __init__.py:162 __init__.py:547
 msgid "Edit password"
 msgstr "Wachtwoord aanpassen"
 
-#: __init__.py:152 __init__.py:154 __init__.py:543
+#: __init__.py:160 __init__.py:162 __init__.py:551
 msgid "Edit other fields"
 msgstr "Andere velden aanpassen"
 
-#: __init__.py:152 __init__.py:154 __init__.py:551
+#: __init__.py:160 __init__.py:162 __init__.py:559
 msgid "Copy"
 msgstr "Kopiëren"
 
-#: __init__.py:152 __init__.py:154 __init__.py:555
+#: __init__.py:160 __init__.py:162 __init__.py:563
 msgid "Rename"
 msgstr "Naam wijzigen"
 
-#: __init__.py:152 __init__.py:154 __init__.py:559
+#: __init__.py:160 __init__.py:162 __init__.py:567
 msgid "Remove"
 msgstr "Verwijderen"
 
-#: __init__.py:154 __init__.py:547
+#: __init__.py:162 __init__.py:555
 msgid "Add OTP"
 msgstr "OTP toevoegen"
 
-#: __init__.py:157 __init__.py:159 __init__.py:496
+#: __init__.py:165 __init__.py:167 __init__.py:504
 msgid "Create"
 msgstr "Maken"
 
-#: __init__.py:157 __init__.py:159 __init__.py:500
+#: __init__.py:165 __init__.py:167 __init__.py:508
 msgid "Generate"
 msgstr "Genereren"
 
-#: __init__.py:157 __init__.py:171 __init__.py:504 __init__.py:514
+#: __init__.py:165 __init__.py:179 __init__.py:512 __init__.py:522
 msgid "View data breaches"
 msgstr "Gegevenslekken tonen"
 
-#: __init__.py:272
+#: __init__.py:280
 msgid "Unknown request received: {}"
 msgstr "Onbekend verzoek ontvangen: {}"
 
-#: __init__.py:303
+#: __init__.py:311
 msgid "What password should OTP be added to?"
 msgstr "Aan welk wachtwoord wil je een OTP toevoegen?"
 
-#: __init__.py:319
+#: __init__.py:327
 msgid "No valid OTP QR codes detected on your screen. Configuring manually…"
 msgstr "Geen geldige OTP QR-codes aangetroffen. Bezig met handmatig instellen…"
 
-#: __init__.py:320
+#: __init__.py:328
 msgid "Which OTP type should be used?"
 msgstr "Wat voor soort OTP wil je gebruiken?"
 
-#: __init__.py:322
+#: __init__.py:330
 msgid "Detected and added {} valid OTP QR code(s) on your screen."
 msgstr ""
 "Er zijn {} geldige OTP QR-code(s) op je scherm aangetroffen en toegevoegd."
 
-#: __init__.py:325
+#: __init__.py:333
 msgid "What is the OTP secret?"
 msgstr "Wat is de OTP-toegangssleutel?"
 
-#: __init__.py:338
+#: __init__.py:346
 msgid "Which password do you want to copy?"
 msgstr "Welk wachtwoord wil je kopiëren?"
 
-#: __init__.py:340 __init__.py:352
+#: __init__.py:348 __init__.py:360
 msgid "What should the copy of {} be named?"
 msgstr "Welke naam moet de kopie van '{}' dragen?"
 
-#: __init__.py:359
+#: __init__.py:367
 msgid "What password do you want to change?"
 msgstr "Welk wachtwoord wil je aanpassen?"
 
-#: __init__.py:362 __init__.py:402
+#: __init__.py:370 __init__.py:410
 msgid "What should the value of {} be?"
 msgstr "Wat moet de waarde van '{}' zijn?"
 
-#: __init__.py:371
+#: __init__.py:379
 msgid "What password do you want to change fields of?"
 msgstr "Van welk wachtwoord wil je de velden aanpassen?"
 
-#: __init__.py:376
+#: __init__.py:384
 msgid "What should the value of the fields of {} be?"
 msgstr "Welke waarde moeten de velden van '{}' hebben?"
 
-#: __init__.py:384
+#: __init__.py:392
 msgid "What name do you want to generate a random password for?"
 msgstr "Voor welke naam wil je een willekeurig wachtwoord genereren?"
 
-#: __init__.py:386
+#: __init__.py:394
 msgid "How many characters should the password be?"
 msgstr "Hoeveel tekens moet het wachtwoord bevatten?"
 
-#: __init__.py:393
+#: __init__.py:401
 msgid "Please provide a GPG key ID to initialize this directory with."
 msgstr "Geef een GPG-sleutel-id op om de map mee te initialiseren."
 
-#: __init__.py:400
+#: __init__.py:408
 msgid "What is the name of the password?"
 msgstr "Voer de naam in van het wachtwoord."
 
-#: __init__.py:409
+#: __init__.py:417
 msgid "What password do you want to remove?"
 msgstr "Welk wachtwoord wil je verwijderen?"
 
-#: __init__.py:411
+#: __init__.py:419
 msgid "Are you sure you want to remove {}?"
 msgstr "Weet je zeker dat je '{}' wilt verwijderen?"
 
-#: __init__.py:427
+#: __init__.py:435
 msgid "What password do you want to rename?"
 msgstr "Van welk wachtwoord wil je de naam wijzigen?"
 
-#: __init__.py:429
+#: __init__.py:437
 msgid "What should the new name of {} be?"
 msgstr "Welke naam moet '{}' vanaf nu dragen?"
 
-#: __init__.py:505
+#: __init__.py:513
 msgid "Data breaches"
 msgstr "Gegevenslekken"
 
-#: __init__.py:509
+#: __init__.py:517
 msgid "No breached accounts found"
 msgstr "Geen geopenbaarde accounts aangetroffen"
 
-#: __init__.py:513 __init__.py:576
+#: __init__.py:521 __init__.py:590
 msgid "Unexpected selection_made value: {}"
 msgstr "Onverwachte selection_made-waarde: {}"
 
@@ -222,6 +223,15 @@ msgid "Password of SSH key, if encrypted, for push/pull. Stored in plain text."
 msgstr ""
 "Wachtwoord bij de SSH-sleutel (indien versleuteld) voor push/pull. Wordt "
 "opgeslagen met plattetekstopmaak."
+
+#~ msgid ""
+#~ "We found {} account(s) that were likely involved in a data breach. You "
+#~ "should change the passwords for these accounts as soon as possible. Do "
+#~ "you want to view the accounts in question?"
+#~ msgstr ""
+#~ "We hebben {} account(s) aangetroffen die waarschijnlijk geopenbaard zijn. "
+#~ "Pas de wachtwoorden van deze accounts zo snel mogelijk aan! Wil de "
+#~ "accounts in kwestie tonen?"
 
 #~ msgid ""
 #~ "<b>{}</b><br/><br/><b>Last opened</b><br/>{}<br/><br/><b>Last modified</"

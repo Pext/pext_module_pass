@@ -66,7 +66,11 @@ class Module(ModuleBase):
         self.settings = settings
 
         with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'breaches.json')) as breaches_json:
-            self.breaches = json.load(breaches_json)
+            try:
+                self.breaches = json.load(breaches_json)
+            except Exception as e:
+                self.breaches = []
+                self.q.put([Action.add_error, _("Failed to parse list of breaches: {}").format(str(e))])
 
         if 'ssh_password' not in self.settings or not self.settings['ssh_password']:
             self.settings['ssh_password'] = None

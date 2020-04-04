@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2020-03-02 20:53+CET\n"
+"POT-Creation-Date: 2020-04-05 00:37+CEST\n"
 "PO-Revision-Date: 2019-03-19 16:04+0000\n"
 "Last-Translator: Viktar Vauchkevich <victorenator@gmail.com>\n"
 "Language-Team: Belarusian <https://hosted.weblate.org/projects/pext/"
@@ -19,174 +19,178 @@ msgstr ""
 "X-Generator: Weblate 3.7-dev\n"
 "Generated-By: pygettext.py 1.5\n"
 
-#: __init__.py:74
+#: __init__.py:72
+msgid "Failed to parse list of breaches: {}"
+msgstr ""
+
+#: __init__.py:78
 msgid ""
 "This module requires at least API version 0.11.1, you are using {}. Please "
 "update Pext."
 msgstr ""
 
-#: __init__.py:78 generate_metadata.py:56
+#: __init__.py:82 generate_metadata.py:56
 msgid "No"
 msgstr ""
 
-#: __init__.py:85
+#: __init__.py:89
 msgid ""
-"We found {} account(s) that were likely involved in a data breach. You "
-"should change the passwords for these accounts as soon as possible. Do you "
-"want to view the accounts in question?"
+"Found {} account(s) likely involved in a data breach. You should change the "
+"passwords for these accounts as soon as possible. Do you want to view the "
+"accounts in question?"
 msgstr ""
 
-#: __init__.py:100
+#: __init__.py:104
 msgid "Failed to pull from Git: {}"
 msgstr ""
 
-#: __init__.py:116
+#: __init__.py:120
 msgid "Failed to push to Git: {}"
 msgstr ""
 
-#: __init__.py:142
-msgid "DATA BREACH FOUND"
-msgstr ""
-
-#: __init__.py:142
+#: __init__.py:134
 msgid "Info provided by HaveIBeenPwned"
 msgstr ""
 
-#: __init__.py:150
+#: __init__.py:152
+msgid "DATA BREACH FOUND"
+msgstr ""
+
+#: __init__.py:158
 msgid ""
 "<b>{}</b><br/>{}<br/><b>Last opened</b><br/>{}<br/><br/><b>Last modified</"
 "b><br/>{}"
 msgstr ""
 
-#: __init__.py:152 __init__.py:154
+#: __init__.py:160 __init__.py:162
 msgid "Open"
 msgstr "Адкрыць"
 
-#: __init__.py:152 __init__.py:154 __init__.py:539
+#: __init__.py:160 __init__.py:162 __init__.py:547
 msgid "Edit password"
 msgstr ""
 
-#: __init__.py:152 __init__.py:154 __init__.py:543
+#: __init__.py:160 __init__.py:162 __init__.py:551
 msgid "Edit other fields"
 msgstr ""
 
-#: __init__.py:152 __init__.py:154 __init__.py:551
+#: __init__.py:160 __init__.py:162 __init__.py:559
 msgid "Copy"
 msgstr "Капiяваць"
 
-#: __init__.py:152 __init__.py:154 __init__.py:555
+#: __init__.py:160 __init__.py:162 __init__.py:563
 msgid "Rename"
 msgstr "Пераназваць"
 
-#: __init__.py:152 __init__.py:154 __init__.py:559
+#: __init__.py:160 __init__.py:162 __init__.py:567
 msgid "Remove"
 msgstr "Выдалiць"
 
-#: __init__.py:154 __init__.py:547
+#: __init__.py:162 __init__.py:555
 msgid "Add OTP"
 msgstr ""
 
-#: __init__.py:157 __init__.py:159 __init__.py:496
+#: __init__.py:165 __init__.py:167 __init__.py:504
 msgid "Create"
 msgstr ""
 
-#: __init__.py:157 __init__.py:159 __init__.py:500
+#: __init__.py:165 __init__.py:167 __init__.py:508
 msgid "Generate"
 msgstr "Згенераваць"
 
-#: __init__.py:157 __init__.py:171 __init__.py:504 __init__.py:514
+#: __init__.py:165 __init__.py:179 __init__.py:512 __init__.py:522
 msgid "View data breaches"
 msgstr ""
 
-#: __init__.py:272
+#: __init__.py:280
 msgid "Unknown request received: {}"
 msgstr ""
 
-#: __init__.py:303
+#: __init__.py:311
 msgid "What password should OTP be added to?"
 msgstr ""
 
-#: __init__.py:319
+#: __init__.py:327
 msgid "No valid OTP QR codes detected on your screen. Configuring manually…"
 msgstr ""
 
-#: __init__.py:320
+#: __init__.py:328
 msgid "Which OTP type should be used?"
 msgstr ""
 
-#: __init__.py:322
+#: __init__.py:330
 msgid "Detected and added {} valid OTP QR code(s) on your screen."
 msgstr ""
 
-#: __init__.py:325
+#: __init__.py:333
 msgid "What is the OTP secret?"
 msgstr ""
 
-#: __init__.py:338
+#: __init__.py:346
 msgid "Which password do you want to copy?"
 msgstr ""
 
-#: __init__.py:340 __init__.py:352
+#: __init__.py:348 __init__.py:360
 msgid "What should the copy of {} be named?"
 msgstr ""
 
-#: __init__.py:359
+#: __init__.py:367
 msgid "What password do you want to change?"
 msgstr ""
 
-#: __init__.py:362 __init__.py:402
+#: __init__.py:370 __init__.py:410
 msgid "What should the value of {} be?"
 msgstr ""
 
-#: __init__.py:371
+#: __init__.py:379
 msgid "What password do you want to change fields of?"
 msgstr ""
 
-#: __init__.py:376
+#: __init__.py:384
 msgid "What should the value of the fields of {} be?"
 msgstr ""
 
-#: __init__.py:384
+#: __init__.py:392
 msgid "What name do you want to generate a random password for?"
 msgstr ""
 
-#: __init__.py:386
+#: __init__.py:394
 msgid "How many characters should the password be?"
 msgstr ""
 
-#: __init__.py:393
+#: __init__.py:401
 msgid "Please provide a GPG key ID to initialize this directory with."
 msgstr ""
 
-#: __init__.py:400
+#: __init__.py:408
 msgid "What is the name of the password?"
 msgstr ""
 
-#: __init__.py:409
+#: __init__.py:417
 msgid "What password do you want to remove?"
 msgstr ""
 
-#: __init__.py:411
+#: __init__.py:419
 msgid "Are you sure you want to remove {}?"
 msgstr ""
 
-#: __init__.py:427
+#: __init__.py:435
 msgid "What password do you want to rename?"
 msgstr ""
 
-#: __init__.py:429
+#: __init__.py:437
 msgid "What should the new name of {} be?"
 msgstr ""
 
-#: __init__.py:505
+#: __init__.py:513
 msgid "Data breaches"
 msgstr ""
 
-#: __init__.py:509
+#: __init__.py:517
 msgid "No breached accounts found"
 msgstr ""
 
-#: __init__.py:513 __init__.py:576
+#: __init__.py:521 __init__.py:590
 msgid "Unexpected selection_made value: {}"
 msgstr "Нечаканае значэнне selection_made: {}"
 

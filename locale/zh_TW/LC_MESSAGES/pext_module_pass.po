@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2020-03-02 20:53+CET\n"
+"POT-Creation-Date: 2020-04-05 00:37+CEST\n"
 "PO-Revision-Date: 2020-03-06 06:40+0000\n"
 "Last-Translator: Jeff Huang <s8321414@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <https://hosted.weblate.org/projects/"
@@ -18,174 +18,179 @@ msgstr ""
 "X-Generator: Weblate 4.0-dev\n"
 "Generated-By: pygettext.py 1.5\n"
 
-#: __init__.py:74
+#: __init__.py:72
+msgid "Failed to parse list of breaches: {}"
+msgstr ""
+
+#: __init__.py:78
 msgid ""
 "This module requires at least API version 0.11.1, you are using {}. Please "
 "update Pext."
 msgstr "此模組需要 API 版本至少為 0.11.1，您正在使用 {}。請更新 Pext。"
 
-#: __init__.py:78 generate_metadata.py:56
+#: __init__.py:82 generate_metadata.py:56
 msgid "No"
 msgstr "否"
 
-#: __init__.py:85
+#: __init__.py:89
 msgid ""
-"We found {} account(s) that were likely involved in a data breach. You "
-"should change the passwords for these accounts as soon as possible. Do you "
-"want to view the accounts in question?"
-msgstr "我們發現 {} 個帳號可能與資料洩漏有關。您應該盡快變更這些帳號的密碼。您想要查看有問題的帳號嗎？"
+"Found {} account(s) likely involved in a data breach. You should change the "
+"passwords for these accounts as soon as possible. Do you want to view the "
+"accounts in question?"
+msgstr ""
 
-#: __init__.py:100
+#: __init__.py:104
 msgid "Failed to pull from Git: {}"
 msgstr "從 Git 拉取失敗：{}"
 
-#: __init__.py:116
+#: __init__.py:120
 msgid "Failed to push to Git: {}"
 msgstr "推送至 Git 失敗：{}"
 
-#: __init__.py:142
-msgid "DATA BREACH FOUND"
-msgstr "發現資料洩漏"
-
-#: __init__.py:142
+#: __init__.py:134
 msgid "Info provided by HaveIBeenPwned"
 msgstr "資訊由 HaveIBeenPwned 提供"
 
-#: __init__.py:150
+#: __init__.py:152
+msgid "DATA BREACH FOUND"
+msgstr "發現資料洩漏"
+
+#: __init__.py:158
 msgid ""
 "<b>{}</b><br/>{}<br/><b>Last opened</b><br/>{}<br/><br/><b>Last modified</"
 "b><br/>{}"
-msgstr "<b>{}</b><br/>{}<br/><b>上次開啟</b><br/>{}<br/><br/><b>上次修改</b><br/>{}"
+msgstr ""
+"<b>{}</b><br/>{}<br/><b>上次開啟</b><br/>{}<br/><br/><b>上次修改</b><br/>{}"
 
-#: __init__.py:152 __init__.py:154
+#: __init__.py:160 __init__.py:162
 msgid "Open"
 msgstr "開啟"
 
-#: __init__.py:152 __init__.py:154 __init__.py:539
+#: __init__.py:160 __init__.py:162 __init__.py:547
 msgid "Edit password"
 msgstr "編輯密碼"
 
-#: __init__.py:152 __init__.py:154 __init__.py:543
+#: __init__.py:160 __init__.py:162 __init__.py:551
 msgid "Edit other fields"
 msgstr "編輯其他欄位"
 
-#: __init__.py:152 __init__.py:154 __init__.py:551
+#: __init__.py:160 __init__.py:162 __init__.py:559
 msgid "Copy"
 msgstr "複製"
 
-#: __init__.py:152 __init__.py:154 __init__.py:555
+#: __init__.py:160 __init__.py:162 __init__.py:563
 msgid "Rename"
 msgstr "重新命名"
 
-#: __init__.py:152 __init__.py:154 __init__.py:559
+#: __init__.py:160 __init__.py:162 __init__.py:567
 msgid "Remove"
 msgstr "移除"
 
-#: __init__.py:154 __init__.py:547
+#: __init__.py:162 __init__.py:555
 msgid "Add OTP"
 msgstr "新增 OTP"
 
-#: __init__.py:157 __init__.py:159 __init__.py:496
+#: __init__.py:165 __init__.py:167 __init__.py:504
 msgid "Create"
 msgstr "建立"
 
-#: __init__.py:157 __init__.py:159 __init__.py:500
+#: __init__.py:165 __init__.py:167 __init__.py:508
 msgid "Generate"
 msgstr "生成"
 
-#: __init__.py:157 __init__.py:171 __init__.py:504 __init__.py:514
+#: __init__.py:165 __init__.py:179 __init__.py:512 __init__.py:522
 msgid "View data breaches"
 msgstr "檢視資料洩漏"
 
-#: __init__.py:272
+#: __init__.py:280
 msgid "Unknown request received: {}"
 msgstr "收到未知的請求： {}"
 
-#: __init__.py:303
+#: __init__.py:311
 msgid "What password should OTP be added to?"
 msgstr "OTP 應該新增什麼密碼？"
 
-#: __init__.py:319
+#: __init__.py:327
 msgid "No valid OTP QR codes detected on your screen. Configuring manually…"
 msgstr "未在您的畫面上偵測到有效的 OTP QR code。正在手動設定……"
 
-#: __init__.py:320
+#: __init__.py:328
 msgid "Which OTP type should be used?"
 msgstr "應該使用哪種 OTP 類型？"
 
-#: __init__.py:322
+#: __init__.py:330
 msgid "Detected and added {} valid OTP QR code(s) on your screen."
 msgstr "已在您的螢幕上偵測到並新增 {} 有效的 OTP QR code。"
 
-#: __init__.py:325
+#: __init__.py:333
 msgid "What is the OTP secret?"
 msgstr "這個 OTP 保護的是什麼？"
 
-#: __init__.py:338
+#: __init__.py:346
 msgid "Which password do you want to copy?"
 msgstr "您想要複製哪種密碼？"
 
-#: __init__.py:340 __init__.py:352
+#: __init__.py:348 __init__.py:360
 msgid "What should the copy of {} be named?"
 msgstr "{} 的副本應該要叫什麼？"
 
-#: __init__.py:359
+#: __init__.py:367
 msgid "What password do you want to change?"
 msgstr "您想要變更什麼密碼？"
 
-#: __init__.py:362 __init__.py:402
+#: __init__.py:370 __init__.py:410
 msgid "What should the value of {} be?"
 msgstr "{} 的值應該要是什麼？"
 
-#: __init__.py:371
+#: __init__.py:379
 msgid "What password do you want to change fields of?"
 msgstr "您想要變更什麼欄位？"
 
-#: __init__.py:376
+#: __init__.py:384
 msgid "What should the value of the fields of {} be?"
 msgstr "{} 欄位的值應該是什麼？"
 
-#: __init__.py:384
+#: __init__.py:392
 msgid "What name do you want to generate a random password for?"
 msgstr "您想為哪個名字生成隨機密碼？"
 
-#: __init__.py:386
+#: __init__.py:394
 msgid "How many characters should the password be?"
 msgstr "密碼應該要有多少字元？"
 
-#: __init__.py:393
+#: __init__.py:401
 msgid "Please provide a GPG key ID to initialize this directory with."
 msgstr "請提供 GPG 金鑰 ID 以初始化此目錄。"
 
-#: __init__.py:400
+#: __init__.py:408
 msgid "What is the name of the password?"
 msgstr "密碼的名稱是什麼？"
 
-#: __init__.py:409
+#: __init__.py:417
 msgid "What password do you want to remove?"
 msgstr "您想要移除什麼密碼？"
 
-#: __init__.py:411
+#: __init__.py:419
 msgid "Are you sure you want to remove {}?"
 msgstr "您確定您想要移除 {} 嗎？"
 
-#: __init__.py:427
+#: __init__.py:435
 msgid "What password do you want to rename?"
 msgstr "您想要重新命名什麼密碼？"
 
-#: __init__.py:429
+#: __init__.py:437
 msgid "What should the new name of {} be?"
 msgstr "{} 的新名稱應該要是什麼？"
 
-#: __init__.py:505
+#: __init__.py:513
 msgid "Data breaches"
 msgstr "資料洩漏"
 
-#: __init__.py:509
+#: __init__.py:517
 msgid "No breached accounts found"
 msgstr "沒有找到洩漏的帳號"
 
-#: __init__.py:513 __init__.py:576
+#: __init__.py:521 __init__.py:590
 msgid "Unexpected selection_made value: {}"
 msgstr "未預期的 selection_made 值：{}"
 
@@ -212,6 +217,14 @@ msgstr "是"
 #: generate_metadata.py:61
 msgid "Password of SSH key, if encrypted, for push/pull. Stored in plain text."
 msgstr "SSH 金鑰的密碼（如果已加密），供推／拉使用。以純文字儲存。"
+
+#~ msgid ""
+#~ "We found {} account(s) that were likely involved in a data breach. You "
+#~ "should change the passwords for these accounts as soon as possible. Do "
+#~ "you want to view the accounts in question?"
+#~ msgstr ""
+#~ "我們發現 {} 個帳號可能與資料洩漏有關。您應該盡快變更這些帳號的密碼。您想要"
+#~ "查看有問題的帳號嗎？"
 
 #~ msgid ""
 #~ "<b>{}</b><br/><br/><b>Last opened</b><br/>{}<br/><br/><b>Last modified</"
