@@ -13,5 +13,5 @@ jobs:
         url: https://haveibeenpwned.com/api/v2/breaches
         file_in_repo: breaches.json
 on:
-  schedule
+  schedule:
     - cron: '0 0 * * *'
