@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2020-04-05 00:37+CEST\n"
-"PO-Revision-Date: 2020-03-06 06:40+0000\n"
+"PO-Revision-Date: 2020-04-05 04:51+0000\n"
 "Last-Translator: Jeff Huang <s8321414@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <https://hosted.weblate.org/projects/"
 "pext/pext_module_pass/zh_Hant/>\n"
@@ -20,7 +20,7 @@ msgstr ""
 
 #: __init__.py:72
 msgid "Failed to parse list of breaches: {}"
-msgstr ""
+msgstr "解析洩漏清單失敗：{}"
 
 #: __init__.py:78
 msgid ""
@@ -37,7 +37,7 @@ msgid ""
 "Found {} account(s) likely involved in a data breach. You should change the "
 "passwords for these accounts as soon as possible. Do you want to view the "
 "accounts in question?"
-msgstr ""
+msgstr "找到 {} 帳號可能受資料洩漏影響。您應該儘快變更這些帳號的密碼。您想要檢視有問題的帳號嗎？"
 
 #: __init__.py:104
 msgid "Failed to pull from Git: {}"
