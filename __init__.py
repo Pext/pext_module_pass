@@ -131,7 +131,15 @@ class Module(ModuleBase):
         # Get breach info, or None if no breach detected
         for breach in self.breaches:
             if breach['Name'].lower() in entry.lower():
-                if last_modified.date() <= date_parser.isoparse(breach['BreachDate']).date():
+
+                # Use fromisoformat if available (Python 3.7+)
+                # otherwise, fall back to dateutil
+                try:
+                    parsed_date = date.fromisoformat(breach['BreachDate'])
+                except AttributeError:
+                    parsed_date = date_parser.isoparse(breach['BreachDate']).date()
+
+                if last_modified.date() <= parsed_date:
                     return (breach['Description'], _("Info provided by HaveIBeenPwned"))
 
     def _get_entries(self, breaches_only=False):
