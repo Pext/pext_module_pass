@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2020-04-05 00:37+CEST\n"
-"PO-Revision-Date: 2019-12-29 02:38+0000\n"
+"PO-Revision-Date: 2020-04-11 11:09+0000\n"
 "Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/pext/"
 "pext_module_pass/es/>\n"
@@ -15,12 +15,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.10\n"
+"X-Generator: Weblate 4.0-dev\n"
 "Generated-By: pygettext.py 1.5\n"
 
 #: __init__.py:72
 msgid "Failed to parse list of breaches: {}"
-msgstr ""
+msgstr "No se pudo procesar la lista de vulneraciones: {}"
 
 #: __init__.py:78
 msgid ""
@@ -40,28 +40,33 @@ msgid ""
 "passwords for these accounts as soon as possible. Do you want to view the "
 "accounts in question?"
 msgstr ""
+"Se encontraron {} cuentas que posiblemente hayan formado parte de una "
+"vulneración de seguridad. Cambie las contraseñas de estas cuentas tan pronto "
+"como pueda. ¿Quiere ver las cuentas en cuestión?"
 
 #: __init__.py:104
 msgid "Failed to pull from Git: {}"
-msgstr ""
+msgstr "No se pudo incorporar desde Git: {}"
 
 #: __init__.py:120
 msgid "Failed to push to Git: {}"
-msgstr ""
+msgstr "No se pudo enviar a Git: {}"
 
 #: __init__.py:134
 msgid "Info provided by HaveIBeenPwned"
-msgstr ""
+msgstr "Información provista por HaveIBeenPwned"
 
 #: __init__.py:152
 msgid "DATA BREACH FOUND"
-msgstr ""
+msgstr "SE ENCONTRÓ UNA VULNERACIÓN DE SEGURIDAD"
 
 #: __init__.py:158
 msgid ""
 "<b>{}</b><br/>{}<br/><b>Last opened</b><br/>{}<br/><br/><b>Last modified</"
 "b><br/>{}"
 msgstr ""
+"<b>{}</b><br/>{}<br/><b>Última apertura</b><br/>{}<br/><br/><b>Última "
+"modificación</b><br/>{}"
 
 #: __init__.py:160 __init__.py:162
 msgid "Open"
@@ -69,11 +74,11 @@ msgstr "Abrir"
 
 #: __init__.py:160 __init__.py:162 __init__.py:547
 msgid "Edit password"
-msgstr ""
+msgstr "Editar contraseña"
 
 #: __init__.py:160 __init__.py:162 __init__.py:551
 msgid "Edit other fields"
-msgstr ""
+msgstr "Editar otros campos"
 
 #: __init__.py:160 __init__.py:162 __init__.py:559
 msgid "Copy"
@@ -101,7 +106,7 @@ msgstr "Generar"
 
 #: __init__.py:165 __init__.py:179 __init__.py:512 __init__.py:522
 msgid "View data breaches"
-msgstr ""
+msgstr "Ver vulneraciones de datos"
 
 #: __init__.py:280
 msgid "Unknown request received: {}"
@@ -109,7 +114,7 @@ msgstr "Se recibió una petición desconocida: {}"
 
 #: __init__.py:311
 msgid "What password should OTP be added to?"
-msgstr ""
+msgstr "¿A qué contraseña debe añadirse OTP?"
 
 #: __init__.py:327
 msgid "No valid OTP QR codes detected on your screen. Configuring manually…"
