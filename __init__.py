@@ -375,10 +375,10 @@ class Module(ModuleBase):
         if not name:
             self.q.put([Action.ask_input, _("What password do you want to change?"), "", "edit"])
         else:
+            current_data = self.password_store.get_decrypted_password(name).splitlines()
             if not value:
-                self.q.put([Action.ask_input_password, _("What should the value of {} be?").format(name), "", "edit_password {}".format(name)])
+                self.q.put([Action.ask_input, _("What should the value of {} be?").format(name), current_data[0], "edit_password {}".format(name)])
             else:
-                current_data = self.password_store.get_decrypted_password(name).splitlines()
                 current_data[0] = value
                 self._save_password(name, '\n'.join(current_data))
                 self.q.put([Action.set_selection, []])
