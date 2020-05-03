@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2020-04-05 00:37+CEST\n"
-"PO-Revision-Date: 2020-01-06 16:21+0000\n"
-"Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
+"PO-Revision-Date: 2020-04-13 09:11+0000\n"
+"Last-Translator: Jeannette L <j.lavoie@net-c.ca>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/pext/"
 "pext_module_pass/fr/>\n"
 "Language: fr\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 3.10\n"
+"X-Generator: Weblate 4.0-dev\n"
 "Generated-By: pygettext.py 1.5\n"
 
 #: __init__.py:72
@@ -40,6 +40,9 @@ msgid ""
 "passwords for these accounts as soon as possible. Do you want to view the "
 "accounts in question?"
 msgstr ""
+"{} compte(s) probablement impliqué(s) dans une fuite de données. Vous "
+"devriez changer les mots de passe pour ces comptes dès que possible. Voulez-"
+"vous voir les comptes en questions ?"
 
 #: __init__.py:104
 msgid "Failed to pull from Git: {}"
@@ -55,13 +58,15 @@ msgstr ""
 
 #: __init__.py:152
 msgid "DATA BREACH FOUND"
-msgstr ""
+msgstr "FUITE DE DONNÉES TROUVÉE"
 
 #: __init__.py:158
 msgid ""
 "<b>{}</b><br/>{}<br/><b>Last opened</b><br/>{}<br/><br/><b>Last modified</"
 "b><br/>{}"
 msgstr ""
+"<b>{}</b><br/>{}<br/><b>Dernière ouverture</b><br/>{}<br/><br/><b>Dernière "
+"modification</b><br/>{}"
 
 #: __init__.py:160 __init__.py:162
 msgid "Open"
@@ -69,15 +74,15 @@ msgstr "Ouvrir"
 
 #: __init__.py:160 __init__.py:162 __init__.py:547
 msgid "Edit password"
-msgstr ""
+msgstr "Modifier le mot de passe"
 
 #: __init__.py:160 __init__.py:162 __init__.py:551
 msgid "Edit other fields"
-msgstr ""
+msgstr "Modifier les autres champs"
 
 #: __init__.py:160 __init__.py:162 __init__.py:559
 msgid "Copy"
-msgstr "Copie"
+msgstr "Copier"
 
 #: __init__.py:160 __init__.py:162 __init__.py:563
 msgid "Rename"
@@ -97,11 +102,11 @@ msgstr "Créer"
 
 #: __init__.py:165 __init__.py:167 __init__.py:508
 msgid "Generate"
-msgstr "Produire"
+msgstr "Générer"
 
 #: __init__.py:165 __init__.py:179 __init__.py:512 __init__.py:522
 msgid "View data breaches"
-msgstr ""
+msgstr "Afficher les fuites de données"
 
 #: __init__.py:280
 msgid "Unknown request received: {}"
@@ -109,7 +114,7 @@ msgstr "Requête inconnue reçue : {}"
 
 #: __init__.py:311
 msgid "What password should OTP be added to?"
-msgstr ""
+msgstr "À quel mot de passe le code à usage unique devrait être ajouté ?"
 
 #: __init__.py:327
 msgid "No valid OTP QR codes detected on your screen. Configuring manually…"
@@ -129,19 +134,19 @@ msgstr ""
 
 #: __init__.py:346
 msgid "Which password do you want to copy?"
-msgstr ""
+msgstr "Quel mot de passe voulez-vous copier ?"
 
 #: __init__.py:348 __init__.py:360
 msgid "What should the copy of {} be named?"
-msgstr ""
+msgstr "Comment la copie de {} devrait être nommée ?"
 
 #: __init__.py:367
 msgid "What password do you want to change?"
-msgstr ""
+msgstr "Quel mot de passe voulez-vous changer ?"
 
 #: __init__.py:370 __init__.py:410
 msgid "What should the value of {} be?"
-msgstr ""
+msgstr "Quelle devrait être la valeur de {} ?"
 
 #: __init__.py:379
 msgid "What password do you want to change fields of?"
@@ -157,7 +162,7 @@ msgstr ""
 
 #: __init__.py:394
 msgid "How many characters should the password be?"
-msgstr ""
+msgstr "Combien de caractères devrait avoir le mot de passe ?"
 
 #: __init__.py:401
 msgid "Please provide a GPG key ID to initialize this directory with."
@@ -173,11 +178,11 @@ msgstr ""
 
 #: __init__.py:419
 msgid "Are you sure you want to remove {}?"
-msgstr ""
+msgstr "Êtes-vous sûr·e de vouloir enlever {} ?"
 
 #: __init__.py:435
 msgid "What password do you want to rename?"
-msgstr ""
+msgstr "Quel mot de passe voulez-vous renommer ?"
 
 #: __init__.py:437
 msgid "What should the new name of {} be?"
@@ -185,15 +190,16 @@ msgstr ""
 
 #: __init__.py:513
 msgid "Data breaches"
-msgstr ""
+msgstr "Fuites de données"
 
 #: __init__.py:517
 msgid "No breached accounts found"
-msgstr ""
+msgstr "Aucun compte compromis trouvé"
 
 #: __init__.py:521 __init__.py:590
+#, fuzzy
 msgid "Unexpected selection_made value: {}"
-msgstr "Sélection inattendue faite: {}"
+msgstr "Valeur selection_made inattendue : {}"
 
 #: generate_metadata.py:40
 msgid "Password Store"
@@ -213,7 +219,7 @@ msgstr ""
 
 #: generate_metadata.py:56 generate_metadata.py:57
 msgid "Yes"
-msgstr ""
+msgstr "Oui"
 
 #: generate_metadata.py:61
 msgid "Password of SSH key, if encrypted, for push/pull. Stored in plain text."

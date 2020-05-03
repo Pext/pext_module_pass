@@ -14,4 +14,4 @@ jobs:
         file_in_repo: breaches.json
 on:
   schedule:
-    - cron: '0 0 * * *'
+    - cron: '37 1 * * *'

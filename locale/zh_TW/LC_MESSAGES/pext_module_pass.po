@@ -37,7 +37,9 @@ msgid ""
 "Found {} account(s) likely involved in a data breach. You should change the "
 "passwords for these accounts as soon as possible. Do you want to view the "
 "accounts in question?"
-msgstr "找到 {} 帳號可能受資料洩漏影響。您應該儘快變更這些帳號的密碼。您想要檢視有問題的帳號嗎？"
+msgstr ""
+"找到 {} 帳號可能受資料洩漏影響。您應該儘快變更這些帳號的密碼。您想要檢視有問"
+"題的帳號嗎？"
 
 #: __init__.py:104
 msgid "Failed to pull from Git: {}"

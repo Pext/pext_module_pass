@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2020-04-05 00:37+CEST\n"
-"PO-Revision-Date: 2019-12-29 02:38+0000\n"
+"PO-Revision-Date: 2020-04-13 09:11+0000\n"
 "Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/pext/"
 "pext_module_pass/es/>\n"
@@ -15,12 +15,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.10\n"
+"X-Generator: Weblate 4.0-dev\n"
 "Generated-By: pygettext.py 1.5\n"
 
 #: __init__.py:72
 msgid "Failed to parse list of breaches: {}"
-msgstr ""
+msgstr "No se pudo procesar la lista de vulneraciones: {}"
 
 #: __init__.py:78
 msgid ""
@@ -40,28 +40,33 @@ msgid ""
 "passwords for these accounts as soon as possible. Do you want to view the "
 "accounts in question?"
 msgstr ""
+"Se encontraron {} cuentas que posiblemente hayan formado parte de una "
+"vulneración de seguridad. Cambie las contraseñas de estas cuentas tan pronto "
+"como pueda. ¿Quiere ver las cuentas en cuestión?"
 
 #: __init__.py:104
 msgid "Failed to pull from Git: {}"
-msgstr ""
+msgstr "No se pudo incorporar desde Git: {}"
 
 #: __init__.py:120
 msgid "Failed to push to Git: {}"
-msgstr ""
+msgstr "No se pudo enviar a Git: {}"
 
 #: __init__.py:134
 msgid "Info provided by HaveIBeenPwned"
-msgstr ""
+msgstr "Información provista por HaveIBeenPwned"
 
 #: __init__.py:152
 msgid "DATA BREACH FOUND"
-msgstr ""
+msgstr "SE ENCONTRÓ UNA VULNERACIÓN DE SEGURIDAD"
 
 #: __init__.py:158
 msgid ""
 "<b>{}</b><br/>{}<br/><b>Last opened</b><br/>{}<br/><br/><b>Last modified</"
 "b><br/>{}"
 msgstr ""
+"<b>{}</b><br/>{}<br/><b>Última apertura</b><br/>{}<br/><br/><b>Última "
+"modificación</b><br/>{}"
 
 #: __init__.py:160 __init__.py:162
 msgid "Open"
@@ -69,11 +74,11 @@ msgstr "Abrir"
 
 #: __init__.py:160 __init__.py:162 __init__.py:547
 msgid "Edit password"
-msgstr ""
+msgstr "Editar contraseña"
 
 #: __init__.py:160 __init__.py:162 __init__.py:551
 msgid "Edit other fields"
-msgstr ""
+msgstr "Editar otros campos"
 
 #: __init__.py:160 __init__.py:162 __init__.py:559
 msgid "Copy"
@@ -101,7 +106,7 @@ msgstr "Generar"
 
 #: __init__.py:165 __init__.py:179 __init__.py:512 __init__.py:522
 msgid "View data breaches"
-msgstr ""
+msgstr "Ver vulneraciones de datos"
 
 #: __init__.py:280
 msgid "Unknown request received: {}"
@@ -109,15 +114,16 @@ msgstr "Se recibió una petición desconocida: {}"
 
 #: __init__.py:311
 msgid "What password should OTP be added to?"
-msgstr ""
+msgstr "¿A qué contraseña debe añadirse OTP?"
 
 #: __init__.py:327
 msgid "No valid OTP QR codes detected on your screen. Configuring manually…"
 msgstr ""
+"No se detectó ningún código QR para OTP válido. Se configurará manualmente…"
 
 #: __init__.py:328
 msgid "Which OTP type should be used?"
-msgstr ""
+msgstr "¿Cuál tipo de OTP debe utilizarse?"
 
 #: __init__.py:330
 msgid "Detected and added {} valid OTP QR code(s) on your screen."
@@ -129,7 +135,7 @@ msgstr "¿Cuál es el secreto de OTP?"
 
 #: __init__.py:346
 msgid "Which password do you want to copy?"
-msgstr ""
+msgstr "¿Qué contraseña quiere copiar?"
 
 #: __init__.py:348 __init__.py:360
 msgid "What should the copy of {} be named?"
@@ -137,7 +143,7 @@ msgstr "¿Cómo debe denominarse la copia de {}?"
 
 #: __init__.py:367
 msgid "What password do you want to change?"
-msgstr ""
+msgstr "¿Qué contraseña quiere cambiar?"
 
 #: __init__.py:370 __init__.py:410
 msgid "What should the value of {} be?"
@@ -145,23 +151,25 @@ msgstr "¿Cuál debe ser el valor de {}?"
 
 #: __init__.py:379
 msgid "What password do you want to change fields of?"
-msgstr ""
+msgstr "¿De cuál contraseña quiere cambiar los campos?"
 
 #: __init__.py:384
 msgid "What should the value of the fields of {} be?"
-msgstr ""
+msgstr "¿Cuál debe ser el valor de los campos de {}?"
 
 #: __init__.py:392
 msgid "What name do you want to generate a random password for?"
-msgstr ""
+msgstr "¿A qué nombre quiere generar una contraseña aleatoria?"
 
 #: __init__.py:394
 msgid "How many characters should the password be?"
-msgstr ""
+msgstr "¿De cuántos caracteres debe ser la contraseña?"
 
 #: __init__.py:401
 msgid "Please provide a GPG key ID to initialize this directory with."
 msgstr ""
+"Brinde un identificador de clave de GPG con el cual inicializar este "
+"directorio."
 
 #: __init__.py:408
 msgid "What is the name of the password?"
@@ -169,7 +177,7 @@ msgstr "¿Cuál es el nombre de la contraseña?"
 
 #: __init__.py:417
 msgid "What password do you want to remove?"
-msgstr ""
+msgstr "¿Qué contraseña quiere quitar?"
 
 #: __init__.py:419
 msgid "Are you sure you want to remove {}?"
@@ -177,7 +185,7 @@ msgstr "¿Confirma que quiere eliminar {}?"
 
 #: __init__.py:435
 msgid "What password do you want to rename?"
-msgstr ""
+msgstr "¿A qué contraseña quiere cambiarle el nombre?"
 
 #: __init__.py:437
 msgid "What should the new name of {} be?"
@@ -185,11 +193,11 @@ msgstr "¿Cómo debe denominarse ahora {}?"
 
 #: __init__.py:513
 msgid "Data breaches"
-msgstr ""
+msgstr "Vulneraciones de datos"
 
 #: __init__.py:517
 msgid "No breached accounts found"
-msgstr ""
+msgstr "No se encontró ninguna cuenta vulnerada"
 
 #: __init__.py:521 __init__.py:590
 msgid "Unexpected selection_made value: {}"
@@ -209,7 +217,7 @@ msgstr "Directorio del Almacén de contraseñas"
 
 #: generate_metadata.py:55
 msgid "Automatically pull and push changes to/from Git"
-msgstr ""
+msgstr "Incorporar y enviar cambios automáticamente desde/hacia Git"
 
 #: generate_metadata.py:56 generate_metadata.py:57
 msgid "Yes"
