@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2020-04-05 00:37+CEST\n"
+"POT-Creation-Date: 2020-05-03 14:28+CEST\n"
 "PO-Revision-Date: 2020-04-15 18:11+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/pext/"
@@ -18,22 +18,22 @@ msgstr ""
 "X-Generator: Weblate 4.0-dev\n"
 "Generated-By: pygettext.py 1.5\n"
 
-#: __init__.py:72
+#: __init__.py:73
 msgid "Failed to parse list of breaches: {}"
 msgstr "Klarte ikke å tolke lekkasjelisten: {}"
 
-#: __init__.py:78
+#: __init__.py:79
 msgid ""
 "This module requires at least API version 0.11.1, you are using {}. Please "
 "update Pext."
 msgstr ""
 "Denne modulen krever minst API-versjon 0.11.1, du bruker {}. Oppgrader Pext."
 
-#: __init__.py:82 generate_metadata.py:56
+#: __init__.py:83 generate_metadata.py:56
 msgid "No"
 msgstr "Nei"
 
-#: __init__.py:89
+#: __init__.py:90
 msgid ""
 "Found {} account(s) likely involved in a data breach. You should change the "
 "passwords for these accounts as soon as possible. Do you want to view the "
@@ -43,23 +43,23 @@ msgstr ""
 "endre passord på disse kontoene så snart som mulig. Ønsker du å vise "
 "kontoene det dreier seg om?"
 
-#: __init__.py:104
+#: __init__.py:105
 msgid "Failed to pull from Git: {}"
 msgstr "Kunne ikke utføre innhenting fra Git: {}"
 
-#: __init__.py:120
+#: __init__.py:121
 msgid "Failed to push to Git: {}"
 msgstr "Klarte ikke å dytte til Git: {}"
 
-#: __init__.py:134
+#: __init__.py:143
 msgid "Info provided by HaveIBeenPwned"
 msgstr "Info fra HaveIBeenPwned"
 
-#: __init__.py:152
+#: __init__.py:161
 msgid "DATA BREACH FOUND"
 msgstr "Datalekkasje funnet"
 
-#: __init__.py:158
+#: __init__.py:167
 msgid ""
 "<b>{}</b><br/>{}<br/><b>Last opened</b><br/>{}<br/><br/><b>Last modified</"
 "b><br/>{}"
@@ -67,140 +67,144 @@ msgstr ""
 "<b>{}</b><br/>{}<br/><b>Sist åpnet</b><br/>{}<br/><br/><b>Sist endret</b><br/"
 ">{}"
 
-#: __init__.py:160 __init__.py:162
+#: __init__.py:169 __init__.py:171
 msgid "Open"
 msgstr "Åpne"
 
-#: __init__.py:160 __init__.py:162 __init__.py:547
+#: __init__.py:169 __init__.py:171 __init__.py:578
 msgid "Edit password"
 msgstr "Rediger passord"
 
-#: __init__.py:160 __init__.py:162 __init__.py:551
+#: __init__.py:169 __init__.py:171 __init__.py:582
+msgid "Generate new password"
+msgstr ""
+
+#: __init__.py:169 __init__.py:171 __init__.py:586
 msgid "Edit other fields"
 msgstr "Rediger andre felter"
 
-#: __init__.py:160 __init__.py:162 __init__.py:559
+#: __init__.py:169 __init__.py:171 __init__.py:594
 msgid "Copy"
 msgstr "Kopier"
 
-#: __init__.py:160 __init__.py:162 __init__.py:563
+#: __init__.py:169 __init__.py:171 __init__.py:598
 msgid "Rename"
 msgstr "Gi nytt navn"
 
-#: __init__.py:160 __init__.py:162 __init__.py:567
+#: __init__.py:169 __init__.py:171 __init__.py:602
 msgid "Remove"
 msgstr "Fjern"
 
-#: __init__.py:162 __init__.py:555
+#: __init__.py:171 __init__.py:590
 msgid "Add OTP"
 msgstr "Legg til OTP"
 
-#: __init__.py:165 __init__.py:167 __init__.py:504
+#: __init__.py:174 __init__.py:176 __init__.py:535
 msgid "Create"
 msgstr "Opprett"
 
-#: __init__.py:165 __init__.py:167 __init__.py:508
+#: __init__.py:174 __init__.py:176 __init__.py:539
 msgid "Generate"
 msgstr "Generer"
 
-#: __init__.py:165 __init__.py:179 __init__.py:512 __init__.py:522
+#: __init__.py:174 __init__.py:188 __init__.py:543 __init__.py:553
 msgid "View data breaches"
 msgstr "Vis datalekkasjer"
 
-#: __init__.py:280
+#: __init__.py:300
 msgid "Unknown request received: {}"
 msgstr "Ukjent forespørsel mottatt: {}"
 
-#: __init__.py:311
+#: __init__.py:331
 #, fuzzy
 msgid "What password should OTP be added to?"
 msgstr "Hvilket passord skal OTP legges til for?"
 
-#: __init__.py:327
+#: __init__.py:347
 msgid "No valid OTP QR codes detected on your screen. Configuring manually…"
 msgstr ""
 "Ingen gyldige OTP-QR-koder oppdaget på skjermen din. Setter opp manuelt…"
 
-#: __init__.py:328
+#: __init__.py:348
 msgid "Which OTP type should be used?"
 msgstr "Hvilken OTP-type skal anvendes?"
 
-#: __init__.py:330
+#: __init__.py:350
 #, fuzzy
 msgid "Detected and added {} valid OTP QR code(s) on your screen."
 msgstr "Oppdaget og la til {} gyldig(e) OTP-QR-kode(r) på skjermen din."
 
-#: __init__.py:333
+#: __init__.py:353
 msgid "What is the OTP secret?"
 msgstr "Hva er OTP-hemmeligheten?"
 
-#: __init__.py:346
+#: __init__.py:366
 msgid "Which password do you want to copy?"
 msgstr "Hvilken passord ønsker du å kopiere?"
 
-#: __init__.py:348 __init__.py:360
+#: __init__.py:368 __init__.py:380
 #, fuzzy
 msgid "What should the copy of {} be named?"
 msgstr "Angi nytt navn for kopien av {}."
 
-#: __init__.py:367
+#: __init__.py:387 __init__.py:399
 msgid "What password do you want to change?"
 msgstr "Hvilket passord ønsker du å endre?"
 
-#: __init__.py:370 __init__.py:410
+#: __init__.py:391 __init__.py:441
 msgid "What should the value of {} be?"
 msgstr "Hva skal verdien av {} være?"
 
-#: __init__.py:379
-msgid "What password do you want to change fields of?"
-msgstr "Hvordan felter tilhørende et passord ønsker du å endre?"
-
-#: __init__.py:384
-msgid "What should the value of the fields of {} be?"
-msgstr "Hva skal verdien av feltene av {} være?"
-
-#: __init__.py:392
-msgid "What name do you want to generate a random password for?"
-msgstr "Hvilket navn ønsker du å generere et tilfeldig passord for?"
-
-#: __init__.py:394
+#: __init__.py:401 __init__.py:425
 msgid "How many characters should the password be?"
 msgstr "Hvor mange tegn skal passordet være?"
 
-#: __init__.py:401
+#: __init__.py:410
+msgid "What password do you want to change fields of?"
+msgstr "Hvordan felter tilhørende et passord ønsker du å endre?"
+
+#: __init__.py:415
+msgid "What should the value of the fields of {} be?"
+msgstr "Hva skal verdien av feltene av {} være?"
+
+#: __init__.py:423
+msgid "What name do you want to generate a random password for?"
+msgstr "Hvilket navn ønsker du å generere et tilfeldig passord for?"
+
+#: __init__.py:432
 msgid "Please provide a GPG key ID to initialize this directory with."
 msgstr "Angi en GPG-nøkkel-ID å igangsette denne mappen med."
 
-#: __init__.py:408
+#: __init__.py:439
 msgid "What is the name of the password?"
 msgstr "Hva er passordets navn?"
 
-#: __init__.py:417
+#: __init__.py:448
 msgid "What password do you want to remove?"
 msgstr "Hvilket passord ønsker du å fjerne?"
 
-#: __init__.py:419
+#: __init__.py:450
 msgid "Are you sure you want to remove {}?"
 msgstr "Er du sikker på at du ønsker å fjerne {}?"
 
-#: __init__.py:435
+#: __init__.py:466
 msgid "What password do you want to rename?"
 msgstr "Hvilket passord ønsker du å gi et nytt navn?"
 
-#: __init__.py:437
+#: __init__.py:468
 #, fuzzy
 msgid "What should the new name of {} be?"
 msgstr "Angi nytt navn for {}."
 
-#: __init__.py:513
+#: __init__.py:544
 msgid "Data breaches"
 msgstr "Datalekkasjer"
 
-#: __init__.py:517
+#: __init__.py:548
 msgid "No breached accounts found"
 msgstr "Fant ikke noen lekkede kontoer"
 
-#: __init__.py:521 __init__.py:590
+#: __init__.py:552 __init__.py:625
 msgid "Unexpected selection_made value: {}"
 msgstr "Uventet selection_made-verdi: {}"
 

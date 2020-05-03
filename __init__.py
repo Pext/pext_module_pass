@@ -166,9 +166,9 @@ class Module(ModuleBase):
             self.q.put([Action.add_entry, entry])
             self.q.put([Action.set_entry_info, entry, _("<b>{}</b><br/>{}<br/><b>Last opened</b><br/>{}<br/><br/><b>Last modified</b><br/>{}").format(html.escape(entry), breach_info, format_datetime((last_opened).replace(microsecond=0), locale=self.settings['_locale']), format_datetime((last_modified).replace(microsecond=0), locale=self.settings['_locale']))])
             if self.settings['_api_version'] < [0, 12, 0]:
-                self.q.put([Action.set_entry_context, entry, [_("Open"), _("Edit password"), _("Edit other fields"), _("Copy"), _("Rename"), _("Remove")]])
+                self.q.put([Action.set_entry_context, entry, [_("Open"), _("Edit password"), _("Generate new password"), _("Edit other fields"), _("Copy"), _("Rename"), _("Remove")]])
             else:
-                self.q.put([Action.set_entry_context, entry, [_("Open"), _("Edit password"), _("Edit other fields"), _("Add OTP"), _("Copy"), _("Rename"), _("Remove")]])
+                self.q.put([Action.set_entry_context, entry, [_("Open"), _("Edit password"), _("Generate new password"), _("Edit other fields"), _("Add OTP"), _("Copy"), _("Rename"), _("Remove")]])
 
         if breached_account_count > 0:
             self.q.put([Action.set_base_context, [_("Create"), _("Generate"), _("View data breaches")]])
@@ -225,6 +225,17 @@ class Module(ModuleBase):
                     self._edit_password(name=" ".join(data[1:]), value=response)
                 else:
                     self._edit_password(name=" ".join(data[1:]))
+        elif data[0] == "generate_new_password":
+            if len(data) == 1:
+                if response is not None:
+                    self._generate_new_password(name=response)
+                else:
+                    self._generate_new_password()
+            else:
+                if response is not None:
+                    self._generate_new_password(name=" ".join(data[1:]), length=response if response else 15)
+                else:
+                    self._generate_new_password(name=" ".join(data[1:]))
         elif data[0] == "edit_other_fields":
             if len(data) == 1:
                 if response is not None:
@@ -382,6 +393,17 @@ class Module(ModuleBase):
                 current_data[0] = value
                 self._save_password(name, '\n'.join(current_data))
                 self.q.put([Action.set_selection, []])
+
+    def _generate_new_password(self, name=None, length=None):
+        if not name:
+            self.q.put([Action.ask_input, _("What password do you want to change?"), "", "generate_new_password"])
+        elif not length:
+            self.q.put([Action.ask_input, _("How many characters should the password be?"), "15", "generate_new_password {}".format(name)])
+        else:
+            current_data = self.password_store.get_decrypted_password(name).splitlines()
+            current_data[0] = self.password_store.generate_password(name, length=int(length))
+            self._save_password(name, '\n'.join(current_data))
+            self.q.put([Action.set_selection, []])
 
     def _edit_other_fields(self, name=None, value=None):
         if not name:
@@ -555,6 +577,10 @@ class Module(ModuleBase):
             if selection[-1]["type"] == SelectionType.entry:
                 if selection[-1]["context_option"] == _("Edit password"):
                     self._edit_password(name=selection[-1]["value"])
+                    self.q.put([Action.set_selection, []])
+                    return
+                elif selection[-1]["context_option"] == _("Generate new password"):
+                    self._generate_new_password(name=selection[-1]["value"])
                     self.q.put([Action.set_selection, []])
                     return
                 elif selection[-1]["context_option"] == _("Edit other fields"):

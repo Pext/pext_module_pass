@@ -22,7 +22,7 @@
     },
     {
       "default": "S\u00ed",
-      "description": "Automatically pull and push changes to/from Git",
+      "description": "Incorporar y enviar cambios autom\u00e1ticamente desde/hacia Git",
       "name": "use_git",
       "options": [
         "S\u00ed",

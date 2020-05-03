@@ -21,11 +21,11 @@
       "name": "directory"
     },
     {
-      "default": "Yes",
+      "default": "Oui",
       "description": "Automatically pull and push changes to/from Git",
       "name": "use_git",
       "options": [
-        "Yes",
+        "Oui",
         "Non"
       ]
     },
