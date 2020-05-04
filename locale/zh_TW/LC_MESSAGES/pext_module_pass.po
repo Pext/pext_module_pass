@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2020-05-03 14:28+CEST\n"
-"PO-Revision-Date: 2020-04-05 04:51+0000\n"
+"PO-Revision-Date: 2020-05-05 12:11+0000\n"
 "Last-Translator: Jeff Huang <s8321414@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <https://hosted.weblate.org/projects/"
 "pext/pext_module_pass/zh_Hant/>\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.0-dev\n"
+"X-Generator: Weblate 4.1-dev\n"
 "Generated-By: pygettext.py 1.5\n"
 
 #: __init__.py:73
@@ -74,7 +74,7 @@ msgstr "編輯密碼"
 
 #: __init__.py:169 __init__.py:171 __init__.py:582
 msgid "Generate new password"
-msgstr ""
+msgstr "生成新密碼"
 
 #: __init__.py:169 __init__.py:171 __init__.py:586
 msgid "Edit other fields"
