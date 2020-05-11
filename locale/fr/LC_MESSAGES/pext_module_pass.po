@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2020-05-11 09:35+CEST\n"
+"POT-Creation-Date: 2020-05-11 09:41+CEST\n"
 "PO-Revision-Date: 2020-04-13 09:11+0000\n"
 "Last-Translator: Jeannette L <j.lavoie@net-c.ca>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/pext/"
@@ -72,43 +72,43 @@ msgstr ""
 msgid "Open"
 msgstr "Ouvrir"
 
-#: __init__.py:169 __init__.py:171 __init__.py:581
+#: __init__.py:169 __init__.py:171 __init__.py:584
 msgid "Edit password"
 msgstr "Modifier le mot de passe"
 
-#: __init__.py:169 __init__.py:171 __init__.py:585
+#: __init__.py:169 __init__.py:171 __init__.py:588
 msgid "Generate new password"
 msgstr ""
 
-#: __init__.py:169 __init__.py:171 __init__.py:589
+#: __init__.py:169 __init__.py:171 __init__.py:592
 msgid "Edit other fields"
 msgstr "Modifier les autres champs"
 
-#: __init__.py:169 __init__.py:171 __init__.py:597
+#: __init__.py:169 __init__.py:171 __init__.py:600
 msgid "Copy"
 msgstr "Copier"
 
-#: __init__.py:169 __init__.py:171 __init__.py:601
+#: __init__.py:169 __init__.py:171 __init__.py:604
 msgid "Rename"
 msgstr "Renommer"
 
-#: __init__.py:169 __init__.py:171 __init__.py:605
+#: __init__.py:169 __init__.py:171 __init__.py:608
 msgid "Remove"
 msgstr "Retirer"
 
-#: __init__.py:171 __init__.py:593
+#: __init__.py:171 __init__.py:596
 msgid "Add OTP"
 msgstr "Ajouter OTP"
 
-#: __init__.py:174 __init__.py:176 __init__.py:538
+#: __init__.py:174 __init__.py:176 __init__.py:541
 msgid "Create"
 msgstr "Créer"
 
-#: __init__.py:174 __init__.py:176 __init__.py:542
+#: __init__.py:174 __init__.py:176 __init__.py:545
 msgid "Generate"
 msgstr "Générer"
 
-#: __init__.py:174 __init__.py:188 __init__.py:546 __init__.py:556
+#: __init__.py:174 __init__.py:188 __init__.py:549 __init__.py:559
 msgid "View data breaches"
 msgstr "Afficher les fuites de données"
 
@@ -120,91 +120,91 @@ msgstr "Requête inconnue reçue : {}"
 msgid "What password should OTP be added to?"
 msgstr "À quel mot de passe le code à usage unique devrait être ajouté ?"
 
-#: __init__.py:347
-msgid "Could not take a screenshot to detect OTP QR codes on the screen."
-msgstr ""
-
-#: __init__.py:350
-msgid "No valid OTP QR codes detected on your screen. Configuring manually…"
-msgstr ""
-
-#: __init__.py:351
-msgid "Which OTP type should be used?"
+#: __init__.py:338
+msgid "Could not take a screenshot to detect OTP QR codes on the screen: {}."
 msgstr ""
 
 #: __init__.py:353
-msgid "Detected and added {} valid OTP QR code(s) on your screen."
+msgid "No valid OTP QR codes detected on your screen. Configuring manually…"
+msgstr ""
+
+#: __init__.py:354
+msgid "Which OTP type should be used?"
 msgstr ""
 
 #: __init__.py:356
+msgid "Detected and added {} valid OTP QR code(s) on your screen."
+msgstr ""
+
+#: __init__.py:359
 msgid "What is the OTP secret?"
 msgstr ""
 
-#: __init__.py:369
+#: __init__.py:372
 msgid "Which password do you want to copy?"
 msgstr "Quel mot de passe voulez-vous copier ?"
 
-#: __init__.py:371 __init__.py:383
+#: __init__.py:374 __init__.py:386
 msgid "What should the copy of {} be named?"
 msgstr "Comment la copie de {} devrait être nommée ?"
 
-#: __init__.py:390 __init__.py:402
+#: __init__.py:393 __init__.py:405
 msgid "What password do you want to change?"
 msgstr "Quel mot de passe voulez-vous changer ?"
 
-#: __init__.py:394 __init__.py:444
+#: __init__.py:397 __init__.py:447
 msgid "What should the value of {} be?"
 msgstr "Quelle devrait être la valeur de {} ?"
 
-#: __init__.py:404 __init__.py:428
+#: __init__.py:407 __init__.py:431
 msgid "How many characters should the password be?"
 msgstr "Combien de caractères devrait avoir le mot de passe ?"
 
-#: __init__.py:413
+#: __init__.py:416
 msgid "What password do you want to change fields of?"
 msgstr ""
 
-#: __init__.py:418
+#: __init__.py:421
 msgid "What should the value of the fields of {} be?"
 msgstr ""
 
-#: __init__.py:426
+#: __init__.py:429
 msgid "What name do you want to generate a random password for?"
 msgstr ""
 
-#: __init__.py:435
+#: __init__.py:438
 msgid "Please provide a GPG key ID to initialize this directory with."
 msgstr ""
 
-#: __init__.py:442
+#: __init__.py:445
 msgid "What is the name of the password?"
 msgstr ""
 
-#: __init__.py:451
+#: __init__.py:454
 msgid "What password do you want to remove?"
 msgstr ""
 
-#: __init__.py:453
+#: __init__.py:456
 msgid "Are you sure you want to remove {}?"
 msgstr "Êtes-vous sûr·e de vouloir enlever {} ?"
 
-#: __init__.py:469
+#: __init__.py:472
 msgid "What password do you want to rename?"
 msgstr "Quel mot de passe voulez-vous renommer ?"
 
-#: __init__.py:471
+#: __init__.py:474
 msgid "What should the new name of {} be?"
 msgstr ""
 
-#: __init__.py:547
+#: __init__.py:550
 msgid "Data breaches"
 msgstr "Fuites de données"
 
-#: __init__.py:551
+#: __init__.py:554
 msgid "No breached accounts found"
 msgstr "Aucun compte compromis trouvé"
 
-#: __init__.py:555 __init__.py:628
+#: __init__.py:558 __init__.py:631
 #, fuzzy
 msgid "Unexpected selection_made value: {}"
 msgstr "Valeur selection_made inattendue : {}"
