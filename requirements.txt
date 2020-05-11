@@ -4,6 +4,6 @@ pypass==0.2.1
 Babel==2.8.0
 git+https://github.com/TheLastProject/pyotp@5d7bf9d10e3bdef8c93917c1f4f5ffcf799a671e#egg=pyotp
 Pillow==7.1.2
-pyscreenshot==1.0
+pyscreenshot==2.1
 zbar-py==1.0.4
 python-dateutil==2.8.1
