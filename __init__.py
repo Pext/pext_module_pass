@@ -330,18 +330,21 @@ class Module(ModuleBase):
         if not name:
             self.q.put([Action.ask_input, _("What password should OTP be added to?"), "", "add_otp"])
         elif not otp_type:
-            screenshot = pyscreenshot.grab(childprocess=False).convert('L')
-            qr_codes = zbar.Scanner().scan(screenshot)
             autodetected = 0
-            for qr_code in qr_codes:
-                qr_data = qr_code.data.decode()
-                try:
-                    pyotp.parse_uri(qr_data)
-                except ValueError:
-                    continue
+            try:
+                screenshot = pyscreenshot.grab(childprocess=False).convert('L')
+                qr_codes = zbar.Scanner().scan(screenshot)
+                for qr_code in qr_codes:
+                    qr_data = qr_code.data.decode()
+                    try:
+                        pyotp.parse_uri(qr_data)
+                    except ValueError:
+                        continue
 
-                autodetected += 1
-                self._append_password(name, qr_data)
+                    autodetected += 1
+                    self._append_password(name, qr_data)
+            except pyscreenshot.FailedBackendError:
+                self.q.put([Action.add_error, _("Could not take a screenshot to detect OTP QR codes on the screen.")])
 
             if autodetected == 0:
                 self.q.put([Action.add_error, _("No valid OTP QR codes detected on your screen. Configuring manually…")])
