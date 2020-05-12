@@ -22,6 +22,7 @@ import platform
 import os
 import shutil
 import threading
+import traceback
 from datetime import date, datetime
 from os.path import expanduser, normcase
 from time import sleep, time
@@ -495,10 +496,14 @@ class Module(ModuleBase):
                 except ValueError:
                     continue
 
-                if isinstance(otp, pyotp.TOTP):
-                    otp_code = otp.now()
-                else:
-                    otp_code = otp.generate_otp()
+                try:
+                    if isinstance(otp, pyotp.TOTP):
+                        otp_code = otp.now()
+                    else:
+                        otp_code = otp.generate_otp()
+                except Exception as e:
+                    otp_code = "Generation failed: {}".format(str(e))
+                    traceback.print_exc()
 
                 otp_description = "{} - {}".format(otp.issuer, otp.name) if otp.issuer else otp.name
                 result_lines[number] = "OTP ({}): {}".format(otp_description, otp_code)
