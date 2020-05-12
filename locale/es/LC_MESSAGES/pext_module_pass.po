@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2020-05-11 09:41+CEST\n"
+"POT-Creation-Date: 2020-05-12 19:00+CEST\n"
 "PO-Revision-Date: 2020-05-11 07:37+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/pext/"
