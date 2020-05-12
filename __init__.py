@@ -394,7 +394,7 @@ class Module(ModuleBase):
             self.q.put([Action.ask_input, _("What password do you want to change?"), "", "edit"])
         else:
             current_data = self.password_store.get_decrypted_password(name).splitlines()
-            if not value:
+            if value is None:
                 self.q.put([Action.ask_input, _("What should the value of {} be?").format(name), current_data[0], "edit_password {}".format(name)])
             else:
                 current_data[0] = value
@@ -418,7 +418,7 @@ class Module(ModuleBase):
         else:
             current_data = self.password_store.get_decrypted_password(name).splitlines()
             fields = '\n'.join(current_data[1:]) if len(current_data) > 1 else ''
-            if not value:
+            if value is None:
                 self.q.put([Action.ask_input_multi_line, _("What should the value of the fields of {} be?").format(name), fields, "edit_other_fields {}".format(name)])
             else:
                 data = "{}\n{}".format(current_data[0], value)
