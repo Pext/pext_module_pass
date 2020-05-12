@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2020-05-11 09:41+CEST\n"
-"PO-Revision-Date: 2020-05-05 12:11+0000\n"
+"PO-Revision-Date: 2020-05-12 17:07+0000\n"
 "Last-Translator: Heimen Stoffels <vistausss@outlook.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/pext/"
 "pext_module_pass/nl/>\n"
@@ -123,6 +123,7 @@ msgstr "Aan welk wachtwoord wil je een OTP toevoegen?"
 #: __init__.py:338
 msgid "Could not take a screenshot to detect OTP QR codes on the screen: {}."
 msgstr ""
+"Er kan geen schermfoto worden gemaakt om OTP QR-codes te detecteren: {}."
 
 #: __init__.py:353
 msgid "No valid OTP QR codes detected on your screen. Configuring manually…"
