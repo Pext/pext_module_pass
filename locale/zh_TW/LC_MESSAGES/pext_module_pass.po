@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2020-05-11 09:41+CEST\n"
-"PO-Revision-Date: 2020-05-05 12:11+0000\n"
+"PO-Revision-Date: 2020-05-12 17:07+0000\n"
 "Last-Translator: Jeff Huang <s8321414@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <https://hosted.weblate.org/projects/"
 "pext/pext_module_pass/zh_Hant/>\n"
@@ -118,7 +118,7 @@ msgstr "OTP 應該新增什麼密碼？"
 
 #: __init__.py:338
 msgid "Could not take a screenshot to detect OTP QR codes on the screen: {}."
-msgstr ""
+msgstr "無法截取螢幕截圖來偵測畫面上的 OTP QR code：{}。"
 
 #: __init__.py:353
 msgid "No valid OTP QR codes detected on your screen. Configuring manually…"
