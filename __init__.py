@@ -196,7 +196,7 @@ class Module(ModuleBase):
             else:
                 if response is not None:
                     if data[-1] in ["TOTP", "HOTP"]:
-                        self._add_otp(name=" ".join(data[1:-1]), otp_type=data[-1], secret=response)
+                        self._add_otp(name=" ".join(data[1:-1]), otp_type=data[-1], secret=response.replace(" ", ""))
                     else:
                         self._add_otp(name=" ".join(data[1:]), otp_type=response)
                 else:
