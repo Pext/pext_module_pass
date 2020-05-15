@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2020-05-12 19:00+CEST\n"
-"PO-Revision-Date: 2020-05-04 01:40+0000\n"
+"PO-Revision-Date: 2020-05-15 20:41+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/pext/"
 "pext_module_pass/nb_NO/>\n"
@@ -123,6 +123,8 @@ msgstr "Hvilket passord skal OTP legges til for?"
 #: __init__.py:339
 msgid "Could not take a screenshot to detect OTP QR codes on the screen: {}."
 msgstr ""
+"Kunne ikke utføre skjermavbildning for oppdaging av engangspassord i QR-kode "
+"på skjermen: {}."
 
 #: __init__.py:354
 msgid "No valid OTP QR codes detected on your screen. Configuring manually…"
