@@ -3,6 +3,7 @@
   "bugtracker_type": "github",
   "description": "Allows Pext to do password management through pass",
   "developer": "Sylvia van Os",
+  "git_branch_stable": "stable",
   "git_urls": [
     "https://github.com/Pext/pext_module_pass"
   ],
