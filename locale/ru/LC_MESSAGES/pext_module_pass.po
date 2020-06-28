@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2020-05-12 19:00+CEST\n"
-"PO-Revision-Date: 2019-10-29 17:53+0000\n"
-"Last-Translator: Saphire Lattice <lattice@saphi.re>\n"
+"PO-Revision-Date: 2020-06-29 15:41+0000\n"
+"Last-Translator: Peter J. Mello <admin@petermello.net>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/pext/"
 "pext_module_pass/ru/>\n"
 "Language: ru\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 4.2-dev\n"
 "Generated-By: pygettext.py 1.5\n"
 
 #: __init__.py:74
@@ -134,7 +134,7 @@ msgstr ""
 
 #: __init__.py:360
 msgid "What is the OTP secret?"
-msgstr "Секретный ключ OTP"
+msgstr "Секретный ключ OTP?"
 
 #: __init__.py:373
 msgid "Which password do you want to copy?"
@@ -142,7 +142,7 @@ msgstr ""
 
 #: __init__.py:375 __init__.py:387
 msgid "What should the copy of {} be named?"
-msgstr "Новое имя для копии {}"
+msgstr "Новое имя для копии {}?"
 
 #: __init__.py:394 __init__.py:406
 msgid "What password do you want to change?"
@@ -150,7 +150,7 @@ msgstr ""
 
 #: __init__.py:398 __init__.py:448
 msgid "What should the value of {} be?"
-msgstr "Значение {}"
+msgstr "Значение {}?"
 
 #: __init__.py:408 __init__.py:432
 msgid "How many characters should the password be?"
@@ -174,7 +174,7 @@ msgstr ""
 
 #: __init__.py:446
 msgid "What is the name of the password?"
-msgstr "Имя пароля"
+msgstr "Имя пароля?"
 
 #: __init__.py:455
 msgid "What password do you want to remove?"
@@ -190,7 +190,7 @@ msgstr ""
 
 #: __init__.py:475
 msgid "What should the new name of {} be?"
-msgstr "Новое имя для пароля {}"
+msgstr "Новое имя для пароля {}?"
 
 #: __init__.py:555
 msgid "Data breaches"
