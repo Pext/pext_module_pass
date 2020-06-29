@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2020-05-12 19:00+CEST\n"
-"PO-Revision-Date: 2020-05-12 17:07+0000\n"
-"Last-Translator: Heimen Stoffels <vistausss@outlook.com>\n"
+"PO-Revision-Date: 2020-06-29 15:41+0000\n"
+"Last-Translator: Peter J. Mello <admin@petermello.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/pext/"
 "pext_module_pass/nl/>\n"
 "Language: nl\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.1-dev\n"
+"X-Generator: Weblate 4.2-dev\n"
 "Generated-By: pygettext.py 1.5\n"
 
 #: __init__.py:74
@@ -180,7 +180,7 @@ msgstr "Geef een GPG-sleutel-id op om de map mee te initialiseren."
 
 #: __init__.py:446
 msgid "What is the name of the password?"
-msgstr "Voer de naam in van het wachtwoord."
+msgstr "Voer de naam in van het wachtwoord?"
 
 #: __init__.py:455
 msgid "What password do you want to remove?"

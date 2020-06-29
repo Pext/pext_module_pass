@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2020-05-12 19:00+CEST\n"
-"PO-Revision-Date: 2018-07-01 17:02+0000\n"
-"Last-Translator: Konrad <ewentualxpl@gmail.com>\n"
+"PO-Revision-Date: 2020-06-29 15:41+0000\n"
+"Last-Translator: Peter J. Mello <admin@petermello.net>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/pext/"
 "pext_module_pass/pl/>\n"
 "Language: pl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 3.1-dev\n"
+"X-Generator: Weblate 4.2-dev\n"
 "Generated-By: pygettext.py 1.5\n"
 
 #: __init__.py:74
@@ -203,8 +203,9 @@ msgid "Unexpected selection_made value: {}"
 msgstr "Niespodziewana wartość selection_made: {}"
 
 #: generate_metadata.py:40
+#, fuzzy
 msgid "Password Store"
-msgstr "Password Store"
+msgstr "Sklep z hasłami"
 
 #: generate_metadata.py:42
 msgid "Allows Pext to do password management through pass"

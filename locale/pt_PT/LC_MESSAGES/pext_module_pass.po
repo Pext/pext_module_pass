@@ -6,28 +6,33 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2020-05-12 19:00+CEST\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2020-06-29 15:41+0000\n"
+"Last-Translator: Peter J. Mello <admin@petermello.net>\n"
+"Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
+"pext/pext_module_pass/pt_PT/>\n"
 "Language: pt_PT\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 4.2-dev\n"
 "Generated-By: pygettext.py 1.5\n"
 
 #: __init__.py:74
 msgid "Failed to parse list of breaches: {}"
-msgstr ""
+msgstr "Falha em analisar a lista de violações de segurança: {}"
 
 #: __init__.py:80
 msgid ""
 "This module requires at least API version 0.11.1, you are using {}. Please "
 "update Pext."
 msgstr ""
+"Este módulo necessita pelo menos da versão API 0.11.1; está a utilizar {}. "
+"Por favor, actualizar o Pext."
 
 #: __init__.py:84 generate_metadata.py:56
 msgid "No"
-msgstr ""
+msgstr "Não"
 
 #: __init__.py:91
 msgid ""
@@ -35,84 +40,91 @@ msgid ""
 "passwords for these accounts as soon as possible. Do you want to view the "
 "accounts in question?"
 msgstr ""
+"Encontrei {} conta(s) provavelmente implicada(s) numa violação de dados. "
+"Deverá alterar as palavras-passe destas contas o mais rapidamente possível. "
+"Quer ver estas contas?"
 
 #: __init__.py:106
 msgid "Failed to pull from Git: {}"
-msgstr ""
+msgstr "Falha em tirar de Git: {}"
 
 #: __init__.py:122
 msgid "Failed to push to Git: {}"
-msgstr ""
+msgstr "Falha em mandar a Git: {}"
 
 #: __init__.py:144
 msgid "Info provided by HaveIBeenPwned"
-msgstr ""
+msgstr "Informação fornecida pela HaveIBeenPwned"
 
 #: __init__.py:162
 msgid "DATA BREACH FOUND"
-msgstr ""
+msgstr "VIOLAÇÃO DE DADOS DETECTADA"
 
 #: __init__.py:168
 msgid ""
 "<b>{}</b><br/>{}<br/><b>Last opened</b><br/>{}<br/><br/><b>Last modified</"
 "b><br/>{}"
 msgstr ""
+"<b>{}</b><br/>{}<br/><b>Última sessão</b><br/>{}<br/><br/><b>Última "
+"modificação</b><br/>{}"
 
 #: __init__.py:170 __init__.py:172
 msgid "Open"
-msgstr ""
+msgstr "Abrir"
 
 #: __init__.py:170 __init__.py:172 __init__.py:589
 msgid "Edit password"
-msgstr ""
+msgstr "Editar palavra-passe"
 
 #: __init__.py:170 __init__.py:172 __init__.py:593
 msgid "Generate new password"
-msgstr ""
+msgstr "Gerar uma nova palavra-passe"
 
 #: __init__.py:170 __init__.py:172 __init__.py:597
 msgid "Edit other fields"
-msgstr ""
+msgstr "Editar outros campos"
 
 #: __init__.py:170 __init__.py:172 __init__.py:605
 msgid "Copy"
-msgstr ""
+msgstr "Copiar"
 
 #: __init__.py:170 __init__.py:172 __init__.py:609
 msgid "Rename"
-msgstr ""
+msgstr "Alterar nome"
 
 #: __init__.py:170 __init__.py:172 __init__.py:613
 msgid "Remove"
-msgstr ""
+msgstr "Remover"
 
 #: __init__.py:172 __init__.py:601
 msgid "Add OTP"
-msgstr ""
+msgstr "Adicionar OTP"
 
 #: __init__.py:175 __init__.py:177 __init__.py:546
 msgid "Create"
-msgstr ""
+msgstr "Criar"
 
 #: __init__.py:175 __init__.py:177 __init__.py:550
 msgid "Generate"
-msgstr ""
+msgstr "Gerar"
 
 #: __init__.py:175 __init__.py:189 __init__.py:554 __init__.py:564
 msgid "View data breaches"
-msgstr ""
+msgstr "Ver violações de dados"
 
 #: __init__.py:301
 msgid "Unknown request received: {}"
-msgstr ""
+msgstr "Recebido pedido desconhecido: {}"
 
 #: __init__.py:332
 msgid "What password should OTP be added to?"
-msgstr ""
+msgstr "A que palavra-passe deve ser adicionado o OTP?"
 
 #: __init__.py:339
 msgid "Could not take a screenshot to detect OTP QR codes on the screen: {}."
 msgstr ""
+"Não foi possível obter uma captura de ecrã para detectar códigos QR de OTP: "
+"{}."
 
 #: __init__.py:354
 msgid "No valid OTP QR codes detected on your screen. Configuring manually…"
@@ -196,7 +208,7 @@ msgstr ""
 
 #: __init__.py:563 __init__.py:636
 msgid "Unexpected selection_made value: {}"
-msgstr ""
+msgstr "Valor inesperado de selection_made: {}"
 
 #: generate_metadata.py:40
 msgid "Password Store"

@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2020-05-12 19:00+CEST\n"
-"PO-Revision-Date: 2020-05-15 20:41+0000\n"
-"Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
+"PO-Revision-Date: 2020-06-29 15:41+0000\n"
+"Last-Translator: Peter J. Mello <admin@petermello.net>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/pext/"
 "pext_module_pass/nb_NO/>\n"
 "Language: nb_NO\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.1-dev\n"
+"X-Generator: Weblate 4.2-dev\n"
 "Generated-By: pygettext.py 1.5\n"
 
 #: __init__.py:74
@@ -149,9 +149,8 @@ msgid "Which password do you want to copy?"
 msgstr "Hvilken passord ønsker du å kopiere?"
 
 #: __init__.py:375 __init__.py:387
-#, fuzzy
 msgid "What should the copy of {} be named?"
-msgstr "Angi nytt navn for kopien av {}."
+msgstr "Angi nytt navn for kopien av {}?"
 
 #: __init__.py:394 __init__.py:406
 msgid "What password do you want to change?"
@@ -198,9 +197,8 @@ msgid "What password do you want to rename?"
 msgstr "Hvilket passord ønsker du å gi et nytt navn?"
 
 #: __init__.py:475
-#, fuzzy
 msgid "What should the new name of {} be?"
-msgstr "Angi nytt navn for {}."
+msgstr "Angi nytt navn for {}?"
 
 #: __init__.py:555
 msgid "Data breaches"
