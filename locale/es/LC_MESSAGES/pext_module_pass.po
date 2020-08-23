@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2020-05-12 19:00+CEST\n"
-"PO-Revision-Date: 2020-06-29 15:41+0000\n"
-"Last-Translator: Peter J. Mello <admin@petermello.net>\n"
+"PO-Revision-Date: 2020-08-30 19:37+0000\n"
+"Last-Translator: Scoopity Whoop <Scoo0p@yandex.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/pext/"
 "pext_module_pass/es/>\n"
 "Language: es\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.2-dev\n"
+"X-Generator: Weblate 4.2.1-dev\n"
 "Generated-By: pygettext.py 1.5\n"
 
 #: __init__.py:74
@@ -123,6 +123,8 @@ msgstr "¿A qué contraseña debe añadirse OTP?"
 #: __init__.py:339
 msgid "Could not take a screenshot to detect OTP QR codes on the screen: {}."
 msgstr ""
+"No se pudo hacer una captura de pantalla para detectar los códigos QR OTP en "
+"la pantalla: {}."
 
 #: __init__.py:354
 msgid "No valid OTP QR codes detected on your screen. Configuring manually…"
