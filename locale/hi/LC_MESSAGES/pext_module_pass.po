@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2020-05-12 19:00+CEST\n"
-"PO-Revision-Date: 2020-01-20 12:21+0000\n"
+"PO-Revision-Date: 2020-08-23 01:43+0000\n"
 "Last-Translator: Aayush Gupta <aayushgupta219@gmail.com>\n"
 "Language-Team: Hindi <https://hosted.weblate.org/projects/pext/"
 "pext_module_pass/hi/>\n"
@@ -15,12 +15,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 3.11-dev\n"
+"X-Generator: Weblate 4.2.1-dev\n"
 "Generated-By: pygettext.py 1.5\n"
 
 #: __init__.py:74
 msgid "Failed to parse list of breaches: {}"
-msgstr ""
+msgstr "उल्लंघनों की सूची पार्स करने में विफल: {}"
 
 #: __init__.py:80
 msgid ""
@@ -40,22 +40,25 @@ msgid ""
 "passwords for these accounts as soon as possible. Do you want to view the "
 "accounts in question?"
 msgstr ""
+"पाया गया कि {} खाते डेटा ब्रीच में शामिल होने की संभावना है। आपको इन खातों के"
+" लिए जल्द से जल्द पासवर्ड बदलना चाहिए। क्या आप विचाराधीन खातों को देखना चाहते"
+" हैं?"
 
 #: __init__.py:106
 msgid "Failed to pull from Git: {}"
-msgstr ""
+msgstr "Git से खींचने में विफल: {}"
 
 #: __init__.py:122
 msgid "Failed to push to Git: {}"
-msgstr ""
+msgstr "Git पर धकेलने में विफल: {}"
 
 #: __init__.py:144
 msgid "Info provided by HaveIBeenPwned"
-msgstr ""
+msgstr "HaveIBeenPwned द्वारा दी गई जानकारी"
 
 #: __init__.py:162
 msgid "DATA BREACH FOUND"
-msgstr ""
+msgstr "डेटा ब्रेक मिला"
 
 #: __init__.py:168
 msgid ""
@@ -69,15 +72,15 @@ msgstr "खोले"
 
 #: __init__.py:170 __init__.py:172 __init__.py:589
 msgid "Edit password"
-msgstr ""
+msgstr "पासवर्ड संपादित करें"
 
 #: __init__.py:170 __init__.py:172 __init__.py:593
 msgid "Generate new password"
-msgstr ""
+msgstr "नया पासवर्ड जनरेट करें"
 
 #: __init__.py:170 __init__.py:172 __init__.py:597
 msgid "Edit other fields"
-msgstr ""
+msgstr "अन्य क्षेत्रों को संपादित करें"
 
 #: __init__.py:170 __init__.py:172 __init__.py:605
 msgid "Copy"
@@ -105,7 +108,7 @@ msgstr "उत्पन्न"
 
 #: __init__.py:175 __init__.py:189 __init__.py:554 __init__.py:564
 msgid "View data breaches"
-msgstr ""
+msgstr "डेटा उल्लंघनों को देखें"
 
 #: __init__.py:301
 msgid "Unknown request received: {}"
@@ -113,19 +116,22 @@ msgstr "अज्ञात अनुरोध प्राप्त हुआ: {
 
 #: __init__.py:332
 msgid "What password should OTP be added to?"
-msgstr ""
+msgstr "OTP किस पासवर्ड से जोड़ा जाना चाहिए?"
 
 #: __init__.py:339
 msgid "Could not take a screenshot to detect OTP QR codes on the screen: {}."
 msgstr ""
+"स्क्रीन पर OTP QR कोड का पता लगाने के लिए स्क्रीनशॉट नहीं ले सकता था: {}।"
 
 #: __init__.py:354
 msgid "No valid OTP QR codes detected on your screen. Configuring manually…"
 msgstr ""
+"आपकी स्क्रीन पर कोई मान्य OTP QR कोड नहीं मिला। मैन्युअल रूप से कॉन्फ़िगर "
+"किया जा रहा है …"
 
 #: __init__.py:355
 msgid "Which OTP type should be used?"
-msgstr ""
+msgstr "किस OTP प्रकार का उपयोग किया जाना चाहिए?"
 
 #: __init__.py:357
 msgid "Detected and added {} valid OTP QR code(s) on your screen."
@@ -137,7 +143,7 @@ msgstr "OTP रहस्य क्या है?"
 
 #: __init__.py:373
 msgid "Which password do you want to copy?"
-msgstr ""
+msgstr "आप कौन सा पासवर्ड कॉपी करना चाहते हैं?"
 
 #: __init__.py:375 __init__.py:387
 msgid "What should the copy of {} be named?"
@@ -145,7 +151,7 @@ msgstr "{} की कॉपी का क्या नाम होना चा
 
 #: __init__.py:394 __init__.py:406
 msgid "What password do you want to change?"
-msgstr ""
+msgstr "आप किस पासवर्ड को बदलना चाहते हैं?"
 
 #: __init__.py:398 __init__.py:448
 msgid "What should the value of {} be?"
@@ -153,23 +159,23 @@ msgstr "{} का क्या मान होना चाहिए?"
 
 #: __init__.py:408 __init__.py:432
 msgid "How many characters should the password be?"
-msgstr ""
+msgstr "पासवर्ड कितने वर्ण का होना चाहिए?"
 
 #: __init__.py:417
 msgid "What password do you want to change fields of?"
-msgstr ""
+msgstr "आप किस क्षेत्र के पासवर्ड बदलना चाहते हैं?"
 
 #: __init__.py:422
 msgid "What should the value of the fields of {} be?"
-msgstr ""
+msgstr "{} के क्षेत्रों का मूल्य क्या होना चाहिए?"
 
 #: __init__.py:430
 msgid "What name do you want to generate a random password for?"
-msgstr ""
+msgstr "आप किस नाम के लिए एक यादृच्छिक पासवर्ड उत्पन्न करना चाहते हैं?"
 
 #: __init__.py:439
 msgid "Please provide a GPG key ID to initialize this directory with."
-msgstr ""
+msgstr "कृपया इस निर्देशिका को आरंभ करने के लिए एक GPG कुंजी ID प्रदान करें।"
 
 #: __init__.py:446
 msgid "What is the name of the password?"
@@ -177,7 +183,7 @@ msgstr "पासवर्ड का नाम क्या है?"
 
 #: __init__.py:455
 msgid "What password do you want to remove?"
-msgstr ""
+msgstr "आप कौन कौन से पासवर्ड निकालना चाहते हैं?"
 
 #: __init__.py:457
 msgid "Are you sure you want to remove {}?"
@@ -185,7 +191,7 @@ msgstr "क्या आप सचमुच हटाना चाहते ह�
 
 #: __init__.py:473
 msgid "What password do you want to rename?"
-msgstr ""
+msgstr "आप कौन कौन से पासवर्ड का नाम बदलना चाहते हैं?"
 
 #: __init__.py:475
 msgid "What should the new name of {} be?"
@@ -193,11 +199,11 @@ msgstr "{} का नया नाम क्या होना चाहिए?
 
 #: __init__.py:555
 msgid "Data breaches"
-msgstr ""
+msgstr "डेटा ब्रीच"
 
 #: __init__.py:559
 msgid "No breached accounts found"
-msgstr ""
+msgstr "कोई उल्लंघनों वाला खाता नहीं मिला"
 
 #: __init__.py:563 __init__.py:636
 msgid "Unexpected selection_made value: {}"
@@ -217,7 +223,7 @@ msgstr "पासवर्ड संग्रह निर्देशिका"
 
 #: generate_metadata.py:55
 msgid "Automatically pull and push changes to/from Git"
-msgstr ""
+msgstr "Git से / के लिए स्वचालित रूप से परिवर्तन और पुश करें"
 
 #: generate_metadata.py:56 generate_metadata.py:57
 msgid "Yes"
