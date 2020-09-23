@@ -1,0 +1,216 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR ORGANIZATION
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2020-05-12 19:00+CEST\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: pt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.5\n"
+
+#: __init__.py:74
+msgid "Failed to parse list of breaches: {}"
+msgstr ""
+
+#: __init__.py:80
+msgid "This module requires at least API version 0.11.1, you are using {}. Please update Pext."
+msgstr ""
+
+#: __init__.py:84 generate_metadata.py:56
+msgid "No"
+msgstr ""
+
+#: __init__.py:91
+msgid "Found {} account(s) likely involved in a data breach. You should change the passwords for these accounts as soon as possible. Do you want to view the accounts in question?"
+msgstr ""
+
+#: __init__.py:106
+msgid "Failed to pull from Git: {}"
+msgstr ""
+
+#: __init__.py:122
+msgid "Failed to push to Git: {}"
+msgstr ""
+
+#: __init__.py:144
+msgid "Info provided by HaveIBeenPwned"
+msgstr ""
+
+#: __init__.py:162
+msgid "DATA BREACH FOUND"
+msgstr ""
+
+#: __init__.py:168
+msgid "<b>{}</b><br/>{}<br/><b>Last opened</b><br/>{}<br/><br/><b>Last modified</b><br/>{}"
+msgstr ""
+
+#: __init__.py:170 __init__.py:172
+msgid "Open"
+msgstr ""
+
+#: __init__.py:170 __init__.py:172 __init__.py:589
+msgid "Edit password"
+msgstr ""
+
+#: __init__.py:170 __init__.py:172 __init__.py:593
+msgid "Generate new password"
+msgstr ""
+
+#: __init__.py:170 __init__.py:172 __init__.py:597
+msgid "Edit other fields"
+msgstr ""
+
+#: __init__.py:170 __init__.py:172 __init__.py:605
+msgid "Copy"
+msgstr ""
+
+#: __init__.py:170 __init__.py:172 __init__.py:609
+msgid "Rename"
+msgstr ""
+
+#: __init__.py:170 __init__.py:172 __init__.py:613
+msgid "Remove"
+msgstr ""
+
+#: __init__.py:172 __init__.py:601
+msgid "Add OTP"
+msgstr ""
+
+#: __init__.py:175 __init__.py:177 __init__.py:546
+msgid "Create"
+msgstr ""
+
+#: __init__.py:175 __init__.py:177 __init__.py:550
+msgid "Generate"
+msgstr ""
+
+#: __init__.py:175 __init__.py:189 __init__.py:554 __init__.py:564
+msgid "View data breaches"
+msgstr ""
+
+#: __init__.py:301
+msgid "Unknown request received: {}"
+msgstr ""
+
+#: __init__.py:332
+msgid "What password should OTP be added to?"
+msgstr ""
+
+#: __init__.py:339
+msgid "Could not take a screenshot to detect OTP QR codes on the screen: {}."
+msgstr ""
+
+#: __init__.py:354
+msgid "No valid OTP QR codes detected on your screen. Configuring manually\342\200\246"
+msgstr ""
+
+#: __init__.py:355
+msgid "Which OTP type should be used?"
+msgstr ""
+
+#: __init__.py:357
+msgid "Detected and added {} valid OTP QR code(s) on your screen."
+msgstr ""
+
+#: __init__.py:360
+msgid "What is the OTP secret?"
+msgstr ""
+
+#: __init__.py:373
+msgid "Which password do you want to copy?"
+msgstr ""
+
+#: __init__.py:375 __init__.py:387
+msgid "What should the copy of {} be named?"
+msgstr ""
+
+#: __init__.py:394 __init__.py:406
+msgid "What password do you want to change?"
+msgstr ""
+
+#: __init__.py:398 __init__.py:448
+msgid "What should the value of {} be?"
+msgstr ""
+
+#: __init__.py:408 __init__.py:432
+msgid "How many characters should the password be?"
+msgstr ""
+
+#: __init__.py:417
+msgid "What password do you want to change fields of?"
+msgstr ""
+
+#: __init__.py:422
+msgid "What should the value of the fields of {} be?"
+msgstr ""
+
+#: __init__.py:430
+msgid "What name do you want to generate a random password for?"
+msgstr ""
+
+#: __init__.py:439
+msgid "Please provide a GPG key ID to initialize this directory with."
+msgstr ""
+
+#: __init__.py:446
+msgid "What is the name of the password?"
+msgstr ""
+
+#: __init__.py:455
+msgid "What password do you want to remove?"
+msgstr ""
+
+#: __init__.py:457
+msgid "Are you sure you want to remove {}?"
+msgstr ""
+
+#: __init__.py:473
+msgid "What password do you want to rename?"
+msgstr ""
+
+#: __init__.py:475
+msgid "What should the new name of {} be?"
+msgstr ""
+
+#: __init__.py:555
+msgid "Data breaches"
+msgstr ""
+
+#: __init__.py:559
+msgid "No breached accounts found"
+msgstr ""
+
+#: __init__.py:563 __init__.py:636
+msgid "Unexpected selection_made value: {}"
+msgstr ""
+
+#: generate_metadata.py:40
+msgid "Password Store"
+msgstr ""
+
+#: generate_metadata.py:42
+msgid "Allows Pext to do password management through pass"
+msgstr ""
+
+#: generate_metadata.py:50
+msgid "Password Store directory"
+msgstr ""
+
+#: generate_metadata.py:55
+msgid "Automatically pull and push changes to/from Git"
+msgstr ""
+
+#: generate_metadata.py:56 generate_metadata.py:57
+msgid "Yes"
+msgstr ""
+
+#: generate_metadata.py:61
+msgid "Password of SSH key, if encrypted, for push/pull. Stored in plain text."
+msgstr ""
