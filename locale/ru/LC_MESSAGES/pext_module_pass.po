@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2020-05-12 19:00+CEST\n"
-"PO-Revision-Date: 2020-06-29 15:41+0000\n"
-"Last-Translator: Peter J. Mello <admin@petermello.net>\n"
+"PO-Revision-Date: 2020-09-28 19:41+0000\n"
+"Last-Translator: Artem <KovalevArtem.ru@gmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/pext/"
 "pext_module_pass/ru/>\n"
 "Language: ru\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.2-dev\n"
+"X-Generator: Weblate 4.3-dev\n"
 "Generated-By: pygettext.py 1.5\n"
 
 #: __init__.py:74
@@ -82,7 +82,7 @@ msgstr ""
 
 #: __init__.py:170 __init__.py:172 __init__.py:605
 msgid "Copy"
-msgstr "Скопировать"
+msgstr "Копировать"
 
 #: __init__.py:170 __init__.py:172 __init__.py:609
 msgid "Rename"
