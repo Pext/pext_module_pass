@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2020-05-12 19:00+CEST\n"
-"PO-Revision-Date: 2020-04-13 09:11+0000\n"
-"Last-Translator: Jeannette L <j.lavoie@net-c.ca>\n"
+"PO-Revision-Date: 2020-11-14 00:28+0000\n"
+"Last-Translator: J. Lavoie <j.lavoie@net-c.ca>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/pext/"
 "pext_module_pass/fr/>\n"
 "Language: fr\n"
@@ -15,12 +15,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.0-dev\n"
+"X-Generator: Weblate 4.4-dev\n"
 "Generated-By: pygettext.py 1.5\n"
 
 #: __init__.py:74
 msgid "Failed to parse list of breaches: {}"
-msgstr ""
+msgstr "Échec de l'analyse de la liste des fuites : {}"
 
 #: __init__.py:80
 msgid ""
@@ -46,15 +46,15 @@ msgstr ""
 
 #: __init__.py:106
 msgid "Failed to pull from Git: {}"
-msgstr ""
+msgstr "Échec de l'extraction de Git : {}"
 
 #: __init__.py:122
 msgid "Failed to push to Git: {}"
-msgstr ""
+msgstr "Échec de l'envoi vers Git : {}"
 
 #: __init__.py:144
 msgid "Info provided by HaveIBeenPwned"
-msgstr ""
+msgstr "Informations fournies par HaveIBeenPwned"
 
 #: __init__.py:162
 msgid "DATA BREACH FOUND"
@@ -78,7 +78,7 @@ msgstr "Modifier le mot de passe"
 
 #: __init__.py:170 __init__.py:172 __init__.py:593
 msgid "Generate new password"
-msgstr ""
+msgstr "Générer un nouveau mot de passe"
 
 #: __init__.py:170 __init__.py:172 __init__.py:597
 msgid "Edit other fields"
@@ -98,7 +98,7 @@ msgstr "Retirer"
 
 #: __init__.py:172 __init__.py:601
 msgid "Add OTP"
-msgstr "Ajouter OTP"
+msgstr "Ajouter un MDP unique"
 
 #: __init__.py:175 __init__.py:177 __init__.py:546
 msgid "Create"
@@ -118,11 +118,13 @@ msgstr "Requête inconnue reçue : {}"
 
 #: __init__.py:332
 msgid "What password should OTP be added to?"
-msgstr "À quel mot de passe le code à usage unique devrait être ajouté ?"
+msgstr "À quel mot de passe le code à usage unique devrait être ajouté ?"
 
 #: __init__.py:339
 msgid "Could not take a screenshot to detect OTP QR codes on the screen: {}."
 msgstr ""
+"Impossible de prendre une capture d'écran pour détecter les codes QR à usage "
+"unique à l'écran : {}."
 
 #: __init__.py:354
 msgid "No valid OTP QR codes detected on your screen. Configuring manually…"
@@ -130,71 +132,73 @@ msgstr ""
 
 #: __init__.py:355
 msgid "Which OTP type should be used?"
-msgstr ""
+msgstr "Quel type de MDP à usage unique doit être utilisé ?"
 
 #: __init__.py:357
 msgid "Detected and added {} valid OTP QR code(s) on your screen."
 msgstr ""
+"Détecté et ajouté {} code(s) QR de MDP à usage unique valides sur votre "
+"écran."
 
 #: __init__.py:360
 msgid "What is the OTP secret?"
-msgstr ""
+msgstr "Quel est le secret du MDP à usage unique ?"
 
 #: __init__.py:373
 msgid "Which password do you want to copy?"
-msgstr "Quel mot de passe voulez-vous copier ?"
+msgstr "Quel mot de passe voulez-vous copier ?"
 
 #: __init__.py:375 __init__.py:387
 msgid "What should the copy of {} be named?"
-msgstr "Comment la copie de {} devrait être nommée ?"
+msgstr "Comment la copie de {} devrait être nommée ?"
 
 #: __init__.py:394 __init__.py:406
 msgid "What password do you want to change?"
-msgstr "Quel mot de passe voulez-vous changer ?"
+msgstr "Quel mot de passe voulez-vous changer ?"
 
 #: __init__.py:398 __init__.py:448
 msgid "What should the value of {} be?"
-msgstr "Quelle devrait être la valeur de {} ?"
+msgstr "Quelle devrait être la valeur de {} ?"
 
 #: __init__.py:408 __init__.py:432
 msgid "How many characters should the password be?"
-msgstr "Combien de caractères devrait avoir le mot de passe ?"
+msgstr "Combien de caractères devrait avoir le mot de passe ?"
 
 #: __init__.py:417
 msgid "What password do you want to change fields of?"
-msgstr ""
+msgstr "De quel mot de passe souhaitez-vous modifier les champs ?"
 
 #: __init__.py:422
 msgid "What should the value of the fields of {} be?"
-msgstr ""
+msgstr "Quelle devrait être la valeur des champs de {} ?"
 
 #: __init__.py:430
 msgid "What name do you want to generate a random password for?"
-msgstr ""
+msgstr "Pour quel nom voulez-vous générer un mot de passe aléatoire ?"
 
 #: __init__.py:439
 msgid "Please provide a GPG key ID to initialize this directory with."
-msgstr ""
+msgstr "Veuillez fournir un ID de clé GPG pour initialiser ce répertoire."
 
 #: __init__.py:446
 msgid "What is the name of the password?"
-msgstr ""
+msgstr "Quel est le nom du mot de passe ?"
 
 #: __init__.py:455
 msgid "What password do you want to remove?"
-msgstr ""
+msgstr "Quel mot de passe voulez-vous retirer ?"
 
 #: __init__.py:457
 msgid "Are you sure you want to remove {}?"
-msgstr "Êtes-vous sûr·e de vouloir enlever {} ?"
+msgstr "Êtes-vous sûr·e de vouloir enlever {} ?"
 
 #: __init__.py:473
 msgid "What password do you want to rename?"
-msgstr "Quel mot de passe voulez-vous renommer ?"
+msgstr "Quel mot de passe voulez-vous renommer ?"
 
 #: __init__.py:475
 msgid "What should the new name of {} be?"
-msgstr ""
+msgstr "Quel devrait être le nouveau nom de {} ?"
 
 #: __init__.py:555
 msgid "Data breaches"
@@ -205,9 +209,8 @@ msgid "No breached accounts found"
 msgstr "Aucun compte compromis trouvé"
 
 #: __init__.py:563 __init__.py:636
-#, fuzzy
 msgid "Unexpected selection_made value: {}"
-msgstr "Valeur selection_made inattendue : {}"
+msgstr "Valeur selection_made inattendue : {}"
 
 #: generate_metadata.py:40
 msgid "Password Store"
@@ -223,7 +226,7 @@ msgstr "Répertoire de mots de passe"
 
 #: generate_metadata.py:55
 msgid "Automatically pull and push changes to/from Git"
-msgstr ""
+msgstr "Extraire et pousser automatiquement les modifications vers/depuis Git"
 
 #: generate_metadata.py:56 generate_metadata.py:57
 msgid "Yes"
@@ -232,6 +235,8 @@ msgstr "Oui"
 #: generate_metadata.py:61
 msgid "Password of SSH key, if encrypted, for push/pull. Stored in plain text."
 msgstr ""
+"Mot de passe de la clé SSH, si chiffrée, pour le l'extraction/la poussée. "
+"Stocké en texte brut."
 
 #~ msgid ""
 #~ "<b>{}</b><br/><br/><b>Last opened</b><br/>{}<br/><br/><b>Last modified</"
