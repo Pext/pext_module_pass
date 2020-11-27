@@ -1,4 +1,4 @@
-dulwich==0.20.13
+dulwich==0.20.14
 paramiko==2.7.2
 pypass==0.2.1
 Babel==2.9.0
