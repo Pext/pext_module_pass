@@ -40,9 +40,8 @@ msgid ""
 "passwords for these accounts as soon as possible. Do you want to view the "
 "accounts in question?"
 msgstr ""
-"पाया गया कि {} खाते डेटा ब्रीच में शामिल होने की संभावना है। आपको इन खातों के"
-" लिए जल्द से जल्द पासवर्ड बदलना चाहिए। क्या आप विचाराधीन खातों को देखना चाहते"
-" हैं?"
+"पाया गया कि {} खाते डेटा ब्रीच में शामिल होने की संभावना है। आपको इन खातों के लिए जल्द "
+"से जल्द पासवर्ड बदलना चाहिए। क्या आप विचाराधीन खातों को देखना चाहते हैं?"
 
 #: __init__.py:106
 msgid "Failed to pull from Git: {}"
@@ -120,14 +119,13 @@ msgstr "OTP किस पासवर्ड से जोड़ा जाना 
 
 #: __init__.py:339
 msgid "Could not take a screenshot to detect OTP QR codes on the screen: {}."
-msgstr ""
-"स्क्रीन पर OTP QR कोड का पता लगाने के लिए स्क्रीनशॉट नहीं ले सकता था: {}।"
+msgstr "स्क्रीन पर OTP QR कोड का पता लगाने के लिए स्क्रीनशॉट नहीं ले सकता था: {}।"
 
 #: __init__.py:354
 msgid "No valid OTP QR codes detected on your screen. Configuring manually…"
 msgstr ""
-"आपकी स्क्रीन पर कोई मान्य OTP QR कोड नहीं मिला। मैन्युअल रूप से कॉन्फ़िगर "
-"किया जा रहा है …"
+"आपकी स्क्रीन पर कोई मान्य OTP QR कोड नहीं मिला। मैन्युअल रूप से कॉन्फ़िगर किया जा रहा है "
+"…"
 
 #: __init__.py:355
 msgid "Which OTP type should be used?"
