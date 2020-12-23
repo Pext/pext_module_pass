@@ -23,7 +23,9 @@ msgid "Failed to parse list of breaches: {}"
 msgstr "Falha em analisar a lista de violações de segurança: {}"
 
 #: __init__.py:80
-msgid "This module requires at least API version 0.11.1, you are using {}. Please update Pext."
+msgid ""
+"This module requires at least API version 0.11.1, you are using {}. Please "
+"update Pext."
 msgstr ""
 "Este módulo necessita pelo menos da versão API 0.11.1; está a utilizar {}. "
 "Por favor, actualizar o Pext."
@@ -33,7 +35,10 @@ msgid "No"
 msgstr "Não"
 
 #: __init__.py:91
-msgid "Found {} account(s) likely involved in a data breach. You should change the passwords for these accounts as soon as possible. Do you want to view the accounts in question?"
+msgid ""
+"Found {} account(s) likely involved in a data breach. You should change the "
+"passwords for these accounts as soon as possible. Do you want to view the "
+"accounts in question?"
 msgstr ""
 "Encontrei {} conta(s) provavelmente implicada(s) numa violação de dados. "
 "Deverá alterar as palavras-passe destas contas o mais rapidamente possível. "
@@ -56,7 +61,9 @@ msgid "DATA BREACH FOUND"
 msgstr "VIOLAÇÃO DE DADOS DETECTADA"
 
 #: __init__.py:168
-msgid "<b>{}</b><br/>{}<br/><b>Last opened</b><br/>{}<br/><br/><b>Last modified</b><br/>{}"
+msgid ""
+"<b>{}</b><br/>{}<br/><b>Last opened</b><br/>{}<br/><br/><b>Last modified</"
+"b><br/>{}"
 msgstr ""
 "<b>{}</b><br/>{}<br/><b>Última sessão</b><br/>{}<br/><br/><b>Última "
 "modificação</b><br/>{}"
@@ -120,7 +127,7 @@ msgstr ""
 "{}."
 
 #: __init__.py:354
-msgid "No valid OTP QR codes detected on your screen. Configuring manually\342\200\246"
+msgid "No valid OTP QR codes detected on your screen. Configuring manually…"
 msgstr ""
 
 #: __init__.py:355
