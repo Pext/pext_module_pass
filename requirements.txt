@@ -4,6 +4,6 @@ pypass==0.2.1
 Babel==2.9.0
 pyotp==2.4.1
 Pillow==8.0.1
-pyscreenshot==2.2
+pyscreenshot==2.3
 zbar-py==1.0.4
 python-dateutil==2.8.1
