@@ -60,7 +60,7 @@ class Module(ModuleBase):
         self.result_display_thread = None
         self.result_display_active = True
 
-        self.data_location = expanduser(normcase("~/.password-store/")) if ('directory' not in settings) else expanduser(normcase(settings['directory']))
+        self.data_location = expanduser(normcase("~/.password-store/")) if ('directory' not in settings or not settings['directory']) else expanduser(normcase(settings['directory']))
         self.password_store = pypass.PasswordStore(self.data_location)
 
         self.q = q
