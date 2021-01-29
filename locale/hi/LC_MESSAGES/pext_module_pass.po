@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2020-05-12 19:00+CEST\n"
-"PO-Revision-Date: 2020-08-23 01:43+0000\n"
-"Last-Translator: Aayush Gupta <aayushgupta219@gmail.com>\n"
+"PO-Revision-Date: 2021-01-24 16:32+0000\n"
+"Last-Translator: Dormin <nkzo3d+1uozh1scczh8c@sharklasers.com>\n"
 "Language-Team: Hindi <https://hosted.weblate.org/projects/pext/"
 "pext_module_pass/hi/>\n"
 "Language: hi\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.2.1-dev\n"
+"X-Generator: Weblate 4.5-dev\n"
 "Generated-By: pygettext.py 1.5\n"
 
 #: __init__.py:74
@@ -60,10 +60,13 @@ msgid "DATA BREACH FOUND"
 msgstr "डेटा ब्रेक मिला"
 
 #: __init__.py:168
+#, fuzzy
 msgid ""
 "<b>{}</b><br/>{}<br/><b>Last opened</b><br/>{}<br/><br/><b>Last modified</"
 "b><br/>{}"
 msgstr ""
+"<b>{}</b><br/>{}<br/><b> अंतिम बार खोला गया </b><br/>{}<br/><br/><br/> अंतिम "
+"बार संशोधित</b><br/>{}"
 
 #: __init__.py:170 __init__.py:172
 msgid "Open"
@@ -181,15 +184,16 @@ msgstr "पासवर्ड का नाम क्या है?"
 
 #: __init__.py:455
 msgid "What password do you want to remove?"
-msgstr "आप कौन कौन से पासवर्ड निकालना चाहते हैं?"
+msgstr "आप कौन सा पासवर्ड हटाना चाहते हैं?"
 
 #: __init__.py:457
 msgid "Are you sure you want to remove {}?"
 msgstr "क्या आप सचमुच हटाना चाहते हैं {}?"
 
 #: __init__.py:473
+#, fuzzy
 msgid "What password do you want to rename?"
-msgstr "आप कौन कौन से पासवर्ड का नाम बदलना चाहते हैं?"
+msgstr "आप कौन से पासवर्ड का नाम बदलना चाहते हैं?"
 
 #: __init__.py:475
 msgid "What should the new name of {} be?"
