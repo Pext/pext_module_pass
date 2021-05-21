@@ -492,7 +492,7 @@ class Module(ModuleBase):
             # Parse OTP
             for number, line in enumerate(result_lines):
                 try:
-                    otp = pyotp.parse_uri(line)
+                    otp = pyotp.parse_uri(self._remove_prefix(line))
                 except ValueError:
                     continue
 
@@ -524,6 +524,13 @@ class Module(ModuleBase):
 
             if self.result_display_active:
                 sleep(1)
+
+    def _remove_prefix(self, string):
+        # Remove any possible prefix. For example, if the entry is named
+        # "URL: https://example.org/", this returns "https://example.org/"
+        # If there is no prefix, the string is returned unchanged
+        parts = string.split(": ", 1)
+        return parts[1] if len(parts) > 1 else parts[0]
 
     def selection_made(self, selection):
         if len(selection) == 0:
@@ -570,13 +577,7 @@ class Module(ModuleBase):
             if selection[1]["value"] == "********":
                 self.q.put([Action.copy_to_clipboard, self.passwordEntries["********"]])
             else:
-                # Get the final part to prepare for copying. For example, if
-                # the entry is named URL: https://example.org/", only copy
-                # "https://example.org/" to the clipboard
-                copyStringParts = self.passwordEntries[selection[1]["value"]].split(": ", 1)
-
-                copyString = copyStringParts[1] if len(copyStringParts) > 1 else copyStringParts[0]
-                self.q.put([Action.copy_to_clipboard, copyString])
+                self.q.put([Action.copy_to_clipboard, self._remove_prefix(self.passwordEntries[selection[1]["value"]])])
 
             self.passwordEntries = {}
             self.q.put([Action.close])
