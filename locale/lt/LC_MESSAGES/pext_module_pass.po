@@ -6,211 +6,230 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2020-05-12 19:00+CEST\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2021-08-27 15:32+0000\n"
+"Last-Translator: Gediminas Murauskas <muziejusinfo@gmail.com>\n"
+"Language-Team: Lithuanian <https://hosted.weblate.org/projects/pext/"
+"pext_module_pass/lt/>\n"
 "Language: lt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n % 10 == 1 && (n % 100 < 11 || n % 100 > "
+"19)) ? 0 : ((n % 10 >= 2 && n % 10 <= 9 && (n % 100 < 11 || n % 100 > 19)) ? "
+"1 : 2);\n"
+"X-Generator: Weblate 4.8.1-dev\n"
 "Generated-By: pygettext.py 1.5\n"
 
 #: __init__.py:74
 msgid "Failed to parse list of breaches: {}"
-msgstr ""
+msgstr "Nepavyko išanalizuoti pažeidimų sąrašo: {}"
 
 #: __init__.py:80
 msgid "This module requires at least API version 0.11.1, you are using {}. Please update Pext."
 msgstr ""
+"Šiam moduliui reikalinga bent API versija 0.11.1, jūs naudojate {}. Prašome "
+"atnaujinti Pext."
 
 #: __init__.py:84 generate_metadata.py:56
 msgid "No"
-msgstr ""
+msgstr "Ne"
 
 #: __init__.py:91
 msgid "Found {} account(s) likely involved in a data breach. You should change the passwords for these accounts as soon as possible. Do you want to view the accounts in question?"
 msgstr ""
+"Rasta {} paskyra (-os), kuri tikriausiai buvo susijusi su duomenų pažeidimu. "
+"Turėtumėte kuo greičiau pakeisti šių paskyrų slaptažodžius. Ar norite "
+"peržiūrėti aptariamas paskyras?"
 
 #: __init__.py:106
 msgid "Failed to pull from Git: {}"
-msgstr ""
+msgstr "Nepavyko ištraukti iš Git: {}"
 
 #: __init__.py:122
 msgid "Failed to push to Git: {}"
-msgstr ""
+msgstr "Nepavyko perkelti į Git: {}"
 
 #: __init__.py:144
 msgid "Info provided by HaveIBeenPwned"
-msgstr ""
+msgstr "Informaciją pateikė HaveIBeenPwned"
 
 #: __init__.py:162
 msgid "DATA BREACH FOUND"
-msgstr ""
+msgstr "RASTAS DUOMENŲ PAŽEIDIMAS"
 
 #: __init__.py:168
 msgid "<b>{}</b><br/>{}<br/><b>Last opened</b><br/>{}<br/><br/><b>Last modified</b><br/>{}"
 msgstr ""
+"<b> {}</b><br/>{}<br/><b>Paskutinį kartą atidaryta</b><br/>{}<br/><br/"
+"><b>Paskutinį kartą keista</b><br/>{}"
 
 #: __init__.py:170 __init__.py:172
 msgid "Open"
-msgstr ""
+msgstr "Atidaryti"
 
 #: __init__.py:170 __init__.py:172 __init__.py:589
 msgid "Edit password"
-msgstr ""
+msgstr "Redaguoti slaptažodį"
 
 #: __init__.py:170 __init__.py:172 __init__.py:593
 msgid "Generate new password"
-msgstr ""
+msgstr "Generuoti naują slaptažodį"
 
 #: __init__.py:170 __init__.py:172 __init__.py:597
 msgid "Edit other fields"
-msgstr ""
+msgstr "Redaguoti kitus laukus"
 
 #: __init__.py:170 __init__.py:172 __init__.py:605
 msgid "Copy"
-msgstr ""
+msgstr "Kopijuoti"
 
 #: __init__.py:170 __init__.py:172 __init__.py:609
 msgid "Rename"
-msgstr ""
+msgstr "Pervadinti"
 
 #: __init__.py:170 __init__.py:172 __init__.py:613
 msgid "Remove"
-msgstr ""
+msgstr "Pašalinti"
 
 #: __init__.py:172 __init__.py:601
 msgid "Add OTP"
-msgstr ""
+msgstr "Pridėti OTP"
 
 #: __init__.py:175 __init__.py:177 __init__.py:546
 msgid "Create"
-msgstr ""
+msgstr "Sukurti"
 
 #: __init__.py:175 __init__.py:177 __init__.py:550
 msgid "Generate"
-msgstr ""
+msgstr "Generuoti"
 
 #: __init__.py:175 __init__.py:189 __init__.py:554 __init__.py:564
 msgid "View data breaches"
-msgstr ""
+msgstr "Peržiūrėti duomenų pažeidimus"
 
 #: __init__.py:301
 msgid "Unknown request received: {}"
-msgstr ""
+msgstr "Gauta nežinoma užklausa: {}"
 
 #: __init__.py:332
 msgid "What password should OTP be added to?"
-msgstr ""
+msgstr "Prie kokio slaptažodžio reikėtų pridėti OTP?"
 
 #: __init__.py:339
 msgid "Could not take a screenshot to detect OTP QR codes on the screen: {}."
 msgstr ""
+"Nepavyko padaryti ekrano kopijos, kad būtų galima aptikti OTP QR kodus "
+"ekrane: {}."
 
 #: __init__.py:354
 msgid "No valid OTP QR codes detected on your screen. Configuring manually\342\200\246"
 msgstr ""
+"Ekrane neaptikta galiojančių OTP QR kodų. Konfigūruojama rankiniu būdu\\342"
+"\\200\\246"
 
 #: __init__.py:355
 msgid "Which OTP type should be used?"
-msgstr ""
+msgstr "Kuris OTP tipas turėtų būti naudojamas?"
 
 #: __init__.py:357
 msgid "Detected and added {} valid OTP QR code(s) on your screen."
 msgstr ""
+"Aptiktas ir pridėtas {} galiojantis (-i) OTP QR kodas (-ai) jūsų ekrane."
 
 #: __init__.py:360
 msgid "What is the OTP secret?"
-msgstr ""
+msgstr "Kokia yra OTP paslaptis?"
 
 #: __init__.py:373
 msgid "Which password do you want to copy?"
-msgstr ""
+msgstr "Kurį slaptažodį norite nukopijuoti?"
 
 #: __init__.py:375 __init__.py:387
 msgid "What should the copy of {} be named?"
-msgstr ""
+msgstr "Kaip turėtų būti pavadinta {} kopija?"
 
 #: __init__.py:394 __init__.py:406
 msgid "What password do you want to change?"
-msgstr ""
+msgstr "Kokį slaptažodį norite pakeisti?"
 
 #: __init__.py:398 __init__.py:448
 msgid "What should the value of {} be?"
-msgstr ""
+msgstr "Kokia turėtų būti {} reikšmė?"
 
 #: __init__.py:408 __init__.py:432
 msgid "How many characters should the password be?"
-msgstr ""
+msgstr "Kiek simbolių turėtų sudaryti slaptažodį?"
 
 #: __init__.py:417
 msgid "What password do you want to change fields of?"
-msgstr ""
+msgstr "Kokio slaptažodžio laukus norite pakeisti?"
 
 #: __init__.py:422
 msgid "What should the value of the fields of {} be?"
-msgstr ""
+msgstr "Kokia turėtų būti {} laukų reikšmė?"
 
 #: __init__.py:430
 msgid "What name do you want to generate a random password for?"
-msgstr ""
+msgstr "Kokiam vardui norite sugeneruoti atsitiktinį slaptažodį?"
 
 #: __init__.py:439
 msgid "Please provide a GPG key ID to initialize this directory with."
-msgstr ""
+msgstr "Pateikite GPG rakto ID, kad inicijuotumėte šį katalogą."
 
 #: __init__.py:446
 msgid "What is the name of the password?"
-msgstr ""
+msgstr "Koks yra slaptažodžio vardas?"
 
 #: __init__.py:455
 msgid "What password do you want to remove?"
-msgstr ""
+msgstr "Kokį slaptažodį norite pašalinti?"
 
 #: __init__.py:457
 msgid "Are you sure you want to remove {}?"
-msgstr ""
+msgstr "Ar tikrai norite pašalinti {}?"
 
 #: __init__.py:473
 msgid "What password do you want to rename?"
-msgstr ""
+msgstr "Kokį slaptažodį norite pervadinti?"
 
 #: __init__.py:475
 msgid "What should the new name of {} be?"
-msgstr ""
+msgstr "Koks turėtų būti naujas {} vardas?"
 
 #: __init__.py:555
 msgid "Data breaches"
-msgstr ""
+msgstr "Duomenų pažeidimai"
 
 #: __init__.py:559
 msgid "No breached accounts found"
-msgstr ""
+msgstr "Pažeistų paskyrų nerasta"
 
 #: __init__.py:563 __init__.py:636
 msgid "Unexpected selection_made value: {}"
-msgstr ""
+msgstr "Netikėta selection_made reikšmė: {}"
 
 #: generate_metadata.py:40
 msgid "Password Store"
-msgstr ""
+msgstr "Slaptažodžių saugykla"
 
 #: generate_metadata.py:42
 msgid "Allows Pext to do password management through pass"
-msgstr ""
+msgstr "Leidžia Pext su leidimu atlikti slaptažodžių valdymą"
 
 #: generate_metadata.py:50
 msgid "Password Store directory"
-msgstr ""
+msgstr "Slaptažodžių saugyklos katalogas"
 
 #: generate_metadata.py:55
 msgid "Automatically pull and push changes to/from Git"
-msgstr ""
+msgstr "Automatiškai ištraukti ir perkelti pakeitimus į/iš Git"
 
 #: generate_metadata.py:56 generate_metadata.py:57
 msgid "Yes"
-msgstr ""
+msgstr "Taip"
 
 #: generate_metadata.py:61
 msgid "Password of SSH key, if encrypted, for push/pull. Stored in plain text."
 msgstr ""
+"SSH rakto slaptažodis, jei jis užšifruotas, skirtas perkelti/ištraukti. "
+"Saugomas atviru tekstu."
