@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2020-05-12 19:00+CEST\n"
-"PO-Revision-Date: 2020-09-23 19:59+0000\n"
-"Last-Translator: ssantos <ssantos@web.de>\n"
+"PO-Revision-Date: 2021-11-20 23:50+0000\n"
+"Last-Translator: Peter J. Mello <admin@petermello.net>\n"
 "Language-Team: Portuguese <https://hosted.weblate.org/projects/pext/"
 "pext_module_pass/pt/>\n"
 "Language: pt\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.3-dev\n"
+"X-Generator: Weblate 4.9.1\n"
 "Generated-By: pygettext.py 1.5\n"
 
 #: __init__.py:74
@@ -129,38 +129,40 @@ msgstr ""
 #: __init__.py:354
 msgid "No valid OTP QR codes detected on your screen. Configuring manually…"
 msgstr ""
+"Nenhum código QR de OTP válido detectado no seu ecrã. A configurar "
+"manualmente…"
 
 #: __init__.py:355
 msgid "Which OTP type should be used?"
-msgstr ""
+msgstr "Qual o tipo de OTP a utilizar?"
 
 #: __init__.py:357
 msgid "Detected and added {} valid OTP QR code(s) on your screen."
-msgstr ""
+msgstr "Detectado e adicionado {} código(s) QR de OTP válido(s) no seu ecrã."
 
 #: __init__.py:360
 msgid "What is the OTP secret?"
-msgstr ""
+msgstr "O que é o segredo do OTP?"
 
 #: __init__.py:373
 msgid "Which password do you want to copy?"
-msgstr ""
+msgstr "Que palavra-passe deseja copiar?"
 
 #: __init__.py:375 __init__.py:387
 msgid "What should the copy of {} be named?"
-msgstr ""
+msgstr "Qual deve ser o nome da cópia de {}?"
 
 #: __init__.py:394 __init__.py:406
 msgid "What password do you want to change?"
-msgstr ""
+msgstr "Que palavra-passe quer alterar?"
 
 #: __init__.py:398 __init__.py:448
 msgid "What should the value of {} be?"
-msgstr ""
+msgstr "Qual deve ser o valor de {}?"
 
 #: __init__.py:408 __init__.py:432
 msgid "How many characters should the password be?"
-msgstr ""
+msgstr "Quantos caracteres devem ser a palavra-passe?"
 
 #: __init__.py:417
 msgid "What password do you want to change fields of?"
