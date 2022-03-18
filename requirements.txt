@@ -1,9 +1,9 @@
-dulwich==0.20.33
-paramiko==2.9.2
+dulwich==0.20.34
+paramiko==2.10.2
 pypass==0.2.1
 Babel==2.9.1
 pyotp==2.6.0
-Pillow==9.0.0
+Pillow==9.0.1
 pyscreenshot==3.0
 zbar-py==1.0.4
 python-dateutil==2.8.2
