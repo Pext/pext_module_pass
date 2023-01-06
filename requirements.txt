@@ -3,7 +3,7 @@ paramiko==2.12.0
 pypass==0.2.1
 Babel==2.11.0
 pyotp==2.8.0
-Pillow==9.3.0
+Pillow==9.4.0
 pyscreenshot==3.0
 zbar-py==1.0.4
 python-dateutil==2.8.2
