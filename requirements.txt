@@ -1,5 +1,5 @@
 dulwich==0.21.5
-paramiko==3.2.0
+paramiko==3.3.1
 pypass==0.2.1
 Babel==2.12.1
 pyotp==2.9.0
