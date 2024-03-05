@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2020-05-12 19:00+CEST\n"
-"PO-Revision-Date: 2024-03-01 05:00+0000\n"
+"PO-Revision-Date: 2024-03-05 06:01+0000\n"
 "Last-Translator: Scrambled777 <weblate.scrambled777@simplelogin.com>\n"
 "Language-Team: Hindi <https://hosted.weblate.org/projects/pext/"
 "pext_module_pass/hi/>\n"
@@ -57,7 +57,7 @@ msgstr "HaveIBeenPwned द्वारा दी गई जानकारी"
 
 #: __init__.py:162
 msgid "DATA BREACH FOUND"
-msgstr "डेटा ब्रेक मिला"
+msgstr "डेटा उल्लंघन पाया गया"
 
 #: __init__.py:168
 msgid ""
@@ -199,7 +199,7 @@ msgstr "{} का नया नाम क्या होना चाहिए?
 
 #: __init__.py:555
 msgid "Data breaches"
-msgstr "डेटा ब्रीच"
+msgstr "डेटा उल्लंघन"
 
 #: __init__.py:559
 msgid "No breached accounts found"
@@ -215,7 +215,7 @@ msgstr "पासवर्ड स्टोर"
 
 #: generate_metadata.py:42
 msgid "Allows Pext to do password management through pass"
-msgstr "पैक्स्ट को पास के माध्यम से पासवर्ड प्रबंधन करने के लिए अनुमति दे"
+msgstr "Pext को पास के माध्यम से पासवर्ड प्रबंधन करने के लिए अनुमति दे"
 
 #: generate_metadata.py:50
 msgid "Password Store directory"
@@ -223,7 +223,7 @@ msgstr "पासवर्ड संग्रह निर्देशिका"
 
 #: generate_metadata.py:55
 msgid "Automatically pull and push changes to/from Git"
-msgstr "Git से / के लिए स्वचालित रूप से परिवर्तन और पुश करें"
+msgstr "Git में/से परिवर्तनों को स्वचालित रूप से खींचें और पुश करें"
 
 #: generate_metadata.py:56 generate_metadata.py:57
 msgid "Yes"
@@ -232,8 +232,8 @@ msgstr "हाँ"
 #: generate_metadata.py:61
 msgid "Password of SSH key, if encrypted, for push/pull. Stored in plain text."
 msgstr ""
-"SSH कुंजी का पासवर्ड, यदि एन्क्रिप्ट किया गया है, तो पुश / पुल के लिए। सादे पाठ में "
-"संग्रहीत।"
+"पुश/पुल के लिए SSH कुंजी का पासवर्ड, यदि एन्क्रिप्ट किया गया हो। सादे पाठ में"
+" संग्रहीत।"
 
 #~ msgid ""
 #~ "<b>{}</b><br/><br/><b>Last opened</b><br/>{}<br/><br/><b>Last modified</"
