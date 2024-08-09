@@ -1,7 +1,7 @@
 dulwich==0.22.1
 paramiko==3.4.0
 pypass==0.2.1
-Babel==2.15.0
+Babel==2.16.0
 pyotp==2.9.0
 Pillow==10.4.0
 pyscreenshot==3.1
